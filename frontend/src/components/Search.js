@@ -1,5 +1,7 @@
 // src/components/Search.js
 
+//to-do: add useEffect Cleanup after fetch function implemented
+
 import React, { useState } from 'react';
 import Scroll from './Scroll';
 import SearchList from './SearchList';
