@@ -1,8 +1,11 @@
 import React from 'react';
+import { useParams } from 'react-router';
 
 const MovieDetails = () => {
+    const {id} = useParams();
+
     return ( 
-        <h2>movie details</h2>
+        <h2>movie details {id}</h2>
     );
 }
  

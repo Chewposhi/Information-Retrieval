@@ -2,11 +2,11 @@
 
 //to-do: add useEffect Cleanup after fetch function implemented
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Scroll from './Scroll';
 import SearchList from './SearchList';
 
-function Search({ details }) {
+function Search({details}) {
 
   const [searchField, setSearchField] = useState("");
 
@@ -36,6 +36,7 @@ function Search({ details }) {
       </Scroll>
     );
   }
+
 
   return (
     <section className="garamond">
