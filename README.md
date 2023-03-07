@@ -25,7 +25,17 @@ Movie page
 - predictive text as we type
 - home page display set of movies (dynamic or statically determined)
 
-### to do (ben) -> end of recess
-solr + search
-### to do (po) -> week 8
-frontend + ui mockup
+### to do (ben) -> 
+- working solr with crawled data
+- research on how to correct spelling (look into solr functions first) secondary
+
+### to do (po) -> 
+- connect frontend to solr
+- test search
+
+
+
+### classification
+reviews -> positive or negative
+classification -> just append new columnn
+2 csvs -> 1 for before classification 1 after classification
