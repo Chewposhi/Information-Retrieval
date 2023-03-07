@@ -14,7 +14,7 @@ function App() {
 
   //fetching of movies
   useEffect(() => {
-    fetch('http://localhost:8001/movies')
+    fetch('http://localhost:8000/movies')
       .then(res => {
         return res.json()
       })
