@@ -33,7 +33,7 @@ Movie page
 - connect frontend to solr
 - test search
 
-
+- flowchart for the program flow
 
 ### classification
 reviews -> positive or negative
