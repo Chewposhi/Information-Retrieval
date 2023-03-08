@@ -32,6 +32,7 @@ Movie page
 ### to do (po) -> 
 - connect frontend to solr
 - test search
+- possible: slide bar for filtering, movie comparison
 
 - flowchart for the program flow
 
