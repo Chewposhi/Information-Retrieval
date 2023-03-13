@@ -1,10 +1,42 @@
-# Getting Started with Create React App
+# Instruction for running the frontend
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Before everything
 
-In the project directory, you can run:
+Install:
+
+### `node.js`
+
+Download latest version of node.js from [https://nodejs.org/en/]
+
+## Starting the project
+
+### Starting the react application
+
+Open terminal, cd to frontend, run 'npm start'. THe website should be started in your browser. If modules are missing, refer to troubleshoot below.
+
+### Starting json server
+
+json server is a mock server tool that allows simulation of api fetch. To test the fetching in the frontend, open a new terminal, run 'npx json-server --watch src/Data/db.json --port 8000'. The file 'db.json' will be acting as a mock database.
+
+## Installing dependency
+
+### `npm install`
+
+The dependencies used by the project will by default not pushed to thge repo, all neccessary dependencies(library, packages, etc) are documented by the package-lock.json file in the drontend folder.
+
+Therefore, when you are working on a branch that might have dependencies used by other developers, you need to install the missing dependencies.
+
+To install missing dependencies, open terminal, cd to the frontend folder and run 'npm install'. required dependencies should be installed, you can ignore warnings by npm.
+
+### Troubleshoot
+
+Many errors in react can be caused by corrupted or dependencies. One way to troubleshoot is to delete the node_modules folder in the frontend directory and run 'npm install' to reinstall the folder. Most problems can be solved by this method.
+
+## Reference
+
+A good tutorial that includes everything you need to know about react.js :[https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d]
 
 ### `npm start`
 
