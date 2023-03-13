@@ -14,7 +14,7 @@ Download latest version of node.js from [https://nodejs.org/en/]
 
 ### Starting the react application
 
-Open terminal, cd to frontend, run 'npm start'. THe website should be started in your browser. If modules are missing, refer to troubleshoot below.
+Open terminal, cd to frontend, run 'npm start'. The website should be started in your browser. If modules are missing, refer to troubleshoot below.
 
 ### Starting json server
 
