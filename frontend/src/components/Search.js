@@ -14,11 +14,11 @@ function Search({details}) {
     movie => {
       return (
         movie
-        .title
+        .movie_name[0]
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
         movie
-        .genre
+        .movie_tags[0]
         .toLowerCase()
         .includes(searchField.toLowerCase())
       );

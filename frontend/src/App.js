@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MovieDetails from './components/MovieDetails';
 import Search from './components/Search';
-import MOCK_DATA from './Data/MOCK_DATA';
 
 
 function App() {
@@ -29,6 +28,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             {details && <Search details={details}/>}
+            {!details && <p>please connect to server</p>}
           </Route>
           <Route path="/movie/:id">
             <MovieDetails/>
