@@ -8,6 +8,7 @@ import SearchList from './SearchList';
 
 function Search({details}) {
 
+  const [searchInput, setSearchInput] = useState("");
   const [searchField, setSearchField] = useState("");
 
   const filteredMovies = details.filter(
@@ -26,7 +27,13 @@ function Search({details}) {
   );
 
   const handleChange = e => {
-    setSearchField(e.target.value);
+    e.preventDefault();
+    setSearchInput(e.target.value);
+  };
+
+  const handleClick = e => {
+    e.preventDefault();
+    setSearchField(searchInput);
   };
 
   function searchList() {
@@ -50,6 +57,7 @@ function Search({details}) {
           placeholder = "Search Movie, genre, keywords" 
           onChange = {handleChange}
         />
+        <button onClick={handleClick}>Search</button>
       </div>
       {searchList()}
     </section>
