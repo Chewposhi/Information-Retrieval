@@ -23,7 +23,7 @@ REM of this file is completely commented.
 REM By default the script will use JAVA_HOME to determine which java
 REM to use, but you can set a specific path for Solr to use without
 REM affecting other Java applications on your server/workstation.
-REM set SOLR_JAVA_HOME=
+REM set SOLR_JAVA_HOME="C:\Program Files (x86)\Java\jre1.8.0_361"
 
 REM Increase Java Min/Max Heap as needed to support your indexing / query needs
 REM set SOLR_JAVA_MEM=-Xms512m -Xmx512m
