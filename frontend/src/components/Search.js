@@ -1,22 +1,25 @@
 // src/components/Search.js
 
-import React, { useState } from 'react';
+//to-do: add useEffect Cleanup after fetch function implemented
+
+import React, { useEffect, useState } from 'react';
 import Scroll from './Scroll';
 import SearchList from './SearchList';
 
-function Search({ details }) {
+function Search({details}) {
 
+  const [searchInput, setSearchInput] = useState("");
   const [searchField, setSearchField] = useState("");
 
   const filteredMovies = details.filter(
     movie => {
       return (
         movie
-        .title
+        .movie_name[0]
         .toLowerCase()
         .includes(searchField.toLowerCase()) ||
         movie
-        .genre
+        .movie_tags[0]
         .toLowerCase()
         .includes(searchField.toLowerCase())
       );
@@ -24,7 +27,13 @@ function Search({ details }) {
   );
 
   const handleChange = e => {
-    setSearchField(e.target.value);
+    e.preventDefault();
+    setSearchInput(e.target.value);
+  };
+
+  const handleClick = e => {
+    e.preventDefault();
+    setSearchField(searchInput);
   };
 
   function searchList() {
@@ -34,6 +43,7 @@ function Search({ details }) {
       </Scroll>
     );
   }
+
 
   return (
     <section className="garamond">
@@ -47,6 +57,7 @@ function Search({ details }) {
           placeholder = "Search Movie, genre, keywords" 
           onChange = {handleChange}
         />
+        <button onClick={handleClick}>Search</button>
       </div>
       {searchList()}
     </section>
