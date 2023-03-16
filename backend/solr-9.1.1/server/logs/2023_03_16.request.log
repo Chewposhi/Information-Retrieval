@@ -432,3 +432,11 @@
 127.0.0.1 - - [16/Mar/2023:06:34:02 +0000] "GET /solr/films/admin/file?_=1678948442202&wt=json HTTP/1.1" 200 591
 127.0.0.1 - - [16/Mar/2023:06:34:02 +0000] "GET /solr/films/admin/file?_=1678948442202&file=lang&wt=json HTTP/1.1" 200 503
 127.0.0.1 - - [16/Mar/2023:06:34:02 +0000] "GET /solr/admin/info/system?_=1678948369456&wt=json HTTP/1.1" 200 1454
+127.0.0.1 - - [16/Mar/2023:17:28:33 +0000] "GET /solr/ HTTP/1.1" 200 3317
+127.0.0.1 - - [16/Mar/2023:17:28:33 +0000] "GET /solr/admin/cores?_=1678987713487&indexInfo=false&wt=json HTTP/1.1" 200 91
+127.0.0.1 - - [16/Mar/2023:17:28:33 +0000] "GET /solr/films/config/params?_=1678987713516&wt=json HTTP/1.1" 503 207
+127.0.0.1 - - [16/Mar/2023:17:28:33 +0000] "GET /solr/films/select?_=1678987713516&indent=true&q=*:*&q.op=OR&rows=10&useParams= HTTP/1.1" 503 207
+127.0.0.1 - - [16/Mar/2023:17:28:33 +0000] "GET /solr/admin/info/system?_=1678987713487&wt=json HTTP/1.1" 200 1430
+127.0.0.1 - - [16/Mar/2023:17:28:34 +0000] "GET /solr/admin/info/system?wt=json HTTP/1.1" 200 4083
+127.0.0.1 - - [16/Mar/2023:17:29:07 +0000] "GET /solr/films/select?q=movie_name:The%20Gangster%2C%20the%20Cop%2C%20the%20Devil&q.op=OR&start=1&rows=5&wt=json HTTP/1.1" 200 1363
+127.0.0.1 - - [16/Mar/2023:17:30:02 +0000] "GET /solr/films/select?q=movie_name:The%20Gangster%2C%20the%20Cop%2C%20the%20Devil&q.op=OR&start=1&rows=5&wt=json HTTP/1.1" 200 1363
