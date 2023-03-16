@@ -28,3 +28,15 @@ features
     - -Dc states the corename
     - -Dtype states type of file posted
     - note the relative directory used for data
+
+## Get Request
+1. http://localhost:8983/solr/films/select?q=* curl or wtv to query
+
+
+# TO DO:
+python script for posting file
+Display score tgt with results
+Indexing - variable types
+
+Extra:
+Edit stopwords
