@@ -31,11 +31,11 @@ client.search(searchQuery, function (err, result) {
     };
 
     const response = result.response;
-    //console.log(response);
+    console.log(response);
 
-    if (response && response.docs) {
+    /*if (response && response.docs) {
         response.docs.forEach((doc) => {
           console.log(doc);
         })
-      }
+      }*/
 });

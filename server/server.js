@@ -7,8 +7,42 @@ app.use(express.json());
 app.use(cors());
 
 
-app.get("/api", (req, res) => {
-    res.json({ "movies": [
+app.get("/init", (req, res) => {
+
+    var client = new SolrNode({
+        host: '127.0.0.1',
+        port: '8983',
+        core: 'films',
+        protocol: 'http'
+    });
+
+    const nameQuery = {
+        "*":"*"
+    };
+
+    const searchQuery = client.query()
+    .q(nameQuery)
+    .qop("OR")
+    .addParams({
+            wt: 'json',
+            indent: true
+        })
+    .start(0)
+    .rows(20)
+
+    client.search(searchQuery, function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        };
+
+        const response = result.response;
+        res.json({"movies": response.docs});
+
+    });
+
+
+    /*res.json({ "movies": [
         {"id":1, "movie_name": ["The Last of Us"], "movie_dis": ["\nAfter a global pandemic destroys civilization, a hardened survivor takes charge of a 14-year-old girl who may be humanity's last hope."], "movie_year": ["(2023– )"], "movie_director_cast": ["Pedro Pascal", "Bella Ramsey", "Anna Torv", "Gabriel Luna"], "movie_tags": ["\nAction, Adventure, Drama            "], "movie_star": ["9.2"]},
         {"id":2,"movie_name": ["Ant-Man and the Wasp: Quantumania"], "movie_dis": ["\nScott Lang and Hope Van Dyne, along with Hank Pym and Janet Van Dyne, explore the Quantum Realm, where they interact with strange creatures and embark on an adventure that goes beyond the limits of what they thought was possible."], "movie_year": ["(2023)"], "movie_director_cast": ["Peyton Reed", "Paul Rudd", "Evangeline Lilly", "Michael Douglas", "Michelle Pfeiffer"], "movie_tags": ["\nAction, Adventure, Comedy            "], "movie_star": ["6.5"]},
         {"id":3,"movie_name": ["You"], "movie_dis": ["\nA dangerously charming, intensely obsessive young man goes to extreme measures to insert himself into the lives of those he is transfixed by."], "movie_year": ["(2018– )"], "movie_director_cast": ["Penn Badgley", "Victoria Pedretti", "Ambyr Childers", "Elizabeth Lail"], "movie_tags": ["\nCrime, Drama, Romance            "], "movie_star": ["7.7"]},
@@ -32,7 +66,7 @@ app.get("/api", (req, res) => {
         {"id":21,"movie_name": ["Knock at the Cabin"], "movie_dis": ["\nWhile vacationing, a girl and her parents are taken hostage by armed strangers who demand that the family make a choice to avert the apocalypse."], "movie_year": ["(2023)"], "movie_director_cast": ["M. Night Shyamalan", "Dave Bautista", "Jonathan Groff", "Ben Aldridge", "Nikki Amuka-Bird"], "movie_tags": ["\nHorror, Mystery, Thriller            "], "movie_star": ["6.2"]}
 
 
-    ] })
+    ] })*/
 })
 
 app.listen(5000, () => {console.log("server started on port 5000")})
