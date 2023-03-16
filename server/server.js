@@ -6,22 +6,21 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+var client = new SolrNode({
+    host: '127.0.0.1',
+    port: '8983',
+    core: 'films',
+    protocol: 'http'
+});
 
 app.get("/init", (req, res) => {
 
-    var client = new SolrNode({
-        host: '127.0.0.1',
-        port: '8983',
-        core: 'films',
-        protocol: 'http'
-    });
-
-    const nameQuery = {
+    const Query = {
         "*":"*"
     };
 
     const searchQuery = client.query()
-    .q(nameQuery)
+    .q(Query)
     .qop("OR")
     .addParams({
             wt: 'json',
@@ -67,6 +66,33 @@ app.get("/init", (req, res) => {
 
 
     ] })*/
-})
+});
 
-app.listen(5000, () => {console.log("server started on port 5000")})
+app.get("/movie/:id", (req, res) => {
+    const Query = {
+        "id":req.params.id
+    };
+
+    const searchQuery = client.query()
+    .q(Query)
+    .qop("OR")
+    .addParams({
+            wt: 'json',
+            indent: true
+        })
+    .start(0)
+    .rows(1)
+
+    client.search(searchQuery, function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        };
+
+        const response = result.response;
+        res.json({"movies": response.docs});
+
+    });
+});
+const port = process.env.PORT || 5000;
+app.listen(port, () => {console.log(`server started on port ${port}...`)});
