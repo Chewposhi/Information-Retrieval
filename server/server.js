@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const SolrNode = require('solr-node');
 const app = express();
 
 app.use(express.json());
