@@ -95,4 +95,32 @@ app.get("/movie/:id", (req, res) => {
     });
 });
 
+app.get("/nameSearch/:q", (req, res) => {
+    const Query = {
+        "movie_name":req.params.q
+    };
+
+    const searchQuery = client.query()
+    .q(Query)
+    .qop("OR")
+    .addParams({
+            wt: 'json',
+            indent: true
+        })
+    .start(0)
+    .rows(20)
+
+    client.search(searchQuery, function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        };
+
+        const response = result.response;
+        res.json({"movies": response.docs});
+
+    });
+});
+
+
 app.listen(5000, () => {console.log(`server started on port 5000...`)});

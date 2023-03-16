@@ -10,6 +10,7 @@ function Search({details}) {
 
   const [searchInput, setSearchInput] = useState("");
   const [searchField, setSearchField] = useState("");
+  const [searchResult, setSearchResult] = useState([{}]);
 
   const filteredMovies = details.filter(
     movie => {
@@ -26,6 +27,10 @@ function Search({details}) {
     }
   );
 
+  useEffect(() => {
+    setSearchResult(details);
+  }, []);
+
   const handleChange = e => {
     e.preventDefault();
     setSearchInput(e.target.value);
@@ -34,12 +39,21 @@ function Search({details}) {
   const handleClick = e => {
     e.preventDefault();
     setSearchField(searchInput);
+    
+    fetch(`http://localhost:5000/nameSearch/${searchInput}`).then(
+      response => response.json()
+    ).then(
+      data => {
+        setSearchResult(data["movies"])
+        console.log(data);
+      }
+    )
   };
 
   function searchList() {
     return (
       <Scroll>
-        <SearchList filteredMovies={filteredMovies} />
+        <SearchList filteredMovies={searchResult} />
       </Scroll>
     );
   }
