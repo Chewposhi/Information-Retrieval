@@ -45,7 +45,7 @@ function Search({details}) {
     ).then(
       data => {
         setSearchResult(data["movies"])
-        console.log(data);
+        //console.log(data);
       }
     )
   };

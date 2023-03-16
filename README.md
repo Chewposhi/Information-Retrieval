@@ -29,11 +29,10 @@ Movie page
 - research on how to correct spelling (look into solr functions first) secondary
 
 ### to do (po) -> 
-- connect frontend to solr
-- test search
+- figure out why search is not accurate (eg. movie_name:The Last of Us does not return "The Last of Us")
+- explore imdb api for review fetching 
 - possible: slide bar for filtering, movie comparison
 
-- flowchart for the program flow
 
 ### classification
 reviews -> positive or negative
