@@ -28,12 +28,9 @@ function App() {
       response => response.json()
     ).then(
       data => {
-        console.log(data["movies"]);
         setDetails(data["movies"])
       }
     )
-
-      console.log(test);
   }, [])
 
   return (
