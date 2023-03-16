@@ -12,7 +12,7 @@ function App() {
   const [details, setDetails] = useState(null);
 
   //fetching of movies
-  useEffect(() => {
+  /*useEffect(() => {
     fetch('http://localhost:8000/movies')
       .then(res => {
         return res.json()
@@ -20,7 +20,21 @@ function App() {
       .then(data => {
         setDetails(data);
       })
-  }, []);
+  }, [])*/
+
+  const [test,setTest] = useState([{}]);
+  useEffect(() => {
+    fetch("http://localhost:5000/api").then(
+      response => response.json()
+    ).then(
+      data => {
+        console.log(data["movies"]);
+        setDetails(data["movies"])
+      }
+    )
+
+      console.log(test);
+  }, [])
 
   return (
     <Router>
