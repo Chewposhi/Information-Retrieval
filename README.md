@@ -26,7 +26,6 @@ Movie page
 - home page display set of movies (dynamic or statically determined)
 
 ### to do (ben) -> 
-- working solr with crawled data
 - research on how to correct spelling (look into solr functions first) secondary
 
 ### to do (po) -> 
@@ -40,3 +39,6 @@ Movie page
 reviews -> positive or negative
 classification -> just append new columnn
 2 csvs -> 1 for before classification 1 after classification
+
+multifaceted search -> filter
+visualisation for ui -> word cloud

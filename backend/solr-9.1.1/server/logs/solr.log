@@ -365,3 +365,221 @@ Caused by: com.ctc.wstx.exc.WstxUnexpectedCharException: Unexpected character '[
 2023-03-16 02:38:48.085 INFO  (qtp816798571-61) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678934063964} status=0 QTime=0
 2023-03-16 02:38:48.085 INFO  (qtp816798571-36) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&indent=true&q.op=OR&useParams=&_=1678934325646} hits=14950 status=0 QTime=0
 2023-03-16 02:38:48.118 INFO  (qtp816798571-40) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678934063964} status=0 QTime=32
+2023-03-16 06:06:28.924 INFO  (qtp816798571-92) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=1
+2023-03-16 06:06:28.936 INFO  (qtp816798571-64) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678946788901} status=0 QTime=0
+2023-03-16 06:06:28.943 INFO  (qtp816798571-85) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&indent=true&q.op=OR&useParams=&_=1678946788901} hits=14950 status=0 QTime=0
+2023-03-16 06:06:29.011 INFO  (qtp816798571-87) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=86
+2023-03-16 06:09:53.173 INFO  (qtp816798571-63) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678946788901} status=0 QTime=0
+2023-03-16 06:09:53.173 INFO  (qtp816798571-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=0
+2023-03-16 06:09:53.178 INFO  (qtp816798571-78) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=tale+of+outsized&indent=true&q.op=OR&useParams=&_=1678946788901} hits=0 status=0 QTime=5
+2023-03-16 06:09:53.213 INFO  (qtp816798571-82) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=40
+2023-03-16 06:10:01.702 INFO  (qtp816798571-92) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=0
+2023-03-16 06:10:01.704 INFO  (qtp816798571-93) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678946788901} status=0 QTime=0
+2023-03-16 06:10:01.706 INFO  (qtp816798571-64) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=The+Flash&indent=true&q.op=OR&useParams=&_=1678946788901} hits=0 status=0 QTime=1
+2023-03-16 06:10:01.750 INFO  (qtp816798571-96) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=45
+2023-03-16 06:10:10.789 INFO  (qtp816798571-78) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678946788901} status=0 QTime=0
+2023-03-16 06:10:10.789 INFO  (qtp816798571-92) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=0
+2023-03-16 06:10:10.789 INFO  (qtp816798571-82) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&indent=true&q.op=OR&useParams=&_=1678946788901} hits=14950 status=0 QTime=0
+2023-03-16 06:10:10.834 INFO  (qtp816798571-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=45
+2023-03-16 06:10:28.535 INFO  (qtp816798571-96) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678946788901} status=0 QTime=0
+2023-03-16 06:10:28.535 INFO  (qtp816798571-63) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=0
+2023-03-16 06:10:28.541 ERROR (qtp816798571-64) [ x:films] o.a.s.h.RequestHandlerBase org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'movie_name:["The Last of Us"]': Encountered " "]" "] "" at line 1, column 28.
+Was expecting:
+    "TO" ...
+     => org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'movie_name:["The Last of Us"]': Encountered " "]" "] "" at line 1, column 28.
+Was expecting:
+org.apache.solr.common.SolrException: org.apache.solr.search.SyntaxError: Cannot parse 'movie_name:["The Last of Us"]': Encountered " "]" "] "" at line 1, column 28.
+Was expecting:
+    "TO" ...
+    
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:217) ~[?:?]
+	at org.apache.solr.handler.component.SearchHandler.handleRequestBody(SearchHandler.java:384) ~[?:?]
+	at org.apache.solr.handler.RequestHandlerBase.handleRequest(RequestHandlerBase.java:224) ~[?:?]
+	at org.apache.solr.core.SolrCore.execute(SolrCore.java:2865) ~[?:?]
+	at org.apache.solr.servlet.HttpSolrCall.execute(HttpSolrCall.java:887) ~[?:?]
+	at org.apache.solr.servlet.HttpSolrCall.call(HttpSolrCall.java:606) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.dispatch(SolrDispatchFilter.java:250) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.lambda$doFilter$0(SolrDispatchFilter.java:218) ~[?:?]
+	at org.apache.solr.servlet.ServletUtils.traceHttpRequestExecution2(ServletUtils.java:257) ~[?:?]
+	at org.apache.solr.servlet.ServletUtils.rateLimitRequest(ServletUtils.java:227) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:213) ~[?:?]
+	at org.apache.solr.servlet.SolrDispatchFilter.doFilter(SolrDispatchFilter.java:195) ~[?:?]
+	at org.eclipse.jetty.servlet.FilterHolder.doFilter(FilterHolder.java:201) ~[jetty-servlet-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.servlet.ServletHandler$Chain.doFilter(ServletHandler.java:1626) ~[jetty-servlet-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:552) ~[jetty-servlet-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:143) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.security.SecurityHandler.handle(SecurityHandler.java:600) ~[jetty-security-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:235) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.handler.ContextHandler.doHandle(ContextHandler.java:1440) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:505) ~[jetty-servlet-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1355) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.handler.ContextHandlerCollection.handle(ContextHandlerCollection.java:191) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.handler.InetAccessHandler.handle(InetAccessHandler.java:177) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.handler.HandlerCollection.handle(HandlerCollection.java:146) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.rewrite.handler.RewriteHandler.handle(RewriteHandler.java:322) ~[jetty-rewrite-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.handler.gzip.GzipHandler.handle(GzipHandler.java:772) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.Server.handle(Server.java:516) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:487) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:732) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:479) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277) ~[jetty-server-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104) ~[jetty-io-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.runTask(EatWhatYouKill.java:338) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.doProduce(EatWhatYouKill.java:315) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.tryProduce(EatWhatYouKill.java:173) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.util.thread.strategy.EatWhatYouKill.run(EatWhatYouKill.java:131) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.util.thread.ReservedThreadExecutor$ReservedThread.run(ReservedThreadExecutor.java:409) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034) ~[jetty-util-9.4.48.v20220622.jar:9.4.48.v20220622]
+	at java.lang.Thread.run(Thread.java:1589) ~[?:?]
+Caused by: org.apache.solr.search.SyntaxError: Cannot parse 'movie_name:["The Last of Us"]': Encountered " "]" "] "" at line 1, column 28.
+Was expecting:
+    "TO" ...
+    
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:277) ~[?:?]
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:51) ~[?:?]
+	at org.apache.solr.search.QParser.getQuery(QParser.java:188) ~[?:?]
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:171) ~[?:?]
+	... 50 more
+Caused by: org.apache.solr.parser.ParseException: Encountered " "]" "] "" at line 1, column 28.
+Was expecting:
+    "TO" ...
+    
+	at org.apache.solr.parser.QueryParser.generateParseException(QueryParser.java:965) ~[?:?]
+	at org.apache.solr.parser.QueryParser.jj_consume_token(QueryParser.java:827) ~[?:?]
+	at org.apache.solr.parser.QueryParser.Term(QueryParser.java:490) ~[?:?]
+	at org.apache.solr.parser.QueryParser.Clause(QueryParser.java:291) ~[?:?]
+	at org.apache.solr.parser.QueryParser.Query(QueryParser.java:171) ~[?:?]
+	at org.apache.solr.parser.QueryParser.TopLevelQuery(QueryParser.java:141) ~[?:?]
+	at org.apache.solr.parser.SolrQueryParserBase.parse(SolrQueryParserBase.java:274) ~[?:?]
+	at org.apache.solr.search.LuceneQParser.parse(LuceneQParser.java:51) ~[?:?]
+	at org.apache.solr.search.QParser.getQuery(QParser.java:188) ~[?:?]
+	at org.apache.solr.handler.component.QueryComponent.prepare(QueryComponent.java:171) ~[?:?]
+	... 50 more
+2023-03-16 06:10:28.542 INFO  (qtp816798571-64) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=movie_name:["The+Last+of+Us"]&indent=true&q.op=OR&useParams=&_=1678946788901} status=400 QTime=6
+2023-03-16 06:10:28.582 INFO  (qtp816798571-93) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=47
+2023-03-16 06:10:36.180 INFO  (qtp816798571-92) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678946788901} status=0 QTime=0
+2023-03-16 06:10:36.180 INFO  (qtp816798571-78) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=0
+2023-03-16 06:10:36.184 INFO  (qtp816798571-82) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=movie_name:The+Last+of+Us&indent=true&q.op=OR&useParams=&_=1678946788901} hits=4010 status=0 QTime=5
+2023-03-16 06:10:36.226 INFO  (qtp816798571-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=46
+2023-03-16 06:11:03.592 INFO  (qtp816798571-64) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=0
+2023-03-16 06:11:03.592 INFO  (qtp816798571-96) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1678947063582} status=0 QTime=0
+2023-03-16 06:11:03.595 INFO  (qtp816798571-93) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1678947063582} status=0 QTime=3
+2023-03-16 06:11:03.629 INFO  (qtp816798571-92) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1678947063582} status=0 QTime=4
+2023-03-16 06:11:03.641 INFO  (qtp816798571-63) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=48
+2023-03-16 06:11:05.173 INFO  (qtp816798571-82) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=0
+2023-03-16 06:11:05.178 INFO  (qtp816798571-64) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/file params={wt=json&_=1678947065170} status=0 QTime=4
+2023-03-16 06:11:05.203 INFO  (qtp816798571-87) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/file params={file=lang&wt=json&_=1678947065170} status=0 QTime=20
+2023-03-16 06:11:05.223 INFO  (qtp816798571-96) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=49
+2023-03-16 06:11:05.588 INFO  (qtp816798571-63) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678946788901} status=0 QTime=0
+2023-03-16 06:11:05.588 INFO  (qtp816798571-92) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=0
+2023-03-16 06:11:05.629 INFO  (qtp816798571-64) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=40
+2023-03-16 06:11:06.222 INFO  (qtp816798571-87) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=0
+2023-03-16 06:11:06.230 INFO  (qtp816798571-82) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/file params={wt=json&_=1678947065170} status=0 QTime=7
+2023-03-16 06:11:06.267 INFO  (qtp816798571-96) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=45
+2023-03-16 06:11:06.275 INFO  (qtp816798571-92) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/file params={file=lang&wt=json&_=1678947065170} status=0 QTime=39
+2023-03-16 06:11:11.005 INFO  (qtp816798571-63) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=0
+2023-03-16 06:11:11.009 INFO  (qtp816798571-78) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/file params={file=stopwords.txt&contentType=text/plain;charset%3Dutf-8&wt=json&_=1678947065170} status=0 QTime=3
+2023-03-16 06:11:11.013 INFO  (qtp816798571-82) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/file params={wt=json&_=1678947065170} status=0 QTime=7
+2023-03-16 06:11:11.047 INFO  (qtp816798571-64) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=42
+2023-03-16 06:11:11.056 INFO  (qtp816798571-92) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/file params={file=lang&wt=json&_=1678947065170} status=0 QTime=36
+2023-03-16 06:11:29.569 INFO  (qtp816798571-82) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=0
+2023-03-16 06:11:29.571 INFO  (qtp816798571-87) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1678947063582} status=0 QTime=1
+2023-03-16 06:11:29.612 INFO  (qtp816798571-93) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=42
+2023-03-16 06:11:31.405 INFO  (qtp816798571-78) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=0
+2023-03-16 06:11:31.406 INFO  (qtp816798571-92) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1678947063582} status=0 QTime=1
+2023-03-16 06:11:31.449 INFO  (qtp816798571-64) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=44
+2023-03-16 06:11:32.073 INFO  (qtp816798571-87) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=0
+2023-03-16 06:11:32.074 INFO  (qtp816798571-82) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1678947063582} status=0 QTime=0
+2023-03-16 06:11:32.077 INFO  (qtp816798571-64) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={action=status&wt=json&_=1678946788802&ts=1678946788802} status=503 QTime=0
+2023-03-16 06:11:32.085 INFO  (qtp816798571-93) [ x:films] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1678947092066} status=0 QTime=12
+2023-03-16 06:11:32.146 INFO  (qtp816798571-96) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=72
+2023-03-16 06:11:32.151 INFO  (qtp816798571-85) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/system params={wt=json&_=1678947092066} status=0 QTime=78
+2023-03-16 06:20:51.346 INFO  (qtp816798571-64) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=0
+2023-03-16 06:20:51.353 INFO  (qtp816798571-99) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/file params={wt=json&_=1678947065170} status=0 QTime=7
+2023-03-16 06:20:51.392 INFO  (qtp816798571-100) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=46
+2023-03-16 06:20:51.400 INFO  (qtp816798571-87) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/file params={file=lang&wt=json&_=1678947065170} status=0 QTime=41
+2023-03-16 06:20:53.530 INFO  (qtp816798571-64) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=0
+2023-03-16 06:20:53.530 INFO  (qtp816798571-85) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678946788901} status=0 QTime=0
+2023-03-16 06:20:53.573 INFO  (qtp816798571-63) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=43
+2023-03-16 06:31:02.762 INFO  (qtp816798571-106) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678946788901} status=0 QTime=0
+2023-03-16 06:31:02.763 INFO  (qtp816798571-104) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678946788802} status=0 QTime=0
+2023-03-16 06:31:02.763 INFO  (qtp816798571-39) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&indent=true&q.op=OR&useParams=&_=1678946788901} hits=14950 status=0 QTime=0
+2023-03-16 06:31:02.795 INFO  (qtp816798571-103) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678946788802} status=0 QTime=33
+2023-03-16 06:31:04.818 INFO  (qtp816798571-78) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&indent=true&q.op=OR&useParams=} hits=14950 status=0 QTime=0
+2023-03-16 06:31:08.187 INFO  (qtp816798571-78) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&indent=true&q.op=OR&useParams=} hits=14950 status=0 QTime=0
+2023-03-16 06:31:20.381 INFO  (qtp816798571-39) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&q.op=OR&useParams=} hits=14950 status=0 QTime=0
+2023-03-16 06:31:31.973 INFO  (qtp816798571-78) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=*} hits=14950 status=0 QTime=0
+2023-03-16 06:32:49.504 INFO  (qtp816798571-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678948369456} status=0 QTime=0
+2023-03-16 06:32:49.505 INFO  (qtp816798571-97) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678948369490} status=0 QTime=0
+2023-03-16 06:32:49.505 INFO  (qtp816798571-87) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&indent=true&q.op=OR&useParams=&_=1678948369490} hits=14950 status=0 QTime=0
+2023-03-16 06:32:49.563 INFO  (qtp816798571-82) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678948369456} status=0 QTime=58
+2023-03-16 06:32:58.349 INFO  (qtp816798571-101) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678948369490} status=0 QTime=0
+2023-03-16 06:32:58.349 INFO  (qtp816798571-106) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678948369456} status=0 QTime=0
+2023-03-16 06:32:58.350 INFO  (qtp816798571-102) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=the+last+of+us&indent=true&q.op=OR&useParams=&_=1678948369490} hits=0 status=0 QTime=1
+2023-03-16 06:32:58.384 INFO  (qtp816798571-85) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678948369456} status=0 QTime=35
+2023-03-16 06:33:04.110 INFO  (qtp816798571-87) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678948369490} status=0 QTime=0
+2023-03-16 06:33:04.110 INFO  (qtp816798571-82) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678948369456} status=0 QTime=0
+2023-03-16 06:33:04.111 INFO  (qtp816798571-39) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=the&indent=true&q.op=OR&useParams=&_=1678948369490} hits=0 status=0 QTime=0
+2023-03-16 06:33:04.143 INFO  (qtp816798571-97) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678948369456} status=0 QTime=32
+2023-03-16 06:33:09.021 INFO  (qtp816798571-102) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678948369490} status=0 QTime=0
+2023-03-16 06:33:09.021 INFO  (qtp816798571-106) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678948369456} status=0 QTime=0
+2023-03-16 06:33:09.022 INFO  (qtp816798571-101) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=last+of+us&indent=true&q.op=OR&useParams=&_=1678948369490} hits=0 status=0 QTime=1
+2023-03-16 06:33:09.062 INFO  (qtp816798571-85) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678948369456} status=0 QTime=41
+2023-03-16 06:33:13.267 INFO  (qtp816798571-82) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678948369490} status=0 QTime=0
+2023-03-16 06:33:13.267 INFO  (qtp816798571-87) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678948369456} status=0 QTime=0
+2023-03-16 06:33:13.267 INFO  (qtp816798571-39) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=last&indent=true&q.op=OR&useParams=&_=1678948369490} hits=0 status=0 QTime=0
+2023-03-16 06:33:13.301 INFO  (qtp816798571-97) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678948369456} status=0 QTime=34
+2023-03-16 06:33:24.321 INFO  (qtp816798571-101) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678948369490} status=0 QTime=0
+2023-03-16 06:33:24.321 INFO  (qtp816798571-85) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678948369456} status=0 QTime=0
+2023-03-16 06:33:24.321 INFO  (qtp816798571-106) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=The+Last+of+Us&indent=true&q.op=OR&useParams=&_=1678948369490} hits=0 status=0 QTime=1
+2023-03-16 06:33:24.360 INFO  (qtp816798571-102) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678948369456} status=0 QTime=39
+2023-03-16 06:33:34.094 INFO  (qtp816798571-39) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678948369490} status=0 QTime=0
+2023-03-16 06:33:34.094 INFO  (qtp816798571-87) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678948369456} status=0 QTime=0
+2023-03-16 06:33:34.129 INFO  (qtp816798571-97) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678948369456} status=0 QTime=34
+2023-03-16 06:33:36.766 INFO  (qtp816798571-106) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678948369490} status=0 QTime=0
+2023-03-16 06:33:36.766 INFO  (qtp816798571-101) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678948369456} status=0 QTime=0
+2023-03-16 06:33:36.767 INFO  (qtp816798571-82) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&indent=true&q.op=OR&useParams=&_=1678948369490} hits=14950 status=0 QTime=0
+2023-03-16 06:33:36.808 INFO  (qtp816798571-102) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678948369456} status=0 QTime=41
+2023-03-16 06:33:44.169 INFO  (qtp816798571-97) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678948369490} status=0 QTime=0
+2023-03-16 06:33:44.169 INFO  (qtp816798571-87) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678948369456} status=0 QTime=0
+2023-03-16 06:33:44.170 INFO  (qtp816798571-39) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=The+Last+of+Us&indent=true&q.op=OR&useParams=&_=1678948369490} hits=0 status=0 QTime=1
+2023-03-16 06:33:44.201 INFO  (qtp816798571-85) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678948369456} status=0 QTime=32
+2023-03-16 06:33:48.987 INFO  (qtp816798571-102) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678948369490} status=0 QTime=0
+2023-03-16 06:33:48.987 INFO  (qtp816798571-106) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678948369456} status=0 QTime=0
+2023-03-16 06:33:49.007 INFO  (qtp816798571-82) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q="The+Last+of+Us"&indent=true&q.op=OR&useParams=&_=1678948369490} hits=0 status=0 QTime=20
+2023-03-16 06:33:49.027 INFO  (qtp816798571-101) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678948369456} status=0 QTime=40
+2023-03-16 06:33:53.347 INFO  (qtp816798571-101) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678948369456} status=0 QTime=0
+2023-03-16 06:33:53.347 INFO  (qtp816798571-85) [ x:tech_products] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1678948433343} status=0 QTime=0
+2023-03-16 06:33:53.351 INFO  (qtp816798571-82) [ x:tech_products] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={action=status&wt=json&_=1678948369456&ts=1678948369456} status=503 QTime=0
+2023-03-16 06:33:53.358 INFO  (qtp816798571-87) [ x:tech_products] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1678948433343} status=0 QTime=11
+2023-03-16 06:33:53.407 INFO  (qtp816798571-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678948369456} status=0 QTime=60
+2023-03-16 06:33:53.411 INFO  (qtp816798571-97) [ x:tech_products] o.a.s.c.S.Request webapp=/solr path=/admin/system params={wt=json&_=1678948433343} status=0 QTime=62
+2023-03-16 06:33:55.198 INFO  (qtp816798571-85) [ x:tech_products] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678948369490} status=0 QTime=0
+2023-03-16 06:33:55.198 INFO  (qtp816798571-106) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678948369456} status=0 QTime=0
+2023-03-16 06:33:55.237 INFO  (qtp816798571-102) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678948369456} status=0 QTime=38
+2023-03-16 06:33:56.385 INFO  (qtp816798571-82) [ x:tech_products] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1678948369490} status=0 QTime=0
+2023-03-16 06:33:56.385 INFO  (qtp816798571-97) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678948369456} status=0 QTime=0
+2023-03-16 06:33:56.386 INFO  (qtp816798571-87) [ x:tech_products] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&indent=true&q.op=OR&useParams=&_=1678948369490} hits=36 status=0 QTime=1
+2023-03-16 06:33:56.421 INFO  (qtp816798571-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678948369456} status=0 QTime=35
+2023-03-16 06:34:00.302 INFO  (qtp816798571-85) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678948369456} status=0 QTime=0
+2023-03-16 06:34:00.302 INFO  (qtp816798571-39) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={action=status&wt=json&_=1678948369456&ts=1678948369456} status=503 QTime=0
+2023-03-16 06:34:00.302 INFO  (qtp816798571-102) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1678948433343} status=0 QTime=0
+2023-03-16 06:34:00.308 INFO  (qtp816798571-101) [ x:films] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1678948433343} status=0 QTime=5
+2023-03-16 06:34:00.357 INFO  (qtp816798571-106) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678948369456} status=0 QTime=55
+2023-03-16 06:34:00.364 INFO  (qtp816798571-63) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/system params={wt=json&_=1678948433343} status=0 QTime=61
+2023-03-16 06:34:02.206 INFO  (qtp816798571-103) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1678948369456} status=0 QTime=0
+2023-03-16 06:34:02.210 INFO  (qtp816798571-82) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/file params={wt=json&_=1678948442202} status=0 QTime=4
+2023-03-16 06:34:02.247 INFO  (qtp816798571-101) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/file params={file=lang&wt=json&_=1678948442202} status=0 QTime=31
+2023-03-16 06:34:02.248 INFO  (qtp816798571-97) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1678948369456} status=0 QTime=42
