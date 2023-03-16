@@ -206,3 +206,15 @@
 127.0.0.1 - - [14/Mar/2023:08:17:02 +0000] "GET /solr/tech_products/config/params?_=1678781821029&wt=json HTTP/1.1" 200 212
 127.0.0.1 - - [14/Mar/2023:08:17:02 +0000] "GET /solr/tech_products/select?_=1678781821029&indent=true&q=*:*&q.op=OR&useParams= HTTP/1.1" 200 1771
 127.0.0.1 - - [14/Mar/2023:08:17:02 +0000] "GET /solr/admin/info/system?_=1678781815977&wt=json HTTP/1.1" 200 1451
+127.0.0.1 - - [14/Mar/2023:08:18:08 +0000] "GET /solr/admin/cores?_=1678781815977&indexInfo=false&wt=json HTTP/1.1" 200 617
+127.0.0.1 - - [14/Mar/2023:08:18:08 +0000] "GET /solr/tech_products/config/params?_=1678781821029&wt=json HTTP/1.1" 200 212
+127.0.0.1 - - [14/Mar/2023:08:18:08 +0000] "GET /solr/tech_products/select?_=1678781821029&indent=true&q=*:*&q.op=OR&useParams= HTTP/1.1" 200 1768
+127.0.0.1 - - [14/Mar/2023:08:18:08 +0000] "GET /solr/admin/info/system?_=1678781815977&wt=json HTTP/1.1" 200 1452
+127.0.0.1 - - [14/Mar/2023:08:18:13 +0000] "GET /solr/tech_products/config/params?_=1678781821029&wt=json HTTP/1.1" 200 212
+127.0.0.1 - - [14/Mar/2023:08:18:13 +0000] "GET /solr/admin/cores?_=1678781815977&indexInfo=false&wt=json HTTP/1.1" 200 617
+127.0.0.1 - - [14/Mar/2023:08:18:13 +0000] "GET /solr/tech_products/select?_=1678781821029&indent=true&q=sam&q.op=OR&useParams= HTTP/1.1" 200 252
+127.0.0.1 - - [14/Mar/2023:08:18:13 +0000] "GET /solr/admin/info/system?_=1678781815977&wt=json HTTP/1.1" 200 1453
+127.0.0.1 - - [14/Mar/2023:08:18:18 +0000] "GET /solr/admin/cores?_=1678781815977&indexInfo=false&wt=json HTTP/1.1" 200 617
+127.0.0.1 - - [14/Mar/2023:08:18:18 +0000] "GET /solr/tech_products/config/params?_=1678781821029&wt=json HTTP/1.1" 200 212
+127.0.0.1 - - [14/Mar/2023:08:18:18 +0000] "GET /solr/tech_products/select?_=1678781821029&indent=true&q=samsung&q.op=OR&useParams= HTTP/1.1" 200 1047
+127.0.0.1 - - [14/Mar/2023:08:18:18 +0000] "GET /solr/admin/info/system?_=1678781815977&wt=json HTTP/1.1" 200 1448
