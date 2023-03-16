@@ -22,7 +22,6 @@ function App() {
       })
   }, [])*/
 
-  const [test,setTest] = useState([{}]);
   useEffect(() => {
     fetch("http://localhost:5000/init").then(
       response => response.json()
