@@ -14,9 +14,9 @@ function Body({review}) {
         <div className="reviews-top">
           <div className="user-details">
             <CardSubtitle className="mb-2 text-muted" tag="h6">
-              {review.author.displayName}
+              User Name: {review.author.displayName}
             </CardSubtitle>
-            <div> 
+            <div className="rating"> 
                 Rating: {review.authorRating}/10
             </div>
           </div>

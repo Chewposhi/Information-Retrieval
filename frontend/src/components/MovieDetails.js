@@ -64,12 +64,14 @@ const MovieDetails = () => {
         <div>
             {poster && <img className="br-50 h10 w5 dib" alt="poster" src={[reviews.base.image.url]} />}
             <div>
-              <h1>{details[0]["movie_name"]}</h1>
-              <h2>genre: {details[0]["movie_tags"]}</h2>
-              <p>description: {details[0]["movie_dis"]}</p>
+              <h1 style={{textDecoration:'underline'}}>{details[0]["movie_name"]}</h1>
+              <h2>Genre: </h2>
+              <h3>{details[0]["movie_tags"]}</h3>
+              <h2>Description: </h2>
+              <h3>{details[0]["movie_dis"]}</h3>
             </div>
             <div>
-              <h1>Reviews</h1>
+              <h2>Reviews:</h2>
               {reviewsloaded && reviewsList()}
             </div>
             
