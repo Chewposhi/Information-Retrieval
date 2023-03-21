@@ -97,7 +97,7 @@ app.get("/movie/:id", (req, res) => {
 
 app.get("/nameSearch/:q", (req, res) => {
     const Query = {
-        "movie_name":req.params.q
+        "movie_name":'"'+req.params.q+'"'
     };
 
     const searchQuery = client.query()
