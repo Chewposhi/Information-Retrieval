@@ -10,7 +10,7 @@ import {
 function Body({review}) {
   return (
     <Card style={{borderStyle:'groove'}}>
-      <CardBody style={{borderBottom:'dotted'}}>
+      <CardBody>
         <div className="reviews-top">
           <div className="user-details">
             <CardSubtitle className="mb-2 text-muted" tag="h6">
