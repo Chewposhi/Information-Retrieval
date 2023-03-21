@@ -71,7 +71,7 @@ function Search({details}) {
           placeholder = "Search Movie, genre, keywords" 
           onChange = {handleChange}
         />
-        <button onClick={handleClick}>Search</button>
+        <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
       </div>
       {searchList()}
     </section>
