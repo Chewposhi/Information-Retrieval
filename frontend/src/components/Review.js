@@ -1,4 +1,5 @@
 import React from "react";
+import ReadMore from "./ReadMore";
 import {
   Card,
   CardSubtitle,
@@ -20,9 +21,9 @@ function Body({review}) {
             </div>
           </div>
           <div className="reviews-body">
-            <CardText>
-                {review.reviewText}
-            </CardText>
+            <ReadMore>
+              {review.reviewText}
+            </ReadMore>
           </div>
           <CardText>
             <small className="text-muted text-bold">
