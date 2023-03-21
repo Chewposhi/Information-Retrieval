@@ -539,6 +539,13 @@ const MovieDetails = () => {
     })*/
 
     //console.log(reviews[0].base.image.url);
+    function reviewsList() {
+      return (
+        <Scroll>
+          <ReviewList Reviews={reviews[0]} />
+        </Scroll>
+      );
+    }
 
     return ( 
         
@@ -551,7 +558,7 @@ const MovieDetails = () => {
             </div>
             <div>
               <h1>Reviews</h1>
-              {reviewsloaded && <ReviewList Reviews={reviews[0]}/>}
+              {reviewsloaded && reviewsList()}
             </div>
             
         </div>

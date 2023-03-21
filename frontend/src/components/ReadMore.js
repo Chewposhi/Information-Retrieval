@@ -9,7 +9,7 @@ const ReadMore = ({children}) => {
     return (
         <div>
             {isReadMore ? children : children.substr(0,200)}
-            <button style={{cursor:'pointer'}} onClick={toggleBtn}>{isReadMore ? "Read Less" : "Read More"}</button>
+            {children.length > 200 && <button style={{cursor:'pointer'}} onClick={toggleBtn}>{isReadMore ? "Read Less" : "Read More"}</button>}
         </div>
 
     )
