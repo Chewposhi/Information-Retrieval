@@ -3,48 +3,37 @@ import {
   Card,
   CardSubtitle,
   CardText,
-  CardTitle,
   CardBody,
-  CardImg,
 } from "reactstrap";
 
-function Body() {
+function Body({review}) {
   return (
-    <Card>
-      <CardBody>
-        <CardTitle tag="h1">Reviews Page</CardTitle>
+    <Card style={{borderStyle:'groove'}}>
+      <CardBody style={{borderBottom:'dotted'}}>
         <div className="reviews-top">
           <div className="user-details">
-            <CardImg
-              className="avatar"
-              src={
-                profilePic ||
-                https://images.pexels.com/photos/7129713/pexels-photo-7129713.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500
-              }
-              alt="user avatar"
-            />
-
             <CardSubtitle className="mb-2 text-muted" tag="h6">
-              {firstName} {lastName || "John Doe"}
+              {review.author.displayName}
             </CardSubtitle>
-            {[...Array(stars || 5)].map((star) => {
-              return <CardSubtitle tag="h5">⭐ </CardSubtitle>;
-            })}
+            <div> 
+                Rating: {review.authorRating}/10
+            </div>
           </div>
           <div className="reviews-body">
             <CardText>
-              {comment ||
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut reiciendis delectus dignissimos, nisi pariatur fuga officiis itaque fugiat! Quibusdam accusantium quae beatae vel.Quas possimus reprehenderit sequi quia nesciunt sunt!"}
+                {review.reviewText}
             </CardText>
           </div>
           <CardText>
             <small className="text-muted text-bold">
-              {timestamp || "3 mins ago"}
+              {review.submissionDate}
             </small>
           </CardText>
         </div>
       </CardBody>
     </Card>
+    
+    
   );
 }
 

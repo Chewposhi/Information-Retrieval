@@ -1,0 +1,30 @@
+  /* Reviews */
+  .card {
+    width: 50vw;
+    margin: auto;
+    margin-bottom: 5px;
+  }
+  .card-title {
+    margin-bottom: 20px;
+    font-size: x-large;
+    font-weight: 800;
+    text-align: center;
+  }
+  .reviews-top {
+    box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.4);
+    padding-left: 5px;
+    padding-right: 5px;
+
+  }
+  .user-details {
+    align-items: center;
+    display: flex;
+  }
+  
+  h6 {
+    font-size: larger;
+    font-weight: 700;
+    margin-right: 10px;
+  }
+
+  

@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-
+import Review from './Review';
+import Scroll from './Scroll';
+import ReviewList from './ReviewsList';
+import '../Styles/review.css';
 const MovieDetails = () => {
     const {id} = useParams();
     const [details, setDetails] = useState([{}]);
-    const [reviews, setReviews] = useState([{}]);
+    const [reviews, setReviews] = useState(null);
+    const [reviewsloaded, setReviewsloaded] = useState(false);
     const [poster, setPoster] = useState(null);
     const options = {
       method: 'GET',
@@ -36,6 +40,8 @@ const MovieDetails = () => {
       .then(response => {
         setReviews(response);
         setPoster(true);
+        setReviewsloaded(true);
+
       }
       );
       
@@ -539,10 +545,15 @@ const MovieDetails = () => {
         <div>
             {poster && <img className="br-50 h10 w5 dib" alt="poster" src={[reviews[0].base.image.url]} />}
             <div>
-            <h1>{details[0]["movie_name"]}</h1>
-            <h2>genre: {details[0]["movie_tags"]}</h2>
-            <p>description: {details[0]["movie_dis"]}</p>
+              <h1>{details[0]["movie_name"]}</h1>
+              <h2>genre: {details[0]["movie_tags"]}</h2>
+              <p>description: {details[0]["movie_dis"]}</p>
             </div>
+            <div>
+              <h1>Reviews</h1>
+              {reviewsloaded && <ReviewList Reviews={reviews[0]}/>}
+            </div>
+            
         </div>
     );
 }
