@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
-import Review from './Review';
 import Scroll from './Scroll';
 import ReviewList from './ReviewsList';
 import '../Styles/review.css';
+
 const MovieDetails = () => {
     const {id} = useParams();
     const [details, setDetails] = useState([{}]);
@@ -13,7 +13,7 @@ const MovieDetails = () => {
     const options = {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': 'dbe439b5fbmsh9e034485ec08f21p19ca13jsn40de937bb717',
+        'X-RapidAPI-Key': process.env.REACT_APP_IMDb_RAPIDAPI_KEY,
         'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
       }
     };
@@ -31,13 +31,11 @@ const MovieDetails = () => {
       // fetch reviews from imdb
       fetch('https://imdb8.p.rapidapi.com/title/get-user-reviews?tconst=tt0944947', options)
       .then(response => response.json())
-      .then(response => {console.log(response);
-                         setReviews(response);
+      .then(response => {setReviews(response);
                          setPoster(true);
                          setReviewsloaded(true);
                          })
       .catch(err => console.error(err));
-      console.log(reviews);
 
       // fetching test data from json server
       /*fetch("http://localhost:8000/reviews")
@@ -53,7 +51,6 @@ const MovieDetails = () => {
     }, []);
 
 
-    //console.log(reviews[0].base.image.url);
     function reviewsList() {
       return (
         <Scroll>
