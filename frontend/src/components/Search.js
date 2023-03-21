@@ -62,7 +62,7 @@ function Search({details}) {
   return (
     <section className="garamond">
       <div className="navy georgia ma0 grow">
-        <h2 className="f2">Search a movie</h2>
+        <h2 className="f2">Search a movie or TV show</h2>
       </div>
       <div className="pa2">
         <input 
