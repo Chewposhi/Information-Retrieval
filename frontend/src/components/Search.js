@@ -11,21 +11,18 @@ function Search({details}) {
   const [searchInput, setSearchInput] = useState("");
   const [searchField, setSearchField] = useState("");
   const [searchResult, setSearchResult] = useState([{}]);
+  const [genreFilter, setGenreFilter] = useState(["Action"]);
 
-  const filteredMovies = details.filter(
+  const genreFiltered = details.filter(
     movie => {
+      let intersect = genreFilter.filter(x => movie.movie_tags[0].includes(x));
       return (
-        movie
-        .movie_name[0]
-        .toLowerCase()
-        .includes(searchField.toLowerCase()) ||
-        movie
-        .movie_tags[0]
-        .toLowerCase()
-        .includes(searchField.toLowerCase())
+        intersect.length != 0
       );
     }
   );
+  
+  console.log(genreFiltered)
 
   useEffect(() => {
     setSearchResult(details);
