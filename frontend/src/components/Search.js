@@ -33,6 +33,19 @@ function Search({details}) {
 
   // use effect for genre filter
   useEffect(() => {
+    setGenreFilter([]);
+    let filter =[];
+    checkedState.map( (checked, index)=> {
+      if(checked){
+        filter.push(genres[index].genre);
+      }
+    }
+    )
+    setGenreFilter(filter);
+  }, [checkedState]);
+
+  // use effect for genre filter
+  useEffect(() => {
     setSearchResult(genreFiltered);
   }, [genreFilter]);
 
