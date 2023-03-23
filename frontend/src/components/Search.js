@@ -9,7 +9,6 @@ import SearchList from './SearchList';
 function Search({details}) {
 
   const [searchInput, setSearchInput] = useState("");
-  const [searchField, setSearchField] = useState("");
   const [searchResult, setSearchResult] = useState([{}]);
   const [genreFilter, setGenreFilter] = useState(["Action","Drama"]);
 
@@ -17,12 +16,11 @@ function Search({details}) {
     movie => {
       let intersect = genreFilter.filter(x => movie.movie_tags[0].includes(x));
       return (
-        intersect.length === genreFilter.length
+        intersect.length === genreFilter.length || genreFilter.length === 0
       );
     }
   );
-  
-  console.log(genreFiltered)
+  console.log(genreFiltered);
 
   useEffect(() => {
     setSearchResult(details);
@@ -35,7 +33,7 @@ function Search({details}) {
 
   const handleClick = e => {
     e.preventDefault();
-    setSearchField(searchInput);
+
     
     fetch(`http://localhost:5000/nameSearch/${searchInput}`).then(
       response => response.json()
@@ -44,6 +42,12 @@ function Search({details}) {
         setSearchResult(data["movies"])
       }
     )
+  };
+
+  const handleFilterClick = e => {
+    e.preventDefault();
+
+    setGenreFilter([])
   };
 
   function searchList() {
@@ -68,6 +72,7 @@ function Search({details}) {
           onChange = {handleChange}
         />
         <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
+        <button style={{cursor:'pointer'}} onClick={handleFilterClick}>filter</button>
       </div>
       {searchList()}
     </section>
