@@ -20,7 +20,7 @@ function Search({details}) {
       );
     }
   );
-  console.log(genreFiltered);
+  //console.log(genreFiltered);
 
   useEffect(() => {
     setSearchResult(details);
@@ -47,7 +47,8 @@ function Search({details}) {
   const handleFilterClick = e => {
     e.preventDefault();
 
-    setGenreFilter([])
+    setGenreFilter(["Action", "Drama"]);
+    setSearchResult(genreFiltered);
   };
 
   function searchList() {
@@ -72,7 +73,18 @@ function Search({details}) {
           onChange = {handleChange}
         />
         <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
-        <button style={{cursor:'pointer'}} onClick={handleFilterClick}>filter</button>
+        <div style={{paddingTop:'20px'}}>
+          <form>
+            Action <input style={{marginRight:'10px'}} type="checkbox"/>
+            Adventure <input style={{marginRight:'10px'}} type="checkbox"/>  
+            Drama <input style={{marginRight:'10px'}} type="checkbox"/>
+            Comedy <input style={{marginRight:'10px'}} type="checkbox"/>
+            Crime <input style={{marginRight:'10px'}} type="checkbox"/>
+            Romance <input style={{marginRight:'10px'}} type="checkbox"/>
+          </form>
+          <button style={{cursor:'pointer'}} onClick={handleFilterClick}>filter</button>
+        </div>
+        
       </div>
       {searchList()}
     </section>
