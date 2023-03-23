@@ -5,12 +5,16 @@
 import React, { useEffect, useState } from 'react';
 import Scroll from './Scroll';
 import SearchList from './SearchList';
+import { genres } from '../utils/genres';
 
 function Search({details}) {
 
   const [searchInput, setSearchInput] = useState("");
   const [searchResult, setSearchResult] = useState([{}]);
   const [genreFilter, setGenreFilter] = useState(["Action","Drama"]);
+  const [checkedState, setCheckedState] = useState(
+    new Array(genres.length).fill(false)
+  );
 
   const genreFiltered = details.filter(
     movie => {
@@ -51,6 +55,10 @@ function Search({details}) {
     setSearchResult(genreFiltered);
   };
 
+  const handleBoxChecked = e => {
+    
+  }
+
   function searchList() {
     return (
       <Scroll>
@@ -73,17 +81,26 @@ function Search({details}) {
           onChange = {handleChange}
         />
         <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
-        <div style={{paddingTop:'20px'}}>
-          <form>
-            Action <input style={{marginRight:'10px'}} type="checkbox"/>
-            Adventure <input style={{marginRight:'10px'}} type="checkbox"/>  
-            Drama <input style={{marginRight:'10px'}} type="checkbox"/>
-            Comedy <input style={{marginRight:'10px'}} type="checkbox"/>
-            Crime <input style={{marginRight:'10px'}} type="checkbox"/>
-            Romance <input style={{marginRight:'10px'}} type="checkbox"/>
-          </form>
-          <button style={{cursor:'pointer'}} onClick={handleFilterClick}>filter</button>
+
+        <div style={{paddingTop:'20px', display:'flex', justifyContent:'center'}}>
+          {genres.map(({ genre }, index) => {
+          return (
+                  <div style={{display:'flex', flexDirection:'row', padding:'5px'}}>
+                    <p>{genre}</p>
+                    <input
+                      type="checkbox"
+                      id={`custom-checkbox-${index}`}
+                      name={genre}
+                      value={genre}
+                      checked={checkedState[index]}
+                      //onChange={() => handleOnChange(index)}
+                    />
+                  </div>
+                  
+          );
+        })}
         </div>
+        <button style={{cursor:'pointer'}} onClick={handleFilterClick}>filter</button>
         
       </div>
       {searchList()}
