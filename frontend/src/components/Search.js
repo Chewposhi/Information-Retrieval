@@ -11,13 +11,13 @@ function Search({details}) {
   const [searchInput, setSearchInput] = useState("");
   const [searchField, setSearchField] = useState("");
   const [searchResult, setSearchResult] = useState([{}]);
-  const [genreFilter, setGenreFilter] = useState(["Action"]);
+  const [genreFilter, setGenreFilter] = useState(["Action","Drama"]);
 
   const genreFiltered = details.filter(
     movie => {
       let intersect = genreFilter.filter(x => movie.movie_tags[0].includes(x));
       return (
-        intersect.length != 0
+        intersect.length === genreFilter.length
       );
     }
   );
