@@ -1,4 +1,5 @@
 import React from "react";
+import ReadMore from "./ReadMore";
 import {
   Card,
   CardSubtitle,
@@ -9,20 +10,20 @@ import {
 function Body({review}) {
   return (
     <Card style={{borderStyle:'groove'}}>
-      <CardBody style={{borderBottom:'dotted'}}>
+      <CardBody>
         <div className="reviews-top">
           <div className="user-details">
             <CardSubtitle className="mb-2 text-muted" tag="h6">
-              {review.author.displayName}
+              User Name: {review.author.displayName}
             </CardSubtitle>
-            <div> 
+            <div className="rating"> 
                 Rating: {review.authorRating}/10
             </div>
           </div>
           <div className="reviews-body">
-            <CardText>
-                {review.reviewText}
-            </CardText>
+            <ReadMore>
+              {review.reviewText}
+            </ReadMore>
           </div>
           <CardText>
             <small className="text-muted text-bold">

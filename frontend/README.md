@@ -6,9 +6,15 @@ This document only explains the steps of starting the React local development se
 
 ## Before everything
 
-Install:
+### Install:
 
-### `node.js`
+`node.js`
+
+### Obtain API from Rapid API:
+
+This step is required. Go to Rapid API and sign up. search for IMDb API and subsceibe to the free option. Obtain X-RapidAPI-Key from it and update the environment variable. Steps for updating environment variable is in the file .env.example
+
+
 
 Download latest version of node.js from [https://nodejs.org/en/]
 
