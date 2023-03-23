@@ -11,7 +11,7 @@ function Search({details}) {
 
   const [searchInput, setSearchInput] = useState("");
   const [searchResult, setSearchResult] = useState([{}]);
-  const [genreFilter, setGenreFilter] = useState(["Action","Drama"]);
+  const [genreFilter, setGenreFilter] = useState([]);
   const [checkedState, setCheckedState] = useState(
     new Array(genres.length).fill(false)
   );
@@ -26,9 +26,15 @@ function Search({details}) {
   );
   //console.log(genreFiltered);
 
+  // use effect for initial page mount
   useEffect(() => {
     setSearchResult(details);
   }, []);
+
+  // use effect for genre filter
+  useEffect(() => {
+    setSearchResult(genreFiltered);
+  }, [genreFilter]);
 
   const handleChange = e => {
     e.preventDefault();
@@ -50,13 +56,22 @@ function Search({details}) {
 
   const handleFilterClick = e => {
     e.preventDefault();
-
-    setGenreFilter(["Action", "Drama"]);
-    setSearchResult(genreFiltered);
+    setGenreFilter([]);
+    let filter =[];
+    checkedState.map( (checked, index)=> {
+      if(checked){
+        filter.push(genres[index].genre);
+      }
+    }
+    )
+    setGenreFilter(filter);
   };
 
-  const handleBoxChecked = e => {
-    
+  const handleBoxChecked = (position) => {
+    const updatedCheckedState = checkedState.map((item, index) =>
+      index === position ? !item : item
+    );
+    setCheckedState(updatedCheckedState);
   }
 
   function searchList() {
@@ -93,7 +108,7 @@ function Search({details}) {
                       name={genre}
                       value={genre}
                       checked={checkedState[index]}
-                      //onChange={() => handleOnChange(index)}
+                      onChange={() => handleBoxChecked(index)}
                     />
                   </div>
                   
