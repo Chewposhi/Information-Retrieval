@@ -11,7 +11,7 @@ function SearchList({ filteredMovies }) {
     new Array(genres.length).fill(false)
   );
 
-  // use effect for genre filter
+  // use effect, set filter when checkboxes are touched
   useEffect(() => {
     setGenreFilter([]);
     let filter =[];
@@ -24,6 +24,7 @@ function SearchList({ filteredMovies }) {
     setGenreFilter(filter);
   }, [checkedState]);
 
+  // when checkboxes are changed
   const handleBoxChecked = (position) => {
     const updatedCheckedState = checkedState.map((item, index) =>
       index === position ? !item : item
@@ -31,6 +32,7 @@ function SearchList({ filteredMovies }) {
     setCheckedState(updatedCheckedState);
   }
 
+  // function for filtering 
   const genreFiltered = filteredMovies.filter(
     movie => {
       let intersect = genreFilter.filter(x => movie.movie_tags[0].includes(x));
@@ -39,6 +41,7 @@ function SearchList({ filteredMovies }) {
       );
     }
   );
+
   const filtered = genreFiltered.map(movie =>  <Card key={movie["id"]} movie={movie} />);
    
   return (
