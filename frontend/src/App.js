@@ -9,7 +9,7 @@ import Search from './components/Search';
 
 function App() {
 
-  const [details, setDetails] = useState(null);
+  const [movies, setMovies] = useState(null);
 
   //fetching of movies
   /*useEffect(() => {
@@ -27,7 +27,7 @@ function App() {
       response => response.json()
     ).then(
       data => {
-        setDetails(data["movies"])
+        setMovies(data["movies"])
       }
     )
   }, [])
@@ -37,8 +37,8 @@ function App() {
       <div className="tc bg-green ma0 pa4 min-vh-100">
         <Switch>
           <Route exact path="/">
-            {details && <Search details={details}/>}
-            {!details && <p>please connect to server</p>}
+            {movies && <Search movies={movies}/>}
+            {!movies && <p>please connect to server</p>}
           </Route>
           <Route path="/movie/:id">
             <MovieDetails/>

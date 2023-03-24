@@ -7,7 +7,7 @@ import Scroll from './Scroll';
 import SearchList from './SearchList';
 import { genres } from '../utils/genres';
 
-function Search({details}) {
+function Search({movies}) {
 
   const [searchInput, setSearchInput] = useState("");
   const [searchResult, setSearchResult] = useState([{}]);
@@ -16,7 +16,7 @@ function Search({details}) {
     new Array(genres.length).fill(false)
   );
 
-  const genreFiltered = details.filter(
+  const genreFiltered = movies.filter(
     movie => {
       let intersect = genreFilter.filter(x => movie.movie_tags[0].includes(x));
       return (
@@ -28,7 +28,7 @@ function Search({details}) {
 
   // use effect for initial page mount
   useEffect(() => {
-    setSearchResult(details);
+    setSearchResult(movies);
   }, []);
 
   // use effect for genre filter
