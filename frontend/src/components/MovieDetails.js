@@ -90,8 +90,9 @@ const MovieDetails = () => {
               <h3>{details[0]["movie_dis"]}</h3>
             </div>
             <div>
-            {moreLoaded && moreList()}
-              <h2>Reviews:</h2>
+              <h2 style={{borderTop:'dotted', marginTop:'20px'}}>Not what you were looking for? Here are movies with similar titles:</h2>
+              {moreLoaded && moreList()}
+              <h2 style={{borderTop:'dotted'}}>Reviews:</h2>
               {reviewsloaded && reviewsList()}
             </div>
             
