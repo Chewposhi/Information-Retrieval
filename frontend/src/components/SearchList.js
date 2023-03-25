@@ -5,11 +5,9 @@ import { useEffect, useState } from 'react';
 import Card from './Card';
 import { genres } from '../utils/genres';
 
-function SearchList({ filteredMovies }) {
+function SearchList({ filteredMovies, checkedState }) {
   const [genreFilter, setGenreFilter] = useState([]);
-  const [checkedState, setCheckedState] = useState(
-    new Array(genres.length).fill(false)
-  );
+  
 
   // use effect, set filter when checkboxes are touched
   useEffect(() => {
@@ -24,13 +22,7 @@ function SearchList({ filteredMovies }) {
     setGenreFilter(filter);
   }, [checkedState]);
 
-  // when checkboxes are changed
-  const handleBoxChecked = (position) => {
-    const updatedCheckedState = checkedState.map((item, index) =>
-      index === position ? !item : item
-    );
-    setCheckedState(updatedCheckedState);
-  }
+
 
   // function for filtering 
   const genreFiltered = filteredMovies.filter(
@@ -46,24 +38,6 @@ function SearchList({ filteredMovies }) {
    
   return (
     <div>
-      <div style={{paddingTop:'20px', display:'flex', justifyContent:'center'}}>
-        {genres.map(({ genre }, index) => {
-          return (
-                  <div style={{display:'flex', flexDirection:'row', padding:'5px'}}>
-                    <p>{genre}</p>
-                    <input
-                      type="checkbox"
-                      id={`custom-checkbox-${index}`}
-                      name={genre}
-                      value={genre}
-                      checked={checkedState[index]}
-                      onChange={() => handleBoxChecked(index)}
-                    />
-                  </div>
-                  
-          );
-          })}
-      </div>
       {filtered}
     </div>
   );
