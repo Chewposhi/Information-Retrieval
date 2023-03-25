@@ -29,8 +29,10 @@ Movie page
 - research on how to correct spelling (look into solr functions first) secondary
 
 ### to do (po) -> 
-- explore imdb api for review fetching 
-- possible: slide bar for filtering, movie comparison
+- UI for crawling and incremental indexing of new data
+- ranking of result
+- sort result
+- possible: movie comparison
 
 
 ### classification
