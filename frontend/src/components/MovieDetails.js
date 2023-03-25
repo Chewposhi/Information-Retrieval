@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import Scroll from './Scroll';
 import ReviewList from './ReviewsList';
-import MoreLikeThisList from './MoreLikeThis.List';
+import MoreLikeThisList from './MoreLikeThisList';
 import '../Styles/review.css';
 
 const MovieDetails = () => {
@@ -10,6 +10,8 @@ const MovieDetails = () => {
     const [details, setDetails] = useState([{}]);
     const [reviews, setReviews] = useState(null);
     const [reviewsloaded, setReviewsloaded] = useState(false);
+    const [more, setMore] = useState(null);
+    const [moreLoaded, setMoreloaded] = useState(false);
     const [poster, setPoster] = useState(null);
     const options = {
       method: 'GET',
@@ -20,12 +22,22 @@ const MovieDetails = () => {
     };
 
     useEffect(() => {
-      // fetch detials from solr
+      // fetch movie detials from solr
       fetch(`http://localhost:5000/movie/${id}`).then(
         response => response.json()
       ).then(
         data => {
           setDetails(data["movies"])
+        }
+      );
+
+      // fetch more like this from solr
+      fetch(`http://localhost:5000/MoreLikeThis/${id}`).then(
+        response => response.json()
+      ).then(
+        data => {
+          setMore(data.movies);
+          setMoreloaded(true);
         }
       );
 
@@ -50,7 +62,6 @@ const MovieDetails = () => {
       
     }, []);
 
-
     function reviewsList() {
       return (
         <Scroll height={'70vh'}>
@@ -62,7 +73,7 @@ const MovieDetails = () => {
     function moreList() {
       return (
         <Scroll height={'40vh'}>
-          <MoreLikeThisList MoreList={[]} />
+          <MoreLikeThisList MoreList={more} />
         </Scroll>
       );
     }
@@ -79,7 +90,7 @@ const MovieDetails = () => {
               <h3>{details[0]["movie_dis"]}</h3>
             </div>
             <div>
-            {moreList()}
+            {moreLoaded && moreList()}
               <h2>Reviews:</h2>
               {reviewsloaded && reviewsList()}
             </div>

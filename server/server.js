@@ -95,5 +95,29 @@ app.get("/nameSearch/:q", (req, res) => {
     });
 });
 
+app.get("/MoreLikeThis/:id", (req, res) => {
+
+    const searchQuery = client.query()
+    .q("{!mlt qf=movie_name mintf=1 mindf=10}"+req.params.id)
+    .qop("OR")
+    .addParams({
+            wt: 'json',
+            indent: true
+        })
+    .start(0)
+    .rows(5)
+
+    client.search(searchQuery, function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        };
+
+        const response = result.response;
+        res.json({"movies": response.docs});
+
+    });
+});
+
 
 app.listen(5000, () => {console.log(`server started on port 5000...`)});
