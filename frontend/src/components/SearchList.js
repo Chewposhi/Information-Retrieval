@@ -34,7 +34,7 @@ function SearchList({ filteredMovies, checkedState }) {
     }
   );
 
-  const filtered = genreFiltered.map(movie =>  <Card key={movie["id"]} movie={movie} />);
+  const filtered = genreFiltered.map(movie =>  <Card key={movie["id"]} movie={movie} isMore={false}/>);
    
   return (
     <div>
