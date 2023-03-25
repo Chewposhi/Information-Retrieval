@@ -98,7 +98,7 @@ app.get("/nameSearch/:q", (req, res) => {
 app.get("/MoreLikeThis/:id", (req, res) => {
 
     const searchQuery = client.query()
-    .q("{!mlt qf=movie_name mintf=1 mindf=10}"+req.params.id)
+    .q("{!mlt qf=movie_name mintf=1 mindf=7}"+req.params.id)
     .qop("OR")
     .addParams({
             wt: 'json',
