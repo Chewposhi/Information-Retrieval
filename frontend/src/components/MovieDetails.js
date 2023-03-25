@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import Scroll from './Scroll';
 import ReviewList from './ReviewsList';
+import MoreLikeThisList from './MoreLikeThis.List';
 import '../Styles/review.css';
 
 const MovieDetails = () => {
@@ -52,8 +53,16 @@ const MovieDetails = () => {
 
     function reviewsList() {
       return (
-        <Scroll>
+        <Scroll height={'70vh'}>
           <ReviewList Reviews={reviews} />
+        </Scroll>
+      );
+    }
+
+    function moreList() {
+      return (
+        <Scroll height={'40vh'}>
+          <MoreLikeThisList MoreList={[]} />
         </Scroll>
       );
     }
@@ -70,6 +79,7 @@ const MovieDetails = () => {
               <h3>{details[0]["movie_dis"]}</h3>
             </div>
             <div>
+            {moreList()}
               <h2>Reviews:</h2>
               {reviewsloaded && reviewsList()}
             </div>

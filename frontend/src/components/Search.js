@@ -37,7 +37,7 @@ function Search({movies}) {
 
   function searchList() {
     return (
-      <Scroll>
+      <Scroll height={'100vh'}>
         <SearchList filteredMovies={searchResult} />
       </Scroll>
     );
