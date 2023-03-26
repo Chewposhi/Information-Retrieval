@@ -38,7 +38,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             {movies && <Search movies={movies}/>}
-            {!movies && <p>please connect to server</p>}
+            {!movies && <p>please connect to solr server</p>}
           </Route>
           <Route path="/movie/:id">
             <MovieDetails/>
