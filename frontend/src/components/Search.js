@@ -13,8 +13,7 @@ function Search({movies}) {
   const [noResultInput, setNoResultInput] = useState("");
   const [searchResult, setSearchResult] = useState([{}]);
   const [noResult, setNoResult] = useState(false);
-  const [fuzzy, setFuzzy] = useState(null);
-  const [fuzzyLoaded, setFuzzyloaded] = useState(false);
+  const [noResultTag, setNoResultTag] = useState(false);
   const [checkedState, setCheckedState] = useState(
     new Array(genres.length).fill(false)
   );
@@ -32,6 +31,7 @@ function Search({movies}) {
       ).then(
         data => {
           setSearchResult(data["movies"])
+          setNoResult(false)
         }
       )
     }
@@ -55,8 +55,10 @@ function Search({movies}) {
         setSearchResult(data["movies"])
         if(data["movies"].length === 0){
           setNoResult(true);
+          setNoResultTag(true);
           setNoResultInput(searchInput);
-        }else{setNoResult(false)}
+        }else{setNoResult(false)
+              setNoResultTag(false)}
       }
     )
   };
@@ -112,7 +114,7 @@ function Search({movies}) {
           );
           })}
       </div>
-      {noResult && <h2>no result for "{noResultInput}", showing our best guesses!</h2>}
+      {noResultTag && <h2>no result for "{noResultInput}", showing our best guesses!</h2>}
       {searchList()}
     </section>
   );
