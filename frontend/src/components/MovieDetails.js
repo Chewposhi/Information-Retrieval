@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import Scroll from './Scroll';
 import ReviewList from './ReviewsList';
+import MoreLikeThisList from './MoreLikeThisList';
 import '../Styles/review.css';
 
 const MovieDetails = () => {
@@ -9,6 +10,8 @@ const MovieDetails = () => {
     const [details, setDetails] = useState([{}]);
     const [reviews, setReviews] = useState(null);
     const [reviewsloaded, setReviewsloaded] = useState(false);
+    const [more, setMore] = useState(null);
+    const [moreLoaded, setMoreloaded] = useState(false);
     const [poster, setPoster] = useState(null);
     const options = {
       method: 'GET',
@@ -19,7 +22,7 @@ const MovieDetails = () => {
     };
 
     useEffect(() => {
-      // fetch detials from solr
+      // fetch movie detials from solr
       fetch(`http://localhost:5000/movie/${id}`).then(
         response => response.json()
       ).then(
@@ -28,33 +31,49 @@ const MovieDetails = () => {
         }
       );
 
+      // fetch more like this from solr
+      fetch(`http://localhost:5000/MoreLikeThis/${id}`).then(
+        response => response.json()
+      ).then(
+        data => {
+          setMore(data.movies);
+          setMoreloaded(true);
+        }
+      );
+
       // fetch reviews from imdb
-      fetch('https://imdb8.p.rapidapi.com/title/get-user-reviews?tconst=tt0944947', options)
+      /*fetch('https://imdb8.p.rapidapi.com/title/get-user-reviews?tconst=tt0944947', options)
       .then(response => response.json())
       .then(response => {setReviews(response);
                          setPoster(true);
                          setReviewsloaded(true);
                          })
-      .catch(err => console.error(err));
+      .catch(err => console.error(err));*/
 
       // fetching test data from json server
-      /*fetch("http://localhost:8000/reviews")
+      fetch("http://localhost:8000/reviews")
       .then(response => response.json())
       .then(response => {
-        setReviews(response);
+        setReviews(response[0]);
         setPoster(true);
         setReviewsloaded(true);
-
       }
-      );*/
+      );
       
     }, []);
 
-
     function reviewsList() {
       return (
-        <Scroll>
+        <Scroll height={'70vh'}>
           <ReviewList Reviews={reviews} />
+        </Scroll>
+      );
+    }
+
+    function moreList() {
+      return (
+        <Scroll height={'40vh'}>
+          <MoreLikeThisList MoreList={more} />
         </Scroll>
       );
     }
@@ -71,7 +90,9 @@ const MovieDetails = () => {
               <h3>{details[0]["movie_dis"]}</h3>
             </div>
             <div>
-              <h2>Reviews:</h2>
+              <h2 style={{borderTop:'dotted', marginTop:'20px'}}>Not what you were looking for? Here are movies with similar titles:</h2>
+              {moreLoaded && moreList()}
+              <h2 style={{borderTop:'dotted'}}>Reviews:</h2>
               {reviewsloaded && reviewsList()}
             </div>
             

@@ -5,40 +5,31 @@
 import React, { useEffect, useState } from 'react';
 import Scroll from './Scroll';
 import SearchList from './SearchList';
+import { genres } from '../utils/genres';
 
-function Search({details}) {
+function Search({movies}) {
 
   const [searchInput, setSearchInput] = useState("");
-  const [searchField, setSearchField] = useState("");
   const [searchResult, setSearchResult] = useState([{}]);
-
-  const filteredMovies = details.filter(
-    movie => {
-      return (
-        movie
-        .movie_name[0]
-        .toLowerCase()
-        .includes(searchField.toLowerCase()) ||
-        movie
-        .movie_tags[0]
-        .toLowerCase()
-        .includes(searchField.toLowerCase())
-      );
-    }
+  const [checkedState, setCheckedState] = useState(
+    new Array(genres.length).fill(false)
   );
 
+  // use effect for initial page mount
   useEffect(() => {
-    setSearchResult(details);
+    setSearchResult(movies);
   }, []);
 
+  // search box input change handle
   const handleChange = e => {
     e.preventDefault();
     setSearchInput(e.target.value);
   };
 
+  // hanle search enter
   const handleClick = e => {
     e.preventDefault();
-    setSearchField(searchInput);
+
     
     fetch(`http://localhost:5000/nameSearch/${searchInput}`).then(
       response => response.json()
@@ -49,10 +40,19 @@ function Search({details}) {
     )
   };
 
+  // when checkboxes are changed
+  const handleBoxChecked = (position) => {
+    const updatedCheckedState = checkedState.map((item, index) =>
+      index === position ? !item : item
+    );
+    setCheckedState(updatedCheckedState);
+  }
+
+  // Output search list of movies
   function searchList() {
     return (
-      <Scroll>
-        <SearchList filteredMovies={searchResult} />
+      <Scroll height={'100vh'}>
+        <SearchList filteredMovies={searchResult} checkedState={checkedState} />
       </Scroll>
     );
   }
@@ -61,7 +61,7 @@ function Search({details}) {
   return (
     <section className="garamond">
       <div className="navy georgia ma0 grow">
-        <h2 className="f2">Search a movie or TV show</h2>
+        <h2 className="f2" style={{cursor:'pointer'}} onClick={()=>window.location.reload()}>Search a movie or TV show</h2>
       </div>
       <div className="pa2">
         <input 
@@ -71,6 +71,24 @@ function Search({details}) {
           onChange = {handleChange}
         />
         <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
+      </div>
+      <div style={{paddingTop:'20px', display:'flex', justifyContent:'center'}}>
+        {genres.map(({ genre }, index) => {
+          return (
+                  <div style={{display:'flex', flexDirection:'row', padding:'5px'}}>
+                    <p>{genre}</p>
+                    <input
+                      type="checkbox"
+                      id={`custom-checkbox-${index}`}
+                      name={genre}
+                      value={genre}
+                      checked={checkedState[index]}
+                      onChange={() => handleBoxChecked(index)}
+                    />
+                  </div>
+                  
+          );
+          })}
       </div>
       {searchList()}
     </section>
