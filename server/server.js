@@ -69,8 +69,9 @@ app.get("/movie/:id", (req, res) => {
 });
 
 app.get("/nameSearch/:q", (req, res) => {
+    const filtered = req.params.q.replace(':','');
     const Query = {
-        "movie_name":'"'+req.params.q+'"'
+        "movie_name":'"'+filtered+'"'
     };
 
     const searchQuery = client.query()
@@ -121,7 +122,8 @@ app.get("/MoreLikeThis/:id", (req, res) => {
 
 app.get("/Fuzzy/:searchText", (req, res) => {
     console.log(req.params.searchText);
-    var inputArray = req.params.searchText.split(' ');
+    var inputArray = req.params.searchText.replace(':','');
+    inputArray = inputArray.split(' ');
     for (let i = 0; i < inputArray.length; i++) {
         inputArray[i]="movie_name:"+inputArray[i]+"~3";
     };
