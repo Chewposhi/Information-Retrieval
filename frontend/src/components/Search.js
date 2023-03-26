@@ -26,13 +26,15 @@ function Search({movies}) {
 
   // use effect to fire fuzzy search
   useEffect(() => {
-    fetch(`http://localhost:5000/Fuzzy/${searchInput}`).then(
-      response => response.json()
-    ).then(
-      data => {
-        setSearchResult(data["movies"])
-      }
-    )
+    if(noResult){
+      fetch(`http://localhost:5000/Fuzzy/${searchInput}`).then(
+        response => response.json()
+      ).then(
+        data => {
+          setSearchResult(data["movies"])
+        }
+      )
+    }
   }, [noResult]);
 
   // search box input change handle
