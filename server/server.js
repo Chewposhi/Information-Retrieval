@@ -119,5 +119,36 @@ app.get("/MoreLikeThis/:id", (req, res) => {
     });
 });
 
+app.get("/Fuzzy/:searchText", (req, res) => {
+    console.log(req.params.searchText);
+    var inputArray = req.params.searchText.split(' ');
+    for (let i = 0; i < inputArray.length; i++) {
+        inputArray[i]="movie_name:"+inputArray[i]+"~1";
+    };
+    inputArray = inputArray.join(' AND ')
+    console.log(inputArray)
+
+    const searchQuery = client.query()
+    .q(inputArray)
+    .qop("OR")
+    .addParams({
+            wt: 'json',
+            indent: true
+        })
+    .start(0)
+    .rows(10)
+
+    client.search(searchQuery, function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        };
+
+        const response = result.response;
+        res.json({"movies": response.docs});
+
+    });
+});
+
 
 app.listen(5000, () => {console.log(`server started on port 5000...`)});

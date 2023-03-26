@@ -10,7 +10,11 @@ import { genres } from '../utils/genres';
 function Search({movies}) {
 
   const [searchInput, setSearchInput] = useState("");
+  const [noResultInput, setNoResultInput] = useState("");
   const [searchResult, setSearchResult] = useState([{}]);
+  const [noResult, setNoResult] = useState(false);
+  const [fuzzy, setFuzzy] = useState(null);
+  const [fuzzyLoaded, setFuzzyloaded] = useState(false);
   const [checkedState, setCheckedState] = useState(
     new Array(genres.length).fill(false)
   );
@@ -19,6 +23,17 @@ function Search({movies}) {
   useEffect(() => {
     setSearchResult(movies);
   }, []);
+
+  // use effect to fire fuzzy search
+  useEffect(() => {
+    fetch(`http://localhost:5000/Fuzzy/${searchInput}`).then(
+      response => response.json()
+    ).then(
+      data => {
+        setSearchResult(data["movies"])
+      }
+    )
+  }, [noResult]);
 
   // search box input change handle
   const handleChange = e => {
@@ -36,9 +51,14 @@ function Search({movies}) {
     ).then(
       data => {
         setSearchResult(data["movies"])
+        if(data["movies"].length === 0){
+          setNoResult(true);
+          setNoResultInput(searchInput);
+        }else{setNoResult(false)}
       }
     )
   };
+
 
   // when checkboxes are changed
   const handleBoxChecked = (position) => {
@@ -90,6 +110,7 @@ function Search({movies}) {
           );
           })}
       </div>
+      {noResult && <h2>no result for "{noResultInput}", showing our best guesses!</h2>}
       {searchList()}
     </section>
   );
