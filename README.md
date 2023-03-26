@@ -33,6 +33,8 @@ Movie page
 - ranking of result
 - sort result
 - possible: movie comparison
+- implement fuzzy search
+
 
 
 ### classification
