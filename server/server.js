@@ -121,14 +121,14 @@ app.get("/MoreLikeThis/:id", (req, res) => {
 });
 
 app.get("/Fuzzy/:searchText", (req, res) => {
-    console.log(req.params.searchText);
+    //console.log(req.params.searchText);
     var inputArray = req.params.searchText.replace(':','');
     inputArray = inputArray.split(' ');
     for (let i = 0; i < inputArray.length; i++) {
         inputArray[i]="movie_name:"+inputArray[i]+"~3";
     };
     inputArray = inputArray.join(' AND ')
-    console.log(inputArray)
+    //console.log(inputArray)
 
     const searchQuery = client.query()
     .q(inputArray)
