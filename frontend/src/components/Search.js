@@ -23,27 +23,30 @@ function Search({movies}) {
     setSearchResult(movies);
   }, []);
 
-  // use effect to fire fuzzy search
-  useEffect(() => {
-    if(noResult){
-      fetch(`http://localhost:5000/Fuzzy/${searchInput}`).then(
-        response => response.json()
-      ).then(
-        data => {
-          setSearchResult(data["movies"])
-          setNoResult(false)
-        }
-      )
-    }
-  }, [noResult]);
-
   // search box input change handle
   const handleChange = e => {
     e.preventDefault();
     setSearchInput(e.target.value);
   };
 
-  // hanle search enter
+  // when checkboxes are changed
+  const handleBoxChecked = (position) => {
+    const updatedCheckedState = checkedState.map((item, index) =>
+      index === position ? !item : item
+    );
+    setCheckedState(updatedCheckedState);
+  }
+
+  // Output search list of movies
+  function searchList() {
+    return (
+      <Scroll height={'100vh'}>
+        <SearchList filteredMovies={searchResult} checkedState={checkedState} />
+      </Scroll>
+    );
+  };
+
+  // Basic search
   const handleClick = e => {
     e.preventDefault();
 
@@ -63,23 +66,20 @@ function Search({movies}) {
     )
   };
 
-
-  // when checkboxes are changed
-  const handleBoxChecked = (position) => {
-    const updatedCheckedState = checkedState.map((item, index) =>
-      index === position ? !item : item
-    );
-    setCheckedState(updatedCheckedState);
-  }
-
-  // Output search list of movies
-  function searchList() {
-    return (
-      <Scroll height={'100vh'}>
-        <SearchList filteredMovies={searchResult} checkedState={checkedState} />
-      </Scroll>
-    );
-  }
+  
+  // fuzzy search
+  useEffect(() => {
+    if(noResult){
+      fetch(`http://localhost:5000/Fuzzy/${searchInput}`).then(
+        response => response.json()
+      ).then(
+        data => {
+          setSearchResult(data["movies"])
+          setNoResult(false)
+        }
+      )
+    }
+  }, [noResult]);
 
 
   return (
