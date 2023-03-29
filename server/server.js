@@ -160,7 +160,7 @@ app.get("/AutoComplete/:searchText", (req, res) => {
         "*":"*"
     };
     const searchQuery = client.query()
-    .q("Te")
+    .q('Te')
     .qop("OR")
     .addParams({
             wt: 'json',
@@ -176,10 +176,9 @@ app.get("/AutoComplete/:searchText", (req, res) => {
             console.log(err);
             return;
         };
-        console.log(result)
         const response = result.suggest.mySuggester;
         console.log(response)
-        res.json({"movies": response});
+        res.json(response);
 
     });
 });

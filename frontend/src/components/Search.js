@@ -18,6 +18,7 @@ function Search({movies}) {
     new Array(genres.length).fill(false)
   );
   const [autoComplete, setAutoComplete] = useState([{movie:'hi'},{movie:'2'}])
+  const test = 'Te';
 
   // use effect for initial page mount
   useEffect(() => {
@@ -28,11 +29,11 @@ function Search({movies}) {
   const handleChange = async e => {
     e.preventDefault();
     setSearchInput(e.target.value);
-    fetch('http://localhost:5000/AutoComplete/${searchInput}').then(
+    fetch(`http://localhost:5000/AutoComplete/${searchInput}`).then(
       response => response.json()
     ).then(
       data => {
-        console.log(data);
+        console.log(data[test].suggestions);
       }
     )
   };
