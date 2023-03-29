@@ -164,15 +164,12 @@ app.get("/AutoComplete/:searchText", (req, res) => {
     .start(0)
     .rows(20)
 
-    console.log(searchQuery)
-
     client._requestGet('suggest', searchQuery, function (err, result) {
         if (err) {
             console.log(err);
             return;
         };
         const response = result.suggest.mySuggester;
-        console.log(response)
         res.json(response);
 
     });
