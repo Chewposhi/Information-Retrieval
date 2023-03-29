@@ -160,7 +160,7 @@ app.get("/AutoComplete/:searchText", (req, res) => {
         "*":"*"
     };
     const searchQuery = client.query()
-    .q('Te')
+    .q(req.params.searchText)
     .qop("OR")
     .addParams({
             wt: 'json',

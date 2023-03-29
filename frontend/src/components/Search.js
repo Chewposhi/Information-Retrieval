@@ -17,8 +17,7 @@ function Search({movies}) {
   const [checkedState, setCheckedState] = useState(
     new Array(genres.length).fill(false)
   );
-  const [autoComplete, setAutoComplete] = useState([{movie:'hi'},{movie:'2'}])
-  const test = 'Te';
+  const [autoComplete, setAutoComplete] = useState([])
 
   // use effect for initial page mount
   useEffect(() => {
@@ -29,13 +28,6 @@ function Search({movies}) {
   const handleChange = async e => {
     e.preventDefault();
     setSearchInput(e.target.value);
-    fetch(`http://localhost:5000/AutoComplete/${searchInput}`).then(
-      response => response.json()
-    ).then(
-      data => {
-        console.log(data[test].suggestions);
-      }
-    )
   };
 
   // when checkboxes are changed
@@ -75,6 +67,11 @@ function Search({movies}) {
     )
   };
 
+  // onAutoComplete
+  const onAutoComplete = (term) => {
+    setSearchInput(term)
+  };
+
   
   // fuzzy search
   useEffect(() => {
@@ -90,6 +87,17 @@ function Search({movies}) {
     }
   }, [noResult]);
 
+  // Suggester
+  useEffect(() => {
+    fetch(`http://localhost:5000/AutoComplete/${searchInput}`).then(
+      response => response.json()
+    ).then(
+      data => {
+        setAutoComplete(data[searchInput].suggestions);
+      }
+    )
+  }, [searchInput]);
+
 
   return (
     <section className="garamond">
@@ -100,14 +108,15 @@ function Search({movies}) {
         <div>
           <input 
             className="pa3 bb br3 grow b--none bg-lightest-blue ma3"
-            type = "search" 
+            type = "text" 
             placeholder = "Search Movie, genre, keywords" 
             onChange = {handleChange}
+            value = {searchInput}
           />
           <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
         </div>
         <div className='dropdown'>
-          {autoComplete.map((item) => (<div className='dropdown-row'>{item.movie}</div>))}
+          {autoComplete.map((item) => (<div onClick={()=>onAutoComplete(item.term)} className='dropdown-row'>{item.term}</div>))}
         </div>
       </div>
       <div style={{paddingTop:'20px', display:'flex', justifyContent:'center', flexWrap:'wrap'}}>
