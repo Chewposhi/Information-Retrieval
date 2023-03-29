@@ -69,9 +69,8 @@ app.get("/movie/:id", (req, res) => {
 });
 
 app.get("/nameSearch/:q", (req, res) => {
-    const filtered = req.params.q.replace(':','');
     const Query = {
-        "movie_name":'"'+filtered+'"'
+        "movie_name":'"'+req.params.q+'"'
     };
 
     const searchQuery = client.query()
@@ -100,38 +99,6 @@ app.get("/MoreLikeThis/:id", (req, res) => {
 
     const searchQuery = client.query()
     .q("{!mlt qf=movie_name mintf=1 mindf=7}"+req.params.id)
-    .qop("OR")
-    .addParams({
-            wt: 'json',
-            indent: true
-        })
-    .start(0)
-    .rows(10)
-
-    client.search(searchQuery, function (err, result) {
-        if (err) {
-            console.log(err);
-            return;
-        };
-
-        const response = result.response;
-        res.json({"movies": response.docs});
-
-    });
-});
-
-app.get("/Fuzzy/:searchText", (req, res) => {
-    //console.log(req.params.searchText);
-    var inputArray = req.params.searchText.replace(':','');
-    inputArray = inputArray.split(' ');
-    for (let i = 0; i < inputArray.length; i++) {
-        inputArray[i]="movie_name:"+inputArray[i]+"~3";
-    };
-    inputArray = inputArray.join(' AND ')
-    //console.log(inputArray)
-
-    const searchQuery = client.query()
-    .q(inputArray)
     .qop("OR")
     .addParams({
             wt: 'json',

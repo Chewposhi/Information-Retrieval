@@ -10,10 +10,7 @@ import { genres } from '../utils/genres';
 function Search({movies}) {
 
   const [searchInput, setSearchInput] = useState("");
-  const [noResultInput, setNoResultInput] = useState("");
   const [searchResult, setSearchResult] = useState([{}]);
-  const [noResult, setNoResult] = useState(false);
-  const [noResultTag, setNoResultTag] = useState(false);
   const [checkedState, setCheckedState] = useState(
     new Array(genres.length).fill(false)
   );
@@ -27,6 +24,20 @@ function Search({movies}) {
   const handleChange = e => {
     e.preventDefault();
     setSearchInput(e.target.value);
+  };
+
+  // hanle search enter
+  const handleClick = e => {
+    e.preventDefault();
+
+    
+    fetch(`http://localhost:5000/nameSearch/${searchInput}`).then(
+      response => response.json()
+    ).then(
+      data => {
+        setSearchResult(data["movies"])
+      }
+    )
   };
 
   // when checkboxes are changed
@@ -44,42 +55,7 @@ function Search({movies}) {
         <SearchList filteredMovies={searchResult} checkedState={checkedState} />
       </Scroll>
     );
-  };
-
-  // Basic search
-  const handleClick = e => {
-    e.preventDefault();
-
-    
-    fetch(`http://localhost:5000/nameSearch/${searchInput}`).then(
-      response => response.json()
-    ).then(
-      data => {
-        setSearchResult(data["movies"])
-        if(data["movies"].length === 0){
-          setNoResult(true);
-          setNoResultTag(true);
-          setNoResultInput(searchInput);
-        }else{setNoResult(false)
-              setNoResultTag(false)}
-      }
-    )
-  };
-
-  
-  // fuzzy search
-  useEffect(() => {
-    if(noResult){
-      fetch(`http://localhost:5000/Fuzzy/${searchInput}`).then(
-        response => response.json()
-      ).then(
-        data => {
-          setSearchResult(data["movies"])
-          setNoResult(false)
-        }
-      )
-    }
-  }, [noResult]);
+  }
 
 
   return (
@@ -114,7 +90,6 @@ function Search({movies}) {
           );
           })}
       </div>
-      {noResultTag && <h2>no result for "{noResultInput}", showing our best guesses!</h2>}
       {searchList()}
     </section>
   );
