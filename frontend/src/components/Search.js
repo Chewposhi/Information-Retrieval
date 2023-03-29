@@ -10,6 +10,7 @@ import '../Styles/search.css'
 function Search({movies}) {
 
   const [searchInput, setSearchInput] = useState("");
+  const [showSuggest, setShowSuggest] = useState(false);
   const [noResultInput, setNoResultInput] = useState("");
   const [searchResult, setSearchResult] = useState([{}]);
   const [noResult, setNoResult] = useState(false);
@@ -69,7 +70,13 @@ function Search({movies}) {
 
   // onAutoComplete
   const onAutoComplete = (term) => {
-    setSearchInput(term)
+    setSearchInput(term);
+    setShowSuggest(false);
+  };
+
+  // handleFocus
+  const handleFocus = () => {
+    setShowSuggest(true)
   };
 
   
@@ -109,15 +116,16 @@ function Search({movies}) {
           <input 
             className="pa3 bb br3 grow b--none bg-lightest-blue ma3"
             type = "text" 
-            placeholder = "Search Movie, genre, keywords" 
+            placeholder = "Search Movie" 
             onChange = {handleChange}
             value = {searchInput}
+            onFocus = {() => handleFocus()}
           />
           <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
         </div>
-        <div className='dropdown'>
+        {showSuggest && <div className='dropdown'>
           {autoComplete.map((item) => (<div onClick={()=>onAutoComplete(item.term)} className='dropdown-row'>{item.term}</div>))}
-        </div>
+        </div>}
       </div>
       <div style={{paddingTop:'20px', display:'flex', justifyContent:'center', flexWrap:'wrap'}}>
         {genres.map(({ genre }, index) => {
