@@ -10,7 +10,6 @@ import Search from './components/Search';
 function App() {
 
   const [movies, setMovies] = useState(null);
-  console.log(process.env)
 
   //fetching of movies
   /*useEffect(() => {

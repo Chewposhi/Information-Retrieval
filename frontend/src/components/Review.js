@@ -16,9 +16,6 @@ function Body({review}) {
             <CardSubtitle className="mb-2 text-muted" tag="h6">
               User Name: {review.author.displayName}
             </CardSubtitle>
-            <div className="rating"> 
-                Rating: {review.authorRating}/10
-            </div>
           </div>
           <div className="reviews-body">
             <ReadMore>

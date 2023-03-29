@@ -42,13 +42,14 @@ const MovieDetails = () => {
       );
 
       // fetch reviews from imdb
-      fetch('https://imdb8.p.rapidapi.com/title/get-user-reviews?tconst=tt0944947', options)
+      /*fetch(`https://imdb8.p.rapidapi.com/title/get-user-reviews?tconst=${details[0].movie_id}`, options)
       .then(response => response.json())
       .then(response => {setReviews(response);
                          setPoster(true);
                          setReviewsloaded(true);
+                         console.log(reviews);
                          })
-      .catch(err => console.error(err));
+      .catch(err => console.error(err));*/
 
       // fetching test data from json server
       /*fetch("http://localhost:8000/reviews")
@@ -61,6 +62,19 @@ const MovieDetails = () => {
       );*/
       
     }, []);
+
+    useEffect(() => {
+      // fetch reviews from imdb
+      fetch(`https://imdb8.p.rapidapi.com/title/get-user-reviews?tconst=${details[0].movie_id}`, options)
+      .then(response => response.json())
+      .then(response => {setReviews(response);
+                         setPoster(true);
+                         setReviewsloaded(true);
+                         console.log(reviews);
+                         })
+      .catch(err => console.error(err));
+      
+    }, [details]);
 
     function reviewsList() {
       return (
