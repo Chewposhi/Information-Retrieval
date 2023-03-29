@@ -96,7 +96,7 @@ function Search({movies}) {
         />
         <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
       </div>
-      <div style={{paddingTop:'20px', display:'flex', justifyContent:'center'}}>
+      <div style={{paddingTop:'20px', display:'flex', justifyContent:'center', flexWrap:'wrap'}}>
         {genres.map(({ genre }, index) => {
           return (
                   <div style={{display:'flex', flexDirection:'row', padding:'5px'}}>
