@@ -154,11 +154,6 @@ app.get("/Fuzzy/:searchText", (req, res) => {
 });
 
 app.get("/AutoComplete/:searchText", (req, res) => {
-    //localhost:8983/solr/films/suggest?suggest=true&suggest.build=true&suggest.dictionary=mySuggester&wt=json&suggest.q=Te
-    //fetch("http://localhost:8983/solr/films/suggest?suggest=true&indent=true&suggest.build=true&suggest.dictionary=mySuggester&wt=json&suggest.q=Te");
-    const Query = {
-        "*":"*"
-    };
     const searchQuery = client.query()
     .q(req.params.searchText)
     .qop("OR")

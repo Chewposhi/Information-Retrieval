@@ -96,6 +96,9 @@ function Search({movies}) {
 
   // Suggester
   useEffect(() => {
+    if(searchInput.length < 4){
+      return;
+    }
     fetch(`http://localhost:5000/AutoComplete/${searchInput}`).then(
       response => response.json()
     ).then(
