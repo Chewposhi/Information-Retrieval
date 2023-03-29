@@ -864,6 +864,7 @@
   <requestHandler name="/suggest" class="solr.SearchHandler"
                   startup="lazy" >
     <lst name="defaults">
+      <str name="suggest.dictionary">mySuggester</str>
       <str name="suggest">true</str>
       <str name="suggest.count">10</str>
     </lst>

@@ -1,11 +1,11 @@
 // src/components/Search.js
 
 //to-do: add useEffect Cleanup after fetch function implemented
-
 import React, { useEffect, useState } from 'react';
 import Scroll from './Scroll';
 import SearchList from './SearchList';
 import { genres } from '../utils/genres';
+import '../Styles/search.css'
 
 function Search({movies}) {
 
@@ -17,6 +17,7 @@ function Search({movies}) {
   const [checkedState, setCheckedState] = useState(
     new Array(genres.length).fill(false)
   );
+  const [autoComplete, setAutoComplete] = useState([{movie:'hi'},{movie:'2'}])
 
   // use effect for initial page mount
   useEffect(() => {
@@ -24,9 +25,16 @@ function Search({movies}) {
   }, []);
 
   // search box input change handle
-  const handleChange = e => {
+  const handleChange = async e => {
     e.preventDefault();
     setSearchInput(e.target.value);
+    fetch('http://localhost:5000/AutoComplete/${searchInput}').then(
+      response => response.json()
+    ).then(
+      data => {
+        console.log(data);
+      }
+    )
   };
 
   // when checkboxes are changed
@@ -88,13 +96,18 @@ function Search({movies}) {
         <h2 className="f2" style={{cursor:'pointer'}} onClick={()=>window.location.reload()}>Search a movie or TV show</h2>
       </div>
       <div className="pa2">
-        <input 
-          className="pa3 bb br3 grow b--none bg-lightest-blue ma3"
-          type = "search" 
-          placeholder = "Search Movie, genre, keywords" 
-          onChange = {handleChange}
-        />
-        <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
+        <div>
+          <input 
+            className="pa3 bb br3 grow b--none bg-lightest-blue ma3"
+            type = "search" 
+            placeholder = "Search Movie, genre, keywords" 
+            onChange = {handleChange}
+          />
+          <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
+        </div>
+        <div className='dropdown'>
+          {autoComplete.map((item) => (<div className='dropdown-row'>{item.movie}</div>))}
+        </div>
       </div>
       <div style={{paddingTop:'20px', display:'flex', justifyContent:'center', flexWrap:'wrap'}}>
         {genres.map(({ genre }, index) => {

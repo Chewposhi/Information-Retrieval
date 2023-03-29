@@ -10,7 +10,8 @@ var client = new SolrNode({
     host: '127.0.0.1',
     port: '8983',
     core: 'films',
-    protocol: 'http'
+    protocol: 'http',
+    //rootPath: '/select'
 });
 
 app.get("/init", (req, res) => {
@@ -148,6 +149,37 @@ app.get("/Fuzzy/:searchText", (req, res) => {
 
         const response = result.response;
         res.json({"movies": response.docs});
+
+    });
+});
+
+app.get("/AutoComplete/:searchText", (req, res) => {
+    //localhost:8983/solr/films/suggest?suggest=true&suggest.build=true&suggest.dictionary=mySuggester&wt=json&suggest.q=Te
+    //fetch("http://localhost:8983/solr/films/suggest?suggest=true&indent=true&suggest.build=true&suggest.dictionary=mySuggester&wt=json&suggest.q=Te");
+    const Query = {
+        "*":"*"
+    };
+    const searchQuery = client.query()
+    .q("Te")
+    .qop("OR")
+    .addParams({
+            wt: 'json',
+            indent: true
+        })
+    .start(0)
+    .rows(20)
+
+    console.log(searchQuery)
+
+    client._requestGet('suggest', searchQuery, function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        };
+        console.log(result)
+        const response = result.suggest.mySuggester;
+        console.log(response)
+        res.json({"movies": response});
 
     });
 });
