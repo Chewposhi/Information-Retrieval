@@ -10,6 +10,7 @@ import Search from './components/Search';
 function App() {
 
   const [movies, setMovies] = useState(null);
+  console.log(process.env.REACT_APP_IMDb_RAPIDAPI_KEY)
 
   //fetching of movies
   /*useEffect(() => {
