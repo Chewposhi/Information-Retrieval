@@ -855,6 +855,7 @@
       <str name="lookupImpl">AnalyzingLookupFactory</str>
       <str name="dictionaryImpl">DocumentDictionaryFactory</str>
       <str name="field">movie_name</str>
+      <str name="weightField">movie_star</str>
       <str name="suggestAnalyzerFieldType">string</str>
       <str name="buildOnStartup">true</str>
     </lst>
