@@ -161,8 +161,6 @@ app.get("/AutoComplete/:searchText", (req, res) => {
             wt: 'json',
             indent: true
         })
-    .start(0)
-    .rows(20)
 
     client._requestGet('suggest', searchQuery, function (err, result) {
         if (err) {
