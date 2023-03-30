@@ -139,7 +139,7 @@ app.get("/Fuzzy/:searchText", (req, res) => {
             indent: true
         })
     .start(0)
-    .rows(10)
+    .rows(30)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
