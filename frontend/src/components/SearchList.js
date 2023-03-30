@@ -18,7 +18,7 @@ function SearchList({ filteredMovies, checkedState, sortValue }) {
       return item.sort === sortValue
     })
     setSortMethod(method[0]['func']);
-  }, []);
+  }, [sortValue]);
 
   // use effect, set filter when checkboxes are touched
   useEffect(() => {
