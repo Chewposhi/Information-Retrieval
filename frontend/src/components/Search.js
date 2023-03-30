@@ -75,6 +75,14 @@ function Search({movies}) {
     )
   };
 
+  // handle enter key down search
+  const handleKeyDownSearch = event => {
+    if (event.key === 'Enter') {
+      handleClick(event);
+      setShowSuggest(false);
+    }
+  }
+
   // onAutoComplete
   const onAutoComplete = (term) => {
     setSearchInput(term);
@@ -130,6 +138,7 @@ function Search({movies}) {
             onChange = {handleChange}
             value = {searchInput}
             onFocus = {() => handleFocus()}
+            onKeyDown={handleKeyDownSearch}
           />
           <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
         </div>
