@@ -4,11 +4,12 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import Card from './Card';
 import { genres } from '../utils/genres';
+import { sorter } from '../utils/sorter';
 
 function SearchList({ filteredMovies, checkedState }) {
   const [genreFilter, setGenreFilter] = useState([]);
   const [sorter, setSorter] = useState(()=>function (a,b){
-    return b.movie_star-a.movie_star
+    return b.movie_year-a.movie_year
   });
   
 
@@ -28,7 +29,7 @@ function SearchList({ filteredMovies, checkedState }) {
   // handleSort
   const handleSort = () => {
     setSorter(()=>function (a,b){
-      return a.movie_star-b.movie_star
+      return a.movie_year-b.movie_year
     })
   }
 
@@ -48,7 +49,6 @@ function SearchList({ filteredMovies, checkedState }) {
    
   return (
     <div>
-      <button onClick={()=>handleSort()}>sort</button>
       {filtered}
     </div>
   );
