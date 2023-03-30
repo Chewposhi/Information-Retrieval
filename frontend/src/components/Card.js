@@ -9,8 +9,9 @@ function Card({movie, isMore}) {
       <div className="tc bg-light-green dib br3 pa3 ma2 grow bw2 shadow-5" style={{borderStyle:isMore? 'solid' : 'none'}}>
         <img className="br-50 h8 w4 dib" alt="poster" src={movie.movie_Poster} />
         <div>
-          <h1>{movie.movie_name}</h1>
-          {!isMore && <h2>genre: {movie.movie_tags}</h2>}
+          <h1>{movie.movie_name} ({movie.movie_year})</h1>
+          {!isMore && <h2>Rating: {movie.movie_star}</h2>}
+          {!isMore && <h2>Genre: {movie.movie_tags}</h2>}
           {!isMore && <p>description: {movie.movie_dis}</p>}
         </div>
       </div>
