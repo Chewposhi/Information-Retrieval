@@ -97,9 +97,13 @@ const MovieDetails = () => {
         <div>
             {poster && <img className="br-50 h10 w5 dib" alt="poster" src={[reviews.base.image.url]} />}
             <div>
-              <h1 style={{textDecoration:'underline'}}>{details[0]["movie_name"]}</h1>
+              <h1 style={{textDecoration:'underline'}}>{details[0]["movie_name"]} ({details[0]["movie_year"]})</h1>
               <h2>Genre: </h2>
               <h3>{details[0]["movie_tags"]}</h3>
+              <h2>Rating: </h2>
+              <h3>{details[0]["movie_star"]}</h3>
+              <h2>Director/Cast: </h2>
+              <h3>{details[0]["movie_director_cast"].join(', ')}</h3>
               <h2>Description: </h2>
               <h3>{details[0]["movie_dis"]}</h3>
             </div>
