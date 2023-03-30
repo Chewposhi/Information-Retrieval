@@ -6,12 +6,19 @@ import Card from './Card';
 import { genres } from '../utils/genres';
 import { sorter } from '../utils/sorter';
 
-function SearchList({ filteredMovies, checkedState }) {
+function SearchList({ filteredMovies, checkedState, sortValue }) {
   const [genreFilter, setGenreFilter] = useState([]);
-  const [sorter, setSorter] = useState(()=>function (a,b){
+  const [sortMethod, setSortMethod] = useState(()=>function (a,b){
     return b.movie_year-a.movie_year
   });
   
+  // use effect, set sorting method
+  useEffect(() => {
+    let method = sorter.filter((item)=>{
+      return item.sort === sortValue
+    })
+    setSortMethod(method[0]['func']);
+  }, []);
 
   // use effect, set filter when checkboxes are touched
   useEffect(() => {
@@ -26,13 +33,6 @@ function SearchList({ filteredMovies, checkedState }) {
     setGenreFilter(filter);
   }, [checkedState]);
 
-  // handleSort
-  const handleSort = () => {
-    setSorter(()=>function (a,b){
-      return a.movie_year-b.movie_year
-    })
-  }
-
   // function for filtering 
   const genreFiltered = filteredMovies.filter(
     movie => {
@@ -43,7 +43,7 @@ function SearchList({ filteredMovies, checkedState }) {
     }
   );
 
-  genreFiltered.sort(sorter)
+  genreFiltered.sort(sortMethod)
 
   const filtered = genreFiltered.map(movie =>  <Card key={movie["id"]} movie={movie} isMore={false}/>);
    

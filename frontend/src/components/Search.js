@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react';
 import Scroll from './Scroll';
 import SearchList from './SearchList';
 import { genres } from '../utils/genres';
+import { sorter } from '../utils/sorter';
 import '../Styles/search.css'
 
 function Search({movies}) {
@@ -18,7 +19,8 @@ function Search({movies}) {
   const [checkedState, setCheckedState] = useState(
     new Array(genres.length).fill(false)
   );
-  const [autoComplete, setAutoComplete] = useState([])
+  const [autoComplete, setAutoComplete] = useState([]);
+  const [sortValue, setSortValue] = useState("movie year descending");
 
   // use effect for initial page mount
   useEffect(() => {
@@ -37,13 +39,18 @@ function Search({movies}) {
       index === position ? !item : item
     );
     setCheckedState(updatedCheckedState);
-  }
+  };
+
+  // handle sorting selector
+  const handleSort = (event) => {
+    setSortValue(event.target.value);
+  };
 
   // Output search list of movies
   function searchList() {
     return (
       <Scroll height={'100vh'}>
-        <SearchList filteredMovies={searchResult} checkedState={checkedState} />
+        <SearchList filteredMovies={searchResult} checkedState={checkedState} sortValue={sortValue} />
       </Scroll>
     );
   };
@@ -147,6 +154,16 @@ function Search({movies}) {
                   
           );
           })}
+      </div>
+      <div>
+        <label>
+          Sort By: 
+          <select value={sortValue} onChange={handleSort}>
+            {sorter.map((sorter) => (
+              <option value={sorter.sort}>{sorter.sort}</option>
+            ))}
+          </select>
+        </label>
       </div>
       {noResultTag && <h2>no result for "{noResultInput}", showing our best guesses!</h2>}
       {searchList()}
