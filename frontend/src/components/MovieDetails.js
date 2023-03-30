@@ -70,7 +70,6 @@ const MovieDetails = () => {
       .then(response => {setReviews(response);
                          setPoster(true);
                          setReviewsloaded(true);
-                         console.log(reviews);
                          })
       .catch(err => console.error(err));
       
@@ -103,7 +102,7 @@ const MovieDetails = () => {
               <h2>Rating: </h2>
               <h3>{details[0]["movie_star"]}</h3>
               <h2>Director/Cast: </h2>
-              <h3>{details[0]["movie_director_cast"].join(', ')}</h3>
+              {/*details && <h3>{details[0]["movie_director_cast"].join(', ')}</h3>*/}
               <h2>Description: </h2>
               <h3>{details[0]["movie_dis"]}</h3>
             </div>
