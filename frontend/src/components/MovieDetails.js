@@ -10,7 +10,9 @@ const MovieDetails = () => {
     const [details, setDetails] = useState([{}]);
     const [reviews, setReviews] = useState(null);
     const [reviewsloaded, setReviewsloaded] = useState(false);
-    const [more, setMore] = useState(null);
+    const [moreByName, setMoreByName] = useState([]);
+    const [moreByCast, setMoreByCast] = useState([]);
+    const [moreCombined, setMoreCombined] = useState([]);
     const [moreLoaded, setMoreloaded] = useState(false);
     const [poster, setPoster] = useState(null);
     const options = {
@@ -30,16 +32,23 @@ const MovieDetails = () => {
           setDetails(data["movies"])
         }
       );
-
-      // fetch more like this from solr
-      fetch(`http://localhost:5000/MoreLikeThis/${id}`).then(
-        response => response.json()
-      ).then(
-        data => {
-          setMore(data.movies);
+      
+      // fetch more like this with half by name and half by cast
+      Promise.all([
+        fetch(`http://localhost:5000/MoreLikeThisName/${id}`),
+        fetch(`http://localhost:5000/MoreLikeThisCast/${id}`),
+      ])
+        .then(([resName, resCast]) => 
+          Promise.all([resName.json(), resCast.json()])
+        )
+        .then(([dataName, dataCast]) => {
+          setMoreByName(dataName);
+          setMoreByCast(dataCast);
+          setMoreCombined(dataName.movies.concat(dataCast.movies));
           setMoreloaded(true);
-        }
-      );
+        });
+      
+
 
       // fetch reviews from imdb
       /*fetch(`https://imdb8.p.rapidapi.com/title/get-user-reviews?tconst=${details[0].movie_id}`, options)
@@ -86,7 +95,7 @@ const MovieDetails = () => {
     function moreList() {
       return (
         <Scroll height={'40vh'}>
-          <MoreLikeThisList MoreList={more} />
+          <MoreLikeThisList MoreList={moreCombined} />
         </Scroll>
       );
     }
