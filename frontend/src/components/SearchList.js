@@ -7,6 +7,9 @@ import { genres } from '../utils/genres';
 
 function SearchList({ filteredMovies, checkedState }) {
   const [genreFilter, setGenreFilter] = useState([]);
+  const [sorter, setSorter] = useState(()=>function (a,b){
+    return b.movie_star-a.movie_star
+  });
   
 
   // use effect, set filter when checkboxes are touched
@@ -22,7 +25,12 @@ function SearchList({ filteredMovies, checkedState }) {
     setGenreFilter(filter);
   }, [checkedState]);
 
-
+  // handleSort
+  const handleSort = () => {
+    setSorter(()=>function (a,b){
+      return a.movie_star-b.movie_star
+    })
+  }
 
   // function for filtering 
   const genreFiltered = filteredMovies.filter(
@@ -34,10 +42,13 @@ function SearchList({ filteredMovies, checkedState }) {
     }
   );
 
+  genreFiltered.sort(sorter)
+
   const filtered = genreFiltered.map(movie =>  <Card key={movie["id"]} movie={movie} isMore={false}/>);
    
   return (
     <div>
+      <button onClick={()=>handleSort()}>sort</button>
       {filtered}
     </div>
   );
