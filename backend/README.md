@@ -32,6 +32,12 @@ features
 ## Get Request
 1. http://localhost:8983/solr/films/select?q=* curl or wtv to query
 
+## Edit Index before uploading documents to solr
+`curl -X POST -H "Content-type:application/json" --data-binary "{\"add-copy-field\" : {\"source\":\"*\",\"dest\":\"_text_\"}}" http://localhost:8983/solr/films/schema`
+`curl -X POST -H "Content-type:application/json" --data-binary "{'add-copy-field' : {'source':'*','dest':'_text_'}}" http://localhost:8983/solr/films/schema`
+explanation: add copy field from * to \_text_ which is the default search field
+both above works for windows machine but make sure to run it on commmand prompt, not powershell
+
 
 # TO DO:
 python script for posting file
