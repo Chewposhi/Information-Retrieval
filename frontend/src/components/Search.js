@@ -58,6 +58,7 @@ function Search({movies}) {
   // Basic search
   const handleClick = e => {
     e.preventDefault();
+    setShowSuggest(false);
 
     
     fetch(`http://localhost:5000/nameSearch/${searchInput}`).then(

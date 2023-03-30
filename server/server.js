@@ -28,7 +28,7 @@ app.get("/init", (req, res) => {
             indent: true
         })
     .start(0)
-    .rows(20)
+    .rows(30)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
@@ -55,7 +55,7 @@ app.get("/movie/:id", (req, res) => {
             indent: true
         })
     .start(0)
-    .rows(1)
+    .rows(10)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
