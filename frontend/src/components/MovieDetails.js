@@ -61,18 +61,18 @@ const MovieDetails = () => {
       .catch(err => console.error(err));*/
 
       // fetching test data from json server
-      /*fetch("http://localhost:8000/reviews")
+      fetch("http://localhost:8000/reviews")
       .then(response => response.json())
       .then(response => {
         setReviews(response[0]);
         setPoster(true);
         setReviewsloaded(true);
       }
-      );*/
+      );
       
     }, []);
 
-    useEffect(() => {
+    /*useEffect(() => {
       // fetch reviews from imdb
       fetch(`https://imdb8.p.rapidapi.com/title/get-user-reviews?tconst=${details[0].movie_id}`, options)
       .then(response => response.json())
@@ -82,7 +82,7 @@ const MovieDetails = () => {
                          })
       .catch(err => console.error(err));
       
-    }, [details]);
+    }, [details]);*/
 
     function reviewsList() {
       return (
