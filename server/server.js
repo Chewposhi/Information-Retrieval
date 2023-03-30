@@ -107,7 +107,7 @@ app.get("/MoreLikeThis/:id", (req, res) => {
             indent: true
         })
     .start(0)
-    .rows(10)
+    .rows(6)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
