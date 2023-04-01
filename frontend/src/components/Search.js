@@ -142,7 +142,7 @@ function Search({movies}) {
           <input 
             className="pa3 bb br3 grow b--none bg-lightest-blue ma3"
             type = "text" 
-            placeholder = "Search Movie or Show titles " 
+            placeholder = "Search Movie or Show Titles " 
             onChange = {handleChange}
             value = {searchInput}
             onFocus = {() => handleFocus()}
