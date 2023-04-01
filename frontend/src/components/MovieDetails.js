@@ -105,20 +105,20 @@ const MovieDetails = () => {
         <div>
             {poster && <img className="br-50 h10 w5 dib" alt="poster" src={[reviews.base.image.url]} />}
             <div>
-              <h1 style={{textDecoration:'underline'}}>{details[0]["movie_name"]} ({details[0]["movie_year"]})</h1>
-              <h2>Genre: </h2>
-              <h3>{details[0]["movie_tags"]}</h3>
-              <h2>Rating: </h2>
-              <h3>{details[0]["movie_star"]}</h3>
-              <h2>Director/Cast: </h2>
+              <h1 style={{textDecoration:'underline', color:'white'}}>{details[0]["movie_name"]} ({details[0]["movie_year"]})</h1>
+              <h2 style={{color:'white'}}>Genre: </h2>
+              <h3 style={{color:'white'}}>{details[0]["movie_tags"]}</h3>
+              <h2 style={{color:'white'}}>Rating: </h2>
+              <h3 style={{color:'white'}}>{details[0]["movie_star"]}</h3>
+              <h2 style={{color:'white'}}>Director/Cast: </h2>
               {/*details && <h3>{details[0]["movie_director_cast"].join(', ')}</h3>*/}
-              <h2>Description: </h2>
-              <h3>{details[0]["movie_dis"]}</h3>
+              <h2 style={{color:'white'}}>Description: </h2>
+              <h3 style={{color:'white'}}>{details[0]["movie_dis"]}</h3>
             </div>
             <div>
-              <h2 style={{borderTop:'dotted', marginTop:'20px'}}>Not what you were looking for? Here are movies with similar titles:</h2>
+              <h2 style={{borderTop:'dotted', marginTop:'20px', color:'white'}}>Not what you were looking for? Here are movies with similar titles:</h2>
               {moreLoaded && moreList()}
-              <h2 style={{borderTop:'dotted'}}>Reviews:</h2>
+              <h2 style={{borderTop:'dotted', color:'white'}}>Reviews:</h2>
               {reviewsloaded && reviewsList()}
             </div>
             

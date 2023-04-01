@@ -129,7 +129,7 @@ function Search({movies}) {
   return (
     <section className="garamond">
       <div className="navy georgia ma0 grow">
-        <h2 className="f2" style={{cursor:'pointer'}} onClick={()=>window.location.reload()}>Search a movie or TV show</h2>
+        <h2 className="f2" style={{cursor:'pointer', color:'white'}} onClick={()=>window.location.reload()}>Search a movie or TV show</h2>
       </div>
       <div className="pa2">
         <div>
@@ -152,7 +152,7 @@ function Search({movies}) {
         {genres.map(({ genre }, index) => {
           return (
                   <div style={{display:'flex', flexDirection:'row', padding:'5px'}}>
-                    <p>{genre}</p>
+                    <p style={{color:'white'}}>{genre}</p>
                     <input
                       type="checkbox"
                       id={`custom-checkbox-${index}`}
@@ -167,7 +167,7 @@ function Search({movies}) {
           })}
       </div>
       <div>
-        <label>
+        <label style={{color:'white'}}>
           Sort By: 
           <select value={sortValue} onChange={handleSort}>
             {sorter.map((sorter) => (
