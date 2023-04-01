@@ -145,7 +145,7 @@ function Search({movies}) {
           <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
         </div>
         {showSuggest && <div className='dropdown'>
-          {autoComplete.map((item) => (<div onClick={()=>onAutoComplete(item.term)} className='dropdown-row'>{item.term}</div>))}
+          {autoComplete.map((item) => (<div style={{color:'white'}} onClick={()=>onAutoComplete(item.term)} className='dropdown-row'>{item.term}</div>))}
         </div>}
       </div>
       <div style={{paddingTop:'20px', display:'flex', justifyContent:'center', flexWrap:'wrap'}}>
