@@ -1,15 +1,17 @@
 // src/components/Search.js
 
 //to-do: add useEffect Cleanup after fetch function implemented
-
 import React, { useEffect, useState } from 'react';
 import Scroll from './Scroll';
 import SearchList from './SearchList';
 import { genres } from '../utils/genres';
+import { sorter } from '../utils/sorter';
+import '../Styles/search.css'
 
 function Search({movies}) {
 
   const [searchInput, setSearchInput] = useState("");
+  const [showSuggest, setShowSuggest] = useState(false);
   const [noResultInput, setNoResultInput] = useState("");
   const [searchResult, setSearchResult] = useState([{}]);
   const [noResult, setNoResult] = useState(false);
@@ -17,6 +19,8 @@ function Search({movies}) {
   const [checkedState, setCheckedState] = useState(
     new Array(genres.length).fill(false)
   );
+  const [autoComplete, setAutoComplete] = useState([]);
+  const [sortValue, setSortValue] = useState("movie year descending");
 
   // use effect for initial page mount
   useEffect(() => {
@@ -24,7 +28,7 @@ function Search({movies}) {
   }, []);
 
   // search box input change handle
-  const handleChange = e => {
+  const handleChange = async e => {
     e.preventDefault();
     setSearchInput(e.target.value);
   };
@@ -35,13 +39,18 @@ function Search({movies}) {
       index === position ? !item : item
     );
     setCheckedState(updatedCheckedState);
-  }
+  };
+
+  // handle sorting selector
+  const handleSort = (event) => {
+    setSortValue(event.target.value);
+  };
 
   // Output search list of movies
   function searchList() {
     return (
       <Scroll height={'100vh'}>
-        <SearchList filteredMovies={searchResult} checkedState={checkedState} />
+        <SearchList filteredMovies={searchResult} checkedState={checkedState} sortValue={sortValue} />
       </Scroll>
     );
   };
@@ -49,6 +58,7 @@ function Search({movies}) {
   // Basic search
   const handleClick = e => {
     e.preventDefault();
+    setShowSuggest(false);
 
     
     fetch(`http://localhost:5000/nameSearch/${searchInput}`).then(
@@ -66,6 +76,25 @@ function Search({movies}) {
     )
   };
 
+  // handle enter key down search
+  const handleKeyDownSearch = event => {
+    if (event.key === 'Enter') {
+      handleClick(event);
+      setShowSuggest(false);
+    }
+  }
+
+  // onAutoComplete
+  const onAutoComplete = (term) => {
+    setSearchInput(term);
+    setShowSuggest(false);
+  };
+
+  // handleFocus
+  const handleFocus = () => {
+    setShowSuggest(true)
+  };
+
   
   // fuzzy search
   useEffect(() => {
@@ -81,6 +110,20 @@ function Search({movies}) {
     }
   }, [noResult]);
 
+  // Suggester
+  useEffect(() => {
+    if(searchInput.length < 4){
+      return;
+    }
+    fetch(`http://localhost:5000/AutoComplete/${searchInput}`).then(
+      response => response.json()
+    ).then(
+      data => {
+        setAutoComplete(data[searchInput].suggestions);
+      }
+    )
+  }, [searchInput]);
+
 
   return (
     <section className="garamond">
@@ -88,13 +131,21 @@ function Search({movies}) {
         <h2 className="f2" style={{cursor:'pointer'}} onClick={()=>window.location.reload()}>Search a movie or TV show</h2>
       </div>
       <div className="pa2">
-        <input 
-          className="pa3 bb br3 grow b--none bg-lightest-blue ma3"
-          type = "search" 
-          placeholder = "Search Movie, genre, keywords" 
-          onChange = {handleChange}
-        />
-        <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
+        <div>
+          <input 
+            className="pa3 bb br3 grow b--none bg-lightest-blue ma3"
+            type = "text" 
+            placeholder = "Search Movie" 
+            onChange = {handleChange}
+            value = {searchInput}
+            onFocus = {() => handleFocus()}
+            onKeyDown={handleKeyDownSearch}
+          />
+          <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
+        </div>
+        {showSuggest && <div className='dropdown'>
+          {autoComplete.map((item) => (<div onClick={()=>onAutoComplete(item.term)} className='dropdown-row'>{item.term}</div>))}
+        </div>}
       </div>
       <div style={{paddingTop:'20px', display:'flex', justifyContent:'center', flexWrap:'wrap'}}>
         {genres.map(({ genre }, index) => {
@@ -113,6 +164,16 @@ function Search({movies}) {
                   
           );
           })}
+      </div>
+      <div>
+        <label>
+          Sort By: 
+          <select value={sortValue} onChange={handleSort}>
+            {sorter.map((sorter) => (
+              <option value={sorter.sort}>{sorter.sort}</option>
+            ))}
+          </select>
+        </label>
       </div>
       {noResultTag && <h2>no result for "{noResultInput}", showing our best guesses!</h2>}
       {searchList()}

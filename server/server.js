@@ -10,7 +10,8 @@ var client = new SolrNode({
     host: '127.0.0.1',
     port: '8983',
     core: 'films',
-    protocol: 'http'
+    protocol: 'http',
+    //rootPath: '/select'
 });
 
 app.get("/init", (req, res) => {
@@ -27,7 +28,7 @@ app.get("/init", (req, res) => {
             indent: true
         })
     .start(0)
-    .rows(20)
+    .rows(30)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
@@ -54,7 +55,7 @@ app.get("/movie/:id", (req, res) => {
             indent: true
         })
     .start(0)
-    .rows(1)
+    .rows(10)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
@@ -96,7 +97,7 @@ app.get("/nameSearch/:q", (req, res) => {
     });
 });
 
-app.get("/MoreLikeThis/:id", (req, res) => {
+app.get("/MoreLikeThisName/:id", (req, res) => {
 
     const searchQuery = client.query()
     .q("{!mlt qf=movie_name mintf=1 mindf=7}"+req.params.id)
@@ -106,7 +107,31 @@ app.get("/MoreLikeThis/:id", (req, res) => {
             indent: true
         })
     .start(0)
-    .rows(10)
+    .rows(5)
+
+    client.search(searchQuery, function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        };
+
+        const response = result.response;
+        res.json({"movies": response.docs});
+
+    });
+});
+
+app.get("/MoreLikeThisCast/:id", (req, res) => {
+
+    const searchQuery = client.query()
+    .q("{!mlt qf=movie_director_cast mintf=1 mindf=7}"+req.params.id)
+    .qop("OR")
+    .addParams({
+            wt: 'json',
+            indent: true
+        })
+    .start(0)
+    .rows(5)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
@@ -138,7 +163,7 @@ app.get("/Fuzzy/:searchText", (req, res) => {
             indent: true
         })
     .start(0)
-    .rows(10)
+    .rows(30)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
@@ -151,6 +176,27 @@ app.get("/Fuzzy/:searchText", (req, res) => {
 
     });
 });
+
+app.get("/AutoComplete/:searchText", (req, res) => {
+    const searchQuery = client.query()
+    .q(req.params.searchText)
+    .qop("OR")
+    .addParams({
+            wt: 'json',
+            indent: true
+        })
+
+    client._requestGet('suggest', searchQuery, function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        };
+        const response = result.suggest.mySuggester;
+        res.json(response);
+
+    });
+});
+
 
 
 app.listen(5000, () => {console.log(`server started on port 5000...`)});
