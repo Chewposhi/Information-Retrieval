@@ -93,7 +93,13 @@ function Search({movies}) {
 
   // handleFocus
   const handleFocus = () => {
-    setShowSuggest(true)
+    if(searchInput.length === 0){
+      setShowSuggest(false)
+    }
+    else{
+      setShowSuggest(true)
+    }
+    
   };
 
   
