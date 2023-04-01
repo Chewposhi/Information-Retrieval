@@ -44,7 +44,20 @@ const MovieDetails = () => {
         .then(([dataName, dataCast]) => {
           setMoreByName(dataName);
           setMoreByCast(dataCast);
-          setMoreCombined(dataName.movies.concat(dataCast.movies));
+          const combined = dataName.movies.concat(dataCast.movies);
+          const uniqueIds = [];
+          const unique = combined.filter(element => {
+            const isDuplicate = uniqueIds.includes(element.id);
+          
+            if (!isDuplicate) {
+              uniqueIds.push(element.id);
+          
+              return true;
+            }
+          
+            return false;
+          });
+          setMoreCombined(unique);
           setMoreloaded(true);
         });
       
