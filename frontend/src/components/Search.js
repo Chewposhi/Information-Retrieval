@@ -20,7 +20,7 @@ function Search({movies}) {
     new Array(genres.length).fill(false)
   );
   const [autoComplete, setAutoComplete] = useState([]);
-  const [sortValue, setSortValue] = useState("movie year descending");
+  const [sortValue, setSortValue] = useState("movie/show year descending");
 
   // use effect for initial page mount
   useEffect(() => {
