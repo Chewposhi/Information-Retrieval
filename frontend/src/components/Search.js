@@ -134,8 +134,9 @@ function Search({movies}) {
 
   return (
     <section className="garamond">
-      <div className="navy georgia ma0 grow">
-        <h2 className="f2" style={{cursor:'pointer', color:'white'}} onClick={()=>window.location.reload()}>Search a movie or TV show</h2>
+      <div className="navy georgia ma0 grow" onClick={()=>window.location.reload()}>
+        <img style={{width:'1000px'}} src={require('../Image/lightning-movie-streaming-service-high-resolution-color-logo.png')} />
+        <h2 className="f2" style={{cursor:'pointer', color:'white'}}>Search a movie or TV show</h2>
       </div>
       <div className="pa2">
         <div>
