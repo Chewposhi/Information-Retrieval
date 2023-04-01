@@ -31,6 +31,7 @@ function Search({movies}) {
   const handleChange = async e => {
     e.preventDefault();
     setSearchInput(e.target.value);
+    setShowSuggest(true);
   };
 
   // when checkboxes are changed
