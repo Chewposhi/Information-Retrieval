@@ -182,7 +182,7 @@ function Search({movies}) {
           </select>
         </label>
       </div>
-      {noResultTag && <h2>no result for "{noResultInput}", showing our best guesses!</h2>}
+      {noResultTag && <h2 style={{color:'grey'}}>no result for "{noResultInput}", showing our best guesses!</h2>}
       {searchList()}
     </section>
   );

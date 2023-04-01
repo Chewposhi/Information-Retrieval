@@ -127,6 +127,9 @@ const MovieDetails = () => {
               {/*details && <h3>{details[0]["movie_director_cast"].join(', ')}</h3>*/}
               <h2 style={{color:'white'}}>Description: </h2>
               <h3 style={{color:'white'}}>{details[0]["movie_dis"]}</h3>
+              <a href="https://r.mtdv.me/videos/82736gas7sas" target='_blank'>
+                <button style={{cursor:'pointer', borderRadius:'10px', color:'gold', background:'black'}}>Watch Now</button>
+              </a>
             </div>
             <div>
               <h2 style={{borderTop:'dotted', marginTop:'20px', color:'white'}}>Not what you were looking for? Here are movies with similar titles:</h2>
