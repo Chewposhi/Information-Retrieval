@@ -128,7 +128,7 @@ const MovieDetails = () => {
               <h2 style={{color:'white'}}>Description: </h2>
               <h3 style={{color:'white'}}>{details[0]["movie_dis"]}</h3>
               <a href="https://r.mtdv.me/videos/82736gas7sas" target='_blank'>
-                <button style={{cursor:'pointer', borderRadius:'10px', color:'gold', background:'black'}}>Watch Now</button>
+                <button style={{cursor:'pointer', borderRadius:'10px', color:'gold', background:'grey', width:'200px', height:'70px', fontSize:'30px'}}>Watch Now</button>
               </a>
             </div>
             <div>
