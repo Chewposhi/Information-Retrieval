@@ -11,7 +11,8 @@ function Body({review}) {
   const [sentiment, setSentiment] = useState(null);
 
   const handleAnalyse = () => {
-    fetch('http://localhost:5000/AnalyseSent', {headers: {'review':'good movie'}}).then(
+    let cleaned = review.reviewText.replace(/[^a-z0-9]/gi, ' ');
+    fetch('http://localhost:5000/AnalyseSent', {headers: {'review':cleaned}}).then(
       response => response.json()
     ).then(
       data => {
