@@ -9,8 +9,10 @@ import {
 
 function Body({review}) {
   const [sentiment, setSentiment] = useState(null);
+  const [btnText, setBtnText] = useState('Analyse');
 
   const handleAnalyse = () => {
+    setBtnText('Analyzing...');
     let cleaned = review.reviewText.replace(/[^a-z0-9]/gi, ' ');
     fetch('http://localhost:5000/AnalyseSent', {headers: {'review':cleaned}}).then(
       response => response.json()
@@ -33,7 +35,7 @@ function Body({review}) {
             </CardSubtitle>
             <p style={{margin:'30px', color:'white'}}>Sentiment Analysis:</p>
             {sentiment && <p style={{color:(sentiment === 'Positive') ? 'green':'red'}}> {sentiment}</p>}
-            {!sentiment && <button style={{cursor:'pointer'}} onClick={()=>handleAnalyse()}>Analyse</button>}
+            {!sentiment && <button style={{cursor:'pointer'}} onClick={()=>handleAnalyse()}>{btnText}</button>}
           </div>
           <div className="reviews-body" style={{color:'white'}}>
             <ReadMore>
