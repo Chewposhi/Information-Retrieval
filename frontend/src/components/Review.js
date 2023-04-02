@@ -11,7 +11,7 @@ function Body({review}) {
   const [sentiment, setSentiment] = useState(null);
 
   const handleAnalyse = () => {
-    fetch(`http://localhost:5000/AnalyseSent/${review.reviewText}`).then(
+    fetch('http://localhost:5000/AnalyseSent', {headers: {'review':'good movie'}}).then(
       response => response.json()
     ).then(
       data => {
