@@ -200,7 +200,7 @@ app.get("/AutoComplete/:searchText", (req, res) => {
 });
 
 app.get("/AnalyseSent/:review", (req, res) => {
-    const review = "Some of you may remember back in the 90s there was a show called Mystery Science Theater 3000 (MST3k) where the crew of the Satellite of Love riffed on bad movies. As the seasons passed they started getting letters from film students offering to intentionally make bad movies for the crew to review since being made fun of on the show would actually boost their chances of making it in Hollywood. I get the impression that the people behind Sharknado were hoping to attract the attention of the MST3k crew who have moved on to doing Rifftrax. It's the only explanation that makes sense. This movie is so badly written, acted, directed, with such immensely bad not-so-special effects that it has to be on purpose.";
+    const review = req.params.review;
     const childPython = spawn('python', ['sentiment_analyse.py',review])
     childPython.stdout.on('data', (data) => {
         console.log(`stdout: ${data}`);

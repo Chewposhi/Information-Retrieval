@@ -11,8 +11,14 @@ function Body({review}) {
   const [sentiment, setSentiment] = useState(null);
 
   const handleAnalyse = () => {
-    console.log("runing analysis...");
-    setSentiment('Negative')
+    fetch(`http://localhost:5000/AnalyseSent/${review.reviewText}`).then(
+      response => response.json()
+    ).then(
+      data => {
+        console.log(data)
+        setSentiment(data);
+      }
+    );
   }
 
   return (
