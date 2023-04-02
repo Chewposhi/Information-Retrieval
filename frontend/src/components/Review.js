@@ -19,7 +19,6 @@ function Body({review}) {
     ).then(
       data => {
         const filtered = data.replace(/[^a-z0-9]/gi, '');
-        console.log(filtered)
         setSentiment(filtered);
       }
     );
