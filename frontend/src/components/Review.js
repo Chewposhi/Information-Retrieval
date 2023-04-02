@@ -15,8 +15,9 @@ function Body({review}) {
       response => response.json()
     ).then(
       data => {
-        console.log(data)
-        setSentiment(data);
+        const filtered = data.replace(/[^a-z0-9]/gi, '');
+        console.log(filtered)
+        setSentiment(filtered);
       }
     );
   }

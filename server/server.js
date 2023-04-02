@@ -200,10 +200,10 @@ app.get("/AutoComplete/:searchText", (req, res) => {
 });
 
 app.get("/AnalyseSent/:review", (req, res) => {
-    const review = req.params.review;
+    const review = req.params.review.replace(/[^a-z0-9]/gi, '');;
     const childPython = spawn('python', ['sentiment_analyse.py',review])
     childPython.stdout.on('data', (data) => {
-        console.log(`stdout: ${data}`);
+        //console.log(`stdout: ${data}`);
         const result = data.toString();
         res.json(result)
     })
