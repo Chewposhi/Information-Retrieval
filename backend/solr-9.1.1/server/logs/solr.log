@@ -1,110 +1,182 @@
-2023-03-30 08:55:19.221 INFO  (main) [] o.e.j.u.log Logging initialized @1007ms to org.eclipse.jetty.util.log.Slf4jLog
-2023-03-30 08:55:19.417 INFO  (main) [] o.e.j.s.Server jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 19.0.2+7-44
-2023-03-30 08:55:20.060 INFO  (main) [] o.a.s.s.CoreContainerProvider Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
-2023-03-30 08:55:20.071 INFO  (main) [] o.a.s.s.CoreContainerProvider  ___      _       Welcome to Apache Solr™ version 9.1.1
-2023-03-30 08:55:20.071 INFO  (main) [] o.a.s.s.CoreContainerProvider / __| ___| |_ _   Starting in standalone mode on port 8983
-2023-03-30 08:55:20.071 INFO  (main) [] o.a.s.s.CoreContainerProvider \__ \/ _ \ | '_|  Install dir: C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1
-2023-03-30 08:55:20.072 INFO  (main) [] o.a.s.s.CoreContainerProvider |___/\___/_|_|    Start time: 2023-03-30T08:55:20.072530600Z
-2023-03-30 08:55:20.077 INFO  (main) [] o.a.s.s.CoreContainerProvider Solr Home: C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr (source: system property: solr.solr.home)
-2023-03-30 08:55:20.078 INFO  (main) [] o.a.s.c.SolrXmlConfig Loading solr.xml from C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\solr.xml
-2023-03-30 08:55:20.146 INFO  (main) [] o.a.s.c.SolrResourceLoader Added 1 libs to classloader, from paths: [/C:/Users/Benjamin%20Chun/Documents/GitHub/Information-Retrieval/backend/solr-9.1.1/lib]
-2023-03-30 08:55:21.051 WARN  (main) [] o.a.s.u.StartupLoggingUtils Jetty request logging enabled. Will retain logs for last 3 days. See chapter "Configuring Logging" in reference guide for how to configure.
-2023-03-30 08:55:21.053 WARN  (main) [] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
-2023-03-30 08:55:21.284 INFO  (main) [] o.a.s.c.CorePropertiesLocator Found 2 core definitions underneath C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr
-2023-03-30 08:55:21.284 INFO  (main) [] o.a.s.c.CorePropertiesLocator Cores are: [tech_products, films]
-2023-03-30 08:55:21.287 INFO  (coreLoadExecutor-10-thread-2) [] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient core cache for max 2147483647 cores with initial capacity of 1024
-2023-03-30 08:55:21.324 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.c.SolrConfig Using Lucene MatchVersion: 9.3.0
-2023-03-30 08:55:21.338 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.c.SolrResourceLoader Added 91 libs to classloader, from paths: [/C:/Users/Benjamin%20Chun/Documents/GitHub/Information-Retrieval/backend/solr-9.1.1/modules/clustering/lib, /C:/Users/Benjamin%20Chun/Documents/GitHub/Information-Retrieval/backend/solr-9.1.1/modules/extraction/lib, /C:/Users/Benjamin%20Chun/Documents/GitHub/Information-Retrieval/backend/solr-9.1.1/modules/langid/lib, /C:/Users/Benjamin%20Chun/Documents/GitHub/Information-Retrieval/backend/solr-9.1.1/modules/ltr/lib, /C:/Users/Benjamin%20Chun/Documents/GitHub/Information-Retrieval/backend/solr-9.1.1/modules/scripting/lib]
-2023-03-30 08:55:21.404 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.s.IndexSchema Schema name=default-config
-2023-03-30 08:55:21.450 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.c.SolrConfig Using Lucene MatchVersion: 9.3.0
-2023-03-30 08:55:21.451 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.u.SolrIndexConfig IndexWriter infoStream solr logging is enabled
-2023-03-30 08:55:21.469 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.s.IndexSchema Schema name=example
-2023-03-30 08:55:21.602 INFO  (main) [] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@4263b080{/solr,file:///C:/Users/Benjamin%20Chun/Documents/GitHub/Information-Retrieval/backend/solr-9.1.1/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server/solr-webapp/webapp}
-2023-03-30 08:55:21.609 INFO  (main) [] o.e.j.s.RequestLogWriter Opened C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\logs\2023_03_30.request.log
-2023-03-30 08:55:21.621 INFO  (main) [] o.e.j.s.AbstractConnector Started ServerConnector@15c25153{HTTP/1.1, (http/1.1, h2c)}{127.0.0.1:8983}
-2023-03-30 08:55:21.621 INFO  (main) [] o.e.j.s.Server Started @3408ms
-2023-03-30 08:55:21.703 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.RestManager Registered ManagedResource impl org.apache.solr.rest.schema.analysis.ManagedWordSetResource for path /schema/analysis/stopwords/english
-2023-03-30 08:55:21.704 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.RestManager Registered ManagedResource impl org.apache.solr.rest.schema.analysis.ManagedSynonymGraphFilterFactory$SynonymManager for path /schema/analysis/synonyms/english
-2023-03-30 08:55:21.704 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.RestManager Added observer of type org.apache.solr.rest.schema.analysis.ManagedStopFilterFactory to existing ManagedResource /schema/analysis/stopwords/english
-2023-03-30 08:55:21.704 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.RestManager Added observer of type org.apache.solr.rest.schema.analysis.ManagedSynonymGraphFilterFactory to existing ManagedResource /schema/analysis/synonyms/english
-2023-03-30 08:55:21.704 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
-2023-03-30 08:55:21.705 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.c.CoreContainer Creating SolrCore 'films' using configuration from instancedir C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films, trusted=true
-2023-03-30 08:55:21.710 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.s.IndexSchema Loaded schema example/1.6 with uniqueid field id
-2023-03-30 08:55:21.732 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.c.CoreContainer Creating SolrCore 'tech_products' using configuration from instancedir C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\configsets\sample_techproducts_configs, trusted=true
-2023-03-30 08:55:21.749 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.c.SolrCore Opening new SolrCore at [C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\configsets\sample_techproducts_configs], dataDir=[C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\configsets\sample_techproducts_configs\data\]
-2023-03-30 08:55:21.749 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.c.SolrCore Opening new SolrCore at [C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films], dataDir=[C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films\data\]
-2023-03-30 08:55:22.199 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2023-03-30 08:55:22.199 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
-2023-03-30 08:55:22.200 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2023-03-30 08:55:22.200 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
-2023-03-30 08:55:22.224 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2023-03-30 08:55:22.224 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
-2023-03-30 08:55:22.225 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2023-03-30 08:55:22.225 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.u.CommitTracker Soft AutoCommit: disabled
-2023-03-30 08:55:22.397 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\configsets\sample_techproducts_configs\conf
-2023-03-30 08:55:22.397 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films\conf
-2023-03-30 08:55:22.400 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResourceStorage Loaded LinkedHashMap at path _rest_managed.json using file:dir=C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\configsets\sample_techproducts_configs\conf
-2023-03-30 08:55:22.400 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResource Loaded initArgs {} for /rest/managed
-2023-03-30 08:55:22.401 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResourceStorage Loaded LinkedHashMap at path _schema_analysis_stopwords_english.json using file:dir=C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\configsets\sample_techproducts_configs\conf
-2023-03-30 08:55:22.401 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResource Loaded initArgs {ignoreCase=true} for /schema/analysis/stopwords/english
-2023-03-30 08:55:22.401 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.s.a.ManagedWordSetResource Loaded 35 words for /schema/analysis/stopwords/english
-2023-03-30 08:55:22.402 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResource Notified 2 observers of /schema/analysis/stopwords/english
-2023-03-30 08:55:22.402 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResourceStorage Loaded LinkedHashMap at path _schema_analysis_synonyms_english.json using file:dir=C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\configsets\sample_techproducts_configs\conf
-2023-03-30 08:55:22.403 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResource Loaded initArgs {ignoreCase=true, format=solr} for /schema/analysis/synonyms/english
-2023-03-30 08:55:22.403 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.s.a.ManagedSynonymGraphFilterFactory Loaded 3 synonym mappings for /schema/analysis/synonyms/english
-2023-03-30 08:55:22.405 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResource Notified 2 observers of /schema/analysis/synonyms/english
-2023-03-30 08:55:22.417 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.s.DirectSolrSpellChecker init: {maxEdits=2, minPrefix=1, maxInspections=5, minQueryLength=4, name=default, field=_text_, classname=solr.DirectSolrSpellChecker, distanceMeasure=internal, accuracy=0.5, maxQueryFrequency=0.01}
-2023-03-30 08:55:22.417 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.s.DirectSolrSpellChecker init: {maxEdits=2, minPrefix=1, maxInspections=5, minQueryLength=4, name=default, field=text, classname=solr.DirectSolrSpellChecker, distanceMeasure=internal, accuracy=0.5, maxQueryFrequency=0.01}
-2023-03-30 08:55:22.423 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.h.c.SuggestComponent Initializing SuggestComponent
-2023-03-30 08:55:22.425 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.s.s.SolrSuggester init: {name=mySuggester, lookupImpl=FuzzyLookupFactory, dictionaryImpl=DocumentDictionaryFactory, field=cat, weightField=price, suggestAnalyzerFieldType=string, buildOnStartup=false}
-2023-03-30 08:55:22.427 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2023-03-30 08:55:22.436 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.s.s.SolrSuggester Dictionary loaded with params: {name=mySuggester, lookupImpl=FuzzyLookupFactory, dictionaryImpl=DocumentDictionaryFactory, field=cat, weightField=price, suggestAnalyzerFieldType=string, buildOnStartup=false}
-2023-03-30 08:55:22.444 INFO  (searcherExecutor-12-thread-1-processing-films) [ x:films] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2023-03-30 08:55:22.444 INFO  (searcherExecutor-12-thread-1-processing-films) [ x:films] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2023-03-30 08:55:22.445 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
-2023-03-30 08:55:22.450 INFO  (searcherExecutor-12-thread-1-processing-films) [ x:films] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
-2023-03-30 08:55:22.533 INFO  (searcherExecutor-14-thread-1-processing-tech_products) [ x:tech_products] o.a.s.c.S.Request webapp=null path=null params={q=static+firstSearcher+warming+in+solrconfig.xml&distrib=false&event=firstSearcher} hits=3 status=0 QTime=83
-2023-03-30 08:55:22.549 INFO  (searcherExecutor-14-thread-1-processing-tech_products) [ x:tech_products] o.a.s.c.QuerySenderListener QuerySenderListener done.
-2023-03-30 08:55:22.549 INFO  (searcherExecutor-14-thread-1-processing-tech_products) [ x:tech_products] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
-2023-03-30 08:55:22.549 INFO  (searcherExecutor-14-thread-1-processing-tech_products) [ x:tech_products] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: wordbreak
-2023-03-30 08:55:22.552 INFO  (searcherExecutor-14-thread-1-processing-tech_products) [ x:tech_products] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
-2023-03-30 08:55:24.194 INFO  (qtp816798571-44) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=38
-2023-03-30 08:55:24.685 INFO  (qtp816798571-42) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680166524600} status=0 QTime=2
-2023-03-30 08:55:24.704 INFO  (qtp816798571-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1680166524600} status=0 QTime=21
-2023-03-30 08:55:24.746 INFO  (qtp816798571-64) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680166524601} status=0 QTime=63
-2023-03-30 08:55:26.733 INFO  (qtp816798571-38) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680166524600} status=0 QTime=0
-2023-03-30 08:55:26.735 INFO  (qtp816798571-36) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1680166526727} status=0 QTime=2
-2023-03-30 08:55:26.742 INFO  (qtp816798571-42) [ x:films] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1680166526727} status=0 QTime=6
-2023-03-30 08:55:26.747 INFO  (qtp816798571-39) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={action=status&wt=json&_=1680166524601&ts=1680166524601} status=503 QTime=1
-2023-03-30 08:55:26.801 INFO  (qtp816798571-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680166524601} status=0 QTime=68
-2023-03-30 08:55:26.806 INFO  (qtp816798571-44) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/system params={wt=json&_=1680166526727} status=0 QTime=68
-2023-03-30 08:55:28.017 INFO  (qtp816798571-36) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680166524600} status=0 QTime=0
-2023-03-30 08:55:28.020 INFO  (qtp816798571-42) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/file params={wt=json&_=1680166528013} status=0 QTime=3
-2023-03-30 08:55:28.042 INFO  (qtp816798571-39) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/file params={file=lang&wt=json&_=1680166528013} status=0 QTime=16
-2023-03-30 08:55:28.057 INFO  (qtp816798571-65) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680166524601} status=0 QTime=40
-2023-03-30 08:55:28.648 INFO  (qtp816798571-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680166524600} status=0 QTime=0
-2023-03-30 08:55:28.651 INFO  (qtp816798571-44) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1680166528636} status=0 QTime=3
-2023-03-30 08:55:28.688 INFO  (qtp816798571-42) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680166524601} status=0 QTime=40
-2023-03-30 08:55:28.962 INFO  (qtp816798571-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680166524600} status=0 QTime=0
-2023-03-30 08:55:28.967 INFO  (qtp816798571-36) [ x:films] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1680166526727} status=0 QTime=4
-2023-03-30 08:55:28.997 INFO  (qtp816798571-65) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680166524601} status=0 QTime=34
-2023-03-30 08:55:29.239 INFO  (qtp816798571-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680166524600} status=0 QTime=0
-2023-03-30 08:55:29.241 INFO  (qtp816798571-40) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680166529232} status=0 QTime=0
-2023-03-30 08:55:29.245 INFO  (qtp816798571-42) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680166526727} status=0 QTime=5
-2023-03-30 08:55:29.280 INFO  (qtp816798571-39) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680166526727} status=0 QTime=8
-2023-03-30 08:55:29.286 INFO  (qtp816798571-44) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680166524601} status=0 QTime=47
-2023-03-30 08:55:31.172 INFO  (qtp816798571-36) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680166524600} status=0 QTime=0
-2023-03-30 08:55:31.175 INFO  (qtp816798571-64) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/file params={wt=json&_=1680166528013} status=0 QTime=3
-2023-03-30 08:55:31.194 INFO  (qtp816798571-37) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/file params={file=lang&wt=json&_=1680166528013} status=0 QTime=13
-2023-03-30 08:55:31.210 INFO  (qtp816798571-42) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680166524601} status=0 QTime=38
-2023-03-30 08:55:32.248 INFO  (qtp816798571-39) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680166524600} status=0 QTime=0
-2023-03-30 08:55:32.248 INFO  (qtp816798571-44) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1680166528636} status=0 QTime=0
-2023-03-30 08:55:32.286 INFO  (qtp816798571-64) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680166524601} status=0 QTime=38
-2023-03-30 08:55:36.533 INFO  (qtp816798571-36) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680166524600} status=0 QTime=0
-2023-03-30 08:55:36.533 INFO  (qtp816798571-65) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1680166528636} status=0 QTime=0
-2023-03-30 08:55:36.535 INFO  (qtp816798571-37) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=hi&indent=true&q.op=OR&useParams=&_=1680166528636} hits=4 status=0 QTime=2
-2023-03-30 08:55:36.575 INFO  (qtp816798571-42) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680166524601} status=0 QTime=42
-2023-03-30 08:55:45.172 INFO  (qtp816798571-64) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680166524600} status=0 QTime=0
-2023-03-30 08:55:45.172 INFO  (qtp816798571-38) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1680166528636} status=0 QTime=0
-2023-03-30 08:55:45.177 INFO  (qtp816798571-39) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=one+piece&indent=true&q.op=OR&useParams=&_=1680166528636} hits=870 status=0 QTime=5
-2023-03-30 08:55:45.215 INFO  (qtp816798571-44) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680166524601} status=0 QTime=42
+2023-03-31 06:14:14.190 INFO  (main) [] o.e.j.u.log Logging initialized @1078ms to org.eclipse.jetty.util.log.Slf4jLog
+2023-03-31 06:14:14.396 INFO  (main) [] o.e.j.s.Server jetty-9.4.48.v20220622; built: 2022-06-21T20:42:25.880Z; git: 6b67c5719d1f4371b33655ff2d047d24e171e49a; jvm 19.0.2+7-44
+2023-03-31 06:14:15.051 INFO  (main) [] o.a.s.s.CoreContainerProvider Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2023-03-31 06:14:15.064 INFO  (main) [] o.a.s.s.CoreContainerProvider  ___      _       Welcome to Apache Solr™ version 9.1.1
+2023-03-31 06:14:15.064 INFO  (main) [] o.a.s.s.CoreContainerProvider / __| ___| |_ _   Starting in standalone mode on port 8983
+2023-03-31 06:14:15.064 INFO  (main) [] o.a.s.s.CoreContainerProvider \__ \/ _ \ | '_|  Install dir: C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1
+2023-03-31 06:14:15.064 INFO  (main) [] o.a.s.s.CoreContainerProvider |___/\___/_|_|    Start time: 2023-03-31T06:14:15.064114Z
+2023-03-31 06:14:15.070 INFO  (main) [] o.a.s.s.CoreContainerProvider Solr Home: C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr (source: system property: solr.solr.home)
+2023-03-31 06:14:15.071 INFO  (main) [] o.a.s.c.SolrXmlConfig Loading solr.xml from C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\solr.xml
+2023-03-31 06:14:15.143 INFO  (main) [] o.a.s.c.SolrResourceLoader Added 1 libs to classloader, from paths: [/C:/Users/Benjamin%20Chun/Documents/GitHub/Information-Retrieval/backend/solr-9.1.1/lib]
+2023-03-31 06:14:16.087 WARN  (main) [] o.a.s.u.StartupLoggingUtils Jetty request logging enabled. Will retain logs for last 3 days. See chapter "Configuring Logging" in reference guide for how to configure.
+2023-03-31 06:14:16.089 WARN  (main) [] o.a.s.c.CoreContainer Not all security plugins configured!  authentication=disabled authorization=disabled.  Solr is only as secure as you make it. Consider configuring authentication/authorization before exposing Solr to users internal or external.  See https://s.apache.org/solrsecurity for more info
+2023-03-31 06:14:16.352 INFO  (main) [] o.a.s.c.CorePropertiesLocator Found 2 core definitions underneath C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr
+2023-03-31 06:14:16.352 INFO  (main) [] o.a.s.c.CorePropertiesLocator Cores are: [tech_products, films]
+2023-03-31 06:14:16.355 INFO  (coreLoadExecutor-10-thread-1) [] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient core cache for max 2147483647 cores with initial capacity of 1024
+2023-03-31 06:14:16.393 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.c.SolrConfig Using Lucene MatchVersion: 9.3.0
+2023-03-31 06:14:16.407 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.c.SolrResourceLoader Added 91 libs to classloader, from paths: [/C:/Users/Benjamin%20Chun/Documents/GitHub/Information-Retrieval/backend/solr-9.1.1/modules/clustering/lib, /C:/Users/Benjamin%20Chun/Documents/GitHub/Information-Retrieval/backend/solr-9.1.1/modules/extraction/lib, /C:/Users/Benjamin%20Chun/Documents/GitHub/Information-Retrieval/backend/solr-9.1.1/modules/langid/lib, /C:/Users/Benjamin%20Chun/Documents/GitHub/Information-Retrieval/backend/solr-9.1.1/modules/ltr/lib, /C:/Users/Benjamin%20Chun/Documents/GitHub/Information-Retrieval/backend/solr-9.1.1/modules/scripting/lib]
+2023-03-31 06:14:16.472 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.s.IndexSchema Schema name=default-config
+2023-03-31 06:14:16.523 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.c.SolrConfig Using Lucene MatchVersion: 9.3.0
+2023-03-31 06:14:16.523 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.u.SolrIndexConfig IndexWriter infoStream solr logging is enabled
+2023-03-31 06:14:16.542 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.s.IndexSchema Schema name=example
+2023-03-31 06:14:16.677 INFO  (main) [] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@4263b080{/solr,file:///C:/Users/Benjamin%20Chun/Documents/GitHub/Information-Retrieval/backend/solr-9.1.1/server/solr-webapp/webapp/,AVAILABLE}{C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server/solr-webapp/webapp}
+2023-03-31 06:14:16.687 INFO  (main) [] o.e.j.s.RequestLogWriter Opened C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\logs\2023_03_31.request.log
+2023-03-31 06:14:16.698 INFO  (main) [] o.e.j.s.AbstractConnector Started ServerConnector@15c25153{HTTP/1.1, (http/1.1, h2c)}{127.0.0.1:8983}
+2023-03-31 06:14:16.698 INFO  (main) [] o.e.j.s.Server Started @3588ms
+2023-03-31 06:14:16.810 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.RestManager Registered ManagedResource impl org.apache.solr.rest.schema.analysis.ManagedWordSetResource for path /schema/analysis/stopwords/english
+2023-03-31 06:14:16.811 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.RestManager Registered ManagedResource impl org.apache.solr.rest.schema.analysis.ManagedSynonymGraphFilterFactory$SynonymManager for path /schema/analysis/synonyms/english
+2023-03-31 06:14:16.811 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.RestManager Added observer of type org.apache.solr.rest.schema.analysis.ManagedStopFilterFactory to existing ManagedResource /schema/analysis/stopwords/english
+2023-03-31 06:14:16.811 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.RestManager Added observer of type org.apache.solr.rest.schema.analysis.ManagedSynonymGraphFilterFactory to existing ManagedResource /schema/analysis/synonyms/english
+2023-03-31 06:14:16.817 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.s.IndexSchema Loaded schema example/1.6 with uniqueid field id
+2023-03-31 06:14:16.817 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2023-03-31 06:14:16.818 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.c.CoreContainer Creating SolrCore 'films' using configuration from instancedir C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films, trusted=true
+2023-03-31 06:14:16.840 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.c.CoreContainer Creating SolrCore 'tech_products' using configuration from instancedir C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\configsets\sample_techproducts_configs, trusted=true
+2023-03-31 06:14:16.863 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.c.SolrCore Opening new SolrCore at [C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films], dataDir=[C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films\data\]
+2023-03-31 06:14:16.863 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.c.SolrCore Opening new SolrCore at [C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\configsets\sample_techproducts_configs], dataDir=[C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\configsets\sample_techproducts_configs\data\]
+2023-03-31 06:14:17.307 INFO  (qtp816798571-36) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243257199} status=0 QTime=7
+2023-03-31 06:14:17.388 INFO  (qtp816798571-62) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243257199} status=0 QTime=85
+2023-03-31 06:14:17.517 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2023-03-31 06:14:17.517 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2023-03-31 06:14:17.518 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2023-03-31 06:14:17.518 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2023-03-31 06:14:17.549 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2023-03-31 06:14:17.549 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2023-03-31 06:14:17.550 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2023-03-31 06:14:17.550 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2023-03-31 06:14:17.724 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films\conf
+2023-03-31 06:14:17.724 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\configsets\sample_techproducts_configs\conf
+2023-03-31 06:14:17.727 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResourceStorage Loaded LinkedHashMap at path _rest_managed.json using file:dir=C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\configsets\sample_techproducts_configs\conf
+2023-03-31 06:14:17.727 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResource Loaded initArgs {} for /rest/managed
+2023-03-31 06:14:17.729 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResourceStorage Loaded LinkedHashMap at path _schema_analysis_stopwords_english.json using file:dir=C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\configsets\sample_techproducts_configs\conf
+2023-03-31 06:14:17.729 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResource Loaded initArgs {ignoreCase=true} for /schema/analysis/stopwords/english
+2023-03-31 06:14:17.729 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.s.a.ManagedWordSetResource Loaded 35 words for /schema/analysis/stopwords/english
+2023-03-31 06:14:17.729 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResource Notified 2 observers of /schema/analysis/stopwords/english
+2023-03-31 06:14:17.730 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResourceStorage Loaded LinkedHashMap at path _schema_analysis_synonyms_english.json using file:dir=C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\configsets\sample_techproducts_configs\conf
+2023-03-31 06:14:17.731 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResource Loaded initArgs {ignoreCase=true, format=solr} for /schema/analysis/synonyms/english
+2023-03-31 06:14:17.732 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.s.a.ManagedSynonymGraphFilterFactory Loaded 3 synonym mappings for /schema/analysis/synonyms/english
+2023-03-31 06:14:17.732 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.r.ManagedResource Notified 2 observers of /schema/analysis/synonyms/english
+2023-03-31 06:14:17.751 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.s.DirectSolrSpellChecker init: {accuracy=0.5, maxQueryFrequency=0.01, name=default, field=_text_, classname=solr.DirectSolrSpellChecker, distanceMeasure=internal, maxEdits=2, minPrefix=1, maxInspections=5, minQueryLength=4}
+2023-03-31 06:14:17.751 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.s.DirectSolrSpellChecker init: {accuracy=0.5, maxQueryFrequency=0.01, name=default, field=text, classname=solr.DirectSolrSpellChecker, distanceMeasure=internal, maxEdits=2, minPrefix=1, maxInspections=5, minQueryLength=4}
+2023-03-31 06:14:17.756 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.h.c.SuggestComponent Initializing SuggestComponent
+2023-03-31 06:14:17.758 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.s.s.SolrSuggester init: {name=mySuggester, lookupImpl=FuzzyLookupFactory, dictionaryImpl=DocumentDictionaryFactory, field=cat, weightField=price, suggestAnalyzerFieldType=string, buildOnStartup=false}
+2023-03-31 06:14:17.760 INFO  (coreLoadExecutor-10-thread-2) [ x:films] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2023-03-31 06:14:17.771 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.s.s.SolrSuggester Dictionary loaded with params: {name=mySuggester, lookupImpl=FuzzyLookupFactory, dictionaryImpl=DocumentDictionaryFactory, field=cat, weightField=price, suggestAnalyzerFieldType=string, buildOnStartup=false}
+2023-03-31 06:14:17.778 INFO  (coreLoadExecutor-10-thread-1) [ x:tech_products] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2023-03-31 06:14:17.779 INFO  (searcherExecutor-14-thread-1-processing-films) [ x:films] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2023-03-31 06:14:17.779 INFO  (searcherExecutor-14-thread-1-processing-films) [ x:films] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2023-03-31 06:14:17.788 INFO  (searcherExecutor-14-thread-1-processing-films) [ x:films] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
+2023-03-31 06:14:17.849 INFO  (searcherExecutor-13-thread-1-processing-tech_products) [ x:tech_products] o.a.s.c.S.Request webapp=null path=null params={q=static+firstSearcher+warming+in+solrconfig.xml&distrib=false&event=firstSearcher} hits=3 status=0 QTime=63
+2023-03-31 06:14:17.858 INFO  (searcherExecutor-13-thread-1-processing-tech_products) [ x:tech_products] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2023-03-31 06:14:17.858 INFO  (searcherExecutor-13-thread-1-processing-tech_products) [ x:tech_products] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2023-03-31 06:14:17.858 INFO  (searcherExecutor-13-thread-1-processing-tech_products) [ x:tech_products] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: wordbreak
+2023-03-31 06:14:17.861 INFO  (searcherExecutor-13-thread-1-processing-tech_products) [ x:tech_products] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
+2023-03-31 06:14:18.759 INFO  (qtp816798571-42) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243258724} status=0 QTime=0
+2023-03-31 06:14:18.763 INFO  (qtp816798571-68) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={action=status&wt=json&_=1680243258724&ts=1680243258724} status=503 QTime=2
+2023-03-31 06:14:18.767 INFO  (qtp816798571-43) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1680243258753} status=0 QTime=8
+2023-03-31 06:14:18.769 INFO  (qtp816798571-39) [ x:films] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1680243258753} status=0 QTime=10
+2023-03-31 06:14:18.848 INFO  (qtp816798571-44) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243258724} status=0 QTime=89
+2023-03-31 06:14:18.854 INFO  (qtp816798571-40) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/system params={wt=json&_=1680243258753} status=0 QTime=94
+2023-03-31 06:14:19.061 INFO  (qtp816798571-36) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=29
+2023-03-31 06:14:21.439 INFO  (qtp816798571-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243258724} status=0 QTime=0
+2023-03-31 06:14:21.443 INFO  (qtp816798571-62) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680243261430} status=0 QTime=4
+2023-03-31 06:14:21.444 INFO  (qtp816798571-63) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680243258753} status=0 QTime=5
+2023-03-31 06:14:21.477 INFO  (qtp816798571-42) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680243258753} status=0 QTime=6
+2023-03-31 06:14:21.482 INFO  (qtp816798571-36) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243258724} status=0 QTime=43
+2023-03-31 06:14:27.249 INFO  (qtp816798571-44) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680243261430} status=0 QTime=0
+2023-03-31 06:14:27.249 INFO  (qtp816798571-63) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243258724} status=0 QTime=0
+2023-03-31 06:14:27.250 INFO  (qtp816798571-43) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680243258753} status=0 QTime=1
+2023-03-31 06:14:27.270 INFO  (qtp816798571-36) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680243258753} status=0 QTime=3
+2023-03-31 06:14:27.294 INFO  (qtp816798571-67) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243258724} status=0 QTime=46
+2023-03-31 06:14:32.509 INFO  (qtp816798571-62) [ x:films] o.a.s.s.ManagedIndexSchema Upgraded to managed schema at C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films\conf\managed-schema.xml
+2023-03-31 06:14:32.518 INFO  (qtp816798571-62) [ x:films] o.a.s.c.SolrConfig Using Lucene MatchVersion: 9.3.0
+2023-03-31 06:14:32.525 INFO  (qtp816798571-62) [ x:films] o.a.s.s.IndexSchema Schema name=default-config
+2023-03-31 06:14:32.596 INFO  (qtp816798571-62) [ x:films] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2023-03-31 06:14:32.597 INFO  (qtp816798571-62) [ x:films] o.a.s.c.CoreContainer Reloading SolrCore 'films' using configuration from instancedir C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films
+2023-03-31 06:14:32.633 INFO  (qtp816798571-62) [ x:films] o.a.s.c.SolrCore Opening new SolrCore at [C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films], dataDir=[C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films\data\]
+2023-03-31 06:14:32.668 INFO  (qtp816798571-62) [ x:films] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2023-03-31 06:14:32.668 INFO  (qtp816798571-62) [ x:films] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2023-03-31 06:14:32.676 INFO  (qtp816798571-62) [ x:films] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films\conf
+2023-03-31 06:14:32.676 INFO  (qtp816798571-62) [ x:films] o.a.s.s.DirectSolrSpellChecker init: {accuracy=0.5, maxQueryFrequency=0.01, name=default, field=_text_, classname=solr.DirectSolrSpellChecker, distanceMeasure=internal, maxEdits=2, minPrefix=1, maxInspections=5, minQueryLength=4}
+2023-03-31 06:14:32.677 INFO  (qtp816798571-62) [ x:films] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2023-03-31 06:14:32.681 INFO  (searcherExecutor-24-thread-1-processing-films) [ x:films] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2023-03-31 06:14:32.681 INFO  (searcherExecutor-24-thread-1-processing-films) [ x:films] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2023-03-31 06:14:32.690 INFO  (searcherExecutor-24-thread-1-processing-films) [ x:films] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
+2023-03-31 06:14:32.690 INFO  (qtp816798571-62) [ x:films] o.a.s.u.DefaultSolrCoreState New IndexWriter is ready to be used.
+2023-03-31 06:14:32.702 INFO  (qtp816798571-62) [] o.a.s.c.S.Request webapp=/solr path=/schema params={wt=json&_=1680243261430} status=0 QTime=273
+2023-03-31 06:14:32.702 INFO  (qtp816798571-62) [] o.a.s.c.SolrCore CLOSING SolrCore org.apache.solr.core.SolrCore@66d10b23 films
+2023-03-31 06:14:32.702 INFO  (qtp816798571-62) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.films tag=SolrCore@66d10b23
+2023-03-31 06:14:32.708 INFO  (searcherExecutor-24-thread-1-processing-films) [ x:films] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2023-03-31 06:14:32.714 INFO  (searcherExecutor-24-thread-1-processing-films) [ x:films] o.a.s.c.SolrCore Registered new searcher autowarm time: 6 ms
+2023-03-31 06:14:34.228 INFO  (qtp816798571-43) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680243261430} status=0 QTime=0
+2023-03-31 06:14:34.230 INFO  (qtp816798571-67) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680243258753} status=0 QTime=2
+2023-03-31 06:14:34.243 INFO  (qtp816798571-62) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680243258753} status=0 QTime=3
+2023-03-31 06:14:39.927 INFO  (qtp816798571-67) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243258724} status=0 QTime=0
+2023-03-31 06:14:39.928 INFO  (qtp816798571-37) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1680243279915} status=0 QTime=0
+2023-03-31 06:14:39.970 INFO  (qtp816798571-36) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243258724} status=0 QTime=42
+2023-03-31 06:14:42.175 INFO  (qtp816798571-42) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1680243279915} status=0 QTime=0
+2023-03-31 06:14:42.175 INFO  (qtp816798571-44) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243258724} status=0 QTime=0
+2023-03-31 06:14:42.177 INFO  (qtp816798571-43) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=*:*&indent=true&q.op=OR&useParams=&_=1680243279915} hits=13490 status=0 QTime=1
+2023-03-31 06:14:42.213 INFO  (qtp816798571-62) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243258724} status=0 QTime=37
+2023-03-31 06:14:45.569 INFO  (qtp816798571-63) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1680243279915} status=0 QTime=0
+2023-03-31 06:14:45.569 INFO  (qtp816798571-67) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243258724} status=0 QTime=0
+2023-03-31 06:14:45.575 INFO  (qtp816798571-37) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=the&indent=true&q.op=OR&useParams=&_=1680243279915} hits=10370 status=0 QTime=6
+2023-03-31 06:14:45.613 INFO  (qtp816798571-36) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243258724} status=0 QTime=44
+2023-03-31 06:14:50.017 INFO  (qtp816798571-62) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680243261430} status=0 QTime=0
+2023-03-31 06:14:50.017 INFO  (qtp816798571-44) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243258724} status=0 QTime=0
+2023-03-31 06:14:50.018 INFO  (qtp816798571-43) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680243258753} status=0 QTime=1
+2023-03-31 06:14:50.037 INFO  (qtp816798571-36) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680243258753} status=0 QTime=2
+2023-03-31 06:14:50.056 INFO  (qtp816798571-42) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243258724} status=0 QTime=38
+2023-03-31 06:14:52.359 INFO  (qtp816798571-37) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680243261430} status=0 QTime=0
+2023-03-31 06:14:52.359 INFO  (qtp816798571-43) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243258724} status=0 QTime=0
+2023-03-31 06:14:52.360 INFO  (qtp816798571-67) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680243258753} status=0 QTime=1
+2023-03-31 06:14:52.373 INFO  (qtp816798571-42) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680243258753} status=0 QTime=1
+2023-03-31 06:14:52.403 INFO  (qtp816798571-63) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243258724} status=0 QTime=44
+2023-03-31 06:14:57.556 INFO  (qtp816798571-62) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243258724} status=0 QTime=0
+2023-03-31 06:14:57.567 INFO  (qtp816798571-44) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1680243258724} status=0 QTime=11
+2023-03-31 06:14:57.596 INFO  (qtp816798571-67) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243258724} status=0 QTime=40
+2023-03-31 06:14:57.597 INFO  (qtp816798571-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243258724} status=0 QTime=0
+2023-03-31 06:14:57.606 INFO  (qtp816798571-63) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1680243258724} status=0 QTime=9
+2023-03-31 06:14:57.631 INFO  (qtp816798571-36) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243258724} status=0 QTime=33
+2023-03-31 06:14:59.536 INFO  (qtp816798571-37) [ x:films] o.a.s.c.SolrConfig Using Lucene MatchVersion: 9.3.0
+2023-03-31 06:14:59.542 INFO  (qtp816798571-37) [ x:films] o.a.s.s.IndexSchema Schema name=default-config
+2023-03-31 06:14:59.603 INFO  (qtp816798571-37) [ x:films] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2023-03-31 06:14:59.603 INFO  (qtp816798571-37) [ x:films] o.a.s.c.CoreContainer Reloading SolrCore 'films' using configuration from instancedir C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films
+2023-03-31 06:14:59.638 INFO  (qtp816798571-37) [] o.a.s.c.SolrCore Opening new SolrCore at [C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films], dataDir=[C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films\data\]
+2023-03-31 06:14:59.669 INFO  (qtp816798571-37) [] o.a.s.u.CommitTracker Hard AutoCommit: if uncommitted for 15000ms; 
+2023-03-31 06:14:59.669 INFO  (qtp816798571-37) [] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2023-03-31 06:14:59.674 INFO  (qtp816798571-37) [] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\Benjamin Chun\Documents\GitHub\Information-Retrieval\backend\solr-9.1.1\server\solr\films\conf
+2023-03-31 06:14:59.675 INFO  (qtp816798571-37) [] o.a.s.s.DirectSolrSpellChecker init: {accuracy=0.5, maxQueryFrequency=0.01, name=default, field=_text_, classname=solr.DirectSolrSpellChecker, distanceMeasure=internal, maxEdits=2, minPrefix=1, maxInspections=5, minQueryLength=4}
+2023-03-31 06:14:59.675 INFO  (qtp816798571-37) [] o.a.s.h.ReplicationHandler Commits will be reserved for 10000 ms
+2023-03-31 06:14:59.677 INFO  (searcherExecutor-29-thread-1) [] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2023-03-31 06:14:59.677 INFO  (searcherExecutor-29-thread-1) [] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2023-03-31 06:14:59.683 INFO  (qtp816798571-37) [] o.a.s.u.DefaultSolrCoreState New IndexWriter is ready to be used.
+2023-03-31 06:14:59.684 INFO  (searcherExecutor-29-thread-1) [] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
+2023-03-31 06:14:59.704 INFO  (qtp816798571-37) [] o.a.s.c.SolrCore CLOSING SolrCore org.apache.solr.core.SolrCore@3a8ce9a films
+2023-03-31 06:14:59.704 INFO  (searcherExecutor-29-thread-1) [] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2023-03-31 06:14:59.704 INFO  (qtp816798571-37) [] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.films tag=SolrCore@3a8ce9a
+2023-03-31 06:14:59.707 INFO  (searcherExecutor-29-thread-1) [] o.a.s.c.SolrCore Registered new searcher autowarm time: 0 ms
+2023-03-31 06:14:59.721 INFO  (qtp816798571-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={core=films&action=RELOAD&wt=json&_=1680243258724} status=0 QTime=192
+2023-03-31 06:15:00.732 INFO  (qtp816798571-36) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243258724} status=0 QTime=0
+2023-03-31 06:15:00.743 INFO  (qtp816798571-44) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={wt=json&_=1680243258724} status=0 QTime=10
+2023-03-31 06:15:00.770 INFO  (qtp816798571-62) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243258724} status=0 QTime=37
+2023-03-31 06:15:03.125 INFO  (qtp816798571-63) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243258724} status=0 QTime=0
+2023-03-31 06:15:03.125 INFO  (qtp816798571-38) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/ping params={action=status&wt=json&_=1680243258724&ts=1680243258724} status=503 QTime=0
+2023-03-31 06:15:03.125 INFO  (qtp816798571-42) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1680243258753} status=0 QTime=0
+2023-03-31 06:15:03.129 INFO  (qtp816798571-67) [ x:films] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1680243258753} status=0 QTime=4
+2023-03-31 06:15:03.187 INFO  (qtp816798571-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243258724} status=0 QTime=62
+2023-03-31 06:15:03.189 INFO  (qtp816798571-35) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/system params={wt=json&_=1680243258753} status=0 QTime=65
+2023-03-31 06:15:04.740 INFO  (qtp816798571-44) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1680243279915} status=0 QTime=0
+2023-03-31 06:15:04.740 INFO  (qtp816798571-66) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243258724} status=0 QTime=0
+2023-03-31 06:15:04.777 INFO  (qtp816798571-36) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243258724} status=0 QTime=37
+2023-03-31 06:15:08.693 INFO  (qtp816798571-38) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config/params params={wt=json&_=1680243279915} status=0 QTime=0
+2023-03-31 06:15:08.693 INFO  (qtp816798571-67) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243258724} status=0 QTime=0
+2023-03-31 06:15:08.696 INFO  (qtp816798571-43) [ x:films] o.a.s.c.S.Request webapp=/solr path=/select params={q=the&indent=true&q.op=OR&useParams=&_=1680243279915} hits=10370 status=0 QTime=3
+2023-03-31 06:15:08.733 INFO  (qtp816798571-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243258724} status=0 QTime=40
+2023-03-31 06:15:13.862 INFO  (qtp816798571-66) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243258724} status=0 QTime=0
+2023-03-31 06:15:13.867 INFO  (qtp816798571-36) [ x:films] o.a.s.c.S.Request webapp=/solr path=/replication params={wt=json&command=details&_=1680243258753} status=0 QTime=3
+2023-03-31 06:15:13.898 INFO  (qtp816798571-42) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243258724} status=0 QTime=35
+2023-03-31 06:15:14.308 INFO  (qtp816798571-67) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1680243258724} status=0 QTime=0
+2023-03-31 06:15:14.308 INFO  (qtp816798571-44) [ x:films] o.a.s.c.S.Request webapp=/solr path=/config params={wt=json&_=1680243261430} status=0 QTime=0
+2023-03-31 06:15:14.310 INFO  (qtp816798571-43) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={show=schema&wt=json&_=1680243258753} status=0 QTime=1
+2023-03-31 06:15:14.324 INFO  (qtp816798571-42) [ x:films] o.a.s.c.S.Request webapp=/solr path=/admin/luke params={numTerms=0&wt=json&_=1680243258753} status=0 QTime=1
+2023-03-31 06:15:14.344 INFO  (qtp816798571-37) [] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1680243258724} status=0 QTime=36
