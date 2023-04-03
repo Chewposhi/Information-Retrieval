@@ -9,29 +9,21 @@ solr = pysolr.Solr('http://localhost:8983/solr/tech_products', always_commit=Tru
 # to have your data be committed following a particular policy.
 
 
-curl -X POST -H 'Content-type:application/json' --data-binary '{
-  "add-field":{
-     "name":"movie_Name",
-     "type":"text_general_stemmed",
-     "stored":true }
-}' http://localhost:8983/solr/gettingstarted/schema
+curl -X POST -H "Content-type:application/json" --data-binary "{
+  'add-field':{
+     'name':'movie_Name',
+     'type':'text_general',
+     'stored':true },
+   'add-field':{
+      'name':'movfmosdmv',
+     'type':'text_general',
+     'stored':true}
+}" http://localhost:8983/solr/films2/schema
 
-curl -X POST -H 'Content-type:application/json' --data-binary '{
-  "add-field-type" : {
-     "name":"myNewTxtField",
-     "class":"solr.TextField",
-     "positionIncrementGap":"100",
-     "analyzer" : {
-        "charFilters":[{
-           "class":"solr.PatternReplaceCharFilterFactory",
-           "replacement":"$1$1",
-           "pattern":"([a-zA-Z])\\\\1+" }],
-        "tokenizer":{
-           "class":"solr.WhitespaceTokenizerFactory" },
-        "filters":[{
-           "class":"solr.WordDelimiterFilterFactory",
-           "preserveOriginal":"0" }]}}
-}' http://localhost:8983/solr/gettingstarted/schema
+curl -X POST -H "Content-type:application/json" --data-binary "{'add-field':{'name':'movie_Name','type':'text_general','stored':true },'add-field':{'name':'movfmosdmv','type':'text_general','stored':true}}" http://localhost:8983/solr/films2/schema
+
+
+curl -X POST -H "Content-type:application/json" --data-binary "{ 'add-field-type' : { 'name':'text_ngrams', 'class':'solr.TextField', 'positionIncrementGap':'100','analyzer' : {'tokenizer':{ 'class':'solr.StandardTokenizerFactory'},'filters':[{'class':'solr.StopFilterFactory','words':'stopwords.txt'},{'class':'solr.LowerCaseFilterFactory'},{'class':'solr.NGramFilterFactory','minGramSize':'3','maxGramSize':'5'}]}}}" http://localhost:8983/solr/films/schema
 
 # Do a health check.
 solr.ping()
