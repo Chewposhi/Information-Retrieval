@@ -21,6 +21,7 @@ function Search({movies}) {
   );
   const [autoComplete, setAutoComplete] = useState([]);
   const [sortValue, setSortValue] = useState("movie/show year descending");
+  const [searchTime, setSearchTime] = useState(null);
 
   // use effect for initial page mount
   useEffect(() => {
@@ -58,6 +59,7 @@ function Search({movies}) {
 
   // Basic search
   const handleClick = e => {
+    const start = performance.now();
     e.preventDefault();
     setShowSuggest(false);
 
@@ -66,6 +68,8 @@ function Search({movies}) {
       response => response.json()
     ).then(
       data => {
+        const end = performance.now();
+        setSearchTime(end - start);
         setSearchResult(data["movies"])
         if(data["movies"].length === 0){
           setNoResult(true);
@@ -174,6 +178,7 @@ function Search({movies}) {
           })}
       </div>
       <div>
+        {searchTime && <div style={{color:'white'}}>Search Took: {searchTime} ms</div>}
         <label style={{color:'white'}}>
           Sort By: 
           <select value={sortValue} onChange={handleSort}>
