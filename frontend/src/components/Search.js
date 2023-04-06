@@ -93,24 +93,16 @@ function Search({movies}) {
   const handleKeywordsSearch = e => {
     const start = performance.now();
     e.preventDefault();
-    setShowSuggest(false);
 
-    
-    fetch(`http://localhost:5000/nameSearch/${searchInput}`).then(
+    console.log(keywords);
+
+    fetch('http://localhost:5000/Keywords', {headers: {'keywords':keywords}}).then(
       response => response.json()
     ).then(
       data => {
-        const end = performance.now();
-        setSearchTime(end - start);
-        setSearchResult(data["movies"])
-        if(data["movies"].length === 0){
-          setNoResult(true);
-          setNoResultTag(true);
-          setNoResultInput(searchInput);
-        }else{setNoResult(false)
-              setNoResultTag(false)}
+        console.log(data);
       }
-    )
+    );
   };
 
   // keyword add

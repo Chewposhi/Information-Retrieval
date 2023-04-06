@@ -207,5 +207,33 @@ app.get("/AnalyseSent", (req, res) => {
     })
 });
 
+app.get("/Keywords", (req, res) => {
+    const Query = {
+        //"movie_dis_keywords":req.header('keywords')
+        "movie_tags":req.header('keywords')
+    };
+
+    const searchQuery = client.query()
+    .q(Query)
+    .qop("OR")
+    .addParams({
+            wt: 'json',
+            indent: true
+        })
+    .start(0)
+    .rows(20)
+
+    client.search(searchQuery, function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        };
+
+        const response = result.response;
+        res.json({"movies": response.docs});
+
+    });
+});
+
 
 app.listen(5000, () => {console.log(`server started on port 5000...`)});
