@@ -21,6 +21,7 @@ function Search({movies}) {
     new Array(genres.length).fill(false)
   );
   const [keywords, setKeywords] = useState([]);
+  const [desc, setDesc] = useState('');
   const [autoComplete, setAutoComplete] = useState([]);
   const [sortValue, setSortValue] = useState("movie/show year descending");
   const [searchTime, setSearchTime] = useState(null);
@@ -109,6 +110,7 @@ function Search({movies}) {
   const handleKeywordsAdd = e => {
     e.preventDefault();
     setKeywords(oldKeywords => [...oldKeywords, keywordInput]);
+    setDesc(keywordInput);
     setKeywordInput('');
   };
 
@@ -120,7 +122,7 @@ function Search({movies}) {
     }
   }
 
-  // handle enter key down search
+  // handle enter key down keyword Add
   const handleKeyDownKeywords = event => {
     if (event.key === 'Enter') {
       handleKeywordsAdd(event);
