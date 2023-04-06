@@ -92,6 +92,10 @@ function Search({movies}) {
 
   // Keywords search
   const handleKeywordsSearch = e => {
+    if(keywords.length == 0){
+      alert("No keyword detected! Please enter keywords");
+      return;
+    }
     const start = performance.now();
     e.preventDefault();
 

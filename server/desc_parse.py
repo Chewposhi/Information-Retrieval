@@ -1,10 +1,11 @@
 from textblob import TextBlob
 from textblob import Word
 from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
 import sys
 stop_words = set(stopwords.words('english'))
 
-
+lemmatizer = WordNetLemmatizer()
 
 def parse(desc):
     tokens = [w for (w, pos) in TextBlob(desc).pos_tags if (pos[0] == 'V' or pos[0] == 'N') ]
