@@ -313,7 +313,7 @@ function Search({movies}) {
         <button style={{margin:'5px', cursor:'pointer'}} onClick={()=>{setfuzzyN(fuzzyN-1)}}>make a more conservative guesses</button>
       </div>
       }
-      <p style={{color:'white'}}>level of search freedom:{fuzzyN}</p>
+      <p style={{color:'white'}}>level of guess freedom:{fuzzyN}</p>
       <p style={{color:'white'}}>number of results:{searchResult.length}</p>
       {searchList()}
     </section>
