@@ -222,6 +222,9 @@ function Search({movies}) {
             onKeyDown={handleKeyDownSearch}
           />
           <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
+          {showSuggest && <div className='dropdown'>
+          {autoComplete.map((item) => (<div style={{color:'white'}} onClick={()=>onAutoComplete(item.term)} className='dropdown-row'>{item.term}</div>))}
+        </div>}
           <h2 className="f2" style={{color:'yellow'}}>OR</h2>
           <h2 style={{color:'yellow'}}>Try our beta function!</h2>
           <h3 style={{color:'yellow'}}>Describe a movie you want to watch, provide 5 keywords, eg. cat, dog, adventure</h3>
@@ -243,9 +246,6 @@ function Search({movies}) {
           <button style={{cursor:'pointer'}} onClick={handleKeywordsSearch}>Search using keywords</button>
 
         </div>
-        {showSuggest && <div className='dropdown'>
-          {autoComplete.map((item) => (<div style={{color:'white'}} onClick={()=>onAutoComplete(item.term)} className='dropdown-row'>{item.term}</div>))}
-        </div>}
       </div>
       <div style={{paddingTop:'20px', display:'flex', justifyContent:'center', flexWrap:'wrap'}}>
         {genres.map(({ genre }, index) => {
