@@ -148,7 +148,6 @@ app.get("/MoreLikeThisCast/:id", (req, res) => {
 });
 
 app.get("/Fuzzy", (req, res) => {
-    console.log(req.header('n'));
     var inputArray = req.header('searchText').replace(':','');
     inputArray = inputArray.split(' ');
     for (let i = 0; i < inputArray.length; i++) {
