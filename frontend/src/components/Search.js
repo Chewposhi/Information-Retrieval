@@ -11,6 +11,7 @@ import '../Styles/search.css'
 function Search({movies}) {
 
   const [searchInput, setSearchInput] = useState("");
+  const [keywordInput, setKeywordInput] = useState("");
   const [showSuggest, setShowSuggest] = useState(false);
   const [noResultInput, setNoResultInput] = useState("");
   const [searchResult, setSearchResult] = useState([{}]);
@@ -19,9 +20,7 @@ function Search({movies}) {
   const [checkedState, setCheckedState] = useState(
     new Array(genres.length).fill(false)
   );
-  const [keywords, setKeywords] = useState(
-    new Array(5).fill('')
-  );
+  const [keywords, setKeywords] = useState([]);
   const [autoComplete, setAutoComplete] = useState([]);
   const [sortValue, setSortValue] = useState("movie/show year descending");
   const [searchTime, setSearchTime] = useState(null);
@@ -36,6 +35,12 @@ function Search({movies}) {
     e.preventDefault();
     setSearchInput(e.target.value);
     setShowSuggest(true);
+  };
+
+  // keyword box input change handle
+  const handleKeywordsChange = async e => {
+    e.preventDefault();
+    setKeywordInput(e.target.value);
   };
 
   // when checkboxes are changed
@@ -84,11 +89,48 @@ function Search({movies}) {
     )
   };
 
+  // Keywords search
+  const handleKeywordsSearch = e => {
+    const start = performance.now();
+    e.preventDefault();
+    setShowSuggest(false);
+
+    
+    fetch(`http://localhost:5000/nameSearch/${searchInput}`).then(
+      response => response.json()
+    ).then(
+      data => {
+        const end = performance.now();
+        setSearchTime(end - start);
+        setSearchResult(data["movies"])
+        if(data["movies"].length === 0){
+          setNoResult(true);
+          setNoResultTag(true);
+          setNoResultInput(searchInput);
+        }else{setNoResult(false)
+              setNoResultTag(false)}
+      }
+    )
+  };
+
+  // keyword add
+  const handleKeywordsAdd = e => {
+    e.preventDefault();
+    setKeywords(oldKeywords => [...oldKeywords, keywordInput]);
+  };
+
   // handle enter key down search
   const handleKeyDownSearch = event => {
     if (event.key === 'Enter') {
       handleClick(event);
       setShowSuggest(false);
+    }
+  }
+
+  // handle enter key down search
+  const handleKeyDownKeywords = event => {
+    if (event.key === 'Enter') {
+      handleKeywordsAdd(event);
     }
   }
 
@@ -166,16 +208,16 @@ function Search({movies}) {
               <h3 style={{paddingRight:'5px', color:'white'}}>{keyword}</h3>
             ))}
           </div>
+          <button style={{cursor:'pointer'}} onClick={handleKeywordsAdd}>Add</button>
           <input 
             className="pa3 bb br3 grow b--none bg-lightest-blue ma3"
             type = "text" 
             placeholder = "Enter keyword" 
-            onChange = {handleChange}
-            value = {searchInput}
-            onFocus = {() => handleFocus()}
-            onKeyDown={handleKeyDownSearch}
+            onChange = {handleKeywordsChange}
+            value = {keywordInput}
+            onKeyDown={handleKeyDownKeywords}
           />
-          <button style={{cursor:'pointer'}} onClick={handleClick}>Add</button>
+          <button style={{cursor:'pointer'}} onClick={handleKeywordsSearch}>Search using keywords</button>
 
         </div>
         {showSuggest && <div className='dropdown'>
