@@ -89,6 +89,7 @@ function Search({movies}) {
               setNoResultTag(false)}
       }
     )
+    setfuzzyN(3);
   };
 
   // Keywords search
@@ -190,6 +191,28 @@ function Search({movies}) {
     }
   }, [noResult]);
 
+  // handle more/less fuzzy
+  useEffect(() => {
+    if(fuzzyN<1){
+      alert('Wow! that is too conservative.')
+      return;
+    }
+    if(fuzzyN>10){
+      alert('Wow! that is too wild.')
+      return;
+    }
+    if(fuzzyN !=3){
+      fetch('http://localhost:5000/Fuzzy', {headers: {'searchText':searchInput, 'n':fuzzyN}}).then(
+        response => response.json()
+      ).then(
+        data => {
+          setSearchResult(data["movies"])
+          setNoResult(false)
+        }
+      )
+    }
+  }, [fuzzyN]);
+
   // Suggester
   useEffect(() => {
     if(searchInput.length < 4){
@@ -277,7 +300,14 @@ function Search({movies}) {
         </label>
         {searchTime && <div style={{color:'white'}}>Search Took: {searchTime} ms</div>}
       </div>
-      {noResultTag && <h2 style={{color:'white'}}>no result for "{noResultInput}", showing our best guesses!</h2>}
+      {noResultTag && 
+      <div>
+        <h2 style={{color:'white'}}>no result for "{noResultInput}", showing our best guesses!</h2>
+        <button style={{margin:'5px', cursor:'pointer'}} onClick={()=>{setfuzzyN(fuzzyN+1)}}>make a wilder guesses</button>
+        <button style={{margin:'5px', cursor:'pointer'}} onClick={()=>{setfuzzyN(fuzzyN-1)}}>make a more conservative guesses</button>
+      </div>
+      }
+      
       {searchList()}
     </section>
   );
