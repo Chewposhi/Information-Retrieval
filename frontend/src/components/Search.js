@@ -194,11 +194,13 @@ function Search({movies}) {
   // handle more/less fuzzy
   useEffect(() => {
     if(fuzzyN<1){
-      alert('Wow! that is too conservative.')
+      alert('Wow! that is too conservative.');
+      setfuzzyN(3);
       return;
     }
     if(fuzzyN>10){
-      alert('Wow! that is too wild.')
+      alert('Wow! that is too wild.');
+      setfuzzyN(3);
       return;
     }
     if(fuzzyN !=3){
@@ -307,7 +309,8 @@ function Search({movies}) {
         <button style={{margin:'5px', cursor:'pointer'}} onClick={()=>{setfuzzyN(fuzzyN-1)}}>make a more conservative guesses</button>
       </div>
       }
-      
+      <p style={{color:'white'}}>level of search freedom:{fuzzyN}</p>
+      <p style={{color:'white'}}>number of results:{searchResult.length}</p>
       {searchList()}
     </section>
   );
