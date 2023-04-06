@@ -96,7 +96,6 @@ function Search({movies}) {
       alert("No keyword detected! Please enter keywords");
       return;
     }
-    const start = performance.now();
     e.preventDefault();
 
     console.log(keywords);
@@ -161,6 +160,16 @@ function Search({movies}) {
     
   };
 
+  // handle keyword remove
+  const handleRemoveKeyword = (keyword) => {
+    const x = keywords.filter(function(item) {
+      return item != keyword
+    });
+    setKeywords(x);
+    
+  };
+
+
   
   // fuzzy search
   useEffect(() => {
@@ -215,7 +224,7 @@ function Search({movies}) {
           <div style={{display:'flex', justifyContent:'center'}}>
             <h3 style={{color:'yellow', paddingRight:'5px'}}>Keywords entered:</h3>
             {keywords.map((keyword) => (
-              <h3 style={{paddingRight:'5px', color:'white'}}>{keyword}</h3>
+              <h3 style={{paddingRight:'5px', color:'white', cursor:'pointer'}} onClick={()=>handleRemoveKeyword(keyword)}>{keyword}</h3>
             ))}
           </div>
           <button style={{cursor:'pointer'}} onClick={handleKeywordsAdd}>Add</button>
