@@ -6,6 +6,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+const { spawn } = require('child_process');
+
 var client = new SolrNode({
     host: '127.0.0.1',
     port: '8983',
@@ -100,7 +102,7 @@ app.get("/nameSearch/:q", (req, res) => {
 app.get("/MoreLikeThisName/:id", (req, res) => {
 
     const searchQuery = client.query()
-    .q("{!mlt qf=movie_name mintf=1 mindf=7}"+req.params.id)
+    .q("{!mlt qf=movie_name mintf=1 mindf=6}"+req.params.id)
     .qop("OR")
     .addParams({
             wt: 'json',
@@ -197,6 +199,13 @@ app.get("/AutoComplete/:searchText", (req, res) => {
     });
 });
 
+app.get("/AnalyseSent", (req, res) => {
+    const childPython = spawn('python', ['sentiment_analyse.py',req.header('review')])
+    childPython.stdout.on('data', (data) => {
+        const result = data.toString();
+        res.json(result)
+    })
+});
 
 
 app.listen(5000, () => {console.log(`server started on port 5000...`)});

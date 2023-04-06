@@ -20,7 +20,8 @@ function Search({movies}) {
     new Array(genres.length).fill(false)
   );
   const [autoComplete, setAutoComplete] = useState([]);
-  const [sortValue, setSortValue] = useState("movie year descending");
+  const [sortValue, setSortValue] = useState("movie/show year descending");
+  const [searchTime, setSearchTime] = useState(null);
 
   // use effect for initial page mount
   useEffect(() => {
@@ -58,6 +59,7 @@ function Search({movies}) {
 
   // Basic search
   const handleClick = e => {
+    const start = performance.now();
     e.preventDefault();
     setShowSuggest(false);
 
@@ -66,6 +68,8 @@ function Search({movies}) {
       response => response.json()
     ).then(
       data => {
+        const end = performance.now();
+        setSearchTime(end - start);
         setSearchResult(data["movies"])
         if(data["movies"].length === 0){
           setNoResult(true);
@@ -93,7 +97,13 @@ function Search({movies}) {
 
   // handleFocus
   const handleFocus = () => {
-    setShowSuggest(true)
+    if(searchInput.length === 0){
+      setShowSuggest(false)
+    }
+    else{
+      setShowSuggest(true)
+    }
+    
   };
 
   
@@ -128,15 +138,16 @@ function Search({movies}) {
 
   return (
     <section className="garamond">
-      <div className="navy georgia ma0 grow">
-        <h2 className="f2" style={{cursor:'pointer'}} onClick={()=>window.location.reload()}>Search a movie or TV show</h2>
+      <div className="navy georgia ma0 grow" onClick={()=>window.location.reload()}>
+        <img style={{width:'1000px'}} src={require('../Image/lightning-movie-streaming-service-high-resolution-color-logo.png')} />
+        <h2 className="f2" style={{cursor:'pointer', color:'white'}}>Search a movie or TV show</h2>
       </div>
       <div className="pa2">
         <div>
           <input 
             className="pa3 bb br3 grow b--none bg-lightest-blue ma3"
             type = "text" 
-            placeholder = "Search Movie" 
+            placeholder = "Search Movie or Show Titles " 
             onChange = {handleChange}
             value = {searchInput}
             onFocus = {() => handleFocus()}
@@ -145,14 +156,14 @@ function Search({movies}) {
           <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
         </div>
         {showSuggest && <div className='dropdown'>
-          {autoComplete.map((item) => (<div onClick={()=>onAutoComplete(item.term)} className='dropdown-row'>{item.term}</div>))}
+          {autoComplete.map((item) => (<div style={{color:'white'}} onClick={()=>onAutoComplete(item.term)} className='dropdown-row'>{item.term}</div>))}
         </div>}
       </div>
       <div style={{paddingTop:'20px', display:'flex', justifyContent:'center', flexWrap:'wrap'}}>
         {genres.map(({ genre }, index) => {
           return (
                   <div style={{display:'flex', flexDirection:'row', padding:'5px'}}>
-                    <p>{genre}</p>
+                    <p style={{color:'white'}}>{genre}</p>
                     <input
                       type="checkbox"
                       id={`custom-checkbox-${index}`}
@@ -167,7 +178,7 @@ function Search({movies}) {
           })}
       </div>
       <div>
-        <label>
+        <label style={{color:'white'}}>
           Sort By: 
           <select value={sortValue} onChange={handleSort}>
             {sorter.map((sorter) => (
@@ -175,8 +186,9 @@ function Search({movies}) {
             ))}
           </select>
         </label>
+        {searchTime && <div style={{color:'white'}}>Search Took: {searchTime} ms</div>}
       </div>
-      {noResultTag && <h2>no result for "{noResultInput}", showing our best guesses!</h2>}
+      {noResultTag && <h2 style={{color:'white'}}>no result for "{noResultInput}", showing our best guesses!</h2>}
       {searchList()}
     </section>
   );

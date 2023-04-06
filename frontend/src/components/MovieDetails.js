@@ -7,7 +7,7 @@ import '../Styles/review.css';
 
 const MovieDetails = () => {
     const {id} = useParams();
-    const [details, setDetails] = useState([{}]);
+    const [details, setDetails] = useState(null);
     const [reviews, setReviews] = useState(null);
     const [reviewsloaded, setReviewsloaded] = useState(false);
     const [moreByName, setMoreByName] = useState([]);
@@ -44,7 +44,20 @@ const MovieDetails = () => {
         .then(([dataName, dataCast]) => {
           setMoreByName(dataName);
           setMoreByCast(dataCast);
-          setMoreCombined(dataName.movies.concat(dataCast.movies));
+          const combined = dataName.movies.concat(dataCast.movies);
+          const uniqueIds = [];
+          const unique = combined.filter(element => {
+            const isDuplicate = uniqueIds.includes(element.id);
+          
+            if (!isDuplicate) {
+              uniqueIds.push(element.id);
+          
+              return true;
+            }
+          
+            return false;
+          });
+          setMoreCombined(unique);
           setMoreloaded(true);
         });
       
@@ -104,21 +117,24 @@ const MovieDetails = () => {
         
         <div>
             {poster && <img className="br-50 h10 w5 dib" alt="poster" src={[reviews.base.image.url]} />}
+            {details && <div>
+              <h1 style={{textDecoration:'underline', color:'white'}}>{details[0]["movie_name"]} ({details[0]["movie_year"]})</h1>
+              <h2 style={{color:'white'}}>Genre: </h2>
+              <h3 style={{color:'white'}}>{details[0]["movie_tags"]}</h3>
+              <h2 style={{color:'white'}}>Rating: </h2>
+              <h3 style={{color:'white'}}>{details[0]["movie_star"]}</h3>
+              <h2 style={{color:'white'}}>Director/Cast: </h2>
+              <h3 style={{color:'white'}}>{details[0]["movie_director_cast"].join(', ')}</h3>
+              <h2 style={{color:'white'}}>Description: </h2>
+              <h3 style={{color:'white'}}>{details[0]["movie_dis"]}</h3>
+              <a href="https://r.mtdv.me/watch?v=RYv6zes4do" target='_blank'>
+                <button style={{cursor:'pointer', borderRadius:'10px', color:'gold', background:'grey', width:'200px', height:'70px', fontSize:'30px'}}>Watch Now</button>
+              </a>
+            </div>}
             <div>
-              <h1 style={{textDecoration:'underline'}}>{details[0]["movie_name"]} ({details[0]["movie_year"]})</h1>
-              <h2>Genre: </h2>
-              <h3>{details[0]["movie_tags"]}</h3>
-              <h2>Rating: </h2>
-              <h3>{details[0]["movie_star"]}</h3>
-              <h2>Director/Cast: </h2>
-              {/*details && <h3>{details[0]["movie_director_cast"].join(', ')}</h3>*/}
-              <h2>Description: </h2>
-              <h3>{details[0]["movie_dis"]}</h3>
-            </div>
-            <div>
-              <h2 style={{borderTop:'dotted', marginTop:'20px'}}>Not what you were looking for? Here are movies with similar titles:</h2>
+              <h2 style={{borderTop:'dotted', marginTop:'20px', color:'white'}}>Not what you were looking for? Here are movies with similar titles:</h2>
               {moreLoaded && moreList()}
-              <h2 style={{borderTop:'dotted'}}>Reviews:</h2>
+              <h2 style={{borderTop:'dotted', color:'white'}}>Reviews:</h2>
               {reviewsloaded && reviewsList()}
             </div>
             
