@@ -25,6 +25,7 @@ function Search({movies}) {
   const [autoComplete, setAutoComplete] = useState([]);
   const [sortValue, setSortValue] = useState("movie/show year descending");
   const [searchTime, setSearchTime] = useState(null);
+  const [fuzzyN, setfuzzyN] = useState(3);
 
   // use effect for initial page mount
   useEffect(() => {
@@ -178,7 +179,7 @@ function Search({movies}) {
   // fuzzy search
   useEffect(() => {
     if(noResult){
-      fetch(`http://localhost:5000/Fuzzy/${searchInput}`).then(
+      fetch('http://localhost:5000/Fuzzy', {headers: {'searchText':searchInput, 'n':fuzzyN}}).then(
         response => response.json()
       ).then(
         data => {
