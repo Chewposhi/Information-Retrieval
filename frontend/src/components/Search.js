@@ -109,6 +109,7 @@ function Search({movies}) {
   const handleKeywordsAdd = e => {
     e.preventDefault();
     setKeywords(oldKeywords => [...oldKeywords, keywordInput]);
+    setKeywordInput('');
   };
 
   // handle enter key down search
