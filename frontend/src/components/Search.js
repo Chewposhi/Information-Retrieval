@@ -178,7 +178,6 @@ function Search({movies}) {
           })}
       </div>
       <div>
-        {searchTime && <div style={{color:'white'}}>Search Took: {searchTime} ms</div>}
         <label style={{color:'white'}}>
           Sort By: 
           <select value={sortValue} onChange={handleSort}>
@@ -187,8 +186,9 @@ function Search({movies}) {
             ))}
           </select>
         </label>
+        {searchTime && <div style={{color:'white'}}>Search Took: {searchTime} ms</div>}
       </div>
-      {noResultTag && <h2 style={{color:'grey'}}>no result for "{noResultInput}", showing our best guesses!</h2>}
+      {noResultTag && <h2 style={{color:'white'}}>no result for "{noResultInput}", showing our best guesses!</h2>}
       {searchList()}
     </section>
   );
