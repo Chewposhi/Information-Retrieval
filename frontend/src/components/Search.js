@@ -69,6 +69,10 @@ function Search({movies}) {
 
   // Basic search
   const handleClick = e => {
+    if(searchInput.length == 0){
+      alert('Please enter something');
+      return;
+    }
     const start = performance.now();
     e.preventDefault();
     setShowSuggest(false);
@@ -300,7 +304,7 @@ function Search({movies}) {
             ))}
           </select>
         </label>
-        {searchTime && <div style={{color:'white'}}>Search Took: {searchTime} ms</div>}
+        {searchTime && <div style={{color:'white', marginTop:'5px'}}>Search Took: {searchTime} ms</div>}
       </div>
       {noResultTag && 
       <div>
