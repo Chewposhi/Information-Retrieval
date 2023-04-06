@@ -100,7 +100,18 @@ function Search({movies}) {
     e.preventDefault();
 
     console.log(keywords);
+    console.log(desc);
 
+    // parse user desc
+    fetch('http://localhost:5000/DescrptionParse', {headers: {'description':desc}}).then(
+      response => response.json()
+    ).then(
+      data => {
+        console.log(data);
+      }
+    );
+    
+    // fetch by keywords
     fetch('http://localhost:5000/Keywords', {headers: {'keywords':keywords}}).then(
       response => response.json()
     ).then(
