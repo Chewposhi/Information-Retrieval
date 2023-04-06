@@ -19,6 +19,9 @@ function Search({movies}) {
   const [checkedState, setCheckedState] = useState(
     new Array(genres.length).fill(false)
   );
+  const [keywords, setKeywords] = useState(
+    new Array(5).fill('')
+  );
   const [autoComplete, setAutoComplete] = useState([]);
   const [sortValue, setSortValue] = useState("movie/show year descending");
   const [searchTime, setSearchTime] = useState(null);
@@ -154,6 +157,26 @@ function Search({movies}) {
             onKeyDown={handleKeyDownSearch}
           />
           <button style={{cursor:'pointer'}} onClick={handleClick}>Search</button>
+          <h2 className="f2" style={{color:'yellow'}}>OR</h2>
+          <h2 style={{color:'yellow'}}>Try our beta function!</h2>
+          <h3 style={{color:'yellow'}}>Describe a movie you want to watch, provide 5 keywords, eg. cat, dog, adventure</h3>
+          <div style={{display:'flex', justifyContent:'center'}}>
+            <h3 style={{color:'yellow', paddingRight:'5px'}}>Keywords entered:</h3>
+            {keywords.map((keyword) => (
+              <h3 style={{paddingRight:'5px', color:'white'}}>{keyword}</h3>
+            ))}
+          </div>
+          <input 
+            className="pa3 bb br3 grow b--none bg-lightest-blue ma3"
+            type = "text" 
+            placeholder = "Enter keyword" 
+            onChange = {handleChange}
+            value = {searchInput}
+            onFocus = {() => handleFocus()}
+            onKeyDown={handleKeyDownSearch}
+          />
+          <button style={{cursor:'pointer'}} onClick={handleClick}>Add</button>
+
         </div>
         {showSuggest && <div className='dropdown'>
           {autoComplete.map((item) => (<div style={{color:'white'}} onClick={()=>onAutoComplete(item.term)} className='dropdown-row'>{item.term}</div>))}
