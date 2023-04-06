@@ -122,6 +122,10 @@ function Search({movies}) {
 
   // keyword add
   const handleKeywordsAdd = e => {
+    if(keywordInput === ''){
+      alert('input is empty');
+      return;
+    }
     e.preventDefault();
     setKeywords(oldKeywords => [...oldKeywords, keywordInput]);
     setDesc(keywordInput);
