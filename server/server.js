@@ -207,6 +207,14 @@ app.get("/AnalyseSent", (req, res) => {
     })
 });
 
+app.get("/DescrptionParse", (req, res) => {
+    const childPython = spawn('python', ['desc_parse.py',req.header('description')])
+    childPython.stdout.on('data', (data) => {
+        const result = data.toString();
+        res.json(result)
+    })
+});
+
 app.get("/Keywords", (req, res) => {
     const Query = {
         //"movie_dis_keywords":req.header('keywords')
