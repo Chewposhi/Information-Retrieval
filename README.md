@@ -69,13 +69,13 @@ This step is required if you want to work with actual movie reviews getched from
 4. a new window should start in your browser, if you see "please connect to solr server" message, it means solr server is not started 
 5. otherwise, the application is up and running
 
-#### 4. [optional] Use dummy reviews in case of no rapid api
+#### 4. [optional] Use dummy reviews in case of no rapid api, reviews will be fetc1hed locally instead of from IMDB
 1. open a new terminal
 2. cd into the `frontend` folder
 3. run `npx json-server --watch src/Data/db.json --port 8000`
 4. check console for successful server start message
 5. go to file `frontend/components/MovieDetails.js`
-6. uncommnet line 77 to 84
-7. comment out line 67 to 74
+6. uncommnet line 76 to 87
+7. comment out line 76 to 74
 
 P.S. if you do the above steps, the movie review and poster for every movie will be the same
