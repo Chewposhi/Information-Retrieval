@@ -323,10 +323,10 @@ function Search({movies}) {
         <h2 style={{color:'white'}}>no result for "{noResultInput}", showing our best guesses!</h2>
         <button style={{margin:'5px', cursor:'pointer'}} onClick={()=>{setfuzzyN(fuzzyN+1)}}>make a wilder guesses</button>
         <button style={{margin:'5px', cursor:'pointer'}} onClick={()=>{setfuzzyN(fuzzyN-1)}}>make a more conservative guesses</button>
+        <p style={{color:'white'}}>level of guess freedom:{fuzzyN}</p>
+        <p style={{color:'white'}}>number of results:{searchResult.length}</p>
       </div>
       }
-      <p style={{color:'white'}}>level of guess freedom:{fuzzyN}</p>
-      <p style={{color:'white'}}>number of results:{searchResult.length}</p>
       {searchList()}
     </section>
   );
