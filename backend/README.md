@@ -24,7 +24,7 @@ features
 1. Ensure core is created
 2. run cmd `bin\post -c <core-name> <dir-to-file.xml/csv/json>` (Linux and Mac system)
 3. run cmd `java -jar example/exampledocs/post.jar [-h]` h flag is for help (Windows system)
-4. cmd that worked for me `java -jar -Dc=films -Dtype=application/json  example/exampledocs/post.jar ..\data\merged.json`
+4. cmd that worked for me `java -jar -Dc=films -Dtype=application/json  example/exampledocs/post.jar ..\data\merged_with_keywords.json`
     - -Dc states the corename
     - -Dtype states type of file posted
     - note the relative directory used for data

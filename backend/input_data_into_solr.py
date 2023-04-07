@@ -20,10 +20,11 @@ curl -X POST -H "Content-type:application/json" --data-binary "{
      'stored':true}
 }" http://localhost:8983/solr/films2/schema
 
-curl -X POST -H "Content-type:application/json" --data-binary "{'add-field':{'name':'movie_Name','type':'text_general','stored':true },'add-field':{'name':'movfmosdmv','type':'text_general','stored':true}}" http://localhost:8983/solr/films2/schema
+curl -X POST -H "Content-type:application/json" --data-binary "{'add-field':{'name':'movie_Name','type':'text_general','stored':true,'indexed':true },'add-field':{'name':'movie_dis','type':'text_en_stopwords','stored':true,'indexed':true},'add-field':{'name':'movie_year','type':'text_general','stored':true,'indexed':true },'add-field':{'name':'movie_director_cast','type':'text_general','stored':true,'indexed':true },'add-field':{'name':'movie_tags','type':'text_general','stored':true,'indexed':true },'add-field':{'name':'movie_star','type':'text_general','stored':true,'indexed':true },'add-field':{'name':'movie_Id','type':'text_general','stored':true},'add-field':{'name':'movie_id','type':'text_general','stored':true},'add-field':{'name':'movie_Poster','type':'text_general','stored':true},'add-field':{'name':'movie_name','type':'text_general','stored':true,'indexed':true },'add-field':{'name':'movie_dis_keywords','type':'text_general','stored':true,'indexed':true}}" http://localhost:8983/solr/films/schema
 
+curl -X POST -H "Content-type:application/json" --data-binary "{'add-copy-field' : {'source':'*','dest':'_text_'}}" http://localhost:8983/solr/films/schema
 
-curl -X POST -H "Content-type:application/json" --data-binary "{ 'add-field-type' : { 'name':'text_ngrams', 'class':'solr.TextField', 'positionIncrementGap':'100','analyzer' : {'tokenizer':{ 'class':'solr.StandardTokenizerFactory'},'filters':[{'class':'solr.StopFilterFactory','words':'stopwords.txt'},{'class':'solr.LowerCaseFilterFactory'},{'class':'solr.NGramFilterFactory','minGramSize':'3','maxGramSize':'5'}]}}}" http://localhost:8983/solr/films/schema
+curl -X POST -H "Content-type:application/json" --data-binary "{ 'add-field-type' : { 'name':'text_en_stopwords', 'class':'solr.TextField', 'positionIncrementGap':'100','analyzer' : {'tokenizer':{ 'class':'solr.StandardTokenizerFactory'},'filters':[{'class':'solr.StopFilterFactory','words':'stopwords_en_modified.txt'},{'class':'solr.LowerCaseFilterFactory'}]}}}" http://localhost:8983/solr/films/schema
 
 # Do a health check.
 solr.ping()
