@@ -13,6 +13,7 @@ function Search({movies}) {
   const [searchInput, setSearchInput] = useState("");
   const [keywordInput, setKeywordInput] = useState("");
   const [showSuggest, setShowSuggest] = useState(false);
+  const [showAddBtn, setShowAddBtn] = useState(true);
   const [noResultInput, setNoResultInput] = useState("");
   const [searchResult, setSearchResult] = useState([{}]);
   const [noResult, setNoResult] = useState(false);
@@ -141,6 +142,7 @@ function Search({movies}) {
       alert('input is empty');
       return;
     }
+    setShowAddBtn(false);
     e.preventDefault();
     setKeywords(oldKeywords => [...oldKeywords, keywordInput]);
     setDesc(keywordInput);
@@ -185,6 +187,7 @@ function Search({movies}) {
       return item != keyword
     });
     setKeywords(x);
+    setShowAddBtn(true);
     
   };
 
@@ -265,15 +268,15 @@ function Search({movies}) {
           {autoComplete.map((item) => (<div style={{color:'white'}} onClick={()=>onAutoComplete(item.term)} className='dropdown-row'>{item.term}</div>))}
         </div>}
           <h2 className="f2" style={{color:'yellow'}}>OR</h2>
-          <h2 style={{color:'yellow'}}>Try our beta function!</h2>
-          <h3 style={{color:'yellow'}}>Describe a movie you want to watch, provide 5 keywords, eg. cat, dog, adventure</h3>
+          <h2 style={{color:'yellow'}}>Try our beta function: desc2movie</h2>
+          <h3 style={{color:'yellow'}}>Describe a movie you want to watch, focus on elments of the movies. eg. "man and girl survive zombie"</h3>
           <div style={{display:'flex', justifyContent:'center'}}>
-            <h3 style={{color:'yellow', paddingRight:'5px'}}>Keywords entered:</h3>
+            <h3 style={{color:'yellow', paddingRight:'5px'}}>description entered:</h3>
             {keywords.map((keyword) => (
               <h3 style={{paddingRight:'5px', color:'white', cursor:'pointer'}} onClick={()=>handleRemoveKeyword(keyword)}>{keyword}</h3>
             ))}
           </div>
-          <button style={{cursor:'pointer'}} onClick={handleKeywordsAdd}>Add</button>
+          {showAddBtn && <button style={{cursor:'pointer'}} onClick={handleKeywordsAdd}>Add</button>}
           <input 
             className="pa3 bb br3 grow b--none bg-lightest-blue ma3"
             type = "text" 
@@ -282,7 +285,7 @@ function Search({movies}) {
             value = {keywordInput}
             onKeyDown={handleKeyDownKeywords}
           />
-          <button style={{cursor:'pointer'}} onClick={handleKeywordsSearch}>Search using keywords</button>
+          <button style={{cursor:'pointer'}} onClick={handleKeywordsSearch}>convert description to movies</button>
 
         </div>
       </div>
