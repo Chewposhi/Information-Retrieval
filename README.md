@@ -67,7 +67,7 @@ This step is required if you want to work with actual movie reviews getched from
 2. cd into the `frontend` folder
 3. run `npm start`
 4. a new window should start in your browser, if you see "please connect to solr server" message, it means solr server is not started 
-5. otherwise, the application is up and running
+5. otherwise, the application is up and running. Happy searching ;)
 
 #### 4. [optional] Use dummy reviews in case of no rapid api, reviews will be fetc1hed locally instead of from IMDB
 1. open a new terminal
