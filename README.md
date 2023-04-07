@@ -7,7 +7,7 @@ This is a movie recommendation website that has the following features
 - Result filtering based on genre
 - Result sorting
 - More like this recommendation
-- desc2movie, comvert a user provided description to movie result
+- desc2movie, convert a user provided description to movie result
 - Live sentiment analysis of movie reviews
 
 ## How to set up
