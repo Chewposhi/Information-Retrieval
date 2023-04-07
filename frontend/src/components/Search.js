@@ -28,6 +28,8 @@ function Search({movies}) {
   const [sortValue, setSortValue] = useState("default");
   const [searchTime, setSearchTime] = useState(null);
   const [fuzzyN, setfuzzyN] = useState(3);
+  let start = 0;
+  let end = 0;
 
   // use effect for initial page mount
   useEffect(() => {
@@ -75,23 +77,22 @@ function Search({movies}) {
       alert('Please enter something');
       return;
     }
-    const start = performance.now();
     e.preventDefault();
     setShowSuggest(false);
 
-    
+    start = performance.now();
     fetch(`http://localhost:5000/nameSearch/${searchInput}`).then(
       response => response.json()
     ).then(
       data => {
-        const end = performance.now();
-        setSearchTime(end - start);
         setSearchResult(data["movies"])
         if(data["movies"].length === 0){
           setNoResult(true);
           setNoResultTag(true);
           setNoResultInput(searchInput);
         }else{setNoResult(false)
+              end = performance.now();
+              setSearchTime(end - start);
               setNoResultTag(false)}
       }
     )
@@ -100,21 +101,18 @@ function Search({movies}) {
 
   // Keywords search, parse description first
   const handleKeywordsSearch = e => {
+    start = performance.now();
     if(keywords.length == 0){
       alert("No description added! Please add description");
       return;
     }
     e.preventDefault();
 
-    console.log(keywords);
-    console.log(desc);
-
     // parse user desc
     fetch('http://localhost:5000/DescrptionParse', {headers: {'description':desc}}).then(
       response => response.json()
     ).then(
       data => {
-        console.log(data);
         setParsedDesc(data);
       }
     );
@@ -128,7 +126,8 @@ function Search({movies}) {
         response => response.json()
       ).then(
         data => {
-          console.log(data);
+          end = performance.now();
+          setSearchTime(end - start);
           setSearchResult(data["movies"]);
         }
       );
@@ -200,6 +199,8 @@ function Search({movies}) {
         response => response.json()
       ).then(
         data => {
+          end = performance.now();
+          setSearchTime(end - start);
           setSearchResult(data["movies"])
           setNoResult(false)
         }
