@@ -75,7 +75,7 @@ This step is required if you want to work with actual movie reviews getched from
 3. run `npx json-server --watch src/Data/db.json --port 8000`
 4. check console for successful server start message
 5. go to file `frontend/components/MovieDetails.js`
-6. uncommnet line 76 to 87
-7. comment out line 76 to 74
+6. uncommnet line 64 to 72
+7. comment out line 76 to 87
 
 P.S. if you do the above steps, the movie review and poster for every movie will be the same
