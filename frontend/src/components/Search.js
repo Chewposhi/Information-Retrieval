@@ -28,8 +28,12 @@ function Search({movies}) {
   const [sortValue, setSortValue] = useState("default");
   const [searchTime, setSearchTime] = useState(null);
   const [fuzzyN, setfuzzyN] = useState(3);
-  let start = 0;
-  let end = 0;
+  var basicStart = 0;
+  var basicEnd = 0;
+  var fuzzyStart = 0;
+  var fuzzyEnd = 0;
+  var descStart = 0;
+  var descEnd = 0;
 
   // use effect for initial page mount
   useEffect(() => {
@@ -80,7 +84,7 @@ function Search({movies}) {
     e.preventDefault();
     setShowSuggest(false);
 
-    start = performance.now();
+    basicStart = performance.now();
     fetch(`http://localhost:5000/nameSearch/${searchInput}`).then(
       response => response.json()
     ).then(
@@ -91,8 +95,8 @@ function Search({movies}) {
           setNoResultTag(true);
           setNoResultInput(searchInput);
         }else{setNoResult(false)
-              end = performance.now();
-              setSearchTime(end - start);
+              basicEnd = performance.now();
+              setSearchTime(basicEnd - basicStart);
               setNoResultTag(false)}
       }
     )
@@ -101,7 +105,6 @@ function Search({movies}) {
 
   // Keywords search, parse description first
   const handleKeywordsSearch = e => {
-    start = performance.now();
     if(keywords.length == 0){
       alert("No description added! Please add description");
       return;
@@ -120,14 +123,15 @@ function Search({movies}) {
 
   // query solr with parsed description
   useEffect(() => {
+    descStart = performance.now();
     if(parsedDesc.length != 0){
       // fetch by tokenised desc
       fetch('http://localhost:5000/Keywords', {headers: {'keywords':parsedDesc}}).then(
         response => response.json()
       ).then(
         data => {
-          end = performance.now();
-          setSearchTime(end - start);
+          descEnd = performance.now();
+          setSearchTime(descEnd - descStart);
           setSearchResult(data["movies"]);
         }
       );
@@ -194,13 +198,16 @@ function Search({movies}) {
   
   // fuzzy search
   useEffect(() => {
+    fuzzyStart = performance.now()
     if(noResult){
       fetch('http://localhost:5000/Fuzzy', {headers: {'searchText':searchInput, 'n':fuzzyN}}).then(
         response => response.json()
       ).then(
         data => {
-          end = performance.now();
-          setSearchTime(end - start);
+          fuzzyEnd = performance.now();
+          console.log(fuzzyEnd);
+          console.log(basicStart);
+          setSearchTime(fuzzyEnd - fuzzyStart);
           setSearchResult(data["movies"])
           setNoResult(false)
         }
