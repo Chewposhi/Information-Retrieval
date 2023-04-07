@@ -13,7 +13,7 @@ def parse(desc):
     for token in tokens:
         if token not in stop_words:
             lemm.append(lemmatizer.lemmatize(token))
-    
+    lemm = (", ".join(lemm))
     return lemm
 
 def main():

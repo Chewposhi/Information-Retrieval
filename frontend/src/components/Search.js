@@ -21,7 +21,7 @@ function Search({movies}) {
     new Array(genres.length).fill(false)
   );
   const [keywords, setKeywords] = useState([]);
-  const [parsedDesc, setParsedDesc] = useState([]);
+  const [parsedDesc, setParsedDesc] = useState('');
   const [desc, setDesc] = useState('');
   const [autoComplete, setAutoComplete] = useState([]);
   const [sortValue, setSortValue] = useState("default");
@@ -123,7 +123,7 @@ function Search({movies}) {
   useEffect(() => {
     if(parsedDesc.length != 0){
       // fetch by tokenised desc
-      fetch('http://localhost:5000/Keywords', {headers: {'keywords':keywords}}).then(
+      fetch('http://localhost:5000/Keywords', {headers: {'keywords':parsedDesc}}).then(
         response => response.json()
       ).then(
         data => {
