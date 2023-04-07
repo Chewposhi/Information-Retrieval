@@ -200,8 +200,6 @@ function Search({movies}) {
       ).then(
         data => {
           fuzzyEnd = performance.now();
-          console.log(fuzzyEnd);
-          console.log(basicStart);
           setSearchTime(fuzzyEnd - fuzzyStart);
           setSearchResult(data["movies"])
           setNoResult(false)
