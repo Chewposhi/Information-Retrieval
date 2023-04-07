@@ -228,7 +228,7 @@ app.get("/Keywords", (req, res) => {
             indent: true
         })
     .start(0)
-    .rows(20)
+    .rows(10)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
