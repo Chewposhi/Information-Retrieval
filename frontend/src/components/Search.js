@@ -281,7 +281,7 @@ function Search({movies}) {
           <input 
             className="pa3 bb br3 grow b--none bg-lightest-blue ma3"
             type = "text" 
-            placeholder = "Enter keyword" 
+            placeholder = "Enter description" 
             onChange = {handleKeywordsChange}
             value = {keywordInput}
             onKeyDown={handleKeyDownKeywords}
