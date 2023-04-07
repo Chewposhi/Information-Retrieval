@@ -60,42 +60,31 @@ const MovieDetails = () => {
           setMoreCombined(unique);
           setMoreloaded(true);
         });
-      
-
-
-      // fetch reviews from imdb
-      /*fetch(`https://imdb8.p.rapidapi.com/title/get-user-reviews?tconst=${details[0].movie_id}`, options)
-      .then(response => response.json())
-      .then(response => {setReviews(response);
-                         setPoster(true);
-                         setReviewsloaded(true);
-                         console.log(reviews);
-                         })
-      .catch(err => console.error(err));*/
 
       // fetching test data from json server
-      fetch("http://localhost:8000/reviews")
-      .then(response => response.json())
-      .then(response => {
-        setReviews(response[0]);
-        setPoster(true);
-        setReviewsloaded(true);
-      }
-      );
+      // fetch("http://localhost:8000/reviews")
+      // .then(response => response.json())
+      // .then(response => {
+      //   setReviews(response[0]);
+      //   setPoster(true);
+      //   setReviewsloaded(true);
+      // }
+      // );
       
     }, []);
 
-    /*useEffect(() => {
-      // fetch reviews from imdb
-      fetch(`https://imdb8.p.rapidapi.com/title/get-user-reviews?tconst=${details[0].movie_id}`, options)
-      .then(response => response.json())
-      .then(response => {setReviews(response);
-                         setPoster(true);
-                         setReviewsloaded(true);
-                         })
-      .catch(err => console.error(err));
-      
-    }, [details]);*/
+    useEffect(() => {
+      if(details != null){
+        // fetch reviews from imdb
+        fetch(`https://imdb8.p.rapidapi.com/title/get-user-reviews?tconst=${details[0].movie_id}`, options)
+        .then(response => response.json())
+        .then(response => {setReviews(response);
+                          setPoster(true);
+                          setReviewsloaded(true);
+                          })
+        .catch(err => console.error(err));
+      } 
+    }, [details]);
 
     function reviewsList() {
       return (

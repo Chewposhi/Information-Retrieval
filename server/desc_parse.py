@@ -3,6 +3,12 @@ from textblob import Word
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 import sys
+import nltk
+
+
+nltk.download('averaged_perceptron_tagger')
+nltk.download('punkt')
+
 stop_words = set(stopwords.words('english'))
 
 lemmatizer = WordNetLemmatizer()
