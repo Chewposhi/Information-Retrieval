@@ -216,8 +216,8 @@ app.get("/DescrptionParse", (req, res) => {
 
 app.get("/Keywords", (req, res) => {
     const Query = {
-        //"movie_dis_keywords":req.header('keywords')
-        "movie_tags":req.header('keywords')
+        "movie_dis_keywords":req.header('keywords')
+        //"movie_tags":req.header('keywords')
     };
 
     const searchQuery = client.query()

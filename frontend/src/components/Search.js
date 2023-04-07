@@ -21,6 +21,7 @@ function Search({movies}) {
     new Array(genres.length).fill(false)
   );
   const [keywords, setKeywords] = useState([]);
+  const [parsedDesc, setParsedDesc] = useState([]);
   const [desc, setDesc] = useState('');
   const [autoComplete, setAutoComplete] = useState([]);
   const [sortValue, setSortValue] = useState("movie/show year descending");
@@ -96,7 +97,7 @@ function Search({movies}) {
     setfuzzyN(3);
   };
 
-  // Keywords search
+  // Keywords search, parse description first
   const handleKeywordsSearch = e => {
     if(keywords.length == 0){
       alert("No keyword detected! Please enter keywords");
@@ -113,18 +114,26 @@ function Search({movies}) {
     ).then(
       data => {
         console.log(data);
-      }
-    );
-    
-    // fetch by keywords
-    fetch('http://localhost:5000/Keywords', {headers: {'keywords':keywords}}).then(
-      response => response.json()
-    ).then(
-      data => {
-        console.log(data);
+        setParsedDesc(data);
       }
     );
   };
+
+  // query solr with parsed description
+  useEffect(() => {
+    if(parsedDesc.length != 0){
+      // fetch by tokenised desc
+      fetch('http://localhost:5000/Keywords', {headers: {'keywords':keywords}}).then(
+        response => response.json()
+      ).then(
+        data => {
+          console.log(data);
+          setSearchResult(data["movies"]);
+        }
+      );
+    }
+  }, [parsedDesc]);
+
 
   // keyword add
   const handleKeywordsAdd = e => {
