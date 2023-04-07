@@ -1,7 +1,13 @@
-# Information Retrieval
-Movie Recommendation website
-Search based on keywords -> description, title 
-Classification on reviews taken from imdb api 
+# Information Retrieval Project
+## What is out system about?
+This is a movie recommendation website that has the following features
+- Basic movie title query
+- Fuzzy query with dynamic freedom
+- Auto complete query
+- Result filtering based on genre
+- Result sorting
+- More like this recommendation
+- desc2movie, comvert a user provided description to movie result
 
 Search/Home page
 - displays some movies tiles
