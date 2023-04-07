@@ -1,5 +1,5 @@
 # Information Retrieval Project
-## What is out system about?
+## What is our application about?
 This is a movie recommendation website that has the following features
 - Basic movie title query
 - Fuzzy query with dynamic freedom
