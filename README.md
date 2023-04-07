@@ -10,3 +10,10 @@ This is a movie recommendation website that has the following features
 - desc2movie, comvert a user provided description to movie result
 - Live sentiment analysis of movie reviews
 
+## How to set up
+
+### Componets of the system
+
+- ReactJs frontend
+- NodeJs backend 
+- Apache Solr database
