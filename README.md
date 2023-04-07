@@ -78,4 +78,4 @@ This step is required if you want to work with actual movie reviews getched from
 6. uncommnet line 65 to 72
 7. comment out line 77 to 87
 
-P.S. if you do the above steps, the movie review and poster for every movie will be the same
+P.S. if you do the above step 4, the movie reviews and poster for every movie will be the same
