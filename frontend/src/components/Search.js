@@ -32,8 +32,6 @@ function Search({movies}) {
   var basicEnd = 0;
   var fuzzyStart = 0;
   var fuzzyEnd = 0;
-  var descStart = 0;
-  var descEnd = 0;
 
   // use effect for initial page mount
   useEffect(() => {
@@ -123,15 +121,12 @@ function Search({movies}) {
 
   // query solr with parsed description
   useEffect(() => {
-    descStart = performance.now();
     if(parsedDesc.length != 0){
       // fetch by tokenised desc
       fetch('http://localhost:5000/Keywords', {headers: {'keywords':parsedDesc}}).then(
         response => response.json()
       ).then(
         data => {
-          descEnd = performance.now();
-          setSearchTime(descEnd - descStart);
           setSearchResult(data["movies"]);
         }
       );
