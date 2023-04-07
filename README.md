@@ -27,7 +27,7 @@ Download latest version of node.js from [https://nodejs.org/en/]
 
 #### 3. Install JAVA
 1. install Java on local machine
-2. set JAVA_HOME environment variable to directory location of jre
+2. add java to your system path
 
 #### 4. Obtain API from Rapid API
 This step is required if you want to work with actual movie reviews getched from IMDB. If you fail this step, you can still work with dummy data, instruction is in next section, step 4. Go to Rapid API and sign up. search for IMDb API (https://rapidapi.com/apidojo/api/imdb8) and subsceibe to the free option. Obtain X-RapidAPI-Key from it and update the environment variable. Steps for updating environment variable is in the file `frontend/.env.example`
