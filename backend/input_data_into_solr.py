@@ -24,7 +24,7 @@ curl -X POST -H "Content-type:application/json" --data-binary "{'add-field':{'na
 
 curl -X POST -H "Content-type:application/json" --data-binary "{'add-copy-field' : {'source':'*','dest':'_text_'}}" http://localhost:8983/solr/films/schema
 
-curl -X POST -H "Content-type:application/json" --data-binary "{ 'add-field-type' : { 'name':'text_en_stopwords', 'class':'solr.TextField', 'positionIncrementGap':'100','analyzer' : {'tokenizer':{ 'class':'solr.StandardTokenizerFactory'},'filters':[{'class':'solr.StopFilterFactory','words':'stopwords_en_modified.txt'},{'class':'solr.LowerCaseFilterFactory'}]}}}" http://localhost:8983/solr/films/schema
+curl -X POST -H "Content-type:application/json" --data-binary "{ 'add-field-type' : { 'name':'text_en_stopwords', 'class':'solr.TextField', 'positionIncrementGap':'100','analyzer' : {'tokenizer':{ 'class':'solr.StandardTokenizerFactory'},'filters':[{'class':'solr.LowerCaseFilterFactory'},{'class':'solr.StopFilterFactory','words':'stopwords_en_modified.txt'}]}}}" http://localhost:8983/solr/films/schema
 
 # Do a health check.
 solr.ping()
