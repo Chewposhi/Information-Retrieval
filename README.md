@@ -47,7 +47,7 @@ This step is required if you want to work with actual movie reviews getched from
 2. run `pip install -r requirements.txt` to install neccessary packages from python
 3. if there is no error, move to the next step
 
-### Steps to start the application
+## How to start the application
 
 #### 1. Start the Solr server
 1. run cmd in administrator mode
