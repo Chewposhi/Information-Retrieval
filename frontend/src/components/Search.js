@@ -24,7 +24,7 @@ function Search({movies}) {
   const [parsedDesc, setParsedDesc] = useState([]);
   const [desc, setDesc] = useState('');
   const [autoComplete, setAutoComplete] = useState([]);
-  const [sortValue, setSortValue] = useState("movie/show year descending");
+  const [sortValue, setSortValue] = useState("default");
   const [searchTime, setSearchTime] = useState(null);
   const [fuzzyN, setfuzzyN] = useState(3);
 

@@ -23,6 +23,12 @@ export const sorter = [
         return b.movie_star-a.movie_star
         }
     },
+    {
+        sort: "default",
+        func: ()=>function (a,b){
+            return
+            }
+        },
 
   ];
 	 	 
