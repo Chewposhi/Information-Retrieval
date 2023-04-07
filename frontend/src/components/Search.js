@@ -101,7 +101,7 @@ function Search({movies}) {
   // Keywords search, parse description first
   const handleKeywordsSearch = e => {
     if(keywords.length == 0){
-      alert("No keyword detected! Please enter keywords");
+      alert("No keyword added! Please add keywords");
       return;
     }
     e.preventDefault();
