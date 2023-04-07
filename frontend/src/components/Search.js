@@ -270,6 +270,7 @@ function Search({movies}) {
           <h2 className="f2" style={{color:'yellow'}}>OR</h2>
           <h2 style={{color:'yellow'}}>Try our beta function: desc2movie</h2>
           <h3 style={{color:'yellow'}}>Describe a movie you want to watch, focus on elments of the movies. eg. "man and girl survive zombie"</h3>
+          <h3 style={{color:'red'}}>P.S. refresh the page before you switch between basic search and desc2movie</h3>
           <div style={{display:'flex', justifyContent:'center'}}>
             <h3 style={{color:'yellow', paddingRight:'5px'}}>description entered:</h3>
             {keywords.map((keyword) => (
