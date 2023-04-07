@@ -72,7 +72,8 @@ const MovieDetails = () => {
       // );
       
     }, []);
-
+      
+    // fetching reviews from imdb 
     useEffect(() => {
       if(details != null){
         // fetch reviews from imdb
