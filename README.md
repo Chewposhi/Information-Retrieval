@@ -1,6 +1,6 @@
 # Information Retrieval Project
 ## What is our application about?
-This is a movie recommendation website that has the following features
+This is a movie streaming website that has the following features
 - Basic movie title query
 - Fuzzy query with dynamic freedom
 - Auto-complete query
