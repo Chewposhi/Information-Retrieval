@@ -1,0 +1,1356 @@
+Query: dirven
+
+Before: 0 result
+
+After Implementing Fuzzy Search:
+
+{
+   "count":24,
+   "result":[
+      {
+         "movie_Name":[
+            "Driven"
+         ],
+         "movie_Id":[
+            "tt0132245"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMjA5MDk4NzI0NF5BMl5BanBnXkFtZTYwNjU0Nzc5._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Driven"
+         ],
+         "movie_id":[
+            "tt0132245"
+         ],
+         "movie_dis":"A young hot shot driver is in the middle of a championship season and is coming apart at the seams. A former CART champion is called in to give him guidance.",
+         "movie_year":[
+            "2001"
+         ],
+         "movie_director_cast":[
+            "Renny Harlin",
+            "Sylvester Stallone",
+            "Kip Pardue",
+            "Til Schweiger",
+            "Burt Reynolds"
+         ],
+         "movie_tags":[
+            "Action, Drama, Sport"
+         ],
+         "movie_star":[
+            "4.6"
+         ],
+         "movie_dis_keywords":[
+            "young",
+            "hot",
+            "shot",
+            "driver",
+            "middle",
+            "championship",
+            "season",
+            "coming",
+            "seam",
+            "former",
+            "CART",
+            "champion",
+            "called",
+            "give",
+            "guidance"
+         ],
+         "id":"71748056-7ba3-4ab0-929d-2f465c34f7dd",
+         "_version_":1762483467282546700
+      },
+      {
+         "movie_Name":[
+            "Driven"
+         ],
+         "movie_Id":[
+            "tt8451888"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BOGYwOTE2NDAtYzU4Yy00NjAzLWI4YzMtZTQyNGZhZTU3MjhjXkEyXkFqcGdeQXVyMTA4ODQyNDYx._V1_QL75_UX190_CR0,2,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Driven"
+         ],
+         "movie_id":[
+            "tt8451888"
+         ],
+         "movie_dis":"A resilient girl with a tragic past and a heart of gold falls in love with a bad boy race car driver.",
+         "movie_year":[
+            "2018"
+         ],
+         "movie_director_cast":[
+            "Olivia Grace Applegate",
+            "Michael Roark",
+            "Julian Silva",
+            "Megan Quinn"
+         ],
+         "movie_tags":[
+            "Romance"
+         ],
+         "movie_star":[
+            "7.1"
+         ],
+         "movie_dis_keywords":[
+            "resilient",
+            "girl",
+            "tragic",
+            "past",
+            "heart",
+            "gold",
+            "fall",
+            "love",
+            "bad",
+            "boy",
+            "race",
+            "car",
+            "driver"
+         ],
+         "id":"b88e5a2e-5cb3-42f4-b0c8-e211b90187b4",
+         "_version_":1762483467297226800
+      },
+      {
+         "movie_Name":[
+            "Diners, Drive-ins and Dives"
+         ],
+         "movie_Id":[
+            "tt1020913"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMGI4ZjVmM2EtZGEwMS00ODYxLTg0YjItZDI5MDE3ZTZjMWRkXkEyXkFqcGdeQXVyMTAwMzM3NDI3._V1_QL75_UY281_CR1,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Diners, Drive-ins and Dives"
+         ],
+         "movie_id":[
+            "tt1020913"
+         ],
+         "movie_dis":"Food Network's Guy Fieri rolls out to visit America's favorite diners, drive-ins and dives, interviewing the owners of the food establishments and samples the items on their menus.",
+         "movie_year":[
+            "2006"
+         ],
+         "movie_director_cast":[
+            "Guy Fieri",
+            "Guy Fieri",
+            "Hunter Fieri",
+            "Ryder Fieri",
+            "Jules Fieri"
+         ],
+         "movie_tags":[
+            "Reality-TV"
+         ],
+         "movie_star":[
+            "7.4"
+         ],
+         "movie_dis_keywords":[
+            "Food",
+            "Network",
+            "Guy",
+            "Fieri",
+            "roll",
+            "visit",
+            "America",
+            "favorite",
+            "diner",
+            "drive-in",
+            "dive",
+            "interviewing",
+            "owner",
+            "food",
+            "establishment",
+            "sample",
+            "item",
+            "menu"
+         ],
+         "id":"9aeee98a-044b-4e8a-be41-0b01dae4ddb1",
+         "_version_":1762483467858215000
+      },
+      {
+         "movie_Name":[
+            "Siren"
+         ],
+         "movie_Id":[
+            "tt5615700"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMjFmYjFmMDgtNjk1Zi00NTc2LWIwOGEtZWIxYTdmMWVmYWVkXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_QL75_UY281_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Siren"
+         ],
+         "movie_id":[
+            "tt5615700"
+         ],
+         "movie_dis":"A coastal town known for its legend of once being home to mermaids is turned upside down when a mysterious girl appears and begins wreaking havoc.",
+         "movie_year":[
+            "2018"
+         ],
+         "movie_director_cast":[
+            "Alex Roe",
+            "Eline Powell",
+            "Fola Evans-Akingbola",
+            "Ian Verdun"
+         ],
+         "movie_tags":[
+            "Drama, Fantasy"
+         ],
+         "movie_star":[
+            "6.9"
+         ],
+         "movie_dis_keywords":[
+            "coastal",
+            "town",
+            "known",
+            "legend",
+            "home",
+            "mermaid",
+            "turned",
+            "mysterious",
+            "girl",
+            "appears",
+            "begin",
+            "wreaking",
+            "havoc"
+         ],
+         "id":"ca36b0bc-4823-4991-ae1c-11cc616e3086",
+         "_version_":1762483466783424500
+      },
+      {
+         "movie_Name":[
+            "Taxi Driver"
+         ],
+         "movie_Id":[
+            "tt0075314"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BM2M1MmVhNDgtNmI0YS00ZDNmLTkyNjctNTJiYTQ2N2NmYzc2XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_QL75_UX190_CR0,4,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Taxi Driver"
+         ],
+         "movie_id":[
+            "tt0075314"
+         ],
+         "movie_dis":"A mentally unstable veteran works as a nighttime taxi driver in New York City, where the perceived decadence and sleaze fuels his urge for violent action.",
+         "movie_director_cast":[
+            "Martin Scorsese",
+            "Robert De Niro",
+            "Jodie Foster",
+            "Cybill Shepherd",
+            "Albert Brooks"
+         ],
+         "movie_tags":[
+            "Crime, Drama"
+         ],
+         "movie_star":[
+            "8.2"
+         ],
+         "movie_year":[
+            "1976"
+         ],
+         "movie_dis_keywords":[
+            "unstable",
+            "veteran",
+            "work",
+            "nighttime",
+            "taxi",
+            "driver",
+            "New",
+            "York",
+            "City",
+            "perceived",
+            "decadence",
+            "sleaze",
+            "fuel",
+            "urge",
+            "violent",
+            "action"
+         ],
+         "id":"2bbf78b6-8c36-4ae2-9959-936bd9eaf022",
+         "_version_":1762483466610409500
+      },
+      {
+         "movie_Name":[
+            "Baby Driver"
+         ],
+         "movie_Id":[
+            "tt3890160"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMjM3MjQ1MzkxNl5BMl5BanBnXkFtZTgwODk1ODgyMjI@._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Baby Driver"
+         ],
+         "movie_id":[
+            "tt3890160"
+         ],
+         "movie_dis":"After being coerced into working for a crime boss, a young getaway driver finds himself taking part in a heist doomed to fail.",
+         "movie_year":[
+            "2017"
+         ],
+         "movie_director_cast":[
+            "Edgar Wright",
+            "Ansel Elgort",
+            "Jon Bernthal",
+            "Jon Hamm",
+            "Eiza González"
+         ],
+         "movie_tags":[
+            "Action, Crime, Drama"
+         ],
+         "movie_star":[
+            "7.6"
+         ],
+         "movie_dis_keywords":[
+            "coerced",
+            "working",
+            "crime",
+            "bos",
+            "young",
+            "getaway",
+            "driver",
+            "find",
+            "taking",
+            "part",
+            "heist",
+            "doomed",
+            "fail"
+         ],
+         "id":"9388ca22-e0bd-490f-86cc-30ae32a27c8f",
+         "_version_":1762483466656546800
+      },
+      {
+         "movie_Name":[
+            "Taxi Driver"
+         ],
+         "movie_Id":[
+            "tt13759970"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMGFlYmMzYzEtMDI0Mi00MTU1LThhNzItZThkNTg1NjMyM2VkXkEyXkFqcGdeQXVyNDY5MjMyNTg@._V1_QL75_UY281_CR5,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Taxi Driver"
+         ],
+         "movie_id":[
+            "tt13759970"
+         ],
+         "movie_dis":"The story of a deluxe taxi driver who gets revenge on behalf of his passengers. It is based on the webtoon Deluxe Taxi by Carlos and Lee Jae-jin",
+         "movie_year":[
+            "2021"
+         ],
+         "movie_director_cast":[
+            "Lee Jehoon",
+            "Kim Eui-sung",
+            "Pyo Ye-Jin",
+            "Jang Hyuk-jin"
+         ],
+         "movie_tags":[
+            "Action, Crime, Drama"
+         ],
+         "movie_star":[
+            "8.0"
+         ],
+         "movie_dis_keywords":[
+            "story",
+            "deluxe",
+            "taxi",
+            "driver",
+            "get",
+            "revenge",
+            "behalf",
+            "passenger",
+            "based",
+            "webtoon",
+            "Deluxe",
+            "Taxi",
+            "Carlos",
+            "Lee",
+            "Jae-jin"
+         ],
+         "id":"35c04487-cd90-44db-beb7-d6dffa1c559a",
+         "_version_":1762483466845290500
+      },
+      {
+         "movie_Name":[
+            "The Driver"
+         ],
+         "movie_Id":[
+            "tt0077474"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMGY1Nzk5OTItOTU1MC00YWYyLThiMjUtZGE5YmZjMGVlMzk4XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_QL75_UX190_CR0,6,190,281_.jpg"
+         ],
+         "movie_name":[
+            "The Driver"
+         ],
+         "movie_id":[
+            "tt0077474"
+         ],
+         "movie_dis":"A getaway driver becomes the latest assignment for a tenacious detective.",
+         "movie_year":[
+            "1978"
+         ],
+         "movie_director_cast":[
+            "Walter Hill",
+            "Ryan O'Neal",
+            "Bruce Dern",
+            "Isabelle Adjani",
+            "Ronee Blakley"
+         ],
+         "movie_tags":[
+            "Action, Crime, Thriller"
+         ],
+         "movie_star":[
+            "7.1"
+         ],
+         "movie_dis_keywords":[
+            "getaway",
+            "driver",
+            "becomes",
+            "latest",
+            "assignment",
+            "tenacious",
+            "detective"
+         ],
+         "id":"d58f0790-8048-4c15-9b89-04605a340218",
+         "_version_":1762483467196563500
+      },
+      {
+         "movie_Name":[
+            "Lady Driver"
+         ],
+         "movie_Id":[
+            "tt7562334"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BNTE0M2ZiNTgtNjQ5MC00MDBjLWExNmUtYzUxYjk2ODM4NmNlXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Lady Driver"
+         ],
+         "movie_id":[
+            "tt7562334"
+         ],
+         "movie_dis":"When a rebellious teen embarks on a solo summer journey to connect with her roots, she finds herself in a new world, geared up for the ride of her life, and discovers she had the drive in her all along.",
+         "movie_year":[
+            "2020"
+         ],
+         "movie_director_cast":[
+            "Shaun Paul Piccinino",
+            "Grace Van Dien",
+            "Sean Patrick Flanery",
+            "Christina Moore",
+            "Casper Van Dien"
+         ],
+         "movie_tags":[
+            "Sport"
+         ],
+         "movie_star":[
+            "5.8"
+         ],
+         "movie_dis_keywords":[
+            "rebellious",
+            "teen",
+            "embarks",
+            "solo",
+            "summer",
+            "journey",
+            "connect",
+            "root",
+            "find",
+            "new",
+            "world",
+            "geared",
+            "ride",
+            "life",
+            "discovers",
+            "drive",
+            "along"
+         ],
+         "id":"8460f5bd-40f1-4378-adad-25f9318631d8",
+         "_version_":1762483467355947000
+      },
+      {
+         "movie_Name":[
+            "Dive"
+         ],
+         "movie_Id":[
+            "tt22656762"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BZTRlYzViMDctMDkyNC00NDNlLWI1MDAtYjQ4OWFkYWE4MjJkXkEyXkFqcGdeQXVyMTg4NzAwNTM@._V1_QL75_UY281_CR18,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Dive"
+         ],
+         "movie_id":[
+            "tt22656762"
+         ],
+         "movie_dis":"From award-winning Lucía Puenzo, comes Dive, starring Karla Souza in a dramatic tour de force performance in this story about the complexities of relationships when set against a backdrop where winning is defined as the ultimate dream",
+         "movie_year":[
+            "2022"
+         ],
+         "movie_director_cast":[
+            "Lucía Puenzo",
+            "Karla Souza",
+            "Hernán Mendoza",
+            "Dèja Ebergenyi",
+            "Fernanda Borches"
+         ],
+         "movie_tags":[
+            "Drama, Sport"
+         ],
+         "movie_star":[
+            "6.9"
+         ],
+         "movie_dis_keywords":[
+            "award-winning",
+            "Lucía",
+            "Puenzo",
+            "come",
+            "Dive",
+            "starring",
+            "Karla",
+            "Souza",
+            "dramatic",
+            "tour",
+            "force",
+            "performance",
+            "story",
+            "complexity",
+            "relationship",
+            "set",
+            "backdrop",
+            "winning",
+            "defined",
+            "ultimate",
+            "dream"
+         ],
+         "id":"aa245fd2-3d3a-4518-aafa-4f261519cc03",
+         "_version_":1762483467539447800
+      },
+      {
+         "movie_Name":[
+            "Mulholland Drive"
+         ],
+         "movie_Id":[
+            "tt0166924"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BYTRiMzg4NDItNTc3Zi00NjBjLTgwOWYtOGZjMTFmNGU4ODY4XkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Mulholland Drive"
+         ],
+         "movie_id":[
+            "tt0166924"
+         ],
+         "movie_dis":"After a car wreck on the winding Mulholland Drive renders a woman amnesiac, she and a perky Hollywood-hopeful search for clues and answers across Los Angeles in a twisting venture beyond dreams and reality.",
+         "movie_year":[
+            "2001"
+         ],
+         "movie_director_cast":[
+            "David Lynch",
+            "Naomi Watts",
+            "Laura Harring",
+            "Justin Theroux",
+            "Jeanne Bates"
+         ],
+         "movie_tags":[
+            "Drama, Mystery, Thriller"
+         ],
+         "movie_star":[
+            "7.9"
+         ],
+         "movie_dis_keywords":[
+            "car",
+            "wreck",
+            "winding",
+            "Mulholland",
+            "Drive",
+            "render",
+            "woman",
+            "amnesiac",
+            "perky",
+            "Hollywood-hopeful",
+            "search",
+            "clue",
+            "answer",
+            "Los",
+            "Angeles",
+            "twisting",
+            "venture",
+            "dream",
+            "reality"
+         ],
+         "id":"8c327031-c8d6-45b4-bcd8-f8e5e4373819",
+         "_version_":1762483466662838300
+      },
+      {
+         "movie_Name":[
+            "Drive Angry"
+         ],
+         "movie_Id":[
+            "tt1502404"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMjIwNTM4Njg2NF5BMl5BanBnXkFtZTcwNDQwMTAwNA@@._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Drive Angry"
+         ],
+         "movie_id":[
+            "tt1502404"
+         ],
+         "movie_dis":"A vengeful father escapes from hell and chases after the men who killed his daughter and kidnapped his granddaughter.",
+         "movie_director_cast":[
+            "Patrick Lussier",
+            "Nicolas Cage",
+            "Amber Heard",
+            "William Fichtner",
+            "Billy Burke"
+         ],
+         "movie_tags":[
+            "Action, Comedy, Fantasy"
+         ],
+         "movie_year":[
+            "2011"
+         ],
+         "movie_star":[
+            "5.4"
+         ],
+         "movie_dis_keywords":[
+            "vengeful",
+            "father",
+            "escape",
+            "hell",
+            "chase",
+            "men",
+            "killed",
+            "daughter",
+            "kidnapped",
+            "granddaughter"
+         ],
+         "id":"53fc7636-e7b3-4ab4-b80d-0ce97f8bebfa",
+         "_version_":1762483466881990700
+      },
+      {
+         "movie_Name":[
+            "Sex Drive"
+         ],
+         "movie_Id":[
+            "tt1135985"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMjE0MTcyMzg5M15BMl5BanBnXkFtZTcwMDUyOTA4MQ@@._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Sex Drive"
+         ],
+         "movie_id":[
+            "tt1135985"
+         ],
+         "movie_dis":"A high-school senior drives cross-country with his best friends to hook up with a babe he met online.",
+         "movie_year":[
+            "2008"
+         ],
+         "movie_director_cast":[
+            "Sean Anders",
+            "Josh Zuckerman",
+            "Clark Duke",
+            "Amanda Crew",
+            "James Marsden"
+         ],
+         "movie_tags":[
+            "Comedy, Romance"
+         ],
+         "movie_star":[
+            "6.5"
+         ],
+         "movie_dis_keywords":[
+            "high-school",
+            "senior",
+            "drive",
+            "cross-country",
+            "best",
+            "friend",
+            "hook",
+            "babe",
+            "met",
+            "online"
+         ],
+         "id":"e2349035-002a-4858-9d16-4936639ead55",
+         "_version_":1762483466941759500
+      },
+      {
+         "movie_Name":[
+            "Hollington Drive"
+         ],
+         "movie_Id":[
+            "tt11917456"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BNWJiMzhlOTYtZGVmNy00ZmYwLWFiODktZTA4NmE3MjU2NzQ4XkEyXkFqcGdeQXVyMTUwMjUyMDA@._V1_QL75_UY281_CR112,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Hollington Drive"
+         ],
+         "movie_id":[
+            "tt11917456"
+         ],
+         "movie_dis":"The lives of two sisters, Theresa, and her older head teacher sibling, Helen, and a missing child.",
+         "movie_year":[
+            "2021"
+         ],
+         "movie_director_cast":[
+            "Anna Maxwell Martin",
+            "Rhashan Stone",
+            "Ken Nwosu",
+            "Tia May Watts"
+         ],
+         "movie_tags":[
+            "Drama, Thriller"
+         ],
+         "movie_star":[
+            "5.7"
+         ],
+         "movie_dis_keywords":[
+            "life",
+            "sister",
+            "Theresa",
+            "older",
+            "head",
+            "sibling",
+            "Helen",
+            "missing",
+            "child"
+         ],
+         "id":"ec944621-1f6e-4680-bd19-63e7696336a5",
+         "_version_":1762483467553079300
+      },
+      {
+         "movie_Name":[
+            "Blood Drive"
+         ],
+         "movie_Id":[
+            "tt4898282"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BY2E1NmRjNDctOGYwZC00MWU2LWI3MmYtNTRiOGY2OTgzM2JhXkEyXkFqcGdeQXVyNjEwNTM2Mzc@._V1_QL75_UX190_CR0,2,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Blood Drive"
+         ],
+         "movie_id":[
+            "tt4898282"
+         ],
+         "movie_dis":"In a dystopian alternate 1999, a former cop is forced to take part in a death race in which cars run on human blood as fuel.",
+         "movie_year":[
+            "2017"
+         ],
+         "movie_director_cast":[
+            "Alan Ritchson",
+            "Christina Ochoa",
+            "Thomas Dominique",
+            "Marama Corlett"
+         ],
+         "movie_tags":[
+            "Action, Adventure, Comedy"
+         ],
+         "movie_star":[
+            "7.2"
+         ],
+         "movie_dis_keywords":[
+            "dystopian",
+            "alternate",
+            "former",
+            "cop",
+            "forced",
+            "take",
+            "part",
+            "death",
+            "race",
+            "car",
+            "run",
+            "human",
+            "blood",
+            "fuel"
+         ],
+         "id":"82b3ac0d-2c1d-41e1-a5fe-2ef93bf76593",
+         "_version_":1762483467751260200
+      },
+      {
+         "movie_Name":[
+            "A Taxi Driver"
+         ],
+         "movie_Id":[
+            "tt6878038"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMTA5ZGE4ZTQtYjVjOS00MTllLTkwZWEtYzQ5NzljMWJkYWE4XkEyXkFqcGdeQXVyMTk0NTY2ODQ@._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "A Taxi Driver"
+         ],
+         "movie_id":[
+            "tt6878038"
+         ],
+         "movie_dis":"A widowed father and taxi driver who drives a German reporter from Seoul to Gwangju to cover the 1980 uprising, soon finds himself regretting his decision after being caught in the violence around him.",
+         "movie_year":[
+            "2017"
+         ],
+         "movie_director_cast":[
+            "Hun Jang",
+            "Song Kang-ho",
+            "Thomas Kretschmann",
+            "Hae-Jin Yoo",
+            "Ryu Jun-Yeol"
+         ],
+         "movie_tags":[
+            "Action, Drama, History"
+         ],
+         "movie_star":[
+            "7.9"
+         ],
+         "movie_dis_keywords":[
+            "widowed",
+            "father",
+            "taxi",
+            "driver",
+            "drive",
+            "German",
+            "reporter",
+            "Seoul",
+            "Gwangju",
+            "cover",
+            "uprising",
+            "find",
+            "regretting",
+            "decision",
+            "caught",
+            "violence"
+         ],
+         "id":"ffc1f6ef-ab42-446d-a6a4-711f150e1f47",
+         "_version_":1762483467290935300
+      },
+      {
+         "movie_Name":[
+            "Drive My Car"
+         ],
+         "movie_Id":[
+            "tt14039582"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BY2NkNDdmZTUtYWQ2MC00MjUyLTk1MGMtNWZiZjI3ZWMzNDYwXkEyXkFqcGdeQXVyNTY4ODAxODI@._V1_QL75_UY281_CR5,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Drive My Car"
+         ],
+         "movie_id":[
+            "tt14039582"
+         ],
+         "movie_dis":"A renowned stage actor and director learns to cope with his wife's unexpected passing when he receives an offer to direct a production of Uncle Vanya in Hiroshima.",
+         "movie_director_cast":[
+            "Ryûsuke Hamaguchi",
+            "Hidetoshi Nishijima",
+            "Tôko Miura",
+            "Reika Kirishima",
+            "Masaki Okada"
+         ],
+         "movie_tags":[
+            "Drama"
+         ],
+         "movie_star":[
+            "7.6"
+         ],
+         "movie_year":[
+            "2021"
+         ],
+         "movie_dis_keywords":[
+            "renowned",
+            "stage",
+            "actor",
+            "director",
+            "learns",
+            "cope",
+            "wife",
+            "unexpected",
+            "passing",
+            "receives",
+            "offer",
+            "direct",
+            "production",
+            "Uncle",
+            "Vanya",
+            "Hiroshima"
+         ],
+         "id":"7eb8560f-1ef0-4162-9ea3-3a10dba5481e",
+         "_version_":1762483466744627200
+      },
+      {
+         "movie_Name":[
+            "License to Drive"
+         ],
+         "movie_Id":[
+            "tt0095519"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BOTk1OWUyODgtMDBlMC00ZDdlLWIzOWUtYTBjNzQ1M2ZjOThiXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_QL75_UX190_CR0,2,190,281_.jpg"
+         ],
+         "movie_name":[
+            "License to Drive"
+         ],
+         "movie_id":[
+            "tt0095519"
+         ],
+         "movie_dis":"A teen decides to go for a night on the town with his friends despite flunking his driver's test.",
+         "movie_year":[
+            "1988"
+         ],
+         "movie_director_cast":[
+            "Greg Beeman",
+            "Corey Haim",
+            "Corey Feldman",
+            "Carol Kane",
+            "Richard Masur"
+         ],
+         "movie_tags":[
+            "Comedy"
+         ],
+         "movie_star":[
+            "6.3"
+         ],
+         "movie_dis_keywords":[
+            "teen",
+            "decides",
+            "go",
+            "night",
+            "town",
+            "friend",
+            "flunking",
+            "driver",
+            "test"
+         ],
+         "id":"3ea066d9-1978-4f3c-b45f-82891f0fe821",
+         "_version_":1762483466866262000
+      },
+      {
+         "movie_Name":[
+            "Any Given Sunday"
+         ],
+         "movie_Id":[
+            "tt0146838"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BZDk2YTQxZjUtYzJkYi00MTk4LTk4NDAtZmQ3ZGQwMDQxY2ZjXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_QL75_UY281_CR11,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Any Given Sunday"
+         ],
+         "movie_id":[
+            "tt0146838"
+         ],
+         "movie_dis":"A behind-the-scenes look at the life-and-death struggles of modern-day gladiators and those who lead them.",
+         "movie_year":[
+            "1999"
+         ],
+         "movie_director_cast":[
+            "Oliver Stone",
+            "Al Pacino",
+            "Dennis Quaid",
+            "Cameron Diaz",
+            "James Woods"
+         ],
+         "movie_tags":[
+            "Drama, Sport"
+         ],
+         "movie_star":[
+            "6.9"
+         ],
+         "movie_dis_keywords":[
+            "behind-the-scenes",
+            "look",
+            "life-and-death",
+            "struggle",
+            "modern-day",
+            "gladiator",
+            "lead"
+         ],
+         "id":"f025448a-c081-49d5-9c27-d8cfb7291225",
+         "_version_":1762483467191320600
+      },
+      {
+         "movie_Name":[
+            "Drive Me Crazy"
+         ],
+         "movie_Id":[
+            "tt0164114"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BYWQwMzUzOGQtNjRiMC00M2NhLTg0MWUtZjM1ZGQ3MjM1Yzc4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_QL75_UX190_CR0,2,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Drive Me Crazy"
+         ],
+         "movie_id":[
+            "tt0164114"
+         ],
+         "movie_dis":"Nicole and Chase used to be BFFs, then junior high happened. The high school centennial dance is coming but Nicole gets dumped. So does Chase. They stage a relationship to get at their exes. They visit each other's worlds. Love in the air?",
+         "movie_director_cast":[
+            "John Schultz",
+            "Melissa Joan Hart",
+            "Adrian Grenier",
+            "Stephen Collins",
+            "Mark Metcalf"
+         ],
+         "movie_tags":[
+            "Comedy, Drama, Romance"
+         ],
+         "movie_star":[
+            "5.7"
+         ],
+         "movie_year":[
+            "1999"
+         ],
+         "movie_dis_keywords":[
+            "Nicole",
+            "Chase",
+            "used",
+            "BFFs",
+            "junior",
+            "high",
+            "happened",
+            "high",
+            "school",
+            "centennial",
+            "dance",
+            "coming",
+            "Nicole",
+            "get",
+            "dumped",
+            "Chase",
+            "stage",
+            "relationship",
+            "get",
+            "ex",
+            "visit",
+            "world",
+            "Love",
+            "air"
+         ],
+         "id":"6366fac7-86b3-480b-b7f6-481cc0c74b68",
+         "_version_":1762483467427250200
+      },
+      {
+         "movie_Name":[
+            "Zero Fucks Given"
+         ],
+         "movie_Id":[
+            "tt13482806"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BODU1NzA1MTQtZTkxMS00M2M0LWJlZWQtNThmNzQyNWMxOTczXkEyXkFqcGdeQXVyODY0MDQ3NTI@._V1_QL75_UY281_CR11,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Zero Fucks Given"
+         ],
+         "movie_id":[
+            "tt13482806"
+         ],
+         "movie_dis":"A young flight attendant loses her job at a low-cost airline.",
+         "movie_year":[
+            "2021"
+         ],
+         "movie_director_cast":[
+            "Julie Lecoustre",
+            "Emmanuel Marre",
+            "Adèle Exarchopoulos",
+            "Alexandre Perrier",
+            "Mara Taquin",
+            "Arthur Egloff"
+         ],
+         "movie_tags":[
+            "Drama"
+         ],
+         "movie_star":[
+            "6.4"
+         ],
+         "movie_dis_keywords":[
+            "young",
+            "flight",
+            "attendant",
+            "loses",
+            "job",
+            "low-cost",
+            "airline"
+         ],
+         "id":"cde079f5-5b40-4535-a52b-a9893c8ced9d",
+         "_version_":1762483467880235000
+      },
+      {
+         "movie_Name":[
+            "Dive Club"
+         ],
+         "movie_Id":[
+            "tt13275052"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BNTI2M2U2MTYtZWJiNC00MGQ4LWFiNDktNzI0OGVjM2JkOTE2XkEyXkFqcGdeQXVyNDIyOTQ4MzY@._V1_QL75_UY281_CR2,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Dive Club"
+         ],
+         "movie_id":[
+            "tt13275052"
+         ],
+         "movie_dis":"Dive Club follows the story of a feisty group of teen divers who search for their friend when she disappears after a cyclone hits Cape Mercy, their small coastal town.",
+         "movie_director_cast":[
+            "Miah Madden",
+            "Georgia-May Davis",
+            "Sana'a Shaik",
+            "Aubri Ibrag"
+         ],
+         "movie_tags":[
+            "Adventure, Drama, Family"
+         ],
+         "movie_year":[
+            "2021"
+         ],
+         "movie_star":[
+            "6.2"
+         ],
+         "movie_dis_keywords":[
+            "Dive",
+            "Club",
+            "follows",
+            "story",
+            "feisty",
+            "group",
+            "teen",
+            "diver",
+            "search",
+            "friend",
+            "disappears",
+            "cyclone",
+            "hit",
+            "Cape",
+            "Mercy",
+            "small",
+            "coastal",
+            "town"
+         ],
+         "id":"a710da1d-9eee-4337-8a68-1d5a2c3469d4",
+         "_version_":1762483467851923500
+      },
+      {
+         "movie_Name":[
+            "Formula 1: Drive to Survive"
+         ],
+         "movie_Id":[
+            "tt8289930"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMzVkMGU0YWMtOWQxMC00MjFhLTg1NjAtMDFlZTZlYzJlMjlhXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_QL75_UY281_CR6,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Formula 1: Drive to Survive"
+         ],
+         "movie_id":[
+            "tt8289930"
+         ],
+         "movie_dis":"Docuseries following the FIA Formula One World Championship across multiple seasons.",
+         "movie_year":[
+            "2019"
+         ],
+         "movie_director_cast":[
+            "Will Buxton",
+            "Jack Nicholls",
+            "Lewis Hamilton",
+            "Daniel Ricciardo"
+         ],
+         "movie_tags":[
+            "Documentary, Sport"
+         ],
+         "movie_star":[
+            "8.6"
+         ],
+         "movie_dis_keywords":[
+            "Docuseries",
+            "following",
+            "FIA",
+            "Formula",
+            "One",
+            "World",
+            "Championship",
+            "multiple",
+            "season"
+         ],
+         "id":"192776db-59ef-45d2-a99f-c571c49d9555",
+         "_version_":1762483466674372600
+      },
+      {
+         "movie_Name":[
+            "The Last Drive-In with Joe Bob Briggs"
+         ],
+         "movie_Id":[
+            "tt8284230"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BN2EzY2I5ZjctZjg1Yy00ZjkzLWE1YjEtZGNhM2U4ODAyYzcyXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_QL75_UX190_CR0,2,190,281_.jpg"
+         ],
+         "movie_name":[
+            "The Last Drive-In with Joe Bob Briggs"
+         ],
+         "movie_id":[
+            "tt8284230"
+         ],
+         "movie_dis":"Joe Bob is back! Watching B-Movies and giving background and behind the scenes information. He watches Tourist Trap, Re-Animator and much much more.",
+         "movie_year":[
+            "2018"
+         ],
+         "movie_director_cast":[
+            "John Bloom",
+            "Diana Prince",
+            "John Patrick Brennan",
+            "Yuki Nakamura"
+         ],
+         "movie_tags":[
+            "Comedy, Fantasy, Horror"
+         ],
+         "movie_star":[
+            "9.5"
+         ],
+         "movie_dis_keywords":[
+            "Joe",
+            "Bob",
+            "Watching",
+            "B-Movies",
+            "giving",
+            "background",
+            "scene",
+            "information",
+            "watch",
+            "Tourist",
+            "Trap",
+            "Re-Animator"
+         ],
+         "id":"5e6d24f5-b4f2-494a-b878-d49f849ea98f",
+         "_version_":1762483467773280300
+      }
+   ]
+}
+
+
+After clicking "make a more conservative guess":
+
+{
+   "count":2,
+   "result":[
+      {
+         "movie_Name":[
+            "Driven"
+         ],
+         "movie_Id":[
+            "tt0132245"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMjA5MDk4NzI0NF5BMl5BanBnXkFtZTYwNjU0Nzc5._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Driven"
+         ],
+         "movie_id":[
+            "tt0132245"
+         ],
+         "movie_dis":"A young hot shot driver is in the middle of a championship season and is coming apart at the seams. A former CART champion is called in to give him guidance.",
+         "movie_year":[
+            "2001"
+         ],
+         "movie_director_cast":[
+            "Renny Harlin",
+            "Sylvester Stallone",
+            "Kip Pardue",
+            "Til Schweiger",
+            "Burt Reynolds"
+         ],
+         "movie_tags":[
+            "Action, Drama, Sport"
+         ],
+         "movie_star":[
+            "4.6"
+         ],
+         "movie_dis_keywords":[
+            "young",
+            "hot",
+            "shot",
+            "driver",
+            "middle",
+            "championship",
+            "season",
+            "coming",
+            "seam",
+            "former",
+            "CART",
+            "champion",
+            "called",
+            "give",
+            "guidance"
+         ],
+         "id":"71748056-7ba3-4ab0-929d-2f465c34f7dd",
+         "_version_":1762483467282546700
+      },
+      {
+         "movie_Name":[
+            "Driven"
+         ],
+         "movie_Id":[
+            "tt8451888"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BOGYwOTE2NDAtYzU4Yy00NjAzLWI4YzMtZTQyNGZhZTU3MjhjXkEyXkFqcGdeQXVyMTA4ODQyNDYx._V1_QL75_UX190_CR0,2,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Driven"
+         ],
+         "movie_id":[
+            "tt8451888"
+         ],
+         "movie_dis":"A resilient girl with a tragic past and a heart of gold falls in love with a bad boy race car driver.",
+         "movie_year":[
+            "2018"
+         ],
+         "movie_director_cast":[
+            "Olivia Grace Applegate",
+            "Michael Roark",
+            "Julian Silva",
+            "Megan Quinn"
+         ],
+         "movie_tags":[
+            "Romance"
+         ],
+         "movie_star":[
+            "7.1"
+         ],
+         "movie_dis_keywords":[
+            "resilient",
+            "girl",
+            "tragic",
+            "past",
+            "heart",
+            "gold",
+            "fall",
+            "love",
+            "bad",
+            "boy",
+            "race",
+            "car",
+            "driver"
+         ],
+         "id":"b88e5a2e-5cb3-42f4-b0c8-e211b90187b4",
+         "_version_":1762483467297226800
+      }
+   ]
+}

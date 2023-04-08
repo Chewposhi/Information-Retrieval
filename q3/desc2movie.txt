@@ -1,0 +1,1589 @@
+Query: some men carried out a heist in a casino
+
+Before: no result
+
+After desc2movie:
+
+
+{
+   "count":30,
+   "result":[
+      {
+         "movie_Name":[
+            "Ocean's Thirteen"
+         ],
+         "movie_Id":[
+            "tt0496806"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMTMyNTc1NzY5MV5BMl5BanBnXkFtZTcwNDM4NTQzMw@@._V1_QL75_UY281_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Ocean's Thirteen"
+         ],
+         "movie_id":[
+            "tt0496806"
+         ],
+         "movie_dis":"Danny Ocean rounds up the boys for a third heist after casino owner Willy Bank double-crosses one of the original eleven, Reuben Tishkoff.",
+         "movie_director_cast":[
+            "Steven Soderbergh",
+            "George Clooney",
+            "Brad Pitt",
+            "Matt Damon",
+            "Michael Mantell"
+         ],
+         "movie_tags":[
+            "Crime, Thriller"
+         ],
+         "movie_year":[
+            "2007"
+         ],
+         "movie_star":[
+            "6.9"
+         ],
+         "movie_dis_keywords":[
+            "Danny",
+            "Ocean",
+            "round",
+            "boy",
+            "third",
+            "heist",
+            "casino",
+            "owner",
+            "Willy",
+            "Bank",
+            "double-crosses",
+            "original",
+            "eleven",
+            "Reuben",
+            "Tishkoff"
+         ],
+         "id":"947c0cab-09e1-4dc7-99f6-b1cff0e04e6e",
+         "_version_":1762483466807541800
+      },
+      {
+         "movie_Name":[
+            "Reindeer Games"
+         ],
+         "movie_Id":[
+            "tt0184858"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BZjNmNWIwZTAtMjM1MS00ODNiLTljYzMtNGI1ZmRkMmIxYzJiXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Reindeer Games"
+         ],
+         "movie_id":[
+            "tt0184858"
+         ],
+         "movie_dis":"After assuming his dead cell-mate's identity to get with the other man's girlfriend, an ex-convict finds himself a reluctant participant in a casino heist.",
+         "movie_year":[
+            "2000"
+         ],
+         "movie_director_cast":[
+            "John Frankenheimer",
+            "Ben Affleck",
+            "Gary Sinise",
+            "Charlize Theron",
+            "James Frain"
+         ],
+         "movie_tags":[
+            "Action, Adventure, Crime"
+         ],
+         "movie_star":[
+            "5.8"
+         ],
+         "movie_dis_keywords":[
+            "assuming",
+            "dead",
+            "cell-mate",
+            "identity",
+            "get",
+            "man",
+            "girlfriend",
+            "ex-convict",
+            "find",
+            "reluctant",
+            "participant",
+            "casino",
+            "heist"
+         ],
+         "id":"064b5fef-a1eb-4eb9-b5d8-95c27ba1dabe",
+         "_version_":1762483467441930200
+      },
+      {
+         "movie_Name":[
+            "Ocean's Eleven"
+         ],
+         "movie_Id":[
+            "tt0054135"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMjA5MzU1ODQzOF5BMl5BanBnXkFtZTgwNTA2MDE3MTE@._V1_QL75_UX190_CR0,4,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Ocean's Eleven"
+         ],
+         "movie_id":[
+            "tt0054135"
+         ],
+         "movie_dis":"Danny Ocean gathers a group of his World War II compatriots to pull off the ultimate Las Vegas heist. Together the eleven friends plan to rob five Las Vegas casinos in one night.",
+         "movie_year":[
+            "1960"
+         ],
+         "movie_director_cast":[
+            "Lewis Milestone",
+            "Frank Sinatra",
+            "Dean Martin",
+            "Sammy Davis Jr.",
+            "Peter Lawford"
+         ],
+         "movie_tags":[
+            "Comedy, Crime, Music"
+         ],
+         "movie_star":[
+            "6.5"
+         ],
+         "movie_dis_keywords":[
+            "Danny",
+            "Ocean",
+            "gather",
+            "group",
+            "World",
+            "War",
+            "II",
+            "compatriot",
+            "pull",
+            "ultimate",
+            "Las",
+            "Vegas",
+            "heist",
+            "eleven",
+            "friend",
+            "plan",
+            "rob",
+            "Las",
+            "Vegas",
+            "casino",
+            "night"
+         ],
+         "id":"44578e31-8b81-4897-99d3-4c8917605529",
+         "_version_":1762483466784473000
+      },
+      {
+         "movie_Name":[
+            "Three Day Millionaire"
+         ],
+         "movie_Id":[
+            "tt11675788"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BNWNiNWE3ZTctZWJjMi00NDMwLWE0ODUtMzU4MmE3Yzc2YzlhXkEyXkFqcGdeQXVyMTI2MTczMTY@._V1_QL75_UY281_CR5,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Three Day Millionaire"
+         ],
+         "movie_id":[
+            "tt11675788"
+         ],
+         "movie_dis":"'A raucous black comedy about a gang of Grimsby Trawler-men who carry out the heist of a lifetime'.",
+         "movie_year":[
+            "2022"
+         ],
+         "movie_director_cast":[
+            "Jack Spring",
+            "Colm Meaney",
+            "Jonas Armstrong",
+            "James Burrows",
+            "Michael Kinsey"
+         ],
+         "movie_tags":[
+            "Comedy"
+         ],
+         "movie_star":[
+            "5.2"
+         ],
+         "movie_dis_keywords":[
+            "raucous",
+            "black",
+            "comedy",
+            "gang",
+            "Grimsby",
+            "Trawler-men",
+            "carry",
+            "heist",
+            "lifetime"
+         ],
+         "id":"9a9f57eb-ba96-4f36-bb05-fe03fb8a9678",
+         "_version_":1762483467231166500
+      },
+      {
+         "movie_Name":[
+            "I Am Dragon"
+         ],
+         "movie_Id":[
+            "tt4057376"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMGU5ODA3MTktMDNmMC00ODc2LWJkMzAtOTAwMWNlMDZmOTE4XkEyXkFqcGdeQXVyNDkzODA5MDY@._V1_QL75_UY281_CR3,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "I Am Dragon"
+         ],
+         "movie_id":[
+            "tt4057376"
+         ],
+         "movie_dis":"In the midst of the wedding princess Miroslava is kidnapped by a dragon and carried away into his castle on the remote island.",
+         "movie_director_cast":[
+            "Indar Dzhendubaev",
+            "Matvey Lykov",
+            "Mariya Poezzhaeva",
+            "Stanislav Lyubshin",
+            "Petr Romanov"
+         ],
+         "movie_tags":[
+            "Adventure, Fantasy, Romance"
+         ],
+         "movie_star":[
+            "6.8"
+         ],
+         "movie_year":[
+            "2015"
+         ],
+         "movie_dis_keywords":[
+            "midst",
+            "wedding",
+            "princess",
+            "Miroslava",
+            "kidnapped",
+            "dragon",
+            "carried",
+            "castle",
+            "remote",
+            "island"
+         ],
+         "id":"1e5072ea-295e-4da5-a99c-a73a1e1eaceb",
+         "_version_":1762483467566710800
+      },
+      {
+         "movie_Name":[
+            "Son of a Gun"
+         ],
+         "movie_Id":[
+            "tt2452200"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMDE1MTIzNzEtNmU0MC00Y2UzLWE4NTgtYmY1YzJlNTFjYWNkL2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_QL75_UY281_CR4,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Son of a Gun"
+         ],
+         "movie_id":[
+            "tt2452200"
+         ],
+         "movie_dis":"JR busts out of prison with Brendan Lynch, Australia's most notorious criminal, and joins Lynch's gang for a gold heist that soon pits the two men against one another.",
+         "movie_year":[
+            "2014"
+         ],
+         "movie_director_cast":[
+            "Julius Avery",
+            "Ewan McGregor",
+            "Brenton Thwaites",
+            "Alicia Vikander",
+            "Brendan Kerkvliet"
+         ],
+         "movie_tags":[
+            "Action, Crime, Drama"
+         ],
+         "movie_star":[
+            "6.4"
+         ],
+         "movie_dis_keywords":[
+            "JR",
+            "bust",
+            "prison",
+            "Brendan",
+            "Lynch",
+            "Australia",
+            "notorious",
+            "criminal",
+            "join",
+            "Lynch",
+            "gang",
+            "gold",
+            "heist",
+            "pit",
+            "men"
+         ],
+         "id":"385d26e0-babc-45d5-85cd-0af82443318f",
+         "_version_":1762483467664228400
+      },
+      {
+         "movie_Name":[
+            "Casino"
+         ],
+         "movie_Id":[
+            "tt0112641"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMTcxOWYzNDYtYmM4YS00N2NkLTk0NTAtNjg1ODgwZjAxYzI3XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_QL75_UX190_CR0,2,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Casino"
+         ],
+         "movie_id":[
+            "tt0112641"
+         ],
+         "movie_dis":"A tale of greed, deception, money, power, and murder occur between two best friends: a mafia enforcer and a casino executive compete against each other over a gambling empire, and over a fast-living and fast-loving socialite.",
+         "movie_year":[
+            "1995"
+         ],
+         "movie_director_cast":[
+            "Martin Scorsese",
+            "Robert De Niro",
+            "Sharon Stone",
+            "Joe Pesci",
+            "James Woods"
+         ],
+         "movie_tags":[
+            "Crime, Drama"
+         ],
+         "movie_star":[
+            "8.2"
+         ],
+         "movie_dis_keywords":[
+            "tale",
+            "greed",
+            "deception",
+            "money",
+            "power",
+            "murder",
+            "occur",
+            "best",
+            "friend",
+            "mafia",
+            "enforcer",
+            "casino",
+            "executive",
+            "compete",
+            "gambling",
+            "empire",
+            "fast-living",
+            "fast-loving",
+            "socialite"
+         ],
+         "id":"77a898c2-6fc9-4d75-a829-eb33ce1ac0bc",
+         "_version_":1762483466663886800
+      },
+      {
+         "movie_Name":[
+            "American Animals"
+         ],
+         "movie_Id":[
+            "tt6212478"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BYTc4ZWQyODItMTZjYy00OTVmLWEzMjUtNTlkOTJjMzhiYzAxXkEyXkFqcGdeQXVyODE0MDY3NzY@._V1_QL75_UY281_CR1,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "American Animals"
+         ],
+         "movie_id":[
+            "tt6212478"
+         ],
+         "movie_dis":"Four young men mistake their lives for a movie and attempt one of the most audacious heists in U.S. history.",
+         "movie_year":[
+            "2018"
+         ],
+         "movie_director_cast":[
+            "Bart Layton",
+            "Spencer Reinhard",
+            "Warren Lipka",
+            "Eric Borsuk",
+            "Chas Allen"
+         ],
+         "movie_tags":[
+            "Biography, Crime, Drama"
+         ],
+         "movie_star":[
+            "7.0"
+         ],
+         "movie_dis_keywords":[
+            "young",
+            "men",
+            "mistake",
+            "life",
+            "movie",
+            "attempt",
+            "audacious",
+            "heist",
+            "U.S.",
+            "history"
+         ],
+         "id":"dd7302b2-9804-40bb-b42c-38f575cb9e57",
+         "_version_":1762483467193417700
+      },
+      {
+         "movie_Name":[
+            "Prison School"
+         ],
+         "movie_Id":[
+            "tt4917066"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BOGQzNzEzMDQtZDk3ZS00MjE3LThjZWItMDFhY2Y1NmI4NGUyXkEyXkFqcGdeQXVyMTM0NDkxNDIz._V1_QL75_UX190_CR0,2,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Prison School"
+         ],
+         "movie_id":[
+            "tt4917066"
+         ],
+         "movie_dis":"Hachimitsu Academy, once an all-girls school, has become co-ed, and teen Kiyoshi is one of five boys to enroll. When he is caught peeping, Kiyoshi is sent to the schools prison, where his punishment is carried out.",
+         "movie_year":[
+            "2015"
+         ],
+         "movie_director_cast":[
+            "Hiroshi Kamiya",
+            "Katsuyuki Konishi",
+            "Kenichi Suzumura",
+            "Daisuke Namikawa"
+         ],
+         "movie_tags":[
+            "Animation, Comedy"
+         ],
+         "movie_star":[
+            "7.6"
+         ],
+         "movie_dis_keywords":[
+            "Hachimitsu",
+            "Academy",
+            "all-girls",
+            "school",
+            "become",
+            "co-ed",
+            "teen",
+            "Kiyoshi",
+            "boy",
+            "enroll",
+            "caught",
+            "peeping",
+            "Kiyoshi",
+            "sent",
+            "school",
+            "prison",
+            "punishment",
+            "carried"
+         ],
+         "id":"8e88eaf8-3b6b-4222-8b95-d416ecef446d",
+         "_version_":1762483467457659000
+      },
+      {
+         "movie_Name":[
+            "Sea Hunt"
+         ],
+         "movie_Id":[
+            "tt0051311"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMTMyMjg1Njc4M15BMl5BanBnXkFtZTcwMzIwNjQ4NA@@._V1_QL75_UX190_CR0,2,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Sea Hunt"
+         ],
+         "movie_id":[
+            "tt0051311"
+         ],
+         "movie_dis":"Mike Nelson is a S.C.U.B.A. diver in the days when it was still very new. He works alone, and the plot was mostly carried through his voice-over narrations. These gave the show a flavor of ... See full summary »",
+         "movie_year":[
+            "1958"
+         ],
+         "movie_director_cast":[
+            "See full summary",
+            "Lloyd Bridges",
+            "Ken Drake",
+            "Courtney Brown",
+            "Jan Harrison"
+         ],
+         "movie_tags":[
+            "Action, Adventure"
+         ],
+         "movie_star":[
+            "7.7"
+         ],
+         "movie_dis_keywords":[
+            "Mike",
+            "Nelson",
+            "S.C.U.B.A",
+            "diver",
+            "day",
+            "new",
+            "work",
+            "plot",
+            "carried",
+            "voice-over",
+            "narration",
+            "gave",
+            "show",
+            "flavor",
+            "See",
+            "full",
+            "summary",
+            "»"
+         ],
+         "id":"dc87bf4e-8410-4071-af5d-13d78aa5b546",
+         "_version_":1762483467864506400
+      },
+      {
+         "movie_Name":[
+            "Casino Royale"
+         ],
+         "movie_Id":[
+            "tt0381061"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BYmI3MmMzMGMtNzc4Ni00YWQ4LWFkMDYtNjVlOWU3ZGZiNjY1XkEyXkFqcGdeQXVyNDQ2MTMzODA@._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Casino Royale"
+         ],
+         "movie_id":[
+            "tt0381061"
+         ],
+         "movie_dis":"After earning 00 status and a licence to kill, secret agent James Bond sets out on his first mission as 007. Bond must defeat a private banker funding terrorists in a high-stakes game of poker at Casino Royale, Montenegro.",
+         "movie_director_cast":[
+            "Martin Campbell",
+            "Daniel Craig",
+            "Eva Green",
+            "Judi Dench",
+            "Jeffrey Wright"
+         ],
+         "movie_tags":[
+            "Action, Adventure, Thriller"
+         ],
+         "movie_star":[
+            "8.0"
+         ],
+         "movie_year":[
+            "2006"
+         ],
+         "movie_dis_keywords":[
+            "earning",
+            "status",
+            "licence",
+            "kill",
+            "secret",
+            "agent",
+            "James",
+            "Bond",
+            "set",
+            "first",
+            "mission",
+            "Bond",
+            "defeat",
+            "private",
+            "banker",
+            "funding",
+            "terrorist",
+            "high-stakes",
+            "game",
+            "poker",
+            "Casino",
+            "Royale",
+            "Montenegro"
+         ],
+         "id":"43d9b226-230a-4bfa-b5bd-788e1ec7bbe8",
+         "_version_":1762483466679615500
+      },
+      {
+         "movie_Name":[
+            "The New Adventures of Pippi Longstocking"
+         ],
+         "movie_Id":[
+            "tt0093744"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BYzJmOTQ2N2ItMDYyMS00NGNhLWI5MGEtOWM2MGUwZDZjNzczXkEyXkFqcGdeQXVyNzc5MjA3OA@@._V1_QL75_UX190_CR0,3,190,281_.jpg"
+         ],
+         "movie_name":[
+            "The New Adventures of Pippi Longstocking"
+         ],
+         "movie_id":[
+            "tt0093744"
+         ],
+         "movie_dis":"After her father's ship is carried off by a sudden storm, the spunky Pippi Longstocking is stranded with her horse, Alfonso, and monkey, Mr. Nilsson, and takes up residence in the old ... See full summary »",
+         "movie_year":[
+            "1988"
+         ],
+         "movie_director_cast":[
+            "See full summary",
+            "Ken Annakin",
+            "Tami Erin",
+            "David Seaman",
+            "Cory Crow",
+            "Eileen Brennan"
+         ],
+         "movie_tags":[
+            "Adventure, Family, Fantasy"
+         ],
+         "movie_star":[
+            "5.8"
+         ],
+         "movie_dis_keywords":[
+            "father",
+            "ship",
+            "carried",
+            "sudden",
+            "storm",
+            "spunky",
+            "Pippi",
+            "Longstocking",
+            "stranded",
+            "horse",
+            "Alfonso",
+            "monkey",
+            "Mr.",
+            "Nilsson",
+            "take",
+            "residence",
+            "old",
+            "See",
+            "full",
+            "summary",
+            "»"
+         ],
+         "id":"0b186f13-5375-435b-9216-f96d3857c850",
+         "_version_":1762483467926372400
+      },
+      {
+         "movie_Name":[
+            "3000 Miles to Graceland"
+         ],
+         "movie_Id":[
+            "tt0233142"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMTExMDA0NDAyOTReQTJeQWpwZ15BbWU2MDM4ODg3OQ@@._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "3000 Miles to Graceland"
+         ],
+         "movie_id":[
+            "tt0233142"
+         ],
+         "movie_dis":"A gang of ex-cons rob a casino during Elvis convention week.",
+         "movie_year":[
+            "2001"
+         ],
+         "movie_director_cast":[
+            "Demian Lichtenstein",
+            "Kurt Russell",
+            "Kevin Costner",
+            "Courteney Cox",
+            "Christian Slater"
+         ],
+         "movie_tags":[
+            "Action, Comedy, Crime"
+         ],
+         "movie_star":[
+            "5.9"
+         ],
+         "movie_dis_keywords":[
+            "gang",
+            "ex-cons",
+            "rob",
+            "casino",
+            "Elvis",
+            "convention",
+            "week"
+         ],
+         "id":"b3866954-1f23-4f29-8000-ddd0072ca68f",
+         "_version_":1762483467299324000
+      },
+      {
+         "movie_Name":[
+            "Seven Thieves"
+         ],
+         "movie_Id":[
+            "tt0054295"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BNzgwMWI0NTYtZjM2ZC00NzI2LTkzMTMtNzI3MDI4YzFlZjMyXkEyXkFqcGdeQXVyMjUxODE0MDY@._V1_QL75_UX190_CR0,1,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Seven Thieves"
+         ],
+         "movie_id":[
+            "tt0054295"
+         ],
+         "movie_dis":"A motley crew of professional thieves plans the robbery of a Monte Carlo casino vault.",
+         "movie_year":[
+            "1960"
+         ],
+         "movie_director_cast":[
+            "Henry Hathaway",
+            "Edward G. Robinson",
+            "Rod Steiger",
+            "Joan Collins",
+            "Eli Wallach"
+         ],
+         "movie_tags":[
+            "Crime, Drama"
+         ],
+         "movie_star":[
+            "6.5"
+         ],
+         "movie_dis_keywords":[
+            "motley",
+            "crew",
+            "professional",
+            "thief",
+            "plan",
+            "robbery",
+            "Monte",
+            "Carlo",
+            "casino",
+            "vault"
+         ],
+         "id":"bcf9e52d-480e-42a9-ae01-4448fe254b5f",
+         "_version_":1762483467856117800
+      },
+      {
+         "movie_Name":[
+            "Rat Race"
+         ],
+         "movie_Id":[
+            "tt0250687"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BNWEzM2NjMjctM2U3Yi00MGZhLWJlYTYtMWEyYjVjZDEzZjM4XkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_QL75_UX190_CR0,1,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Rat Race"
+         ],
+         "movie_id":[
+            "tt0250687"
+         ],
+         "movie_dis":"A Las Vegas casino magnate, determined to find a new avenue for wagering, sets up a race for money.",
+         "movie_year":[
+            "2001"
+         ],
+         "movie_director_cast":[
+            "Jerry Zucker",
+            "Breckin Meyer",
+            "Amy Smart",
+            "Whoopi Goldberg",
+            "Vince Vieluf"
+         ],
+         "movie_tags":[
+            "Action, Adventure, Comedy"
+         ],
+         "movie_star":[
+            "6.4"
+         ],
+         "movie_dis_keywords":[
+            "Las",
+            "Vegas",
+            "casino",
+            "magnate",
+            "determined",
+            "find",
+            "new",
+            "avenue",
+            "wagering",
+            "set",
+            "race",
+            "money"
+         ],
+         "id":"26fbdf7e-175c-41ba-9324-0d7655932097",
+         "_version_":1762483466953293800
+      },
+      {
+         "movie_Name":[
+            "Big Bet"
+         ],
+         "movie_Id":[
+            "tt17329616"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMWQ4NDc3NjEtYjdjOC00NTE0LThlMWEtM2ZjODI1M2Y4NWFlXkEyXkFqcGdeQXVyNDcyMTM4Ng@@._V1_QL75_UY281_CR3,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Big Bet"
+         ],
+         "movie_id":[
+            "tt17329616"
+         ],
+         "movie_dis":"A crime-action drama about a casino king who is taking risks and trying to get back into the game.",
+         "movie_year":[
+            "2022"
+         ],
+         "movie_director_cast":[
+            "Choi Min-sik",
+            "Sukku Son",
+            "Dong-hwi Lee",
+            "Rich Ting"
+         ],
+         "movie_tags":[
+            "Action, Crime, Drama"
+         ],
+         "movie_star":[
+            "7.2"
+         ],
+         "movie_dis_keywords":[
+            "crime-action",
+            "drama",
+            "casino",
+            "king",
+            "taking",
+            "risk",
+            "trying",
+            "get",
+            "game"
+         ],
+         "id":"2c210c20-998e-4c0c-b932-c2e9a0e687eb",
+         "_version_":1762483467105337300
+      },
+      {
+         "movie_Name":[
+            "Croupier"
+         ],
+         "movie_Id":[
+            "tt0159382"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMmMwNDE5YmYtNzdmYy00ZTlmLWJkOWYtMDY5NDBiMGQyNTFmXkEyXkFqcGdeQXVyMjUzOTY1NTc@._V1_QL75_UY281_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Croupier"
+         ],
+         "movie_id":[
+            "tt0159382"
+         ],
+         "movie_dis":"An aspiring writer is hired as a croupier at a casino, where he realizes that his life as a croupier would make a great novel.",
+         "movie_year":[
+            "1998"
+         ],
+         "movie_director_cast":[
+            "Mike Hodges",
+            "Clive Owen",
+            "Nick Reding",
+            "Nicholas Ball",
+            "Alexander Morton"
+         ],
+         "movie_tags":[
+            "Crime, Drama"
+         ],
+         "movie_star":[
+            "7.0"
+         ],
+         "movie_dis_keywords":[
+            "aspiring",
+            "writer",
+            "hired",
+            "croupier",
+            "casino",
+            "realizes",
+            "life",
+            "croupier",
+            "make",
+            "great",
+            "novel"
+         ],
+         "id":"e42d0283-211d-458b-9bae-dbc19d642e23",
+         "_version_":1762483467291984000
+      },
+      {
+         "movie_Name":[
+            "Gilda"
+         ],
+         "movie_Id":[
+            "tt0038559"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BYWUxMzViZTUtNTYxNy00YjY4LWJmMjYtMzNlOThjNjhiZmZkXkEyXkFqcGdeQXVyMDI2NDg0NQ@@._V1_QL75_UX190_CR0,3,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Gilda"
+         ],
+         "movie_id":[
+            "tt0038559"
+         ],
+         "movie_dis":"A small-time gambler hired to work in a Buenos Aires casino discovers his employer's new wife is his former lover.",
+         "movie_year":[
+            "1946"
+         ],
+         "movie_director_cast":[
+            "Charles Vidor",
+            "Rita Hayworth",
+            "Glenn Ford",
+            "George Macready",
+            "Joseph Calleia"
+         ],
+         "movie_tags":[
+            "Drama, Film-Noir, Romance"
+         ],
+         "movie_star":[
+            "7.6"
+         ],
+         "movie_dis_keywords":[
+            "small-time",
+            "gambler",
+            "hired",
+            "work",
+            "Buenos",
+            "Aires",
+            "casino",
+            "discovers",
+            "employer",
+            "new",
+            "wife",
+            "former",
+            "lover"
+         ],
+         "id":"a62d937c-310f-485b-b262-f0deb4e240b5",
+         "_version_":1762483467467096000
+      },
+      {
+         "movie_Name":[
+            "The Hurricane Heist"
+         ],
+         "movie_Id":[
+            "tt5360952"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMzg3Y2MyNjgtMzk4ZS00OTU3LWEwZmMtN2Y0NTdlZjU0NGFiXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "The Hurricane Heist"
+         ],
+         "movie_id":[
+            "tt5360952"
+         ],
+         "movie_dis":"Thieves attempt a massive heist against the U.S. Treasury as a Category 5 hurricane approaches one of its Mint facilities.",
+         "movie_year":[
+            "2018"
+         ],
+         "movie_director_cast":[
+            "Rob Cohen",
+            "Toby Kebbell",
+            "Maggie Grace",
+            "Ryan Kwanten",
+            "Ralph Ineson"
+         ],
+         "movie_tags":[
+            "Action, Adventure, Crime"
+         ],
+         "movie_star":[
+            "5.1"
+         ],
+         "movie_dis_keywords":[
+            "Thieves",
+            "attempt",
+            "massive",
+            "heist",
+            "U.S.",
+            "Treasury",
+            "Category",
+            "hurricane",
+            "approach",
+            "Mint",
+            "facility"
+         ],
+         "id":"993b1c6f-378e-43bf-a1f6-2320b7882213",
+         "_version_":1762483467547836400
+      },
+      {
+         "movie_Name":[
+            "Casino Royale"
+         ],
+         "movie_Id":[
+            "tt0061452"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BZjJlYzgyZTQtNDFiMy00ZGFjLTk2N2ItN2ViNzNhNzhhNGM1XkEyXkFqcGdeQXVyMDI2NDg0NQ@@._V1_QL75_UX190_CR0,4,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Casino Royale"
+         ],
+         "movie_id":[
+            "tt0061452"
+         ],
+         "movie_dis":"In an early spy spoof, aging Sir James Bond comes out of retirement to take on SMERSH.",
+         "movie_year":[
+            "1967"
+         ],
+         "movie_director_cast":[
+            "Val Guest",
+            "Ken Hughes",
+            "John Huston",
+            "Joseph McGrath",
+            "Robert Parrish",
+            "Richard Talmadge",
+            "David Niven",
+            "Peter Sellers",
+            "Ursula Andress",
+            "Orson Welles"
+         ],
+         "movie_tags":[
+            "Comedy"
+         ],
+         "movie_star":[
+            "5.0"
+         ],
+         "movie_dis_keywords":[
+            "early",
+            "spy",
+            "spoof",
+            "aging",
+            "Sir",
+            "James",
+            "Bond",
+            "come",
+            "retirement",
+            "take",
+            "SMERSH"
+         ],
+         "id":"14bde187-aebc-4f85-b294-f2fd842ed85f",
+         "_version_":1762483467023548400
+      },
+      {
+         "movie_Name":[
+            "Snake Eyes"
+         ],
+         "movie_Id":[
+            "tt0120832"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BNmZiODkzNWEtNDkxZC00NDg2LWFiYzktZjY2ZmUwMmM2ZmJlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Snake Eyes"
+         ],
+         "movie_id":[
+            "tt0120832"
+         ],
+         "movie_dis":"A shady police detective finds himself in the middle of a murder conspiracy at an important boxing match in an Atlantic City casino.",
+         "movie_year":[
+            "1998"
+         ],
+         "movie_director_cast":[
+            "Brian De Palma",
+            "Nicolas Cage",
+            "Gary Sinise",
+            "John Heard",
+            "Carla Gugino"
+         ],
+         "movie_tags":[
+            "Crime, Mystery, Thriller"
+         ],
+         "movie_star":[
+            "6.1"
+         ],
+         "movie_dis_keywords":[
+            "shady",
+            "police",
+            "detective",
+            "find",
+            "middle",
+            "murder",
+            "conspiracy",
+            "important",
+            "boxing",
+            "match",
+            "Atlantic",
+            "City",
+            "casino"
+         ],
+         "id":"f332ac6d-4fab-4c65-82be-52ac2d78c8b3",
+         "_version_":1762483467268915200
+      },
+      {
+         "movie_Name":[
+            "The Cooler"
+         ],
+         "movie_Id":[
+            "tt0318374"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BODYyZGE4ZWUtZGI0Yi00YjM1LTlmMWEtN2Q1YTFjYjQ5ZThmXkEyXkFqcGdeQXVyMjQwMjk0NjI@._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "The Cooler"
+         ],
+         "movie_id":[
+            "tt0318374"
+         ],
+         "movie_dis":"In an old school Las Vegas casino, its top gambling jinx breaks his curse when he falls in love, much to his boss' consternation.",
+         "movie_director_cast":[
+            "Wayne Kramer",
+            "William H. Macy",
+            "Maria Bello",
+            "Alec Baldwin",
+            "Shawn Hatosy"
+         ],
+         "movie_tags":[
+            "Drama, Romance"
+         ],
+         "movie_star":[
+            "6.9"
+         ],
+         "movie_year":[
+            "2003"
+         ],
+         "movie_dis_keywords":[
+            "old",
+            "school",
+            "Las",
+            "Vegas",
+            "casino",
+            "top",
+            "gambling",
+            "jinx",
+            "break",
+            "curse",
+            "fall",
+            "love",
+            "bos",
+            "consternation"
+         ],
+         "id":"fcfb439f-b69e-4fbf-b968-2a5fbf78485a",
+         "_version_":1762483467701977000
+      },
+      {
+         "movie_Name":[
+            "Las Vegas"
+         ],
+         "movie_Id":[
+            "tt0364828"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMTk2Mjc0NTM2N15BMl5BanBnXkFtZTcwNTI5OTU3MQ@@._V1_QL75_UY281_CR8,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Las Vegas"
+         ],
+         "movie_id":[
+            "tt0364828"
+         ],
+         "movie_dis":"Welcome to the Montecito Resort and Casino in Las Vegas, where you can do anything you want, but Ed Deline and his crack surveillance team will be watching. Just remember: what happens in Vegas stays in Vegas.",
+         "movie_year":[
+            "2003"
+         ],
+         "movie_director_cast":[
+            "Josh Duhamel",
+            "James Caan",
+            "James Lesure",
+            "Vanessa Marcil"
+         ],
+         "movie_tags":[
+            "Crime, Drama"
+         ],
+         "movie_star":[
+            "7.4"
+         ],
+         "movie_dis_keywords":[
+            "Welcome",
+            "Montecito",
+            "Resort",
+            "Casino",
+            "Las",
+            "Vegas",
+            "anything",
+            "want",
+            "Ed",
+            "Deline",
+            "crack",
+            "surveillance",
+            "team",
+            "watching",
+            "remember",
+            "happens",
+            "Vegas",
+            "stay",
+            "Vegas"
+         ],
+         "id":"d9b8f9aa-6e3c-4ce3-b23e-992fd53c866c",
+         "_version_":1762483466844242000
+      },
+      {
+         "movie_Name":[
+            "The Incredible Burt Wonderstone"
+         ],
+         "movie_Id":[
+            "tt0790628"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMTk3MDkxMDAyN15BMl5BanBnXkFtZTcwODY5NzQyOQ@@._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "The Incredible Burt Wonderstone"
+         ],
+         "movie_id":[
+            "tt0790628"
+         ],
+         "movie_dis":"A veteran Vegas magician tries to revive his career after his longtime partner quits, he gets fired from his casino act, and an edgy new street magician steals his thunder.",
+         "movie_year":[
+            "2013"
+         ],
+         "movie_director_cast":[
+            "Don Scardino",
+            "Steve Carell",
+            "Luke Vanek",
+            "Steve Buscemi",
+            "Mason Cook"
+         ],
+         "movie_tags":[
+            "Comedy"
+         ],
+         "movie_star":[
+            "5.9"
+         ],
+         "movie_dis_keywords":[
+            "veteran",
+            "Vegas",
+            "magician",
+            "try",
+            "revive",
+            "career",
+            "longtime",
+            "partner",
+            "quits",
+            "get",
+            "fired",
+            "casino",
+            "act",
+            "edgy",
+            "new",
+            "street",
+            "magician",
+            "steal",
+            "thunder"
+         ],
+         "id":"7f6541c4-f7dc-4f40-b2e6-4860bc6650db",
+         "_version_":1762483467352801300
+      },
+      {
+         "movie_Name":[
+            "The Ladykillers"
+         ],
+         "movie_Id":[
+            "tt0335245"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMTYwNjUxMTYzM15BMl5BanBnXkFtZTYwNjgwMjY3._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "The Ladykillers"
+         ],
+         "movie_id":[
+            "tt0335245"
+         ],
+         "movie_dis":"An eccentric, if not charming Southern professor and his crew pose as a classical ensemble in order to rob a casino, all under the nose of his unsuspecting but sharp old landlady.",
+         "movie_year":[
+            "2004"
+         ],
+         "movie_director_cast":[
+            "Ethan Coen",
+            "Joel Coen",
+            "Tom Hanks",
+            "Marlon Wayans",
+            "Irma P. Hall",
+            "J.K. Simmons"
+         ],
+         "movie_tags":[
+            "Comedy, Crime, Thriller"
+         ],
+         "movie_star":[
+            "6.2"
+         ],
+         "movie_dis_keywords":[
+            "eccentric",
+            "charming",
+            "Southern",
+            "professor",
+            "crew",
+            "classical",
+            "ensemble",
+            "order",
+            "rob",
+            "casino",
+            "nose",
+            "unsuspecting",
+            "sharp",
+            "old",
+            "landlady"
+         ],
+         "id":"9c705d22-729b-4827-be86-ddef1bd1d1de",
+         "_version_":1762483467431444500
+      },
+      {
+         "movie_Name":[
+            "Johnny & Clyde"
+         ],
+         "movie_Id":[
+            "tt14875820"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BODIxMTE1ZWItM2UyMS00OTYxLWI3NmMtMzY2NjQwZTA4OWYyXkEyXkFqcGdeQXVyMDI4NjM1MQ@@._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Johnny & Clyde"
+         ],
+         "movie_id":[
+            "tt14875820"
+         ],
+         "movie_dis":"Johnny and Clyde are two serial killers who are madly in love and on an endless crime spree. They have their sights set on robbing a prosperous casino - owned by crime boss Alana and guarded by a demonic slayer that she commands.",
+         "movie_year":[
+            "2023"
+         ],
+         "movie_director_cast":[
+            "Tom DeNucci",
+            "Megan Fox",
+            "Vanessa Angel",
+            "Bai Ling",
+            "Avan Jogia"
+         ],
+         "movie_tags":[
+            "Action, Thriller"
+         ],
+         "movie_star":[
+            "2.9"
+         ],
+         "movie_dis_keywords":[
+            "Johnny",
+            "Clyde",
+            "serial",
+            "killer",
+            "love",
+            "endless",
+            "crime",
+            "spree",
+            "sight",
+            "set",
+            "robbing",
+            "prosperous",
+            "casino",
+            "owned",
+            "crime",
+            "bos",
+            "Alana",
+            "guarded",
+            "demonic",
+            "slayer",
+            "command"
+         ],
+         "id":"1ef2ad6c-ae3f-4330-8e90-93167b2a70a7",
+         "_version_":1762483467617042400
+      },
+      {
+         "movie_Name":[
+            "Second Time Around"
+         ],
+         "movie_Id":[
+            "tt0286057"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BNjMxYWJhYzEtYTMzNi00NzAyLWFmZWUtZTViMGRkNmI1ODZkXkEyXkFqcGdeQXVyMTU4NjM5MDk0._V1_QL75_UY281_CR10,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Second Time Around"
+         ],
+         "movie_id":[
+            "tt0286057"
+         ],
+         "movie_dis":"A young cop, Tina, meets a gambler, Lee, at a casino in Las Vegas and things started to happen. With an Indian rock, they are brought back to the past to change history, which includes changing the relationship between them.",
+         "movie_director_cast":[
+            "Jeffrey Lau",
+            "Ekin Cheng",
+            "Cecilia Cheung",
+            "Ke Huy Quan",
+            "Annamarie Ameera"
+         ],
+         "movie_tags":[
+            "Drama, Fantasy, Romance"
+         ],
+         "movie_star":[
+            "6.3"
+         ],
+         "movie_year":[
+            "2002"
+         ],
+         "movie_dis_keywords":[
+            "young",
+            "cop",
+            "Tina",
+            "meet",
+            "gambler",
+            "Lee",
+            "casino",
+            "Las",
+            "Vegas",
+            "thing",
+            "started",
+            "happen",
+            "Indian",
+            "rock",
+            "brought",
+            "past",
+            "change",
+            "history",
+            "includes",
+            "changing",
+            "relationship"
+         ],
+         "id":"4f82747b-7bf4-43d5-bda7-59f757af1ec3",
+         "_version_":1762483466897719300
+      },
+      {
+         "movie_Name":[
+            "Ambulance"
+         ],
+         "movie_Id":[
+            "tt4998632"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BYjUyN2VlZGEtNGEyZC00YjViLTgwYmQtZDJiM2FlOTU3Mjg2XkEyXkFqcGdeQXVyMjMxOTE0ODA@._V1_QL75_UX190_CR0,10,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Ambulance"
+         ],
+         "movie_id":[
+            "tt4998632"
+         ],
+         "movie_dis":"Two robbers steal an ambulance after their heist goes awry.",
+         "movie_year":[
+            "2022"
+         ],
+         "movie_director_cast":[
+            "Michael Bay",
+            "Jake Gyllenhaal",
+            "Yahya Abdul-Mateen II",
+            "Eiza González",
+            "Garret Dillahunt"
+         ],
+         "movie_tags":[
+            "Action, Crime, Drama"
+         ],
+         "movie_star":[
+            "6.1"
+         ],
+         "movie_dis_keywords":[
+            "robber",
+            "steal",
+            "ambulance",
+            "heist",
+            "go"
+         ],
+         "id":"465d70d5-e5a3-4724-bbfa-2ca960f19942",
+         "_version_":1762483466664935400
+      },
+      {
+         "movie_Name":[
+            "Logan Lucky"
+         ],
+         "movie_Id":[
+            "tt5439796"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BMTYyODg0NDU1OV5BMl5BanBnXkFtZTgwNjcxMzU0MjI@._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Logan Lucky"
+         ],
+         "movie_id":[
+            "tt5439796"
+         ],
+         "movie_dis":"Two brothers attempt to pull off a heist during a NASCAR race in North Carolina.",
+         "movie_year":[
+            "2017"
+         ],
+         "movie_director_cast":[
+            "Steven Soderbergh",
+            "Channing Tatum",
+            "Adam Driver",
+            "Daniel Craig",
+            "Farrah Mackenzie"
+         ],
+         "movie_tags":[
+            "Action, Comedy, Crime"
+         ],
+         "movie_star":[
+            "7.0"
+         ],
+         "movie_dis_keywords":[
+            "brother",
+            "attempt",
+            "pull",
+            "heist",
+            "NASCAR",
+            "race",
+            "North",
+            "Carolina"
+         ],
+         "id":"d7ca4c20-45dd-4a24-8165-b39e17e29d86",
+         "_version_":1762483466765598700
+      },
+      {
+         "movie_Name":[
+            "Marauders"
+         ],
+         "movie_Id":[
+            "tt3963816"
+         ],
+         "movie_Poster":[
+            "https://m.media-amazon.com/images/M/MV5BODU2OTc1OTgyMF5BMl5BanBnXkFtZTgwOTU4OTMxOTE@._V1_QL75_UX190_CR0,0,190,281_.jpg"
+         ],
+         "movie_name":[
+            "Marauders"
+         ],
+         "movie_id":[
+            "tt3963816"
+         ],
+         "movie_dis":"When a bank is hit by a brutal heist, all evidence points to the owner and his high-powered clients. But as a group of FBI agents dig deeper into the case - and the deadly heists continue - it becomes clear that a larger conspiracy is at play.",
+         "movie_year":[
+            "2016"
+         ],
+         "movie_director_cast":[
+            "Steven C. Miller",
+            "Bruce Willis",
+            "Christopher Meloni",
+            "Dave Bautista",
+            "Adrian Grenier"
+         ],
+         "movie_tags":[
+            "Action, Crime, Thriller"
+         ],
+         "movie_star":[
+            "5.5"
+         ],
+         "movie_dis_keywords":[
+            "bank",
+            "hit",
+            "brutal",
+            "heist",
+            "evidence",
+            "point",
+            "owner",
+            "high-powered",
+            "client",
+            "group",
+            "FBI",
+            "agent",
+            "dig",
+            "case",
+            "deadly",
+            "heist",
+            "continue",
+            "becomes",
+            "clear",
+            "larger",
+            "conspiracy",
+            "play"
+         ],
+         "id":"8fcb53ee-4095-40f5-bc2b-4f0955fb3ebf",
+         "_version_":1762483467351752700
+      }
+   ]
+}
