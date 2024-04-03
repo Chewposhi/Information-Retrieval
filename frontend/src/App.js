@@ -6,23 +6,13 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MovieDetails from './components/MovieDetails';
 import Search from './components/Search';
 import Navbar from './components/Navbar';
+import Carousel from './components/Carousel';
 import './index.css';
 
 
 function App() {
 
   const [movies, setMovies] = useState(null);
-
-  //fetching of movies
-  /*useEffect(() => {
-    fetch('http://localhost:8000/movies')
-      .then(res => {
-        return res.json()
-      })
-      .then(data => {
-        setDetails(data);
-      })
-  }, [])*/
 
   useEffect(() => {
     fetch("http://localhost:5000/init").then(
@@ -40,6 +30,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/">
+            <Carousel />
             {movies && <Search movies={movies}/>}
             {!movies && <p>please connect to solr server</p>}
           </Route>

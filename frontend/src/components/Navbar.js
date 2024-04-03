@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Navbar() {
+const Navbar = () => {
   return (
     <div>
         <nav class="text-white p-4">
@@ -31,3 +31,5 @@ export default function Navbar() {
     </div>
   )
 }
+
+export default Navbar
