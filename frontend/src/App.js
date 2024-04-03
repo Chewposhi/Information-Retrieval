@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MovieDetails from './components/MovieDetails';
 import Search from './components/Search';
-import './index.css';
 
 
 function App() {
