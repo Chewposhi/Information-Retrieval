@@ -3,10 +3,10 @@ import React from 'react'
 const Navbar = () => {
   return (
     <div>
-        <nav class="text-white p-4">
+        <nav class="text-white py-4 px-20">
             <div class="flex items-center justify-between">
                 <div class="flex items-center">
-                    <img src='./image/logo.png' alt="Logo" class="h-8 mr-6" />
+                    <img src='/image/logo.png' alt="Logo" class="h-8 mr-6" />
                     
                     <ul class="flex space-x-6 font-bold">
                         <li><a href="#" class="hover:underline">Home</a></li>

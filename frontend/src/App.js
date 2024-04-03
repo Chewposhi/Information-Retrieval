@@ -3,7 +3,7 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import MovieDetails from './components/MovieDetails';
+import MovieDetails from './pages/MovieDetails';
 import Search from './components/Search';
 import Navbar from './components/Navbar';
 import Carousel from './components/Carousel';
