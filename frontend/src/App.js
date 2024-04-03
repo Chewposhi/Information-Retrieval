@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MovieDetails from './components/MovieDetails';
 import Search from './components/Search';
+import Navbar from './components/Navbar';
 import './index.css';
 
 
@@ -35,7 +36,8 @@ function App() {
 
   return (
     <Router>
-      <div className="tc ma0 pa4 min-vh-100" style={{background:'rgb(42, 59, 88)'}}>
+      <div className="tc ma0 pa4 min-vh-100">
+        <Navbar />
         <Switch>
           <Route exact path="/">
             {movies && <Search movies={movies}/>}
