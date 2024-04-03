@@ -4,9 +4,8 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import MovieDetails from './pages/MovieDetails';
-import Search from './components/Search';
 import Navbar from './components/Navbar';
-import Carousel from './components/Carousel';
+import Home from './pages/Home';
 import './index.css';
 
 
@@ -30,9 +29,7 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/">
-            <Carousel />
-            {movies && <Search movies={movies}/>}
-            {!movies && <p>please connect to solr server</p>}
+            <Home movies={movies}/>
           </Route>
           <Route path="/movie/:id">
             <MovieDetails/>

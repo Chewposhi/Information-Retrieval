@@ -6,13 +6,19 @@ import { Link } from 'react-router-dom';
 function Card({movie, isMore}) {
   return(
     <Link to={`/movie/${movie.id}` } target="_blank">
-      <div className="tc dib br3 pa3 ma2 grow bw2 shadow-5" style={{borderStyle:isMore? 'solid' : 'none', background:'rgb(42, 59, 88)'}}>
-        <img className="br-50 h8 w4 dib" alt="poster" src={movie.movie_Poster} />
-        <div>
-          <h1 style={{color:'white'}}>{movie.movie_name} ({movie.movie_year})</h1>
-          {!isMore && <h2 style={{color:'white'}}>Rating: {movie.movie_star}</h2>}
-          {!isMore && <h2 style={{color:'white'}}>Genre: {movie.movie_tags}</h2>}
-          {!isMore && <p style={{color:'white'}}>description: {movie.movie_dis}</p>}
+      <div className={`flex-col flex gap-2 shadow-5 items-center ${isMore ? 'border-solid' : 'border-none'}`} style={{ width: '300px', height: '400px' }}>
+        <img className="br-50 h-140 w-70" alt="poster" src={movie.movie_Poster} />
+        <div className="h-full flex flex-col justify-between">
+          <div>
+            <h1 className="text-white mb-2 font-bold">{movie.movie_name} ({movie.movie_year})</h1>
+            {!isMore && (
+              <div>
+                <h2 className="text-white mb-2">Rating: {movie.movie_star}</h2>
+                <h2 className="text-white">Genre: {movie.movie_tags}</h2>
+              </div>
+            )}
+          </div>
+          {!isMore && <div></div>} {/* To maintain fixed size when content is hidden */}
         </div>
       </div>
     </Link>

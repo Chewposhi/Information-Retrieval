@@ -15,3 +15,32 @@ export const carouselData = [
         "id":"84101f1e-cdea-44a3-92f0-85b4bd39ca8b"
     },
 ]
+
+export const genres = [
+    "Action",
+    "Adventure",
+    "Drama",
+    "Comedy",
+    "Crime",
+    "Romance",
+    "Animation",
+    "Biography",
+    "Documentary",
+    "Family",
+    "Fantasy",
+    "Film-Noir",
+    "Game-Show",
+    "History",
+    "Horror",
+    "Music",
+    "Musical",
+    "Mystery",
+    "News",
+    "Reality-TV",
+    "Sci-Fi",
+    "Sport",
+    "Talk-Show",
+    "Thriller",
+    "War",
+    "Western"
+];

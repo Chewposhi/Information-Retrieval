@@ -175,3 +175,42 @@ margin-right: 10px;
 padding-left: 100px;
 }
 
+
+
+
+
+
+
+.paper {
+  padding: 25px;
+  border-radius: 10px;
+  width: 1440px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 3;
+  letter-spacing: normal;
+  text-align: left;
+}
+
+.container {
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+}
+
+.productItemsContainer {
+  display: flex;
+  overflow-x: scroll;
+  gap: 12px;
+  justify-content: flex-start;
+}
+.product {
+  width: 620px;
+  min-width: 620px;
+  height: 60px;
+  background: red;
+}
