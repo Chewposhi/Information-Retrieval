@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Scroll from './Scroll';
-import SearchList from './SearchList';
 import { genres } from '../utils/genres';
-import { sorter } from '../utils/sorter';
 import '../Styles/search.css'
 
 function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
@@ -52,27 +49,6 @@ function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
     setKeywordInput(e.target.value);
   };
 
-  // when checkboxes are changed
-  const handleBoxChecked = (position) => {
-    const updatedCheckedState = checkedState.map((item, index) =>
-      index === position ? !item : item
-    );
-    setCheckedState(updatedCheckedState);
-  };
-
-  // handle sorting selector
-  const handleSort = (event) => {
-    setSortValue(event.target.value);
-  };
-
-  // Output search list of movies
-  function searchList() {
-    return (
-      <Scroll height={'100vh'}>
-        <SearchList filteredMovies={searchResult} checkedState={checkedState} sortValue={sortValue} />
-      </Scroll>
-    );
-  };
 
   // Basic search
   const handleClick = async e => {
