@@ -47,9 +47,9 @@ const MoviesSearch = () => {
     const isMoreMovies = false;
     const {genre} = useParams();
     const [selectedGenres, setSelectedGenres] = useState(isMoreMovies? [genre] : []);
-     const [sortCriteria, setSortCriteria] = useState(null);
+    const [sortCriteria, setSortCriteria] = useState(null);
 
-     const handleFilter = (genre) => {
+    const handleFilter = (genre) => {
         const updatedSelectedGenres = selectedGenres.includes(genre)
         ? selectedGenres.filter((selectedGenre) => selectedGenre !== genre)
         : [...selectedGenres, genre];
