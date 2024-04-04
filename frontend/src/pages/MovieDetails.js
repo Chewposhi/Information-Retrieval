@@ -1,7 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router';
-import Scroll from '../components/Scroll';
-import ReviewList from '../components/ReviewsList';
 import { styles } from '../styles';
 
 import ScrollableBox from '../components/ScrollableBox'
@@ -87,13 +85,6 @@ const MovieDetails = () => {
       } 
     }, [details]);
 
-    function reviewsList() {
-      return (
-        <Scroll height={'70vh'}>
-          <ReviewList Reviews={reviews} />
-        </Scroll>
-      );
-    }
 
     return ( 
         
