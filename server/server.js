@@ -44,6 +44,34 @@ app.get("/init", (req, res) => {
     });
 });
 
+// get movies by genre
+app.get("/movie/:genre", (req, res) => {
+    const Query = {
+        "movie_tags":req.params.genre
+    };
+
+    const searchQuery = client.query()
+    .q(Query)
+    .qop("OR")
+    .addParams({
+            wt: 'json',
+            indent: true
+        })
+    .start(0)
+    .rows(30)
+
+    client.search(searchQuery, function (err, result) {
+        if (err) {
+            console.log(err);
+            return;
+        };
+
+        const response = result.response;
+        res.json({"movies": response.docs});
+
+    });
+});
+
 app.get("/movie/:id", (req, res) => {
     const Query = {
         "id":req.params.id
@@ -70,6 +98,7 @@ app.get("/movie/:id", (req, res) => {
 
     });
 });
+
 
 app.get("/nameSearch/:q", (req, res) => {
     const filtered = req.params.q.replace(':','');

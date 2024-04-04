@@ -1,9 +1,34 @@
-import React,  {createRef, useRef, useState } from 'react';
+import React,  {createRef, useRef, useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Card from './Card';
 import { genres } from '../constants/constants';
 
 const MoviesRCM = ({ movies }) => {
+    const [movieData, setMovieData] = useState({});
+    useEffect(() => {
+        // Array to store promises of fetch calls
+        const fetchPromises = genres.map(genre => {
+          return fetch(`http://localhost:5000/movie/${genre}`)
+            .then(response => response.json())
+            .then(data => ({
+              [genre]: data.movies
+            }));
+        });
+    
+        // Wait for all fetches to complete
+        Promise.all(fetchPromises)
+          .then(results => {
+            // Combine the results into a single object
+            const combinedResults = results.reduce((acc, result) => {
+              return { ...acc, ...result };
+            }, {});
+            // Set the state with the combined results
+            setMovieData(combinedResults);
+          })
+          .catch(error => {
+            console.error('Error fetching movies:', error);
+          });
+      }, []);
 
     const elementsRef = useRef(genres.map(() => createRef()));
 
@@ -36,7 +61,7 @@ const MoviesRCM = ({ movies }) => {
                         </button>
                     </div>
                     <div className='flex gap-4 overflow-x-scroll' ref={elementsRef.current[index]} style={{ '-ms-overflow-style': 'none', 'scrollbar-width': 'none', 'overflow-y': 'hidden' }}>
-                        {movies.map((movie, idx) => (
+                        {movieData[genre].map((movie, idx) => (
                             <div key={idx}>
                                 {movie.movie_tags[0].includes(genre) && <Card movie={movie} isMore={false}/>}
                             </div>
