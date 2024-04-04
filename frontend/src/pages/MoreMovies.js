@@ -5,7 +5,7 @@ import Search from '../components/Search';
 import { genres } from '../constants/constants';
 import { styles } from '../styles';
 
-const MoviesSearch = ({ movies, isMoreMovies }) => {
+const MoreMovies = ({ movies, isMoreMovies }) => {
   const {genre} = useParams();
   const [selectedGenres, setSelectedGenres] = useState(isMoreMovies? [genre] : []);
   const [sortCriteria, setSortCriteria] = useState(null);
@@ -80,4 +80,4 @@ const MoviesSearch = ({ movies, isMoreMovies }) => {
   );
 };
 
-export default MoviesSearch;
+export default MoreMovies;

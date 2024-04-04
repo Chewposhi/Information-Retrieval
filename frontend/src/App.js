@@ -7,7 +7,7 @@ import MovieDetails from './pages/MovieDetails';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import './index.css';
-import Test from './pages/test';
+import MoviesSearch from './pages/MovieSearch';
 
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
             <Home isMoreMovies={true} movies={movies} search={search} showSearchResult={true} setShowSearchResult={setShowSearchResult}/>
           </Route>
           <Route path="/search/:search">
-            <Test movies={search}/>
+            <MoviesSearch />
           </Route>
         </Switch>
         

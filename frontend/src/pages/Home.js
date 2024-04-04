@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Carousel from '../components/Carousel';
 import Search from '../components/Search';
-import MoviesSearch from './MoviesSearch';
+import MoreMovies from './MoreMovies';
 import MoviesRCM from '../components/MoviesRCM';
 
 const Home = ({ movies, search, showSearchResult, isMoreMovies }) => {
@@ -14,7 +14,7 @@ const Home = ({ movies, search, showSearchResult, isMoreMovies }) => {
       <Carousel />
       {/* {movies && <Search movies={movies}/>} */}
       {!showSearchResult && movies && <MoviesRCM movies={movies} />}
-      {showSearchResult && movies && <MoviesSearch movies={isMoreMovies? movies : search} isMoreMovies={isMoreMovies}/>}
+      {showSearchResult && movies && <MoreMovies movies={movies} isMoreMovies={isMoreMovies}/>}
       {!movies && <p>please connect to solr server</p>}
       
       {/* Back to Top button */}
