@@ -10,7 +10,7 @@ const Navbar = () => {
                     <img src='/image/logo.png' alt="Logo" class="h-8 mr-6" />
                     
                     <ul class="flex space-x-6 font-bold">
-                        <li><a href="#" class="hover:underline">Home</a></li>
+                        <li><a href="/" class="hover:underline">Home</a></li>
                         <li><a href="#" class="hover:underline">Movies</a></li>
                         <li><a href="#" class="hover:underline">TV Shows</a></li>
                     </ul>

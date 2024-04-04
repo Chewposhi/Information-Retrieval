@@ -25,7 +25,7 @@ function App() {
 
   return (
     <Router>
-      <div className="tc ma0 pa4 min-vh-100">
+      <div className="tc pa4 min-vh-100 bg-black">
         <Navbar />
         <Switch>
           <Route exact path="/">
