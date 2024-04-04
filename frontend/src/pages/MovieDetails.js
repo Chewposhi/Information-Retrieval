@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router';
 import Scroll from '../components/Scroll';
 import ReviewList from '../components/ReviewsList';
 import MoreLikeThisList from '../components/MoreLikeThisList';
+import { styles } from '../styles';
+
+import ScrollableBox from '../components/ScrollableBox'
 import '../Styles/review.css';
 
 const MovieDetails = () => {
@@ -10,11 +13,10 @@ const MovieDetails = () => {
     const [details, setDetails] = useState(null);
     const [reviews, setReviews] = useState(null);
     const [reviewsloaded, setReviewsloaded] = useState(false);
-    const [moreByName, setMoreByName] = useState([]);
-    const [moreByCast, setMoreByCast] = useState([]);
     const [moreCombined, setMoreCombined] = useState([]);
     const [moreLoaded, setMoreloaded] = useState(false);
     const [poster, setPoster] = useState(null);
+    const ref = useRef(null);
     const options = {
       method: 'GET',
       headers: {
@@ -43,8 +45,6 @@ const MovieDetails = () => {
           Promise.all([resName.json(), resCast.json()])
         )
         .then(([dataName, dataCast]) => {
-          setMoreByName(dataName);
-          setMoreByCast(dataCast);
           const combined = dataName.movies.concat(dataCast.movies);
           const uniqueIds = [];
           const unique = combined.filter(element => {
@@ -98,7 +98,7 @@ const MovieDetails = () => {
 
     function moreList() {
       return (
-        <Scroll height={'40vh'}>
+        <Scroll height={'30vh'}>
           <MoreLikeThisList MoreList={moreCombined} />
         </Scroll>
       );
@@ -108,9 +108,8 @@ const MovieDetails = () => {
         
         <div>
             {poster && <img className="br-50 h10 w5 dib" alt="poster" src={[reviews.base.image.url]} />}
-            {details && <div>
-              {console.log(details)}
-              <h1 style={{textDecoration:'underline', color:'white'}}>{details[0]["movie_name"]} ({details[0]["movie_year"]})</h1>
+            {details && <div className='flex flex-col items-center gap-2 mb-4'>
+              <h1 className={`${styles.heroSubText}`}>{details[0]["movie_name"]} ({details[0]["movie_year"]})</h1>
               <h2 style={{color:'white'}}>Genre: </h2>
               <h3 style={{color:'white'}}>{details[0]["movie_tags"]}</h3>
               <h2 style={{color:'white'}}>Rating: </h2>
@@ -119,14 +118,13 @@ const MovieDetails = () => {
               <h3 style={{color:'white'}}>{details[0]["movie_director_cast"].join(', ')}</h3>
               <h2 style={{color:'white'}}>Description: </h2>
               <h3 style={{color:'white'}}>{details[0]["movie_dis"]}</h3>
-              <a href="https://r.mtdv.me/watch?v=RYv6zes4do" target='_blank'>
-                <button style={{cursor:'pointer', borderRadius:'10px', color:'gold', background:'grey', width:'200px', height:'70px', fontSize:'30px'}}>Watch Now</button>
-              </a>
+                <button onClick={()=>(window.open("https://r.mtdv.me/watch?v=RYv6zes4do"))} style={{cursor:'pointer', borderRadius:'10px', color:'gold', background:'grey', width:'200px', height:'70px', fontSize:'30px'}}>Watch Now</button>
             </div>}
-            <div>
-              <h2 style={{borderTop:'dotted', marginTop:'20px', color:'white'}}>Not what you were looking for? Here are movies with similar titles:</h2>
-              {moreLoaded && moreList()}
-              <h2 style={{borderTop:'dotted', color:'white'}}>Reviews:</h2>
+            <div className='mx-2'>
+              <h2 className={`${styles.heroSubText} my-4`}>Not what you were looking for? Here are similar movies</h2>
+              {moreLoaded && <ScrollableBox movies={moreCombined}/>
+              }
+              <h2>Reviews:</h2>
               {reviewsloaded && reviewsList()}
             </div>
             
