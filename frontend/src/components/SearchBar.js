@@ -52,36 +52,7 @@ function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
 
   // Basic search
   const handleClick = async e => {
-    if(searchInput.length == 0){
-      alert('Please enter something');
-      return;
-    }
-    e.preventDefault();
-    setShowSuggest(false);
-
-    basicStart = performance.now();
-    await fetch(`http://localhost:5000/nameSearch/${searchInput}`).then(
-      response => response.json()
-    ).then(
-      data => {
-        console.log(data["movies"])
-        setSearchResult(data["movies"])
-        if(data["movies"].length === 0){
-          setNoResult(true);
-          setNoResultTag(true);
-          setNoResultInput(searchInput);
-        }else{setNoResult(false)
-              basicEnd = performance.now();
-              setSearchTime(basicEnd - basicStart);
-              setNoResultTag(false);
-              setSearch(data["movies"]);
-              setMovies(data["movies"]);
-              setShowSearchResult(true);
-              window.open(`/search/${searchInput}`)
-            }
-      }
-    )
-    setfuzzyN(3);
+      window.open(`/search/${searchInput}`)
   };
 
   // Keywords search, parse description first

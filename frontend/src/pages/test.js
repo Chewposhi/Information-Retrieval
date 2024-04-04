@@ -7,6 +7,7 @@ import { styles } from '../styles';
 
 const MoviesSearch = () => {
     const {search} = useParams();
+    const [fuzzyN, setfuzzyN] = useState(3);
 
     useEffect(() => {
         handleClick();
@@ -23,10 +24,25 @@ const MoviesSearch = () => {
         ).then(
             data => {
                 console.log(data["movies"])
-                setMovies(data["movies"])
+                if(data["movies"].length === 0){
+                    fuzzy();
+                  }else{
+                    setMovies(data["movies"]);
+                }
             }
         )
     };
+
+      // fuzzy search
+    const fuzzy = async e => {
+        fetch('http://localhost:5000/Fuzzy', {headers: {'searchText':search, 'n':fuzzyN}}).then(
+            response => response.json()
+        ).then(
+            data => {
+            setMovies(data["movies"])
+            }
+        )
+    }
 
     const [movies, setMovies] = useState([]);
     const isMoreMovies = false;
