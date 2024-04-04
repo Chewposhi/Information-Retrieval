@@ -144,27 +144,6 @@ function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
   };
 
 
-  
-  // fuzzy search
-  useEffect(() => {
-    fuzzyStart = performance.now()
-    if(noResult){
-      fetch('http://localhost:5000/Fuzzy', {headers: {'searchText':searchInput, 'n':fuzzyN}}).then(
-        response => response.json()
-      ).then(
-        data => {
-          fuzzyEnd = performance.now();
-          setSearchTime(fuzzyEnd - fuzzyStart);
-          setSearchResult(data["movies"])
-          setSearch(data["movies"]);
-          setMovies(data["movies"]);
-          setShowSearchResult(true);
-          setNoResult(false)
-        }
-      )
-    }
-  }, [noResult]);
-
   // handle more/less fuzzy
   useEffect(() => {
     if(fuzzyN<1){
