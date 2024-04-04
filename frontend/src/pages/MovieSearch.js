@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import Card from '../components/Card';
-import Search from '../components/Search';
 import { genres } from '../constants/constants';
 import { styles } from '../styles';
 
