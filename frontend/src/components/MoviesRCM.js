@@ -29,7 +29,7 @@ const MoviesRCM = ({ movies }) => {
                     <div className='flex gap-4 overflow-x-scroll' ref={elementsRef.current[index]} style={{ '-ms-overflow-style': 'none', 'scrollbar-width': 'none', 'overflow-y': 'hidden' }}>
                         {movies.map((movie, idx) => (
                             <div key={idx}>
-                                <Card movie={movie} isMore={false}/>
+                                {movie.movie_tags[0].includes(genre) && <Card movie={movie} isMore={false}/>}
                             </div>
                         ))}
                     </div>
