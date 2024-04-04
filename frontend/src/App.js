@@ -7,12 +7,13 @@ import MovieDetails from './pages/MovieDetails';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import './index.css';
+import Test from './pages/test';
 
 
 function App() {
 
   const [movies, setMovies] = useState(null);
-  const [search, setSearch] = useState([]);
+  const [search, setSearch] = useState(null);
   const [showSearchResult, setShowSearchResult] = useState(false);
 
   useEffect(() => {
@@ -38,6 +39,9 @@ function App() {
           </Route>
           <Route path="/more-movies/:genre">
             <Home isMoreMovies={true} movies={movies} search={search} showSearchResult={true} setShowSearchResult={setShowSearchResult}/>
+          </Route>
+          <Route path="/search/:search">
+            <Test movies={search}/>
           </Route>
         </Switch>
         

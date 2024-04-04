@@ -77,6 +77,7 @@ function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
               setSearch(data["movies"]);
               setMovies(data["movies"]);
               setShowSearchResult(true);
+              window.open(`/search/${searchInput}`)
             }
       }
     )
