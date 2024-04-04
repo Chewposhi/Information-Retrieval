@@ -6,6 +6,7 @@ import { styles } from '../styles';
 
 import ScrollableBox from '../components/ScrollableBox'
 import '../Styles/review.css';
+import Review from '../components/Review';
 
 const MovieDetails = () => {
     const {id} = useParams();
@@ -113,14 +114,23 @@ const MovieDetails = () => {
               </div>}
           </div>
             {/* more like this section */}
-            <div className='mx-2'>
-              <h2 className={`${styles.heroSubText} my-4`}>Not what you were looking for? Here are similar movies</h2>
-              {moreLoaded && <ScrollableBox movies={moreCombined}/>
-              }
-              <h2>Reviews:</h2>
-              {reviewsloaded && reviewsList()}
+            <div className='mx-2 flex flex-col'>
+              <div>
+                <h2 className={`${styles.heroSubText} my-4`}>Not what you were looking for? Here are similar movies</h2>
+                {moreLoaded && <ScrollableBox movies={moreCombined}/>
+                }
+              </div>
+              <div className='flex flex-col items-center'>
+                <h2 className={`${styles.heroSubText} my-4`}>Reviews:</h2>
+                {reviewsloaded && 
+                  <div className='flex flex-col gap-4'>
+                    {reviews.reviews.map((review, idx)=>(
+                      <Review key={idx} review={review} />
+                    ))}
+                  </div>
+                }
+              </div>
             </div>
-            
         </div>
     );
 }
