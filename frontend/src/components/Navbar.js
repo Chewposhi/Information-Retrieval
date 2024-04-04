@@ -1,7 +1,7 @@
 import React from 'react'
 import SearchBar from './SearchBar'
 
-const Navbar = ({setSearch, setShowSearchResult}) => {
+const Navbar = ({setSearch, setShowSearchResult, setMovies}) => {
   return (
     <div>
         <nav class="text-white py-4 px-20">
@@ -16,7 +16,7 @@ const Navbar = ({setSearch, setShowSearchResult}) => {
                     </ul>
                 </div>
                 
-                <SearchBar setSearch={setSearch} setShowSearchResult={setShowSearchResult}/>
+                <SearchBar setSearch={setSearch} setShowSearchResult={setShowSearchResult} setMovies={setMovies}/>
             </div>
         </nav>
 

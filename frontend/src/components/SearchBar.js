@@ -5,7 +5,7 @@ import { genres } from '../utils/genres';
 import { sorter } from '../utils/sorter';
 import '../Styles/search.css'
 
-function SearchBar({movies, setSearch, setShowSearchResult}) {
+function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
 
   const [searchInput, setSearchInput] = useState("");
   const [keywordInput, setKeywordInput] = useState("");
@@ -99,6 +99,7 @@ function SearchBar({movies, setSearch, setShowSearchResult}) {
               setSearchTime(basicEnd - basicStart);
               setNoResultTag(false);
               setSearch(data["movies"]);
+              setMovies(data["movies"]);
               setShowSearchResult(true);
             }
       }
@@ -208,6 +209,7 @@ function SearchBar({movies, setSearch, setShowSearchResult}) {
           setSearchTime(fuzzyEnd - fuzzyStart);
           setSearchResult(data["movies"])
           setSearch(data["movies"]);
+          setMovies(data["movies"]);
           setShowSearchResult(true);
           setNoResult(false)
         }

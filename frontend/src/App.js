@@ -28,7 +28,7 @@ function App() {
   return (
     <Router>
       <div className="tc pa4 min-vh-100 bg-black">
-        <Navbar setSearch={setSearch} setShowSearchResult={setShowSearchResult}/>
+        <Navbar setSearch={setSearch} setShowSearchResult={setShowSearchResult} setMovies={setMovies} />
         <Switch>
           <Route exact path="/">
             <Home isMoreMovies={false} movies={movies} search={search} showSearchResult={showSearchResult} setShowSearchResult={setShowSearchResult}/>
