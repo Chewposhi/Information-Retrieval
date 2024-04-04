@@ -13,6 +13,7 @@ function App() {
 
   const [movies, setMovies] = useState(null);
   const [search, setSearch] = useState([]);
+  const [showSearchResult, setShowSearchResult] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:5000/init").then(
@@ -27,10 +28,10 @@ function App() {
   return (
     <Router>
       <div className="tc pa4 min-vh-100 bg-black">
-        <Navbar setSearch={setSearch}/>
+        <Navbar setSearch={setSearch} setShowSearchResult={setShowSearchResult}/>
         <Switch>
           <Route exact path="/">
-            <Home movies={movies} search={search}/>
+            <Home movies={movies} search={search} showSearchResult={showSearchResult} setShowSearchResult={setShowSearchResult}/>
           </Route>
           <Route path="/movie/:id">
             <MovieDetails/>

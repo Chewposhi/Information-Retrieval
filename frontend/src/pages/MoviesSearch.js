@@ -44,9 +44,9 @@ const MoviesSearch = ({ movies }) => {
       <h2 className={`${styles.heroSubText} my-6`}>Search Result: {moviesToDisplay.length}</h2>
       {/* filter */}
       <h2 className={`${styles.sectionSubText} pink-text-gradient`}>Filter</h2>
-      <div className='flex flex-wrap justify-between px-10'>
+      <div className='flex flex-wrap justify-between px-10 divide-x-2 divide-cyan-400'>
         {genres.map(genre => (
-          <label key={genre} className='text-white mb-4'>
+          <label key={genre} className='text-white mb-4 px-2'>
             {genre}
             <input
               type='checkbox'
