@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router';
 import Card from '../components/Card';
 import Search from '../components/Search';
 import { genres } from '../constants/constants';
 import { styles } from '../styles';
 
-const MoviesSearch = ({ movies }) => {
-  const [selectedGenres, setSelectedGenres] = useState([]);
+const MoviesSearch = ({ movies, isMoreMovies }) => {
+  const {genre} = useParams();
+  const [selectedGenres, setSelectedGenres] = useState(isMoreMovies? [genre] : []);
   const [sortCriteria, setSortCriteria] = useState(null);
 
   const handleFilter = (genre) => {

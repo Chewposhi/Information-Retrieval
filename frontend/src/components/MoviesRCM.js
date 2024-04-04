@@ -1,10 +1,11 @@
 import React,  {createRef, useRef, useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Card from './Card';
 import { genres } from '../constants/constants';
 import { styles } from '../styles';
 
-const MoviesRCM = ({ movies }) => {
+const MoviesRCM = () => {
     const [movieData, setMovieData] = useState(null);
     useEffect(() => {
         // Array to store promises of fetch calls
@@ -61,7 +62,9 @@ const MoviesRCM = ({ movies }) => {
                         <button onClick={() => scroll(elementsRef.current[index], +80)}>
                             <FaChevronRight /> {/* Icon for scrolling right */}
                         </button>
-                        <a href='/' className='absolute right-10'>more</a>
+                        <Link className='absolute right-10' to={`/more-movies/${genre}` } target="_blank">
+                            <p >more</p>
+                        </Link>
                     </div>
                     {movieData && <div className='flex gap-4 overflow-x-scroll' ref={elementsRef.current[index]} style={{ '-ms-overflow-style': 'none', 'scrollbar-width': 'none', 'overflow-y': 'hidden' }}>
                         {movieData[genre].map((movie, idx) => (
