@@ -1,33 +1,42 @@
-import React, { useRef } from 'react';
+import React,  {createRef, useRef, useState } from 'react';
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import Card from './Card';
 import { genres } from '../constants/constants';
 
 const MoviesRCM = ({ movies }) => {
-    const ref = useRef(null);
-    const products = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-    const scroll = (scrollOffset) => {
+
+    const elementsRef = useRef(genres.map(() => createRef()));
+
+    const scroll = (ref, scrollOffset) => {
         ref.current.scrollLeft += scrollOffset;
         console.log(ref.current.scrollLeft);
         console.log(ref.current);
       };
 
     return (
-        <div className="paper">
-            <button onClick={() => scroll(-80)}>LEFT</button>
-            <button onClick={() => scroll(+80)}>RIGHT</button>
-            <div className={'container'}>
-                <div>
-                <div className='flex gap-4 overflow-x-scroll' ref={ref} style={{ '-ms-overflow-style': 'none', 'scrollbar-width': 'none', 'overflow-y': 'hidden' }}>
-                        
-                         {movies.map((movie, idx) => (
-                             <div key={idx}>
-                                 <Card movie={movie} isMore={false}/>
-                             </div>
-                         ))}
-                     </div>
+        <div className='flex flex-col gap-10 mt-10 justify-start'>
+            {genres.map((genre, index) => (
+                <div className="flex flex-col gap-2">
+                    <div className='flex justify-around'>
+                        <button onClick={() => scroll(elementsRef.current[index], -80)} className="mr-2">
+                            <FaChevronLeft /> {/* Icon for scrolling left */}
+                        </button>
+                        <h2 className="mr-2">{genre}</h2>
+                        <button onClick={() => scroll(elementsRef.current[index], +80)}>
+                            <FaChevronRight /> {/* Icon for scrolling right */}
+                        </button>
+                    </div>
+                    <div className='flex gap-4 overflow-x-scroll' ref={elementsRef.current[index]} style={{ '-ms-overflow-style': 'none', 'scrollbar-width': 'none', 'overflow-y': 'hidden' }}>
+                        {movies.map((movie, idx) => (
+                            <div key={idx}>
+                                <Card movie={movie} isMore={false}/>
+                            </div>
+                        ))}
+                    </div>
                 </div>
-            </div>
-            </div>
+            ))}
+        </div>
+        
         // <div className='flex flex-col gap-10 mt-10 justify-start'>
         //     {genres.map((genre, index) => (
         //         <div key={index} className='relative'>
