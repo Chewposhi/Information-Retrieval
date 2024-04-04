@@ -18,8 +18,8 @@ const ScrollableBox = ({movies}) => {
         console.log(ref.current);
     };
     return (
-        <div className="flex flex-col gap-4">
-            <div className='flex justify-around mt-1 relative'>
+        <div className="flex flex-col gap-4 my-6">
+            <div className='flex justify-around relative'>
                 <button onClick={() => scroll(ref, -80)} className="mr-2">
                     <FaChevronLeft /> {/* Icon for scrolling left */}
                 </button>
