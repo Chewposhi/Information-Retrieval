@@ -30,6 +30,7 @@ const MovieDetails = () => {
       ).then(
         data => {
           setDetails(data["movies"])
+          console.log(data["movies"])
         }
       );
       
@@ -108,6 +109,7 @@ const MovieDetails = () => {
         <div>
             {poster && <img className="br-50 h10 w5 dib" alt="poster" src={[reviews.base.image.url]} />}
             {details && <div>
+              {console.log(details)}
               <h1 style={{textDecoration:'underline', color:'white'}}>{details[0]["movie_name"]} ({details[0]["movie_year"]})</h1>
               <h2 style={{color:'white'}}>Genre: </h2>
               <h3 style={{color:'white'}}>{details[0]["movie_tags"]}</h3>

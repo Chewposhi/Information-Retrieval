@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { carouselData } from '../constants/constants';
+import { styles } from '../styles';
 
 const Carousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -28,7 +29,7 @@ const Carousel = () => {
 
   return (
     <div className="relative mt-6">
-        <h2 className="text-2xl font-bold mb-4">What's hot</h2>
+        <h2 className={`text-2xl font-bold mb-4 ${styles.sectionHeadText}`}>What's hot</h2>
         <div className="carousel relative flex justify-center items-center">
             <div className="carousel-container flex gap-6 justify-center items-center">
             <button

@@ -45,7 +45,7 @@ app.get("/init", (req, res) => {
 });
 
 // get movies by genre
-app.get("/movie/:genre", (req, res) => {
+app.get("/movie-rec/:genre", (req, res) => {
     const Query = {
         "movie_tags":req.params.genre
     };
