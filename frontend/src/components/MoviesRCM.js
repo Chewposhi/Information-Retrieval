@@ -8,20 +8,29 @@ const MoviesRCM = ({ movies }) => {
     const elementsRef = useRef(genres.map(() => createRef()));
 
     const scroll = (ref, scrollOffset) => {
-        ref.current.scrollLeft += scrollOffset;
+        // Get the width of the viewport
+        const viewportWidth = window.innerWidth;
+    
+        // Calculate the scroll distance based on the viewport width
+        const calculatedScrollOffset = scrollOffset * (viewportWidth / 100); // Adjust factor as needed
+    
+        // Scroll the element by the calculated scroll offset
+        ref.current.scrollLeft += calculatedScrollOffset;
+    
         console.log(ref.current.scrollLeft);
         console.log(ref.current);
-      };
+    };
+    
 
     return (
         <div className='flex flex-col gap-10 mt-10 justify-start'>
             {genres.map((genre, index) => (
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-4">
                     <div className='flex justify-around'>
                         <button onClick={() => scroll(elementsRef.current[index], -80)} className="mr-2">
                             <FaChevronLeft /> {/* Icon for scrolling left */}
                         </button>
-                        <h2 className="mr-2">{genre}</h2>
+                        <h2 className="mr-2 font-bold pink-text-gradient">{genre}</h2>
                         <button onClick={() => scroll(elementsRef.current[index], +80)}>
                             <FaChevronRight /> {/* Icon for scrolling right */}
                         </button>
