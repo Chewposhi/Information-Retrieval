@@ -206,6 +206,7 @@ function SearchBar({movies, setSearch}) {
           fuzzyEnd = performance.now();
           setSearchTime(fuzzyEnd - fuzzyStart);
           setSearchResult(data["movies"])
+          setSearch(data["movies"])
           setNoResult(false)
         }
       )

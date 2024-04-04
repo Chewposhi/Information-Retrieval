@@ -10,7 +10,7 @@ const  Home =({ movies, search }) => {
     <div>
         <Carousel />
         {/* {movies && <Search movies={movies}/>} */}
-        {movies && <MoviesRCM movies={movies}/>}
+        {/* {movies && <MoviesRCM movies={movies}/>} */}
         <MoviesSearch movies={search}/>
         {!movies && <p>please connect to solr server</p>}
     </div>
