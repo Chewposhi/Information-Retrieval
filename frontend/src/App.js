@@ -12,6 +12,7 @@ import './index.css';
 function App() {
 
   const [movies, setMovies] = useState(null);
+  const [search, setSearch] = useState([]);
 
   useEffect(() => {
     fetch("http://localhost:5000/init").then(
@@ -26,10 +27,10 @@ function App() {
   return (
     <Router>
       <div className="tc pa4 min-vh-100 bg-black">
-        <Navbar />
+        <Navbar setSearch={setSearch}/>
         <Switch>
           <Route exact path="/">
-            <Home movies={movies}/>
+            <Home movies={movies} search={search}/>
           </Route>
           <Route path="/movie/:id">
             <MovieDetails/>
