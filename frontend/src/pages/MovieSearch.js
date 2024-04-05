@@ -10,9 +10,7 @@ const MoviesSearch = () => {
     const [fuzzyN, setfuzzyN] = useState(3);
 
     // show more and less
-    const [showAddBtn, setShowAddBtn] = useState(true);
     const [noResultInput, setNoResultInput] = useState("");
-    const [noResult, setNoResult] = useState(false);
     const [noResultTag, setNoResultTag] = useState(false);
 
     // search time
@@ -28,10 +26,6 @@ const MoviesSearch = () => {
 
     // Basic search
     const handleClick = async e => {
-        if(search.length == 0){
-        alert('Please enter something');
-        return;
-        }
         basicStart = performance.now();
         await fetch(`http://localhost:5000/nameSearch/${search}`).then(
         response => response.json()
@@ -39,7 +33,6 @@ const MoviesSearch = () => {
             data => {
                 console.log(data["movies"])
                 if(data["movies"].length === 0){
-                    setNoResult(true);
                     setNoResultTag(true);
                     setNoResultInput(search);
                     fuzzy();
@@ -63,7 +56,6 @@ const MoviesSearch = () => {
                 setMovies(data["movies"]);
                 fuzzyEnd = performance.now();
                 setSearchTime(fuzzyEnd - fuzzyStart);
-                setNoResult(false);
             }
         )
     }
@@ -86,7 +78,6 @@ const MoviesSearch = () => {
         ).then(
             data => {
             setMovies(data["movies"])
-            setNoResult(false);
             }
         )
         }
