@@ -158,15 +158,15 @@ const MoviesSearch = () => {
         </select>
         {/* search results */}
         <div className='max-w-screen-xxl mx-auto px-4 sm:px-6 lg:px-8'>
-            {searchTime && <div style={{color:'white', marginTop:'5px'}}>Search Took: {searchTime} ms</div>}
+            {searchTime && <div className='mb-4'>Search Took: {searchTime} ms</div>}
             {noResultTag && 
-                <div className='flex flex-col items-center gap-2'>
+                <div className='flex flex-col items-center gap-2 my-2'>
                     <h2>no result for "{noResultInput}", showing our best guesses!</h2>
                     <div className='flex justify-center'>
-                        <button className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-4' onClick={() => { setfuzzyN(fuzzyN + 1) }}>Show More</button>
-                        <button className='bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded' onClick={() => { setfuzzyN(fuzzyN - 1) }}>Show Less</button>
+                        <button className={`${fuzzyN<9? 'inline' : 'hidden'} bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-4 `}onClick={() => { setfuzzyN(fuzzyN + 1) }}>Show More</button>
+                        <button className={`${fuzzyN>1? 'inline' : 'hidden'} bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded`} onClick={() => { setfuzzyN(fuzzyN - 1) }}>Show Less</button>
                     </div>
-                    <p>level of guess freedom:{fuzzyN}</p>
+                    <p>level of guess freedom: {fuzzyN}</p>
                 </div>
             }
             <div className='flex flex-wrap justify-center gap-5'>
