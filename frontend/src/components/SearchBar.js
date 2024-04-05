@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { genres } from '../utils/genres';
+import ToggleSwitch from './ToggleSwitch';
 import '../Styles/search.css'
 
 function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
+
+  const [mode, setMode] = useState(0);
 
   const [searchInput, setSearchInput] = useState("");
   const [keywordInput, setKeywordInput] = useState("");
@@ -31,6 +34,10 @@ function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
   useEffect(() => {
     setSearchResult(movies);
   }, []);
+
+  useEffect(() => {
+    console.log(mode)
+  }, [mode]);
 
   // search box input change handle
   const handleChange = async e => {
@@ -185,10 +192,14 @@ function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
 
   return (
     <div class="relative flex flex-col">
-      <div>
+      <div className='flex'>
+        <p>{mode}</p>
+        <div className='absoulute left-0'>
+          <ToggleSwitch label="desc2Movie" mode={mode} setMode={setMode} />
+        </div>
         <input 
           type="text" 
-          placeholder="Search"
+          placeholder={mode===0? "Search title" : "Enter Description"}
           onChange={handleChange}
           value={searchInput}
           onFocus={() => handleFocus()}
