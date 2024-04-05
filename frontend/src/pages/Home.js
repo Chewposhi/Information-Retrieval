@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import Carousel from '../components/Carousel';
-import Search from '../components/Search';
 import MoreMovies from './MoreMovies';
 import MoviesRCM from '../components/MoviesRCM';
 
-const Home = ({ movies, search, showSearchResult, isMoreMovies }) => {
+const Home = ({ movies, showSearchResult, isMoreMovies }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };

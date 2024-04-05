@@ -5,8 +5,22 @@ import { genres } from '../constants/constants';
 import { styles } from '../styles';
 
 const MoviesSearch = () => {
+    // basic search, fuzzy search
     const {search} = useParams();
     const [fuzzyN, setfuzzyN] = useState(3);
+
+    // show more and less
+    const [showAddBtn, setShowAddBtn] = useState(true);
+    const [noResultInput, setNoResultInput] = useState("");
+    const [noResult, setNoResult] = useState(false);
+    const [noResultTag, setNoResultTag] = useState(false);
+
+    // search time
+    const [searchTime, setSearchTime] = useState(null);
+    var basicStart = 0;
+    var basicEnd = 0;
+    var fuzzyStart = 0;
+    var fuzzyEnd = 0;
 
     useEffect(() => {
         handleClick();
@@ -18,15 +32,22 @@ const MoviesSearch = () => {
         alert('Please enter something');
         return;
         }
+        basicStart = performance.now();
         await fetch(`http://localhost:5000/nameSearch/${search}`).then(
         response => response.json()
         ).then(
             data => {
                 console.log(data["movies"])
                 if(data["movies"].length === 0){
+                    setNoResult(true);
+                    setNoResultTag(true);
+                    setNoResultInput(search);
                     fuzzy();
                   }else{
                     setMovies(data["movies"]);
+                    basicEnd = performance.now();
+                    setSearchTime(basicEnd - basicStart);
+                    setNoResultTag(false)
                 }
             }
         )
@@ -34,14 +55,42 @@ const MoviesSearch = () => {
 
     // fuzzy search
     const fuzzy = async e => {
+        fuzzyStart = performance.now()
+        fetch('http://localhost:5000/Fuzzy', {headers: {'searchText':search, 'n':fuzzyN}}).then(
+            response => response.json()
+        ).then(
+            data => {
+                setMovies(data["movies"]);
+                fuzzyEnd = performance.now();
+                setSearchTime(fuzzyEnd - fuzzyStart);
+                setNoResult(false);
+            }
+        )
+    }
+
+    // handle more/less fuzzy
+    useEffect(() => {
+        if(fuzzyN<1){
+        alert('Wow! that is too conservative.');
+        setfuzzyN(3);
+        return;
+        }
+        if(fuzzyN>10){
+        alert('Wow! that is too wild.');
+        setfuzzyN(3);
+        return;
+        }
+        if(fuzzyN !=3){
         fetch('http://localhost:5000/Fuzzy', {headers: {'searchText':search, 'n':fuzzyN}}).then(
             response => response.json()
         ).then(
             data => {
             setMovies(data["movies"])
+            setNoResult(false);
             }
         )
-    }
+        }
+    }, [fuzzyN]);
 
     const [movies, setMovies] = useState([]);
     const isMoreMovies = false;
@@ -109,6 +158,17 @@ const MoviesSearch = () => {
         </select>
         {/* search results */}
         <div className='max-w-screen-xxl mx-auto px-4 sm:px-6 lg:px-8'>
+            {noResultTag && 
+                <div className='flex flex-col items-center gap-2'>
+                    {searchTime && <div style={{color:'white', marginTop:'5px'}}>Search Took: {searchTime} ms</div>}
+                    <h2>no result for "{noResultInput}", showing our best guesses!</h2>
+                    <div className='flex justify-center'>
+                        <button className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-4' onClick={() => { setfuzzyN(fuzzyN + 1) }}>Show More</button>
+                        <button className='bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded' onClick={() => { setfuzzyN(fuzzyN - 1) }}>Show Less</button>
+                    </div>
+                    <p>level of guess freedom:{fuzzyN}</p>
+                </div>
+            }
             <div className='flex flex-wrap justify-center gap-5'>
             {moviesToDisplay.map((movie) => (
                 <Card key={movie.id} movie={movie} isMore={false}/>
