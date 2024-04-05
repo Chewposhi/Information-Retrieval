@@ -158,9 +158,9 @@ const MoviesSearch = () => {
         </select>
         {/* search results */}
         <div className='max-w-screen-xxl mx-auto px-4 sm:px-6 lg:px-8'>
+            {searchTime && <div style={{color:'white', marginTop:'5px'}}>Search Took: {searchTime} ms</div>}
             {noResultTag && 
                 <div className='flex flex-col items-center gap-2'>
-                    {searchTime && <div style={{color:'white', marginTop:'5px'}}>Search Took: {searchTime} ms</div>}
                     <h2>no result for "{noResultInput}", showing our best guesses!</h2>
                     <div className='flex justify-center'>
                         <button className='bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-4' onClick={() => { setfuzzyN(fuzzyN + 1) }}>Show More</button>
