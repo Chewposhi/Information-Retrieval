@@ -35,10 +35,6 @@ function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
     setSearchResult(movies);
   }, []);
 
-  useEffect(() => {
-    console.log(mode)
-  }, [mode]);
-
   // search box input change handle
   const handleChange = async e => {
     e.preventDefault();
@@ -63,7 +59,12 @@ function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
         alert('Please enter something');
         return;
       }
-      window.open(`/search/${searchInput}`)
+      if(mode === 0){
+        window.open(`/search/${mode}/${searchInput}`)
+      }else{
+        window.open(`/search/${mode}/${searchInput}`)
+      }
+      
   };
 
   // Keywords search, parse description first

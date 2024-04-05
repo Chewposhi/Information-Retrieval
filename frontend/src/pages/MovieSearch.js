@@ -5,8 +5,12 @@ import { genres } from '../constants/constants';
 import { styles } from '../styles';
 
 const MoviesSearch = () => {
+    const [loaded, setLoaded] = useState(false);
+
     // basic search, fuzzy search
     const {search} = useParams();
+    const {mode} = useParams();
+    console.log(mode)
     const [fuzzyN, setfuzzyN] = useState(3);
 
     // show more and less
@@ -26,24 +30,51 @@ const MoviesSearch = () => {
 
     // Basic search
     const handleClick = async e => {
-        basicStart = performance.now();
-        await fetch(`http://localhost:5000/nameSearch/${search}`).then(
-        response => response.json()
-        ).then(
-            data => {
-                console.log(data["movies"])
-                if(data["movies"].length === 0){
-                    setNoResultTag(true);
-                    setNoResultInput(search);
-                    fuzzy();
-                  }else{
-                    setMovies(data["movies"]);
-                    basicEnd = performance.now();
-                    setSearchTime(basicEnd - basicStart);
-                    setNoResultTag(false)
+        // name search api
+        if(mode == 0){
+            basicStart = performance.now();
+            await fetch(`http://localhost:5000/nameSearch/${search}`).then(
+            response => response.json()
+            ).then(
+                data => {
+                    console.log(data["movies"])
+                    if(data["movies"].length === 0){
+                        setNoResultTag(true);
+                        setNoResultInput(search);
+                        fuzzy();
+                      }else{
+                        setMovies(data["movies"]);
+                        setLoaded(true);
+                        basicEnd = performance.now();
+                        setSearchTime(basicEnd - basicStart);
+                        setNoResultTag(false)
+                    }
                 }
-            }
-        )
+            )
+            // desc2movie api
+        }else{
+            // parse user desc
+            fetch('http://localhost:5000/DescrptionParse', {headers: {'description':search}}).then(
+                response => response.json()
+            ).then(
+                data => {
+                if(data.length != 0){
+                    // fetch by tokenised desc
+                    fetch('http://localhost:5000/Keywords', {headers: {'keywords':data}}).then(
+                      response => response.json()
+                    ).then(
+                      data => {
+                        setMovies(data["movies"]);
+                        setLoaded(true);
+                      }
+                    );
+                  }else{
+                    alert("Could not find result");
+                  }
+                }
+  );
+        }
+        
     };
 
     // fuzzy search
@@ -54,6 +85,7 @@ const MoviesSearch = () => {
         ).then(
             data => {
                 setMovies(data["movies"]);
+                setLoaded(true);
                 fuzzyEnd = performance.now();
                 setSearchTime(fuzzyEnd - fuzzyStart);
             }
@@ -122,50 +154,51 @@ const MoviesSearch = () => {
 
     return (
         <div className='mt-6'>
-        <h2 className={`${styles.heroSubText} my-6`}>Search Result: {moviesToDisplay.length}</h2>
-        {/* filter */}
-        <h2 className={`${styles.sectionSubText} pink-text-gradient`}>Filter</h2>
-        <div className='flex flex-wrap justify-between px-10 divide-x-2 divide-cyan-400'>
-            {genres.map(genre => (
-            <label key={genre} className='text-white mb-4 px-2'>
-                {genre}
-                <input
-                type='checkbox'
-                checked={selectedGenres.includes(genre)}
-                onChange={() => handleFilter(genre)}
-                className='ml-2'
-                />
-            </label>
-            ))}
-        </div>
-        {/* sorter */}
-        <h2 className={`${styles.sectionSubText} pink-text-gradient`}>Sort by:</h2>
-        <select className='px-4 py-2 mb-4' onChange={(e) => handleSort(e.target.value)}>
-            <option value=''>-- Select sorting criteria --</option>
-            <option value='yearAsc'>Year (Ascending)</option>
-            <option value='yearDesc'>Year (Descending)</option>
-            <option value='ratingAsc'>Rating (Ascending)</option>
-            <option value='ratingDesc'>Rating (Descending)</option>
-        </select>
-        {/* search results */}
-        <div className='max-w-screen-xxl mx-auto px-4 sm:px-6 lg:px-8'>
-            {searchTime && <div className='mb-4'>Search Took: {searchTime} ms</div>}
-            {noResultTag && 
-                <div className='flex flex-col items-center gap-2 my-2'>
-                    <h2>no result for "{noResultInput}", showing our best guesses!</h2>
-                    <div className='flex justify-center'>
-                        <button className={`${fuzzyN<9? 'inline' : 'hidden'} bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-4 `}onClick={() => { setfuzzyN(fuzzyN + 1) }}>Show More</button>
-                        <button className={`${fuzzyN>1? 'inline' : 'hidden'} bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded`} onClick={() => { setfuzzyN(fuzzyN - 1) }}>Show Less</button>
-                    </div>
-                    <p>level of guess freedom: {fuzzyN}</p>
-                </div>
-            }
-            <div className='flex flex-wrap justify-center gap-5'>
-            {moviesToDisplay.map((movie) => (
-                <Card key={movie.id} movie={movie} isMore={false}/>
-            ))}
+            <h2 className={`${styles.heroSubText} my-6`}>Search Result: {moviesToDisplay.length}</h2>
+            {/* filter */}
+            <h2 className={`${styles.sectionSubText} pink-text-gradient`}>Filter</h2>
+            <div className='flex flex-wrap justify-between px-10 divide-x-2 divide-cyan-400'>
+                {genres.map(genre => (
+                <label key={genre} className='text-white mb-4 px-2'>
+                    {genre}
+                    <input
+                    type='checkbox'
+                    checked={selectedGenres.includes(genre)}
+                    onChange={() => handleFilter(genre)}
+                    className='ml-2'
+                    />
+                </label>
+                ))}
             </div>
-        </div>
+            {/* sorter */}
+            <h2 className={`${styles.sectionSubText} pink-text-gradient`}>Sort by:</h2>
+            <select className='px-4 py-2 mb-4' onChange={(e) => handleSort(e.target.value)}>
+                <option value=''>-- Select sorting criteria --</option>
+                <option value='yearAsc'>Year (Ascending)</option>
+                <option value='yearDesc'>Year (Descending)</option>
+                <option value='ratingAsc'>Rating (Ascending)</option>
+                <option value='ratingDesc'>Rating (Descending)</option>
+            </select>
+            {/* search results */}
+            {!loaded && <h1 className={`${styles.sectionHeadText}`}>Loading...</h1>}
+            {loaded && <div className='max-w-screen-xxl mx-auto px-4 sm:px-6 lg:px-8'>
+                {searchTime && <div className='mb-4'>Search Took: {searchTime} ms</div>}
+                {noResultTag && 
+                    <div className='flex flex-col items-center gap-2 my-2'>
+                        <h2>no result for "{noResultInput}", showing our best guesses!</h2>
+                        <div className='flex justify-center'>
+                            <button className={`${fuzzyN<9? 'inline' : 'hidden'} bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mr-4 `}onClick={() => { setfuzzyN(fuzzyN + 1) }}>Show More</button>
+                            <button className={`${fuzzyN>1? 'inline' : 'hidden'} bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded`} onClick={() => { setfuzzyN(fuzzyN - 1) }}>Show Less</button>
+                        </div>
+                        <p>level of guess freedom: {fuzzyN}</p>
+                    </div>
+                }
+                <div className='flex flex-wrap justify-center gap-5'>
+                {moviesToDisplay.map((movie) => (
+                    <Card key={movie.id} movie={movie} isMore={false}/>
+                ))}
+                </div>
+            </div>}
         </div>
     );
 };
