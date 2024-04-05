@@ -40,7 +40,7 @@ function App() {
           <Route path="/more-movies/:genre">
             <Home isMoreMovies={true} movies={movies} search={search} showSearchResult={true} setShowSearchResult={setShowSearchResult}/>
           </Route>
-          <Route path="/search/:search">
+          <Route path="/search/:mode?/:search">
             <MoviesSearch />
           </Route>
         </Switch>

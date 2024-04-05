@@ -59,6 +59,10 @@ function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
 
   // Basic search
   const handleClick = async e => {
+      if(searchInput.length == 0){
+        alert('Please enter something');
+        return;
+      }
       window.open(`/search/${searchInput}`)
   };
 
@@ -193,7 +197,6 @@ function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
   return (
     <div class="relative flex flex-col">
       <div className='flex'>
-        <p>{mode}</p>
         <div className='absoulute left-0'>
           <ToggleSwitch label="desc2Movie" mode={mode} setMode={setMode} />
         </div>
