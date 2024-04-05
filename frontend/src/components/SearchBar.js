@@ -1,39 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { genres } from '../utils/genres';
 import ToggleSwitch from './ToggleSwitch';
-import '../Styles/search.css'
 
-function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
-
+function SearchBar() {
+  // mode selector: 0 -> normal search, 1 -> desc2movie
   const [mode, setMode] = useState(0);
 
   const [searchInput, setSearchInput] = useState("");
-  const [keywordInput, setKeywordInput] = useState("");
   const [showSuggest, setShowSuggest] = useState(false);
-  const [showAddBtn, setShowAddBtn] = useState(true);
-  const [noResultInput, setNoResultInput] = useState("");
-  const [searchResult, setSearchResult] = useState([{}]);
-  const [noResult, setNoResult] = useState(false);
-  const [noResultTag, setNoResultTag] = useState(false);
-  const [checkedState, setCheckedState] = useState(
-    new Array(genres.length).fill(false)
-  );
-  const [keywords, setKeywords] = useState([]);
-  const [parsedDesc, setParsedDesc] = useState('');
-  const [desc, setDesc] = useState('');
-  const [autoComplete, setAutoComplete] = useState([]);
-  const [sortValue, setSortValue] = useState("default");
-  const [searchTime, setSearchTime] = useState(null);
-  const [fuzzyN, setfuzzyN] = useState(3);
-  var basicStart = 0;
-  var basicEnd = 0;
-  var fuzzyStart = 0;
-  var fuzzyEnd = 0;
 
-  // use effect for initial page mount
-  useEffect(() => {
-    setSearchResult(movies);
-  }, []);
+  // values from autoComplete function
+  const [autoComplete, setAutoComplete] = useState([]);;
 
   // search box input change handle
   const handleChange = async e => {
@@ -44,12 +21,6 @@ function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
     }else{
       setShowSuggest(true);
     }
-  };
-
-  // keyword box input change handle
-  const handleKeywordsChange = async e => {
-    e.preventDefault();
-    setKeywordInput(e.target.value);
   };
 
 
@@ -67,64 +38,11 @@ function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
       
   };
 
-  // Keywords search, parse description first
-  const handleKeywordsSearch = e => {
-    if(keywords.length == 0){
-      alert("No description added! Please add description");
-      return;
-    }
-    e.preventDefault();
-
-    // parse user desc
-    fetch('http://localhost:5000/DescrptionParse', {headers: {'description':desc}}).then(
-      response => response.json()
-    ).then(
-      data => {
-        setParsedDesc(data);
-      }
-    );
-  };
-
-  // query solr with parsed description
-  useEffect(() => {
-    if(parsedDesc.length != 0){
-      // fetch by tokenised desc
-      fetch('http://localhost:5000/Keywords', {headers: {'keywords':parsedDesc}}).then(
-        response => response.json()
-      ).then(
-        data => {
-          setSearchResult(data["movies"]);
-        }
-      );
-    }
-  }, [parsedDesc]);
-
-
-  // keyword add
-  const handleKeywordsAdd = e => {
-    if(keywordInput === ''){
-      alert('input is empty');
-      return;
-    }
-    setShowAddBtn(false);
-    e.preventDefault();
-    setKeywords(oldKeywords => [...oldKeywords, keywordInput]);
-    setDesc(keywordInput);
-    setKeywordInput('');
-  };
-
   // handle enter key down search
   const handleKeyDownSearch = event => {
     if (event.key === 'Enter') {
       handleClick(event);
       setShowSuggest(false);
-    }
-  }
-
-  // handle enter key down keyword Add
-  const handleKeyDownKeywords = event => {
-    if (event.key === 'Enter') {
-      handleKeywordsAdd(event);
     }
   }
 
@@ -144,41 +62,6 @@ function SearchBar({movies, setSearch, setShowSearchResult, setMovies}) {
     }
     
   };
-
-  // handle keyword remove
-  const handleRemoveKeyword = (keyword) => {
-    const x = keywords.filter(function(item) {
-      return item != keyword
-    });
-    setKeywords(x);
-    setShowAddBtn(true);
-    
-  };
-
-
-  // handle more/less fuzzy
-  useEffect(() => {
-    if(fuzzyN<1){
-      alert('Wow! that is too conservative.');
-      setfuzzyN(3);
-      return;
-    }
-    if(fuzzyN>10){
-      alert('Wow! that is too wild.');
-      setfuzzyN(3);
-      return;
-    }
-    if(fuzzyN !=3){
-      fetch('http://localhost:5000/Fuzzy', {headers: {'searchText':searchInput, 'n':fuzzyN}}).then(
-        response => response.json()
-      ).then(
-        data => {
-          setSearchResult(data["movies"])
-          setNoResult(false)
-        }
-      )
-    }
-  }, [fuzzyN]);
 
   // Suggester
   useEffect(() => {

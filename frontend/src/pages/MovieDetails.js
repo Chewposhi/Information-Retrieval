@@ -3,7 +3,6 @@ import { useParams } from 'react-router';
 import { styles } from '../styles';
 
 import ScrollableBox from '../components/ScrollableBox'
-import '../Styles/review.css';
 import Review from '../components/Review';
 
 const MovieDetails = () => {
