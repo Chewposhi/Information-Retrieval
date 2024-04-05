@@ -30,7 +30,7 @@ app.get("/init", (req, res) => {
             indent: true
         })
     .start(0)
-    .rows(30)
+    .rows(60)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
@@ -114,7 +114,7 @@ app.get("/nameSearch/:q", (req, res) => {
             indent: true
         })
     .start(0)
-    .rows(20)
+    .rows(60)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
@@ -193,7 +193,7 @@ app.get("/Fuzzy", (req, res) => {
             indent: true
         })
     .start(0)
-    .rows(30)
+    .rows(60)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
