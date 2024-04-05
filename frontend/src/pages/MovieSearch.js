@@ -183,7 +183,7 @@ const MoviesSearch = () => {
             {!loaded && <h1 className={`${styles.sectionHeadText}`}>Loading...</h1>}
             {loaded && <div className='max-w-screen-xxl mx-auto px-4 sm:px-6 lg:px-8'>
                 {searchTime && <div className='mb-4'>Search Took: {searchTime} ms</div>}
-                {noResultTag && 
+                {noResultTag && search!=="*" && 
                     <div className='flex flex-col items-center gap-2 my-2'>
                         <h2>no result for "{noResultInput}", showing our best guesses!</h2>
                         <div className='flex justify-center'>
