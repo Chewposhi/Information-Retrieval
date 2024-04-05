@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { genres } from '../utils/genres';
 import ToggleSwitch from './ToggleSwitch';
 
 function SearchBar() {
