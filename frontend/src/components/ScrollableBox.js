@@ -14,8 +14,8 @@ const ScrollableBox = ({movies}) => {
         // Scroll the element by the calculated scroll offset
         ref.current.scrollLeft += calculatedScrollOffset;
 
-        console.log(ref.current.scrollLeft);
-        console.log(ref.current);
+        // console.log(ref.current.scrollLeft);
+        // console.log(ref.current);
     };
     return (
         <div className="flex flex-col gap-4 my-6">

@@ -28,7 +28,7 @@ const MovieDetails = () => {
       ).then(
         data => {
           setDetails(data["movies"])
-          console.log(data["movies"])
+          // console.log(data["movies"])
         }
       );
       

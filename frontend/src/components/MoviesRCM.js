@@ -44,8 +44,8 @@ const MoviesRCM = () => {
         // Scroll the element by the calculated scroll offset
         ref.current.scrollLeft += calculatedScrollOffset;
     
-        console.log(ref.current.scrollLeft);
-        console.log(ref.current);
+        // console.log(ref.current.scrollLeft);
+        // console.log(ref.current);
     };
     
 
