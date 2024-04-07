@@ -5,12 +5,18 @@ import { genres } from '../constants/constants';
 import { styles } from '../styles';
 
 const MoviesSearch = () => {
+    // url params
+    const {search} = useParams();
+    const {mode} = useParams();
+
+    const [movies, setMovies] = useState([]);
+    const [selectedGenres, setSelectedGenres] = useState(mode == 2? [search] : []);
+    const [sortCriteria, setSortCriteria] = useState(null);
+
     const [loaded, setLoaded] = useState(false);
 
     // basic search, fuzzy search
-    const {search} = useParams();
-    const {mode} = useParams();
-    console.log(mode)
+
     const [fuzzyN, setfuzzyN] = useState(3);
 
     // show more and less
@@ -30,14 +36,14 @@ const MoviesSearch = () => {
 
     // Basic search
     const handleClick = async e => {
-        // name search api
+        // mode 0: name search api
         if(mode == 0){
             basicStart = performance.now();
             await fetch(`http://localhost:5000/nameSearch/${search}`).then(
             response => response.json()
             ).then(
                 data => {
-                    console.log(data["movies"])
+                    // if basic search returns no result, try fuzzy
                     if(data["movies"].length === 0){
                         setNoResultTag(true);
                         setNoResultInput(search);
@@ -51,8 +57,8 @@ const MoviesSearch = () => {
                     }
                 }
             )
-            // desc2movie api
-        }else{
+            // mode 1: desc2movie api
+        }else if(mode == 1){
             // parse user desc
             fetch('http://localhost:5000/DescrptionParse', {headers: {'description':search}}).then(
                 response => response.json()
@@ -72,7 +78,20 @@ const MoviesSearch = () => {
                     alert("Could not find result");
                   }
                 }
-  );
+            );
+            // mode 2: search by genre
+        } else if(mode == 2){
+            await fetch(`http://localhost:5000/movie-rec/${search}`).then(
+                response => response.json()
+                ).then(
+                    data => {
+                        setMovies(data["movies"]);
+                        setLoaded(true);
+                        setNoResultTag(false)
+                    }
+                )
+        }else{
+            console.log("mode not recognized")
         }
         
     };
@@ -114,12 +133,6 @@ const MoviesSearch = () => {
         )
         }
     }, [fuzzyN]);
-
-    const [movies, setMovies] = useState([]);
-    const isMoreMovies = false;
-    const {genre} = useParams();
-    const [selectedGenres, setSelectedGenres] = useState(isMoreMovies? [genre] : []);
-    const [sortCriteria, setSortCriteria] = useState(null);
 
     const handleFilter = (genre) => {
         const updatedSelectedGenres = selectedGenres.includes(genre)

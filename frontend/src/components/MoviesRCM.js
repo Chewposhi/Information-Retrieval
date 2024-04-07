@@ -62,7 +62,7 @@ const MoviesRCM = () => {
                         <button onClick={() => scroll(elementsRef.current[index], +80)}>
                             <FaChevronRight /> {/* Icon for scrolling right */}
                         </button>
-                        <Link className='absolute right-10' to={`/more-movies/${genre}` } target="_blank">
+                        <Link className='absolute right-10' to={`/search/2/${genre}` } target="_blank">
                             <p >more</p>
                         </Link>
                     </div>

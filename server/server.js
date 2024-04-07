@@ -58,7 +58,7 @@ app.get("/movie-rec/:genre", (req, res) => {
             indent: true
         })
     .start(0)
-    .rows(30)
+    .rows(60)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
