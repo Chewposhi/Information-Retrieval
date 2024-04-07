@@ -1,5 +1,3 @@
-// src/App.js
-
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -13,8 +11,6 @@ import MoviesSearch from './pages/MovieSearch';
 function App() {
 
   const [movies, setMovies] = useState(null);
-  const [search, setSearch] = useState(null);
-  const [showSearchResult, setShowSearchResult] = useState(false);
 
   useEffect(() => {
     fetch("http://localhost:5000/init").then(
@@ -29,10 +25,10 @@ function App() {
   return (
     <Router>
       <div className="tc pa4 min-vh-100 bg-black">
-        <Navbar setSearch={setSearch} setShowSearchResult={setShowSearchResult} setMovies={setMovies} />
+        <Navbar />
         <Switch>
           <Route exact path="/">
-            <Home isMoreMovies={false} movies={movies} search={search} showSearchResult={showSearchResult} setShowSearchResult={setShowSearchResult}/>
+            <Home movies={movies} />
           </Route>
           <Route path="/movie/:id">
             <MovieDetails/>

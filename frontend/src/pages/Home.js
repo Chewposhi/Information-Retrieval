@@ -1,9 +1,8 @@
 import React from 'react';
 import Carousel from '../components/Carousel';
-import MoreMovies from './MoreMovies';
 import MoviesRCM from '../components/MoviesRCM';
 
-const Home = ({ movies, showSearchResult, isMoreMovies }) => {
+const Home = ({ movies }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -11,9 +10,7 @@ const Home = ({ movies, showSearchResult, isMoreMovies }) => {
   return (
     <div>
       <Carousel />
-      {/* {movies && <Search movies={movies}/>} */}
-      {!showSearchResult && movies && <MoviesRCM movies={movies} />}
-      {showSearchResult && movies && <MoreMovies movies={movies} isMoreMovies={isMoreMovies}/>}
+      { movies && <MoviesRCM movies={movies} />}
       {!movies && <p>please connect to solr server</p>}
       
       {/* Back to Top button */}
