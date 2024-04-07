@@ -270,7 +270,7 @@ app.get("/Keywords", (req, res) => {
         };
 
         const response = result.response;
-        res.json({"movies": response.docs});
+        res.json({"movies": response.docs, "count": response.numFound});
 
     });
 });
