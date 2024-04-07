@@ -56,8 +56,8 @@ app.get("/movie-rec/:genre/:start?/:end?", (req, res) => {
             wt: 'json',
             indent: true
         })
-    .start(0)
-    .rows(req.params.count ? req.params.count:40)
+    .start(req.params.start? req.params.start : 0)
+    .rows(req.params.end ? req.params.end:14)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
