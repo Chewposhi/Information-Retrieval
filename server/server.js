@@ -37,7 +37,6 @@ app.get("/init", (req, res) => {
             console.log(err);
             return;
         };
-
         const response = result.response;
         res.json({"movies": response.docs});
 
@@ -65,7 +64,6 @@ app.get("/movie-rec/:genre/:count?", (req, res) => {
             console.log(err);
             return;
         };
-
         const response = result.response;
         res.json({"movies": response.docs});
 
@@ -102,9 +100,14 @@ app.get("/movie/:id", (req, res) => {
 
 app.get("/nameSearch/:q", (req, res) => {
     const filtered = req.params.q.replace(':','');
-    const Query = {
+    let Query = {
         "movie_name":'"'+filtered+'"'
     };
+    if(req.params.q == "*"){
+        Query = {
+            "movie_name":'*'
+        };
+    }
 
     const searchQuery = client.query()
     .q(Query)
@@ -121,7 +124,7 @@ app.get("/nameSearch/:q", (req, res) => {
             console.log(err);
             return;
         };
-
+        console.log(result)
         const response = result.response;
         res.json({"movies": response.docs});
 
