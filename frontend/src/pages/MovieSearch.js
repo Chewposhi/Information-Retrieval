@@ -81,7 +81,7 @@ const MoviesSearch = () => {
             );
             // mode 2: search by genre
         } else if(mode == 2){
-            await fetch(`http://localhost:5000/movie-rec/${search}`).then(
+            await fetch(`http://localhost:5000/movie-rec/${search}/90`).then(
                 response => response.json()
                 ).then(
                     data => {
@@ -167,22 +167,24 @@ const MoviesSearch = () => {
 
     return (
         <div className='mt-6'>
-            <h2 className={`${styles.heroSubText} my-6`}>Search Result: {moviesToDisplay.length}</h2>
+            <h2 className={`${styles.heroSubText} my-6`}>Search Result{mode == 2? (" for "+search +": ")  :":" } {moviesToDisplay.length}</h2>
             {/* filter */}
-            <h2 className={`${styles.sectionSubText} pink-text-gradient`}>Filter</h2>
-            <div className='flex flex-wrap justify-between px-10 divide-x-2 divide-cyan-400'>
-                {genres.map(genre => (
-                <label key={genre} className='text-white mb-4 px-2'>
-                    {genre}
-                    <input
-                    type='checkbox'
-                    checked={selectedGenres.includes(genre)}
-                    onChange={() => handleFilter(genre)}
-                    className='ml-2'
-                    />
-                </label>
-                ))}
-            </div>
+            {mode != 2 && <div>
+                <h2 className={`${styles.sectionSubText} pink-text-gradient`}>Filter</h2>
+                <div className='flex flex-wrap justify-between px-10 divide-x-2 divide-cyan-400'>
+                    {genres.map(genre => (
+                    <label key={genre} className='text-white mb-4 px-2'>
+                        {genre}
+                        <input
+                        type='checkbox'
+                        checked={selectedGenres.includes(genre)}
+                        onChange={() => handleFilter(genre)}
+                        className='ml-2'
+                        />
+                    </label>
+                    ))}
+                </div>
+            </div>}
             {/* sorter */}
             <h2 className={`${styles.sectionSubText} pink-text-gradient`}>Sort by:</h2>
             <select className='px-4 py-2 mb-4' onChange={(e) => handleSort(e.target.value)}>

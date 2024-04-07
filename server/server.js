@@ -45,7 +45,7 @@ app.get("/init", (req, res) => {
 });
 
 // get movies by genre
-app.get("/movie-rec/:genre", (req, res) => {
+app.get("/movie-rec/:genre/:count?", (req, res) => {
     const Query = {
         "movie_tags":req.params.genre
     };
@@ -58,7 +58,7 @@ app.get("/movie-rec/:genre", (req, res) => {
             indent: true
         })
     .start(0)
-    .rows(60)
+    .rows(req.params.count)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
