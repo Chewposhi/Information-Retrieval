@@ -39,8 +39,8 @@ const Carousel = () => {
                 &lt;
             </button>
             {carouselData.map((item, index) => (
-                <Link to={`/movie/${carouselData[currentImageIndex].id}` } target="_blank">
-                    <div key={index} className={`relative ${index === currentImageIndex ? 'opacity-100' : 'opacity-0 hidden'}`}>
+                <Link key={index} to={`/movie/${carouselData[currentImageIndex].id}` } target="_blank">
+                    <div className={`relative ${index === currentImageIndex ? 'opacity-100' : 'opacity-0 hidden'}`}>
                     <img
                         src={item.image}
                         alt={item.title}

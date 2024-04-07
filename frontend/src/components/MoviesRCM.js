@@ -53,7 +53,7 @@ const MoviesRCM = () => {
         <div className='flex flex-col gap-10 mt-10 pt-10 justify-start divide-y-4 divide-cyan-400'>
             <h1 className={`${styles.heroSubText}`}>Recommended For You</h1>
             {genres.map((genre, index) => (
-                <div className="flex flex-col gap-4">
+                <div key={index} className="flex flex-col gap-4">
                     <div className='flex justify-around mt-5 relative'>
                         <button onClick={() => scroll(elementsRef.current[index], -80)} className="mr-2">
                             <FaChevronLeft /> {/* Icon for scrolling left */}
@@ -76,23 +76,6 @@ const MoviesRCM = () => {
                 </div>
             ))}
         </div>
-        
-        // <div className='flex flex-col gap-10 mt-10 justify-start'>
-        //     {genres.map((genre, index) => (
-        //         <div key={index} className='relative'>
-        //             <h2>{genre}</h2>
-        //             <button className="" onClick={() => scroll(-80)}>Scroll Right</button>
-        //             <div className='flex gap-4 overflow-x-scroll' ref={containerRef} style={{ '-ms-overflow-style': 'none', 'scrollbar-width': 'none', 'overflow-y': 'hidden' }}>
-                        
-        //                 {movies.map((movie, idx) => (
-        //                     <div key={idx}>
-        //                         {movie["movie_tags"][0].includes(genre) && <Card movie={movie} isMore={false}/>}
-        //                     </div>
-        //                 ))}
-        //             </div>
-        //         </div>
-        //     ))}
-        // </div>
     );
 };
 

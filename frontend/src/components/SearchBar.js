@@ -78,7 +78,7 @@ function SearchBar() {
 
 
   return (
-    <div class="relative flex flex-col">
+    <div className="relative flex flex-col">
       <div className='flex'>
         <div className='absoulute left-0'>
           <ToggleSwitch label="desc2Movie" mode={mode} setMode={setMode} />
@@ -90,18 +90,18 @@ function SearchBar() {
           value={searchInput}
           onFocus={() => handleFocus()}
           onKeyDown={handleKeyDownSearch}
-          class="w-full bg-gray-900 text-white px-4 py-2 rounded-md focus:outline-none" />
-        <button onClick={handleClick} class="absolute right-0 top-0 mt-2 mr-2">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-400 hover:text-gray-300 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          className="w-full bg-gray-900 text-white px-4 py-2 rounded-md focus:outline-none" />
+        <button onClick={handleClick} className="absolute right-0 top-0 mt-2 mr-2">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-400 hover:text-gray-300 transition duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l4.5 4.5M10 8a2 2 0 100-4 2 2 0 000 4z" />
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-4.5-4.5M6 10a6 6 0 1112 0 6 6 0 01-12 0z" />
           </svg>
         </button>
       </div>
       {showSuggest && (
-        <div class="absolute left-0 mt-10 w-full z-10">
+        <div className="absolute left-0 mt-10 w-full z-10">
           {autoComplete.map((item) => (
-            <div style={{ color: 'white' }} onClick={() => onAutoComplete(item.term)} class="dropdown-row">
+            <div style={{ color: 'white' }} onClick={() => onAutoComplete(item.term)} className="dropdown-row">
               {item.term}
             </div>
           ))}
