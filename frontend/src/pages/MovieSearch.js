@@ -12,6 +12,7 @@ const MoviesSearch = () => {
     const [movies, setMovies] = useState([]);
     const [selectedGenres, setSelectedGenres] = useState(mode == 2? [search] : []);
     const [sortCriteria, setSortCriteria] = useState(null);
+    const [databaseCount, setDatabaseCount] = useState(0);
 
     const [loaded, setLoaded] = useState(false);
 
@@ -50,6 +51,7 @@ const MoviesSearch = () => {
                         fuzzy();
                       }else{
                         setMovies(data["movies"]);
+                        setDatabaseCount(data["count"]);
                         setLoaded(true);
                         basicEnd = performance.now();
                         setSearchTime(basicEnd - basicStart);
@@ -71,6 +73,7 @@ const MoviesSearch = () => {
                     ).then(
                       data => {
                         setMovies(data["movies"]);
+                        setDatabaseCount(data["count"]);
                         setLoaded(true);
                       }
                     );
@@ -86,6 +89,7 @@ const MoviesSearch = () => {
                 ).then(
                     data => {
                         setMovies(data["movies"]);
+                        setDatabaseCount(data["count"]);
                         setLoaded(true);
                         setNoResultTag(false)
                     }
@@ -167,7 +171,7 @@ const MoviesSearch = () => {
 
     return (
         <div className='mt-6'>
-            <h2 className={`${styles.heroSubText} my-6`}>Search Result{mode == 2? (" for "+search +": ")  :":" } {moviesToDisplay.length}</h2>
+            <h2 className={`${styles.heroSubText} my-6`}>Search Result{mode == 2? (" for "+search +": ")  :":" } {noResultTag? moviesToDisplay.length : databaseCount}</h2>
             {/* filter */}
             {mode != 2 && <div>
                 <h2 className={`${styles.sectionSubText} pink-text-gradient`}>Filter</h2>

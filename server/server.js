@@ -65,7 +65,7 @@ app.get("/movie-rec/:genre/:count?", (req, res) => {
             return;
         };
         const response = result.response;
-        res.json({"movies": response.docs});
+        res.json({"movies": response.docs,"count": response.numFound});
 
     });
 });
@@ -92,7 +92,7 @@ app.get("/movie/:id", (req, res) => {
         };
 
         const response = result.response;
-        res.json({"movies": response.docs});
+        res.json({"movies": response.docs,"count": response.numFound});
 
     });
 });
@@ -124,9 +124,8 @@ app.get("/nameSearch/:q", (req, res) => {
             console.log(err);
             return;
         };
-        console.log(result)
         const response = result.response;
-        res.json({"movies": response.docs});
+        res.json({"movies": response.docs,"count": response.numFound});
 
     });
 });
@@ -205,7 +204,7 @@ app.get("/Fuzzy", (req, res) => {
         };
 
         const response = result.response;
-        res.json({"movies": response.docs});
+        res.json({"movies": response.docs,"count": response.numFound});
 
     });
 });
