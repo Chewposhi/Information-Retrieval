@@ -77,6 +77,7 @@ const MovieDetails = () => {
         fetch(`https://imdb8.p.rapidapi.com/title/get-user-reviews?tconst=${details[0].movie_id}`, options)
         .then(response => response.json())
         .then(response => {setReviews(response);
+          console.log(response);
                           setPoster(true);
                           setReviewsloaded(true);
                           })
@@ -114,7 +115,7 @@ const MovieDetails = () => {
                 <h2 className={`${styles.heroSubText} my-4`}>Reviews:</h2>
                 {reviewsloaded && 
                   <div className='flex flex-col gap-4'>
-                    {reviews.reviews.map((review, idx)=>(
+                    {reviews.totalReviews != 0 && reviews.reviews.map((review, idx)=>(
                       <Review key={idx} review={review} />
                     ))}
                   </div>

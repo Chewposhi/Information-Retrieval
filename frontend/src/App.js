@@ -20,7 +20,11 @@ function App() {
         setMovies(data["movies"])
       }
     )
-  }, [])
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <Router>
@@ -37,7 +41,13 @@ function App() {
             <MoviesSearch />
           </Route>
         </Switch>
-        
+        {/* Back to Top button */}
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-10 right-10 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+        >
+          Back to Top
+        </button>
       </div>
     </Router>
     
