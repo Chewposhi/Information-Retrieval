@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import Card from '../components/Card';
+import Pagination from '../components/Pagination';
 import { genres } from '../constants/constants';
 import { styles } from '../styles';
 
@@ -15,6 +16,10 @@ const MoviesSearch = () => {
     const [databaseCount, setDatabaseCount] = useState(0);
 
     const [loaded, setLoaded] = useState(false);
+
+    // Pagination
+    const [currentPage, setCurrentPage] = useState(1);
+    const moviesPerPage = 40;
 
     // basic search, fuzzy search
 
@@ -33,14 +38,14 @@ const MoviesSearch = () => {
 
     useEffect(() => {
         handleClick();
-      }, [search]);
+      }, [search, currentPage]);
 
     // Basic search
     const handleClick = async e => {
         // mode 0: name search api
         if(mode == 0){
             basicStart = performance.now();
-            await fetch(`http://localhost:5000/nameSearch/${search}`).then(
+            await fetch(`http://localhost:5000/nameSearch/${search}/${(currentPage-1)*moviesPerPage}/${moviesPerPage*currentPage}`).then(
             response => response.json()
             ).then(
                 data => {
@@ -68,7 +73,7 @@ const MoviesSearch = () => {
                 data => {
                 if(data.length != 0){
                     // fetch by tokenised desc
-                    fetch('http://localhost:5000/Keywords', {headers: {'keywords':data}}).then(
+                    fetch(`http://localhost:5000/Keywords/${(currentPage-1)*moviesPerPage}/${moviesPerPage*currentPage}`, {headers: {'keywords':data}}).then(
                       response => response.json()
                     ).then(
                       data => {
@@ -84,7 +89,7 @@ const MoviesSearch = () => {
             );
             // mode 2: search by genre
         } else if(mode == 2){
-            await fetch(`http://localhost:5000/movie-rec/${search}/90`).then(
+            await fetch(`http://localhost:5000/movie-rec/${search}/${(currentPage-1)*moviesPerPage}/${moviesPerPage*currentPage}`).then(
                 response => response.json()
                 ).then(
                     data => {
@@ -103,11 +108,13 @@ const MoviesSearch = () => {
     // fuzzy search
     const fuzzy = async e => {
         fuzzyStart = performance.now()
-        fetch('http://localhost:5000/Fuzzy', {headers: {'searchText':search, 'n':fuzzyN}}).then(
+        fetch(`http://localhost:5000/Fuzzy/${(currentPage-1)*moviesPerPage}/${moviesPerPage*currentPage}`, {headers: {'searchText':search, 'n':fuzzyN}}).then(
             response => response.json()
         ).then(
             data => {
                 setMovies(data["movies"]);
+                setDatabaseCount(data["count"]);
+                console.log(data["count"])
                 setLoaded(true);
                 fuzzyEnd = performance.now();
                 setSearchTime(fuzzyEnd - fuzzyStart);
@@ -137,6 +144,12 @@ const MoviesSearch = () => {
         )
         }
     }, [fuzzyN]);
+
+    // handle page change, fetch new movies
+    const handlePageChange = page => {
+        setCurrentPage(page);
+        // You can perform data fetching or any other action here based on the new page number
+      };
 
     const handleFilter = (genre) => {
         const updatedSelectedGenres = selectedGenres.includes(genre)
@@ -171,7 +184,7 @@ const MoviesSearch = () => {
 
     return (
         <div className='mt-6'>
-            <h2 className={`${styles.heroSubText} my-6`}>Search Result{mode == 2? (" for "+search +": ")  :":" } {noResultTag? moviesToDisplay.length : databaseCount}</h2>
+            <h2 className={`${styles.heroSubText} my-6`}>Search Result{mode == 2? (" for "+search +": ")  :":" } {databaseCount}</h2>
             {/* filter */}
             {mode != 2 && <div>
                 <h2 className={`${styles.sectionSubText} pink-text-gradient`}>Filter</h2>
@@ -217,6 +230,7 @@ const MoviesSearch = () => {
                     <Card key={movie.id} movie={movie} isMore={false}/>
                 ))}
                 </div>
+                <Pagination moviesPerPage={moviesPerPage} currentPage={currentPage} onPageChange={handlePageChange} totalPages={databaseCount}/>
             </div>}
         </div>
     );

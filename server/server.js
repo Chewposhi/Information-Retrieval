@@ -44,7 +44,7 @@ app.get("/init", (req, res) => {
 });
 
 // get movies by genre
-app.get("/movie-rec/:genre/:count?", (req, res) => {
+app.get("/movie-rec/:genre/:start?/:end?", (req, res) => {
     const Query = {
         "movie_tags":req.params.genre
     };
@@ -56,8 +56,8 @@ app.get("/movie-rec/:genre/:count?", (req, res) => {
             wt: 'json',
             indent: true
         })
-    .start(0)
-    .rows(req.params.count ? req.params.count:14)
+    .start(req.params.start? req.params.start : 0)
+    .rows(req.params.end ? req.params.end:14)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
@@ -98,7 +98,7 @@ app.get("/movie/:id", (req, res) => {
 });
 
 
-app.get("/nameSearch/:q", (req, res) => {
+app.get("/nameSearch/:q/:start?/:end?", (req, res) => {
     const filtered = req.params.q.replace(':','');
     let Query = {
         "movie_name":'"'+filtered+'"'
@@ -116,8 +116,8 @@ app.get("/nameSearch/:q", (req, res) => {
             wt: 'json',
             indent: true
         })
-    .start(0)
-    .rows(60)
+    .start(req.params.start? req.params.start: 0)
+    .rows(req.params.end? req.params.end: 40)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
@@ -178,7 +178,7 @@ app.get("/MoreLikeThisCast/:id", (req, res) => {
     });
 });
 
-app.get("/Fuzzy", (req, res) => {
+app.get("/Fuzzy/:start?/:end?", (req, res) => {
     var inputArray = req.header('searchText').replace(':','');
     inputArray = inputArray.split(' ');
     for (let i = 0; i < inputArray.length; i++) {
@@ -194,8 +194,9 @@ app.get("/Fuzzy", (req, res) => {
             wt: 'json',
             indent: true
         })
-    .start(0)
-    .rows(60)
+    .start(req.params.start? req.params.start: 0)
+    .rows(req.params.end? req.params.end: 40)
+    
 
     client.search(searchQuery, function (err, result) {
         if (err) {
@@ -245,12 +246,9 @@ app.get("/DescrptionParse", (req, res) => {
     })
 });
 
-app.get("/Keywords", (req, res) => {
+app.get("/Keywords/:start?/:end?", (req, res) => {
     const Query = {
         "movie_dis_keywords":req.header('keywords')
-
-        //"movie_dis_keywords":req.header('keywords')
-        //"movie_tags":req.header('keywords')
     };
 
     const searchQuery = client.query()
@@ -260,8 +258,8 @@ app.get("/Keywords", (req, res) => {
             wt: 'json',
             indent: true
         })
-    .start(0)
-    .rows(30)
+    .start(req.params.start? req.params.start: 0)
+    .rows(req.params.end? req.params.end: 40)
 
     client.search(searchQuery, function (err, result) {
         if (err) {
