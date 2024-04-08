@@ -38,7 +38,7 @@ const MoviesSearch = () => {
 
     useEffect(() => {
         handleClick();
-      }, [search]);
+      }, [search, currentPage]);
 
     // Basic search
     const handleClick = async e => {

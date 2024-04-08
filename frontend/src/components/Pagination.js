@@ -32,11 +32,11 @@ const Pagination = ({ moviesPerPage, currentPage, totalPages, onPageChange }) =>
             ))}
           </select>
         </li>
-        <li className={`page-item ${currentPage === totalPages ? 'opacity-50 pointer-events-none' : ''}`}>
+        <li className={`page-item ${currentPage === Math.ceil(totalPages/moviesPerPage) ? 'opacity-50 pointer-events-none' : ''}`}>
           <button
             className="page-link bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             onClick={() => onPageChange(currentPage + 1)}
-            disabled={currentPage === totalPages}
+            disabled={currentPage === Math.ceil(totalPages/moviesPerPage)}
           >
             Next
           </button>
