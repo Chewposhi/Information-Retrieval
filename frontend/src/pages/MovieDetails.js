@@ -105,7 +105,7 @@ const MovieDetails = () => {
               </div>}
           </div>
             {/* more like this section */}
-            <div className='mx-2 flex flex-col'>
+            <div className={`mx-2 flex flex-col ${moreCombined.length>5? "" : 'items-center'}`}>
               <div>
                 <h2 className={`${styles.heroSubText} my-4`}>Not what you were looking for? Here are similar movies</h2>
                 {moreLoaded && <ScrollableBox movies={moreCombined}/>
