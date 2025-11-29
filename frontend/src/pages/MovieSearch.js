@@ -23,7 +23,7 @@ const MoviesSearch = () => {
 
     // basic search, fuzzy search
 
-    const [fuzzyN, setfuzzyN] = useState(1);
+    const [fuzzyN, setfuzzyN] = useState(2);
 
     // show more and less
     const [noResultInput, setNoResultInput] = useState("");
